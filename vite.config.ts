@@ -4,12 +4,14 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import dts from 'vite-plugin-dts'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ mode }) => ({
   plugins: [
+    tailwindcss(),
     vue(),
     mode !== 'production' && vueDevTools(),
-    dts({ rollupTypes: true }),
+    dts({ tsconfigPath: './tsconfig.app.json' }),
   ],
   publicDir: mode !== 'production' ? 'public' : false,
   build: {
