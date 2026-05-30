@@ -1,9 +1,9 @@
 <script setup lang="ts">
-type Variant = 'primary' | 'secondary' | 'outlined' | 'ghost' | 'danger'
-type Size = 'sm' | 'md' | 'lg'
-type ButtonType = 'button' | 'submit' | 'reset'
+export type Variant = 'primary' | 'secondary' | 'outlined' | 'ghost' | 'danger'
+export type Size = 'sm' | 'md' | 'lg'
+export type ButtonType = 'button' | 'submit' | 'reset'
 
-interface Props {
+export interface Props {
   variant?: Variant
   size?: Size
   disabled?: boolean
