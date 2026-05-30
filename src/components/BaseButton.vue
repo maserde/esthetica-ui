@@ -77,9 +77,9 @@ function handleClick(event: MouseEvent) {
   --_btn-duration: var(--btn-transition-duration, 160ms);
 
   /* Primary */
-  --_btn-primary-bg: var(--btn-primary-bg, var(--color-stone-900));
-  --_btn-primary-bg-hover: var(--btn-primary-bg-hover, var(--color-stone-800));
-  --_btn-primary-color: var(--btn-primary-color, var(--color-stone-50));
+  --_btn-primary-bg: var(--btn-primary-bg, var(--color-stone-900, #1c1917));
+  --_btn-primary-bg-hover: var(--btn-primary-bg-hover, var(--color-stone-800, #292524));
+  --_btn-primary-color: var(--btn-primary-color, var(--color-stone-50, #fafaf9));
   --_btn-primary-shadow: var(--btn-primary-shadow,
     0 1px 3px 0 rgb(28 25 23 / 0.4),
     0 1px 2px -1px rgb(28 25 23 / 0.4));
@@ -87,24 +87,24 @@ function handleClick(event: MouseEvent) {
     0 4px 12px -2px rgb(28 25 23 / 0.45));
 
   /* Secondary */
-  --_btn-secondary-bg: var(--btn-secondary-bg, var(--color-stone-200));
-  --_btn-secondary-bg-hover: var(--btn-secondary-bg-hover, var(--color-stone-300));
-  --_btn-secondary-color: var(--btn-secondary-color, var(--color-stone-900));
+  --_btn-secondary-bg: var(--btn-secondary-bg, var(--color-stone-200, #e7e5e4));
+  --_btn-secondary-bg-hover: var(--btn-secondary-bg-hover, var(--color-stone-300, #d6d3d1));
+  --_btn-secondary-color: var(--btn-secondary-color, var(--color-stone-900, #1c1917));
 
   /* Outlined */
-  --_btn-outlined-border: var(--btn-outlined-border, var(--color-stone-400));
-  --_btn-outlined-border-hover: var(--btn-outlined-border-hover, var(--color-stone-900));
-  --_btn-outlined-color: var(--btn-outlined-color, var(--color-stone-900));
-  --_btn-outlined-bg-hover: var(--btn-outlined-bg-hover, var(--color-stone-50));
+  --_btn-outlined-border: var(--btn-outlined-border, var(--color-stone-400, #a8a29e));
+  --_btn-outlined-border-hover: var(--btn-outlined-border-hover, var(--color-stone-900, #1c1917));
+  --_btn-outlined-color: var(--btn-outlined-color, var(--color-stone-900, #1c1917));
+  --_btn-outlined-bg-hover: var(--btn-outlined-bg-hover, var(--color-stone-50, #fafaf9));
 
   /* Ghost */
-  --_btn-ghost-color: var(--btn-ghost-color, var(--color-stone-700));
-  --_btn-ghost-bg-hover: var(--btn-ghost-bg-hover, var(--color-stone-100));
+  --_btn-ghost-color: var(--btn-ghost-color, var(--color-stone-700, #44403c));
+  --_btn-ghost-bg-hover: var(--btn-ghost-bg-hover, var(--color-stone-100, #f5f5f4));
 
   /* Danger */
-  --_btn-danger-bg: var(--btn-danger-bg, var(--color-rose-700));
-  --_btn-danger-bg-hover: var(--btn-danger-bg-hover, var(--color-rose-800));
-  --_btn-danger-color: var(--btn-danger-color, var(--color-white));
+  --_btn-danger-bg: var(--btn-danger-bg, var(--color-rose-700, #be123c));
+  --_btn-danger-bg-hover: var(--btn-danger-bg-hover, var(--color-rose-800, #9f1239));
+  --_btn-danger-color: var(--btn-danger-color, var(--color-white, #ffffff));
   --_btn-danger-shadow: var(--btn-danger-shadow,
     0 1px 3px 0 rgb(190 18 60 / 0.35),
     0 1px 2px -1px rgb(190 18 60 / 0.35));
@@ -130,7 +130,7 @@ function handleClick(event: MouseEvent) {
 
 .base-button:focus-visible {
   @apply outline-2 outline-offset-[3px];
-  outline-color: var(--btn-focus-ring, var(--color-stone-900));
+  outline-color: var(--btn-focus-ring, var(--color-stone-900, #1c1917));
 }
 
 .base-button:active:not(:disabled) {
