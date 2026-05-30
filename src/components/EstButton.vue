@@ -138,15 +138,19 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--sm {
-  @apply py-1.5 px-3.25 text-[0.8125rem] min-h-8;
+  @apply p-[--est-btn-sm-padding] min-h-8;
+  font-size: var(--est-btn-sm-font-size);
+  border-radius: calc(var(--est-radius) * 0.5);
 }
 
 .est-button--md {
-  @apply py-2.25 px-4.75 text-[0.9375rem] min-h-10;
+  @apply p-[--est-btn-md-padding] min-h-10;
+  font-size: var(--est-btn-md-font-size);
 }
 
 .est-button--lg {
-  @apply py-3 px-6.5 text-[1.0625rem] min-h-12;
+  @apply p-[--est-btn-lg-padding] min-h-12;
+  font-size: var(--est-btn-lg-font-size);
 }
 
 .est-button--primary {

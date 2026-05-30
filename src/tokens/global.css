@@ -1,27 +1,6 @@
 @layer esthetica-ui-tokens {
   :root {
-    --est-color-primary: #056dff;
-    --est-color-primary-hover: #1a7dff;
-    --est-color-primary-fg: #fafaf9;
-
-    --est-color-secondary: #e7e5e4;
-    --est-color-secondary-hover: #d6d3d1;
-    --est-color-secondary-fg: #1c1917;
-
-    --est-color-black: #070707;
-
-    --est-color-danger: #be123c;
-    --est-color-danger-hover: #9f1239;
-    --est-color-danger-fg: #ffffff;
-
-    --est-color-border: #a8a29e;
-    --est-color-border-strong: #1c1917;
-
-    --est-color-surface: #fafaf9;
-    --est-color-muted: #f5f5f4;
-    --est-color-muted-fg: #44403c;
-
-    --est-radius: 0.375rem;
+    --est-radius: 0.5rem;
     --est-font-sans: 'Inter', sans-serif;
   }
 }

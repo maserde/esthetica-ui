@@ -25,5 +25,13 @@
     --est-btn-danger-bg: var(--est-color-danger);
     --est-btn-danger-bg-hover: var(--est-color-danger-hover);
     --est-btn-danger-color: var(--est-color-danger-fg);
+
+    --est-btn-sm-padding: .5rem .5rem;
+    --est-btn-md-padding: .75rem .75rem;
+    --est-btn-lg-padding: .5rem 1rem;
+
+    --est-btn-sm-font-size: .75rem;
+    --est-btn-md-font-size: .875rem;
+    --est-btn-lg-font-size: 1rem;
   }
 }
