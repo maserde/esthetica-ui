@@ -22,7 +22,7 @@ import '@ardiprasetiyo/esthetica-ui/style.css'
 ## Usage
 
 ```ts
-import { BaseButton } from '@ardiprasetiyo/esthetica-ui'
+import { EstButton } from '@ardiprasetiyo/esthetica-ui'
 ```
 
 ## Development
