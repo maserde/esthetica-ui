@@ -30,7 +30,7 @@ const meta = {
     loading: { control: 'boolean' },
     onClick: { action: 'click' },
   },
-  render: (args: Record<string, unknown>) => ({
+  render: (args) => ({
     components: { BaseButton },
     setup() { return { args }; },
     template: `<BaseButton v-bind="args">{{ args.default ?? 'Button' }}</BaseButton>`,
