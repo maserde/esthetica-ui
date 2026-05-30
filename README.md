@@ -1,4 +1,4 @@
-# esthetica-ui
+![Project Logo](esthetica-logo.svg)
 
 A minimalist Vue 3 component library built with TypeScript and TailwindCSS.
 
