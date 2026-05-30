@@ -22,9 +22,9 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/esthetica-ui.js",
-      "require": "./dist/esthetica-ui.umd.cjs",
-      "types": "./dist/src/index.d.ts"
+      "require": "./dist/esthetica-ui.umd.cjs"
     },
     "./style.css": "./dist/esthetica-ui.css"
   },
