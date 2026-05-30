@@ -68,9 +68,8 @@ function handleClick(event: MouseEvent) {
 .est-button {
   @apply relative inline-flex items-center justify-center;
   @apply font-medium leading-none tracking-[0.01em] whitespace-nowrap;
-  @apply border-[1.5px] border-transparent;
-  @apply cursor-pointer select-none outline-none no-underline appearance-none;
-  -webkit-appearance: none;
+  @apply border-solid border-[1.5px] border-transparent;
+  @apply cursor-pointer select-none outline-none no-underline;
   font-family: var(--est-btn-font-family), 'sans-serif';
   border-radius: var(--est-btn-radius);
   transition:

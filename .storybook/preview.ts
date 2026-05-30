@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/vue3-vite';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import '../src/style.css';
 
 const preview: Preview = {
