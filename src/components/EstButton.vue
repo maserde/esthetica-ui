@@ -60,7 +60,7 @@ function handleClick(event: MouseEvent) {
       </span>
     </span>
 
-    <span v-if="loading" class="est-button__spinner" aria-hidden="true" />
+    <span v-if="loading" class="i-ri-loader-4-line est-button__spinner" aria-hidden="true" />
   </button>
 </template>
 
@@ -128,7 +128,6 @@ function handleClick(event: MouseEvent) {
 .est-button__spinner {
   @apply absolute top-1/2 left-1/2 w-[1em] h-[1em];
   @apply mt-[-0.5em] ml-[-0.5em];
-  @apply border-[1.5px] border-current border-t-transparent rounded-full;
   animation: est-button-spin 580ms linear infinite;
 }
 
