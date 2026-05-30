@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import BaseButton from './components/BaseButton.vue'
+import {ref} from 'vue'
+import EstButton from './components/EstButton.vue'
 
 const loading = ref(false)
 
@@ -22,11 +22,11 @@ function simulateLoad() {
       <section class="section">
         <h2 class="section__label">Variants</h2>
         <div class="row">
-          <BaseButton variant="primary">Primary</BaseButton>
-          <BaseButton variant="secondary">Secondary</BaseButton>
-          <BaseButton variant="outlined">Outlined</BaseButton>
-          <BaseButton variant="ghost">Ghost</BaseButton>
-          <BaseButton variant="danger">Danger</BaseButton>
+          <EstButton variant="primary">Primary</EstButton>
+          <EstButton variant="secondary">Secondary</EstButton>
+          <EstButton variant="outlined">Outlined</EstButton>
+          <EstButton variant="ghost">Ghost</EstButton>
+          <EstButton variant="danger">Danger</EstButton>
         </div>
       </section>
 
@@ -34,9 +34,9 @@ function simulateLoad() {
       <section class="section">
         <h2 class="section__label">Sizes</h2>
         <div class="row row--align-center">
-          <BaseButton size="sm">Small</BaseButton>
-          <BaseButton size="md">Medium</BaseButton>
-          <BaseButton size="lg">Large</BaseButton>
+          <EstButton size="sm">Small</EstButton>
+          <EstButton size="md">Medium</EstButton>
+          <EstButton size="lg">Large</EstButton>
         </div>
       </section>
 
@@ -44,33 +44,70 @@ function simulateLoad() {
       <section class="section">
         <h2 class="section__label">With icons</h2>
         <div class="row">
-          <BaseButton variant="primary">
+          <EstButton variant="primary">
             <template #leading>
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M8 2.75a.75.75 0 0 0-1.5 0V7H2.75a.75.75 0 0 0 0 1.5H6.5v4.25a.75.75 0 0 0 1.5 0V8.5h4.25a.75.75 0 0 0 0-1.5H8V2.75Z" fill="currentColor"/>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8 2.75a.75.75 0 0 0-1.5 0V7H2.75a.75.75 0 0 0 0 1.5H6.5v4.25a.75.75 0 0 0 1.5 0V8.5h4.25a.75.75 0 0 0 0-1.5H8V2.75Z"
+                  fill="currentColor"
+                />
               </svg>
             </template>
             Add item
-          </BaseButton>
+          </EstButton>
 
-          <BaseButton variant="outlined">
+          <EstButton variant="outlined">
             Export
             <template #trailing>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M7 1.75a.75.75 0 0 1 .75.75v5.19l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3A.75.75 0 1 1 4.53 5.97L6.25 7.69V2.5A.75.75 0 0 1 7 1.75ZM1.75 11.5a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 1.75a.75.75 0 0 1 .75.75v5.19l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3A.75.75 0 1 1 4.53 5.97L6.25 7.69V2.5A.75.75 0 0 1 7 1.75ZM1.75 11.5a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                />
               </svg>
             </template>
-          </BaseButton>
+          </EstButton>
 
-          <BaseButton variant="ghost">
+          <EstButton variant="ghost">
             <template #leading>
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M7.5 1a6.5 6.5 0 1 0 0 13A6.5 6.5 0 0 0 7.5 1ZM0 7.5a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
-                <path d="M7 4.5a.5.5 0 0 1 1 0V7h2.5a.5.5 0 0 1 0 1H8v2.5a.5.5 0 0 1-1 0V8H4.5a.5.5 0 0 1 0-1H7V4.5Z" fill="currentColor"/>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7.5 1a6.5 6.5 0 1 0 0 13A6.5 6.5 0 0 0 7.5 1ZM0 7.5a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                />
+                <path
+                  d="M7 4.5a.5.5 0 0 1 1 0V7h2.5a.5.5 0 0 1 0 1H8v2.5a.5.5 0 0 1-1 0V8H4.5a.5.5 0 0 1 0-1H7V4.5Z"
+                  fill="currentColor"
+                />
               </svg>
             </template>
             New
-          </BaseButton>
+          </EstButton>
         </div>
       </section>
 
@@ -78,11 +115,11 @@ function simulateLoad() {
       <section class="section">
         <h2 class="section__label">Loading</h2>
         <div class="row">
-          <BaseButton variant="primary" :loading="loading" @click="simulateLoad">
+          <EstButton variant="primary" :loading="loading" @click="simulateLoad">
             {{ loading ? 'Saving…' : 'Save changes' }}
-          </BaseButton>
-          <BaseButton variant="outlined" loading>Processing</BaseButton>
-          <BaseButton variant="danger" loading>Deleting</BaseButton>
+          </EstButton>
+          <EstButton variant="outlined" loading>Processing</EstButton>
+          <EstButton variant="danger" loading>Deleting</EstButton>
         </div>
       </section>
 
@@ -90,11 +127,11 @@ function simulateLoad() {
       <section class="section">
         <h2 class="section__label">Disabled</h2>
         <div class="row">
-          <BaseButton variant="primary" disabled>Primary</BaseButton>
-          <BaseButton variant="secondary" disabled>Secondary</BaseButton>
-          <BaseButton variant="outlined" disabled>Outlined</BaseButton>
-          <BaseButton variant="ghost" disabled>Ghost</BaseButton>
-          <BaseButton variant="danger" disabled>Danger</BaseButton>
+          <EstButton variant="primary" disabled>Primary</EstButton>
+          <EstButton variant="secondary" disabled>Secondary</EstButton>
+          <EstButton variant="outlined" disabled>Outlined</EstButton>
+          <EstButton variant="ghost" disabled>Ghost</EstButton>
+          <EstButton variant="danger" disabled>Danger</EstButton>
         </div>
       </section>
     </main>
@@ -102,7 +139,13 @@ function simulateLoad() {
 </template>
 
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;

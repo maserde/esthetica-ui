@@ -1,0 +1,29 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-btn-font-family: initial;
+    --est-btn-radius: initial;
+    --est-btn-transition-duration: initial;
+    --est-btn-focus-ring: initial;
+    --est-btn-focus-ring-offset: #fff;
+
+    --est-btn-primary-bg: var(--est-color-primary);
+    --est-btn-primary-bg-hover: var(--est-color-primary-hover);
+    --est-btn-primary-color: var(--est-color-primary-fg);
+
+    --est-btn-secondary-bg: var(--est-color-secondary);
+    --est-btn-secondary-bg-hover: var(--est-color-secondary-hover);
+    --est-btn-secondary-color: var(--est-color-secondary-fg);
+
+    --est-btn-outlined-border: var(--est-color-border);
+    --est-btn-outlined-border-hover: var(--est-color-border-strong);
+    --est-btn-outlined-color: var(--est-color-secondary-fg);
+    --est-btn-outlined-bg-hover: var(--est-color-surface);
+
+    --est-btn-ghost-color: var(--est-color-muted-fg);
+    --est-btn-ghost-bg-hover: var(--est-color-muted);
+
+    --est-btn-danger-bg: var(--est-color-danger);
+    --est-btn-danger-bg-hover: var(--est-color-danger-hover);
+    --est-btn-danger-color: var(--est-color-danger-fg);
+  }
+}

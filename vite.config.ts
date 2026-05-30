@@ -4,11 +4,11 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import dts from 'vite-plugin-dts'
-import tailwindcss from '@tailwindcss/vite'
+import UnoCSS from 'unocss/vite'
 
 export default defineConfig(({ mode }) => ({
   plugins: [
-    tailwindcss(),
+    UnoCSS(),
     vue(),
     mode !== 'production' && vueDevTools(),
     dts({ tsconfigPath: './tsconfig.app.json' }),
@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
       fileName: 'esthetica-ui',
       formats: ['es', 'umd'],
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: ['vue'],
       output: {
         globals: {
