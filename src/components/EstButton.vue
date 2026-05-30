@@ -84,6 +84,8 @@ function handleClick(event: MouseEvent) {
     0 0 0 0 transparent;
 }
 
+.est-button--outlined:focus-visible,
+.est-button--outlined:focus:not(:disabled),
 .est-button:focus-visible,
 .est-button:focus:not(:disabled) {
   box-shadow:
@@ -98,8 +100,6 @@ function handleClick(event: MouseEvent) {
     0 0 0 3px var(--est-btn-focus-ring, var(--est-color-danger));
 }
 
-.est-button--outlined:focus-visible,
-.est-button--outlined:focus:not(:disabled),
 .est-button--secondary:focus-visible,
 .est-button--secondary:focus:not(:disabled) {
   box-shadow:

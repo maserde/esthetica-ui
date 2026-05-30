@@ -14,9 +14,9 @@
     --est-btn-secondary-bg-hover: var(--est-color-secondary-hover);
     --est-btn-secondary-color: var(--est-color-secondary-fg);
 
-    --est-btn-outlined-border: var(--est-color-border);
-    --est-btn-outlined-border-hover: var(--est-color-border-strong);
-    --est-btn-outlined-color: var(--est-color-secondary-fg);
+    --est-btn-outlined-border: var(--est-color-primary);
+    --est-btn-outlined-border-hover: var(--est-color-primary-hover);
+    --est-btn-outlined-color: var(--est-color-primary);
     --est-btn-outlined-bg-hover: var(--est-color-surface);
 
     --est-btn-ghost-color: var(--est-color-muted-fg);
