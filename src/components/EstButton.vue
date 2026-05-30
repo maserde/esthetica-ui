@@ -79,7 +79,9 @@ function handleClick(event: MouseEvent) {
     box-shadow var(--est-btn-transition-duration) ease,
     opacity var(--est-btn-transition-duration) ease,
     transform var(--est-btn-transition-duration) ease;
-  box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+  box-shadow:
+    0 0 0 0 transparent,
+    0 0 0 0 transparent;
 }
 
 .est-button:focus-visible,
