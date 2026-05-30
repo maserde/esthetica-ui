@@ -60,7 +60,7 @@ function handleClick(event: MouseEvent) {
       </span>
     </span>
 
-    <span v-if="loading" class="i-ri-loader-4-line est-button__spinner" aria-hidden="true" />
+    <span v-if="loading" class="i-ri-loader-4-line text-lg est-button__spinner" aria-hidden="true" />
   </button>
 </template>
 
