@@ -1,5 +1,13 @@
 <script setup lang="ts">
-export type Variant = 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger' |  'outlined' | 'ghost'
+export type Variant =
+  | 'primary'
+  | 'secondary'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'outlined'
+  | 'ghost'
 export type Size = 'sm' | 'md' | 'lg'
 export type ButtonType = 'button' | 'submit' | 'reset'
 
@@ -99,7 +107,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--outlined:focus-visible,
-.est-button--outlined:focus:not(:disabled){
+.est-button--outlined:focus:not(:disabled) {
   box-shadow:
     0 0 0 1px var(--est-btn-focus-ring-offset),
     0 0 0 3px var(--est-btn-outlined-border);
