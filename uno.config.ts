@@ -1,6 +1,14 @@
-import { defineConfig, presetUno, transformerDirectives } from 'unocss'
+import { defineConfig, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
+
 
 export default defineConfig({
-  presets: [presetUno()],
+  presets: [presetUno(), presetWebFonts({
+    provider: 'google',
+    fonts: {
+      sans: 'Inter',
+      serif: 'Roboto Slab',
+      mono: 'Fira Code',
+    },
+  })],
   transformers: [transformerDirectives()],
 })

@@ -22,6 +22,6 @@
     --est-color-muted-fg: #44403c;
 
     --est-radius: 0.375rem;
-    --est-font-sans: 'sans-serif';
+    --est-font-sans: 'Inter', sans-serif;
   }
 }

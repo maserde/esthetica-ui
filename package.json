@@ -62,6 +62,8 @@
     "@tsconfig/node24": "^24.0.4",
     "@types/jsdom": "^28.0.1",
     "@types/node": "^24.12.2",
+    "@unocss/preset-typography": "^66.7.0",
+    "@unocss/preset-web-fonts": "^66.7.0",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vitest/browser-playwright": "^4.1.4",
     "@vitest/coverage-v8": "^4.1.4",
