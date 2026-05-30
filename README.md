@@ -61,11 +61,26 @@ npm run test:unit
 npm run lint
 ```
 
+Runs `oxlint` followed by `eslint`, both with `--fix` applied automatically.
+
 ### Format
 
 ```sh
 npm run format
 ```
+
+Formats all files under `src/` using `oxfmt`.
+
+### Git hooks
+
+This project uses [Husky](https://typicode.github.io/husky/) to enforce code quality on every commit. The pre-commit hook runs automatically:
+
+1. `npm run format` — formats staged source files
+2. `npm run lint` — lints the codebase and applies auto-fixes
+
+If the linter reports errors that cannot be auto-fixed, the commit is rejected. Stage any formatting changes produced by the hook and commit again.
+
+Hooks are installed automatically when you run `npm install` via the `prepare` script.
 
 ## Build
 
