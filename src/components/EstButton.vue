@@ -69,16 +69,17 @@ function handleClick(event: MouseEvent) {
   @apply relative inline-flex items-center justify-center;
   @apply font-medium leading-none tracking-[0.01em] whitespace-nowrap;
   @apply border-[1.5px] border-transparent;
-  @apply cursor-pointer select-none outline-none no-underline;
-  font-family: var(--est-btn-font-family, var(--est-font-sans)), 'sans-serif';
-  border-radius: var(--est-btn-radius, var(--est-radius, 0.375rem));
+  @apply cursor-pointer select-none outline-none no-underline appearance-none;
+  -webkit-appearance: none;
+  font-family: var(--est-btn-font-family), 'sans-serif';
+  border-radius: var(--est-btn-radius);
   transition:
-    background-color var(--est-btn-transition-duration, 160ms) ease,
-    border-color var(--est-btn-transition-duration, 160ms) ease,
-    color var(--est-btn-transition-duration, 160ms) ease,
-    box-shadow var(--est-btn-transition-duration, 160ms) ease,
-    opacity var(--est-btn-transition-duration, 160ms) ease,
-    transform var(--est-btn-transition-duration, 160ms) ease;
+    background-color var(--est-btn-transition-duration) ease,
+    border-color var(--est-btn-transition-duration) ease,
+    color var(--est-btn-transition-duration) ease,
+    box-shadow var(--est-btn-transition-duration) ease,
+    opacity var(--est-btn-transition-duration) ease,
+    transform var(--est-btn-transition-duration) ease;
   box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
 }
 

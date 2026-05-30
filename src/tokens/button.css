@@ -1,8 +1,8 @@
 @layer esthetica-ui-tokens {
   :root {
-    --est-btn-font-family: initial;
-    --est-btn-radius: initial;
-    --est-btn-transition-duration: initial;
+    --est-btn-font-family: var(--est-font-sans);
+    --est-btn-radius: var(--est-radius);
+    --est-btn-transition-duration: 160ms;
     --est-btn-focus-ring: initial;
     --est-btn-focus-ring-offset: #fff;
 
