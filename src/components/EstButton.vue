@@ -115,7 +115,6 @@ function handleClick(event: MouseEvent) {
 
 .est-button--info:focus-visible,
 .est-button--info:focus:not(:disabled) {
-  @apply bg-[--est-btn-info-bg-pressed];
   box-shadow:
     0 0 0 1px var(--est-btn-focus-ring-offset),
     0 0 0 3px var(--est-color-info);
@@ -123,7 +122,6 @@ function handleClick(event: MouseEvent) {
 
 .est-button--success:focus-visible,
 .est-button--success:focus:not(:disabled) {
-  @apply bg-[--est-btn-success-bg-pressed];
   box-shadow:
     0 0 0 1px var(--est-btn-focus-ring-offset),
     0 0 0 3px var(--est-color-success);
@@ -131,7 +129,6 @@ function handleClick(event: MouseEvent) {
 
 .est-button--warning:focus-visible,
 .est-button--warning:focus:not(:disabled) {
-  @apply bg-[--est-btn-warning-bg-pressed];
   box-shadow:
     0 0 0 1px var(--est-btn-focus-ring-offset),
     0 0 0 3px var(--est-color-warning);
@@ -139,7 +136,6 @@ function handleClick(event: MouseEvent) {
 
 .est-button--danger:focus-visible,
 .est-button--danger:focus:not(:disabled) {
-  @apply bg-[--est-btn-danger-bg-pressed];
   box-shadow:
     0 0 0 1px var(--est-btn-focus-ring-offset),
     0 0 0 3px var(--est-color-danger);
@@ -199,17 +195,17 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--primary {
-  background-color: var(--est-btn-primary-bg, var(--est-color-primary));
-  color: var(--est-btn-primary-color, var(--est-color-primary-fg));
+  background-color: var(--est-btn-primary-bg);
+  color: var(--est-btn-primary-color);
 }
 
 .est-button--primary:hover:not(:disabled) {
-  background-color: var(--est-btn-primary-bg-hover, var(--est-color-primary-hover));
+  background-color: var(--est-btn-primary-bg-hover);
 }
 
 .est-button--secondary {
-  background-color: var(--est-btn-secondary-bg, var(--est-color-secondary));
-  color: var(--est-btn-secondary-color, var(--est-color-secondary-fg));
+  background-color: var(--est-btn-secondary-bg);
+  color: var(--est-btn-secondary-color);
 }
 
 .est-button--secondary:hover:not(:disabled) {
@@ -217,39 +213,42 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--info {
-  background-color: var(--est-btn-info-bg, var(--est-color-info));
-  color: var(--est-btn-info-color, var(--est-color-info-fg));
+  background-color: var(--est-btn-info-bg);
+  color: var(--est-btn-info-color);
 }
 
 .est-button--info:hover:not(:disabled) {
-  background-color: var(--est-btn-info-bg-hover, var(--est-color-info-hover));
+  background-color: var(--est-btn-info-bg-hover);
+}
+
+.est-button--info:active:not(:disabled) {
+  background-color: var(--est-btn-info-bg-pressed);
 }
 
 .est-button--success {
-  background-color: var(--est-btn-success-bg, var(--est-color-success));
-  color: var(--est-btn-success-color, var(--est-color-success-fg));
+  background-color: var(--est-btn-success-bg);
+  color: var(--est-btn-success-color);
 }
 
 .est-button--success:hover:not(:disabled) {
-  background-color: var(--est-btn-success-bg-hover, var(--est-color-success-hover));
+  background-color: var(--est-btn-success-bg-hover);
+}
+
+.est-button--success:active:not(:disabled) {
+  background-color: var(--est-btn-success-bg-pressed);
 }
 
 .est-button--warning {
-  background-color: var(--est-btn-warning-bg, var(--est-color-warning));
-  color: var(--est-btn-warning-color, var(--est-color-warning-fg));
+  background-color: var(--est-btn-warning-bg);
+  color: var(--est-btn-warning-color);
 }
 
 .est-button--warning:hover:not(:disabled) {
-  background-color: var(--est-btn-warning-bg-hover, var(--est-color-warning-hover));
+  background-color: var(--est-btn-warning-bg-hover);
 }
 
-.est-button--danger {
-  background-color: var(--est-btn-danger-bg);
-  color: var(--est-btn-danger-color);
-}
-
-.est-button--danger:hover:not(:disabled) {
-  background-color: var(--est-btn-ghost-bg-hover);
+.est-button--warning:active:not(:disabled) {
+  background-color: var(--est-btn-warning-bg-pressed);
 }
 
 .est-button--outlined {
@@ -279,6 +278,10 @@ function handleClick(event: MouseEvent) {
 
 .est-button--danger:hover:not(:disabled) {
   background-color: var(--est-btn-danger-bg-hover);
+}
+
+.est-button--danger:active:not(:disabled) {
+  background-color: var(--est-btn-danger-bg-pressed);
 }
 
 .est-button--disabled,
