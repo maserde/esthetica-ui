@@ -8,35 +8,6 @@
     --est-btn-focus-ring: initial;
     --est-btn-focus-ring-offset: var(--est-color-surface);
 
-    --est-btn-primary-bg: var(--est-color-primary);
-    --est-btn-primary-bg-hover: var(--est-color-primary-hover);
-    --est-btn-primary-bg-pressed: var(--est-color-primary-700);
-    --est-btn-primary-color: var(--est-color-primary-fg);
-
-    --est-btn-secondary-bg: var(--est-color-secondary);
-    --est-btn-secondary-bg-hover: var(--est-color-secondary-hover);
-    --est-btn-secondary-color: var(--est-color-secondary-fg);
-
-    --est-btn-info-bg: var(--est-color-info);
-    --est-btn-info-bg-hover: var(--est-color-info-hover);
-    --est-btn-info-bg-pressed: var(--est-color-info-700);
-    --est-btn-info-color: var(--est-color-info-fg);
-
-    --est-btn-warning-bg: var(--est-color-warning);
-    --est-btn-warning-bg-hover: var(--est-color-warning-hover);
-    --est-btn-warning-bg-pressed: var(--est-color-warning-700);
-    --est-btn-warning-color: var(--est-color-warning-fg);
-
-    --est-btn-success-bg: var(--est-color-success);
-    --est-btn-success-bg-hover: var(--est-color-success-hover);
-    --est-btn-success-bg-pressed: var(--est-color-success-700);
-    --est-btn-success-color: var(--est-color-success-fg);
-
-    --est-btn-danger-bg: var(--est-color-danger);
-    --est-btn-danger-bg-hover: var(--est-color-danger-hover);
-    --est-btn-danger-bg-pressed: var(--est-color-danger-700);
-    --est-btn-danger-color: var(--est-color-danger-fg);
-
     --est-btn-outlined-border: var(--est-color-neutral-500);
     --est-btn-outlined-border-hover: var(--est-color-neutral-300);
     --est-btn-outlined-color: var(--est-color-neutral-500);
@@ -45,12 +16,63 @@
     --est-btn-ghost-color: var(--est-color-muted-fg);
     --est-btn-ghost-bg-hover: var(--est-color-muted);
 
-    --est-btn-sm-padding: 0.5rem 0.5rem;
-    --est-btn-md-padding: 0.2rem 0.75rem;
-    --est-btn-lg-padding: 1rem 1.5rem;
+    /* Base */
 
+    --est-btn-padding: 0.2rem 0.75rem;
+    --est-btn-min-height: 2rem;
+    --est-btn-font-size: 0.75rem;
+    --est-btn-bg-color: var(--est-color-primary);
+    --est-btn-bg-hover: var(--est-color-primary-hover);
+    --est-btn-bg-pressed: var(--est-color-primary-700);
+    --est-btn-color: var(--est-color-primary-fg);
+    --est-btn-focus-ring-color: var(--est-color-primary-700);
+    --est-btn-border-color: var(--est-color-border);
+    --est-btn-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+
+    /* Variants */
+
+    /* Box Model */
+    --est-btn-sm-padding: 0.5rem 0.5rem;
+    --est-btn-sm-min-height: 2rem;
     --est-btn-sm-font-size: 0.75rem;
+
+    --est-btn-md-padding: 0.2rem 0.75rem;
+    --est-btn-md-min-height: 2rem;
     --est-btn-md-font-size: 0.75rem;
+
+    --est-btn-lg-padding: 1rem 1.5rem;
+    --est-btn-lg-min-height: 2rem;
     --est-btn-lg-font-size: 1rem;
+
+    /* Colors */
+    --est-btn-secondary-bg-color: var(--est-color-secondary);
+    --est-btn-secondary-bg-hover: var(--est-color-secondary-hover);
+    --est-btn-secondary-bg-pressed: var(--est-color-secondary-pressed);
+    --est-btn-secondary-color: var(--est-color-secondary-fg);
+    --est-btn-secondary-focus-ring-color: var(--est-color-border);
+
+    --est-btn-info-bg-color: var(--est-color-info);
+    --est-btn-info-bg-hover: var(--est-color-info-hover);
+    --est-btn-info-bg-pressed: var(--est-color-info-700);
+    --est-btn-info-color: var(--est-color-info-fg);
+    --est-btn-info-focus-ring-color: var(--est-color-info);
+
+    --est-btn-warning-bg-color: var(--est-color-warning);
+    --est-btn-warning-bg-hover: var(--est-color-warning-hover);
+    --est-btn-warning-bg-pressed: var(--est-color-warning-700);
+    --est-btn-warning-color: var(--est-color-warning-fg);
+    --est-btn-warning-focus-ring-color: var(--est-color-warning);
+
+    --est-btn-success-bg-color: var(--est-color-success);
+    --est-btn-success-bg-hover: var(--est-color-success-hover);
+    --est-btn-success-bg-pressed: var(--est-color-success-700);
+    --est-btn-success-color: var(--est-color-success-fg);
+    --est-btn-success-focus-ring-color: var(--est-color-success);
+
+    --est-btn-danger-bg-color: var(--est-color-danger);
+    --est-btn-danger-bg-hover: var(--est-color-danger-hover);
+    --est-btn-danger-bg-pressed: var(--est-color-danger-700);
+    --est-btn-danger-color: var(--est-color-danger-fg);
+    --est-btn-danger-focus-ring-color: var(--est-color-danger);
   }
 }
