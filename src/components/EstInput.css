@@ -8,12 +8,47 @@
 }
 
 .est-input__wrapper {
-  @apply relative flex items-center;
+  @apply flex items-center gap-2;
+  border-radius: var(--est-input-radius);
+  background-color: var(--est-input-bg);
+  border: 1px solid var(--est-input-border);
+  padding: 0 var(--est-input-padding-x);
+  box-shadow: var(--est-input-shadow);
+  transition-property: border-color, box-shadow;
+  transition-duration: var(--est-input-transition-duration);
+  transition-timing-function: ease;
+}
+
+.est-input__wrapper:focus-within {
+  border-color: var(--est-input-focus-border);
+  box-shadow:
+    var(--est-input-shadow),
+    0 0 0 2px #ffffff,
+    0 0 0 4px var(--est-input-focus-ring-color);
+}
+
+.est-input__wrapper--error {
+  border-color: var(--est-input-error-border);
+}
+
+.est-input__wrapper--error:focus-within {
+  border-color: var(--est-input-error-border);
+  box-shadow:
+    var(--est-input-shadow),
+    0 0 0 2px var(--est-input-error-ring-color);
+}
+
+.est-input__wrapper--readonly {
+  background-color: var(--est-input-readonly-bg);
+}
+
+.est-input__wrapper--disabled {
+  @apply opacity-50 pointer-events-none;
 }
 
 .est-input__icon-left,
 .est-input__icon-right {
-  @apply absolute top-1/2 -translate-y-1/2 flex items-center;
+  @apply flex items-center flex-shrink-0;
   @apply bg-transparent border-none p-0 cursor-pointer outline-none;
   color: var(--est-input-icon-color);
   transition: color var(--est-input-transition-duration) ease;
@@ -29,68 +64,19 @@
   color: var(--est-input-icon-hover-color);
 }
 
-.est-input__icon-left:disabled,
-.est-input__icon-right:disabled {
-  @apply pointer-events-none;
-}
-
-.est-input__icon-left {
-  left: var(--est-input-padding-x);
-}
-
-.est-input__icon-right {
-  right: var(--est-input-padding-x);
-}
-
 .est-input__field {
-  @apply w-full border outline-none transition;
-  border-radius: var(--est-input-radius);
-  background-color: var(--est-input-bg);
+  @apply flex-1 min-w-0 border-0 outline-none bg-transparent;
   color: var(--est-input-color);
-  border-color: var(--est-input-border);
   font-size: var(--est-input-font-size);
-  padding: var(--est-input-padding-y) var(--est-input-padding-x);
-  box-shadow: var(--est-input-shadow);
-  transition-duration: var(--est-input-transition-duration);
+  padding: var(--est-input-padding-y) 0;
 }
 
 .est-input__field::placeholder {
   color: var(--est-input-placeholder-color);
 }
 
-.est-input__field:focus {
-  border-color: var(--est-input-focus-border);
-  box-shadow:
-    var(--est-input-shadow),
-    0 0 0 2px #ffffff,
-    0 0 0 4px var(--est-input-focus-ring-color);
-}
-
 .est-input__field:disabled {
-  @apply cursor-not-allowed opacity-50;
-}
-
-.est-input__field:read-only {
-  background-color: var(--est-input-readonly-bg);
-}
-
-.est-input__field--with-left-icon {
-  padding-left: var(--est-input-padding-x-with-icon);
-}
-
-.est-input__field--with-right-icon {
-  padding-right: var(--est-input-padding-x-with-icon);
-}
-
-.est-input__field--error {
-  border-color: var(--est-input-error-border);
-}
-
-.est-input__field--error:focus {
-  border-color: var(--est-input-error-border);
-  box-shadow:
-    var(--est-input-shadow),
-    0 0 0 2px var(--est-input-error-ring-color);
+  @apply cursor-not-allowed;
 }
 
 .est-input__error {

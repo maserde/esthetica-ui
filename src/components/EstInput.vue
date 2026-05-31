@@ -41,7 +41,14 @@ function handleInput(event: Event) {
       {{ label }}
     </label>
 
-    <div class="est-input__wrapper">
+    <div
+      class="est-input__wrapper"
+      :class="{
+        'est-input__wrapper--error': !!error,
+        'est-input__wrapper--disabled': disabled,
+        'est-input__wrapper--readonly': readonly,
+      }"
+    >
       <button
         v-if="leftIcon"
         type="button"
@@ -62,12 +69,7 @@ function handleInput(event: Event) {
         :disabled="disabled"
         :readonly="readonly"
         :aria-invalid="!!error"
-        :class="{
-          'est-input__field': true,
-          'est-input__field--with-left-icon': !!leftIcon,
-          'est-input__field--with-right-icon': !!rightIcon,
-          'est-input__field--error': !!error,
-        }"
+        class="est-input__field"
         @input="handleInput"
       />
 
