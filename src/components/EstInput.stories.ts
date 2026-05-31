@@ -59,7 +59,7 @@ export const WithLeadingIcon: Story = {
     template: `
       <EstInput label="Email" placeholder="Enter your email" style="width:320px;">
         <template #leading>
-          <span class="i-ri-mail-line w-6 h-6 flex-shrink-0" aria-hidden="true" />
+          <span class="i-ri-mail-line text-[--est-color-neutral-500] w-6 h-6 flex-shrink-0" aria-hidden="true" />
         </template>
       </EstInput>
     `,
@@ -74,7 +74,7 @@ export const WithTrailingIcon: Story = {
       <EstInput label="Password" placeholder="Enter your password" style="width:320px;">
         <template #trailing>
           <button type="button" class="flex items-center flex-shrink-0 bg-transparent border-none p-0 cursor-pointer" aria-label="Show password">
-            <span class="i-ri-eye-line w-6 h-6" aria-hidden="true" />
+            <span class="i-ri-eye-line text-[--est-color-neutral-500] w-6 h-6" aria-hidden="true" />
           </button>
         </template>
       </EstInput>
@@ -89,11 +89,11 @@ export const WithBothSlots: Story = {
     template: `
       <EstInput label="Search" placeholder="Search..." style="width:320px;">
         <template #leading>
-          <span class="i-ri-search-line w-6 h-6 flex-shrink-0" aria-hidden="true" />
+          <span class="i-ri-search-line text-[--est-color-neutral-500] w-6 h-6 flex-shrink-0" aria-hidden="true" />
         </template>
         <template #trailing>
           <button type="button" class="flex items-center flex-shrink-0 bg-transparent border-none p-0 cursor-pointer" aria-label="Clear">
-            <span class="i-ri-close-line w-6 h-6" aria-hidden="true" />
+            <span class="i-ri-close-line text-[--est-color-neutral-500] w-6 h-6" aria-hidden="true" />
           </button>
         </template>
       </EstInput>
@@ -113,7 +113,7 @@ export const AllStates: Story = {
         <EstInput label="With value" model-value="user@example.com" />
         <EstInput label="With icon" placeholder="Search...">
           <template #leading>
-            <span class="i-ri-search-line w-6 h-6 flex-shrink-0" aria-hidden="true" />
+            <span class="i-ri-search-line text-[--est-color-neutral-500] w-4 h-4 flex-shrink-0" aria-hidden="true" />
           </template>
         </EstInput>
         <EstInput label="Error" model-value="invalid" error="This field is required." />
