@@ -99,53 +99,11 @@ function handleClick(event: MouseEvent) {
     0 0 0 0 transparent;
 }
 
-.est-button--primary:focus-visible,
-.est-button--primary:focus:not(:disabled) {
+.est-button:focus-visible,
+.est-button:focus:not(:disabled) {
   box-shadow:
     0 0 0 1px var(--est-btn-focus-ring-offset),
-    0 0 0 3px var(--est-color-primary);
-}
-
-.est-button--outlined:focus-visible,
-.est-button--outlined:focus:not(:disabled) {
-  box-shadow:
-    0 0 0 1px var(--est-btn-focus-ring-offset),
-    0 0 0 3px var(--est-btn-outlined-border);
-}
-
-.est-button--info:focus-visible,
-.est-button--info:focus:not(:disabled) {
-  box-shadow:
-    0 0 0 1px var(--est-btn-focus-ring-offset),
-    0 0 0 3px var(--est-color-info);
-}
-
-.est-button--success:focus-visible,
-.est-button--success:focus:not(:disabled) {
-  box-shadow:
-    0 0 0 1px var(--est-btn-focus-ring-offset),
-    0 0 0 3px var(--est-color-success);
-}
-
-.est-button--warning:focus-visible,
-.est-button--warning:focus:not(:disabled) {
-  box-shadow:
-    0 0 0 1px var(--est-btn-focus-ring-offset),
-    0 0 0 3px var(--est-color-warning);
-}
-
-.est-button--danger:focus-visible,
-.est-button--danger:focus:not(:disabled) {
-  box-shadow:
-    0 0 0 1px var(--est-btn-focus-ring-offset),
-    0 0 0 3px var(--est-color-danger);
-}
-
-.est-button--secondary:focus-visible,
-.est-button--secondary:focus:not(:disabled) {
-  box-shadow:
-    0 0 0 1px var(--est-btn-focus-ring-offset),
-    0 0 0 3px var(--est-btn-outlined-border);
+    0 0 0 3px var(--est-btn-focus-ring-color, transparent);
 }
 
 .est-button:active:not(:disabled) {
@@ -195,6 +153,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--primary {
+  --est-btn-focus-ring-color: var(--est-color-primary);
   background-color: var(--est-btn-primary-bg);
   color: var(--est-btn-primary-color);
 }
@@ -204,6 +163,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--secondary {
+  --est-btn-focus-ring-color: var(--est-btn-outlined-border);
   background-color: var(--est-btn-secondary-bg);
   color: var(--est-btn-secondary-color);
 }
@@ -213,6 +173,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--info {
+  --est-btn-focus-ring-color: var(--est-color-info);
   background-color: var(--est-btn-info-bg);
   color: var(--est-btn-info-color);
 }
@@ -226,6 +187,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--success {
+  --est-btn-focus-ring-color: var(--est-color-success);
   background-color: var(--est-btn-success-bg);
   color: var(--est-btn-success-color);
 }
@@ -239,6 +201,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--warning {
+  --est-btn-focus-ring-color: var(--est-color-warning);
   background-color: var(--est-btn-warning-bg);
   color: var(--est-btn-warning-color);
 }
@@ -252,6 +215,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--outlined {
+  --est-btn-focus-ring-color: var(--est-btn-outlined-border);
   @apply bg-transparent border-2;
   border-color: var(--est-btn-outlined-border);
   color: var(--est-btn-outlined-color);
@@ -272,6 +236,7 @@ function handleClick(event: MouseEvent) {
 }
 
 .est-button--danger {
+  --est-btn-focus-ring-color: var(--est-color-danger);
   background-color: var(--est-btn-danger-bg);
   color: var(--est-btn-danger-color);
 }
