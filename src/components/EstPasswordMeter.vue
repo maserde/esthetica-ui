@@ -38,10 +38,22 @@ const strengthModifier = computed(() => {
 })
 
 const requirements = computed(() => [
-  { label: 'Contain at least 8 characters', met: hasMinLength.value },
-  { label: '1 upper case character', met: hasUpperCase.value },
-  { label: '1 lower case character', met: hasLowerCase.value },
-  { label: '1 special character (@,#,$,!)', met: hasSpecialChar.value },
+  {
+    label: 'Contain at least 8 characters',
+    met: hasMinLength.value,
+  },
+  {
+    label: '1 upper case character',
+    met: hasUpperCase.value,
+  },
+  {
+    label: '1 lower case character',
+    met: hasLowerCase.value,
+  },
+  {
+    label: '1 special character (@,#,$,!)',
+    met: hasSpecialChar.value,
+  },
 ])
 </script>
 
@@ -78,23 +90,27 @@ const requirements = computed(() => [
     </div>
 
     <ul class="est-password-meter__requirements">
-      <li v-for="req in requirements" :key="req.label" class="est-password-meter__requirement">
+      <li
+        v-for="requirement in requirements"
+        :key="requirement.label"
+        class="est-password-meter__requirement"
+      >
         <span
           class="i-ri-checkbox-circle-line est-password-meter__req-icon"
           :class="{
-            'est-password-meter__req-icon--met': req.met,
-            'est-password-meter__req-icon--unmet': !req.met,
+            'est-password-meter__req-icon--met': requirement.met,
+            'est-password-meter__req-icon--unmet': !requirement.met,
           }"
           aria-hidden="true"
         />
         <span
           class="est-password-meter__req-label"
           :class="{
-            'est-password-meter__req-label--met': req.met,
-            'est-password-meter__req-label--unmet': !req.met,
+            'est-password-meter__req-label--met': requirement.met,
+            'est-password-meter__req-label--unmet': !requirement.met,
           }"
         >
-          {{ req.label }}
+          {{ requirement.label }}
         </span>
       </li>
     </ul>

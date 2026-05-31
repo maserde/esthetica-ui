@@ -10,7 +10,7 @@ export interface Props {
   loading?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   variant: 'default',
   borderless: false,
   loading: false,
@@ -20,16 +20,6 @@ const slots = useSlots()
 
 const hasHeaderSlot = computed(() => !!slots.header)
 const hasFooterSlot = computed(() => !!slots.footer)
-
-const headerClasses = computed(() => ({
-  'est-card__header': true,
-  'est-card__header--bordered': !props.borderless,
-}))
-
-const footerClasses = computed(() => ({
-  'est-card__footer': true,
-  'est-card__footer--bordered': !props.borderless,
-}))
 </script>
 
 <template>
@@ -49,13 +39,25 @@ const footerClasses = computed(() => ({
       'est-card--borderless': borderless,
     }"
   >
-    <div v-if="hasHeaderSlot" :class="headerClasses">
+    <div
+      v-if="hasHeaderSlot"
+      :class="{
+        'est-card__header': true,
+        'est-card__header--bordered': !borderless,
+      }"
+    >
       <slot name="header" />
     </div>
     <div class="est-card__body">
       <slot />
     </div>
-    <div v-if="hasFooterSlot" :class="footerClasses">
+    <div
+      v-if="hasFooterSlot"
+      :class="{
+        'est-card__footer': true,
+        'est-card__footer--bordered': !borderless,
+      }"
+    >
       <slot name="footer" />
     </div>
   </div>
