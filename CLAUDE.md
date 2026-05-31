@@ -1,0 +1,147 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Library purpose
+
+This is a **component library consumed by external projects**, not a standalone app. Every architecture decision, solution design, and code generation must account for this constraint:
+
+- **No bundled peer dependencies.** Vue is already marked external. Any library a consumer app is also likely to use (state managers, utility libs, etc.) must be a `peerDependency`, never a direct `dependency`, to prevent version conflicts in the consumer's project.
+- **No global style side-effects.** Do not add CSS resets, base element overrides, or unscoped utility classes — they will bleed into the consumer app. All design tokens live inside `@layer esthetica-ui-tokens` so consumers can override them. Component styles must always be scoped.
+- **Namespace everything.** CSS classes use the `.est-` BEM prefix; CSS custom properties use `--est-`. Any new additions must follow the same discipline to avoid collisions with consumer stylesheets.
+- **Keep exports tree-shakeable.** Each component is exported individually from `src/index.ts`. Avoid module-level side effects that would force consumers to load the entire library.
+- **Scrutinise third-party libraries.** Every new dependency increases the consumer's bundle and risks version conflicts. Prefer native browser APIs and Vue built-ins. If a library is unavoidable, verify it can be externalised or that it will not conflict when the consumer has a different version installed.
+- **Externalise every peer dependency in `vite.config.ts`.** When a new `peerDependency` is added to `package.json`, it must also be listed in `rolldownOptions.external` in `vite.config.ts`; otherwise it gets bundled into the library output and shipped to consumers.
+- **Exported types and prop defaults are public API.** `Variant`, `Size`, `Props`, and every union member are consumed directly by downstream projects. Never remove a union member, rename an exported type, or change a `withDefaults` default without treating it as a breaking change (semver major). Adding new optional union members or new optional props is safe.
+
+## Commands
+
+```bash
+pnpm dev              # Playground app at http://localhost:5173
+pnpm storybook        # Storybook at http://localhost:6006 (primary dev environment)
+pnpm test:unit        # Run all tests (jsdom + Storybook/Playwright)
+pnpm lint             # oxlint --fix, then eslint --fix (runs both in sequence)
+pnpm format           # oxfmt src/
+pnpm build            # type-check + vite build → dist/
+pnpm build-storybook  # Static Storybook build
+```
+
+Run a single test file:
+
+```bash
+pnpm vitest run src/__tests__/App.spec.ts
+```
+
+## Architecture
+
+This is a **Vue 3 component library** published to npm as `@ardiprasetiyo/esthetica-ui`. The build output (`dist/`) ships an ES module, a UMD bundle, and a compiled CSS file. Vue is an external peer dependency — it is not bundled.
+
+### Entry point
+
+`src/index.ts` is the library entry. Every component exported here becomes part of the public API. It also imports `virtual:uno.css` and `src/style.css` so consumers get styles with a single `import '@ardiprasetiyo/esthetica-ui/style.css'`.
+
+`virtual:uno.css` is a virtual module injected by the UnoCSS Vite plugin at build time — it does not exist as a real file and should never be created or deleted manually.
+
+`src/App.vue` and `src/main.ts` are the playground app entry points used during `pnpm dev`. They are not part of the library output and are excluded from the build (`publicDir` is disabled in production mode).
+
+The `@` alias resolves to `src/` (configured in `vite.config.ts` and `tsconfig.app.json`). Use it for all intra-library imports.
+
+### Token system
+
+Design tokens are plain CSS custom properties organised under `src/tokens/`:
+
+- `global.css` — base tokens (`--est-radius`, `--est-font-sans`)
+- `colors.css` — semantic color palette (`--est-color-primary`, `--est-color-danger`, etc.)
+- `tokens/components/button.css` — component-level tokens (`--est-btn-*`)
+
+`src/style.css` imports all token files in order. Token files use `@layer esthetica-ui-tokens` so they stay below any consumer overrides. Component tokens must always reference global or color tokens via `var()` — never hardcode raw values (hex colours, pixel sizes, etc.). Hardcoding bypasses the token system and silently breaks consumer theming.
+
+### Component conventions
+
+Each component lives in `src/components/` as three sibling files:
+
+| File | Purpose |
+|---|---|
+| `EstFoo.vue` | Component logic and template |
+| `EstFoo.css` | Scoped styles (linked via `<style scoped src="./EstFoo.css" />`) |
+| `EstFoo.stories.ts` | Storybook stories (co-located with the component) |
+
+Components use the `Est` prefix. CSS classes follow BEM: `.est-foo`, `.est-foo--modifier`, `.est-foo__element`. Styles use UnoCSS `@apply` directives for utility classes and CSS custom properties from the token system for theme-able values.
+
+Do not write inline `<style>` blocks in `.vue` files. All component styles live in the sibling `.css` file, linked with `<style scoped src="./EstFoo.css" />`.
+
+Props are typed with `defineProps<Interface>()` + `withDefaults`. Every prop, including optional ones, must have an explicit entry in `withDefaults` — missing entries cause Vue runtime warnings and leave consumers without a guaranteed default. Emits are typed with `defineEmits<{ event: [args] }>()`. Types (`Variant`, `Size`, etc.) are exported from the `<script setup>` block so consumers can import them.
+
+Named slots follow a consistent convention: `leading` for icons/content before the label, `trailing` for icons/content after the label, and the default slot for the primary label text.
+
+Class bindings use object syntax with one explicit BEM modifier class per condition. Do not use string concatenation, array syntax, or computed class strings:
+
+```html
+:class="{
+  'est-foo': true,
+  'est-foo--primary': variant === 'primary',
+  'est-foo--sm': size === 'sm',
+  'est-foo--disabled': disabled,
+}"
+```
+
+**Adding a new component — required steps (in order):**
+1. `src/components/EstFoo.vue` — component logic and template
+2. `src/components/EstFoo.css` — scoped styles
+3. `src/components/EstFoo.stories.ts` — Storybook stories
+4. `src/tokens/components/foo.css` — component design tokens using `--est-foo-*` naming, wrapped in `@layer esthetica-ui-tokens`
+5. Add `@import './tokens/components/foo.css';` to `src/style.css`
+6. Add `export { default as EstFoo } from './components/EstFoo.vue'` to `src/index.ts`
+
+### Accessibility (mandatory)
+
+Accessibility is not optional. Every component must ship with correct ARIA semantics. Do not consider a component complete without addressing all applicable points below:
+
+- **`disabled` prop** → add `aria-disabled="true"` on the root element alongside the native `disabled` attribute.
+- **`loading` prop** → add `aria-busy="true"` on the root element.
+- **Decorative icons and spinners** → always add `aria-hidden="true"` so screen readers skip them.
+- **Interactive elements** → must have a visible label or a screen-reader-only equivalent (`aria-label` / `aria-labelledby`).
+- **Native semantics first** → use `<button>`, `<a>`, `<input>`, `<select>` etc. before reaching for `role` attributes.
+- **Keyboard navigation** → every focusable element must be reachable by Tab and operable by Enter or Space.
+- **Focus ring** → never suppress the focus ring. Use `focus-visible` to control styling; do not apply `outline: none` without a visible replacement.
+
+### Storybook integration
+
+Stories use `@storybook/vue3-vite`. Vitest is configured with two test projects: one for jsdom unit tests and one for Storybook/Playwright browser tests. Both run via `pnpm test:unit`. Storybook stories use `tags: ['autodocs']` for automatic docs generation.
+
+Every story file must follow this structure:
+
+```ts
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import EstFoo from './EstFoo.vue'
+
+const meta = {
+  title: 'Components/EstFoo',          // always 'Components/EstFoo' format
+  component: EstFoo,
+  tags: ['autodocs'],
+  argTypes: {
+    variant: { control: 'select', options: ['primary', ...] },
+    size:    { control: 'select', options: ['sm', 'md', 'lg'] },
+    disabled: { control: 'boolean' },
+    loading:  { control: 'boolean' },
+    onClick:  { action: 'click' },     // wire every emit as an action
+  },
+  render: (args) => ({
+    components: { EstFoo },
+    setup() { return { args } },
+    template: `<EstFoo v-bind="args">{{ args.default ?? 'Label' }}</EstFoo>`,
+  }),
+} satisfies Meta<typeof EstFoo>        // use satisfies, not a type annotation
+
+export default meta
+type Story = StoryObj<typeof meta>
+```
+
+Stories are organised in groups: individual variant stories first, then individual size stories, then individual state stories (loading, disabled), then icon slot stories. Each group ends with an `All X` overview story that uses an inline `render` template to show all options side by side.
+
+### Toolchain
+
+- **UnoCSS** with `presetWind4`, `presetWebFonts` (Inter/Roboto Slab/Fira Code via Google), `presetIcons` (Remix Icon set via `@iconify-json/ri`), and `transformerDirectives` (enables `@apply` in plain CSS files). Icons are used as utility classes directly on elements: `i-ri-loader-4-line`, `i-ri-arrow-right-line`, etc. Do not import icon components or add other icon libraries.
+- **Lint**: oxlint first, then eslint (both with `--fix`). Husky + lint-staged enforce this on every commit for staged files under `src/`
+- **Format**: oxfmt (not Prettier)
+- **Type-checking**: `vue-tsc --build` against `tsconfig.app.json`
