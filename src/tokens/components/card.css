@@ -1,0 +1,31 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-card-radius: var(--est-radius);
+    --est-card-padding-x: 0.75rem;
+    --est-card-padding-y: 0.5rem;
+
+    --est-card-default-bg: #ffffff;
+    --est-card-default-color: var(--est-color-neutral-800);
+    --est-card-default-border: rgba(0, 0, 0, 0.1);
+
+    --est-card-primary-bg: var(--est-color-primary-100);
+    --est-card-primary-color: var(--est-color-primary-700);
+    --est-card-primary-border: var(--est-color-primary-700);
+
+    --est-card-success-bg: var(--est-color-success-100);
+    --est-card-success-color: var(--est-color-success-700);
+    --est-card-success-border: var(--est-color-success-700);
+
+    --est-card-info-bg: var(--est-color-info-100);
+    --est-card-info-color: var(--est-color-info-700);
+    --est-card-info-border: var(--est-color-info-700);
+
+    --est-card-warning-bg: var(--est-color-warning-100);
+    --est-card-warning-color: var(--est-color-warning-700);
+    --est-card-warning-border: var(--est-color-warning-700);
+
+    --est-card-danger-bg: var(--est-color-danger-100);
+    --est-card-danger-color: var(--est-color-danger-700);
+    --est-card-danger-border: var(--est-color-danger-700);
+  }
+}

@@ -1,0 +1,63 @@
+.est-table {
+  @apply rounded-lg overflow-hidden;
+  background-color: var(--est-table-bg);
+}
+
+.est-table:not(.est-table--borderless) {
+  @apply border;
+  border-color: var(--est-table-border);
+}
+
+.est-table__slot-header {
+  padding: var(--est-table-slot-padding-y-header) var(--est-table-slot-padding-x);
+}
+
+.est-table__slot-footer {
+  @apply border-t;
+  border-color: var(--est-table-slot-border);
+  padding: var(--est-table-slot-padding-y-footer) var(--est-table-slot-padding-x);
+}
+
+.est-table__scroll {
+  @apply overflow-x-auto;
+}
+
+.est-table__table {
+  @apply w-full table-auto;
+}
+
+.est-table__header-row {
+  background-color: var(--est-table-header-bg);
+}
+
+.est-table__header-cell {
+  @apply px-4 py-3 text-left text-xs font-semibold tracking-wide;
+  color: var(--est-table-header-color);
+}
+
+.est-table__row {
+  @apply border-t;
+  border-color: var(--est-table-row-border);
+}
+
+.est-table__row--striped {
+  background-color: var(--est-table-striped-bg);
+}
+
+.est-table__row--hoverable {
+  @apply transition-colors;
+}
+
+.est-table__row--hoverable:hover {
+  background-color: var(--est-table-hover-bg);
+}
+
+.est-table__body-cell {
+  @apply px-4 py-3.5 text-sm;
+  color: var(--est-table-body-color);
+}
+
+.est-table__empty {
+  @apply px-4 py-8 text-center text-sm;
+  color: var(--est-table-empty-color);
+}

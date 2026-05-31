@@ -1,0 +1,140 @@
+.est-pagination {
+  @apply flex items-center justify-between gap-4 py-3;
+  font-family: var(--est-font-sans);
+}
+
+/* ─── Info section ─────────────────────────────────────────────────────────── */
+
+.est-pagination__info {
+  @apply flex items-center gap-2;
+}
+
+.est-pagination__info-text {
+  @apply text-xs font-normal whitespace-nowrap;
+  color: var(--est-pagination-text-color);
+}
+
+.est-pagination__page-input {
+  @apply w-8 h-8 border rounded-md text-center bg-white outline-none transition-colors;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--est-pagination-text-color);
+  border-color: var(--est-pagination-border-color);
+  transition-duration: 150ms;
+}
+
+.est-pagination__page-input:focus {
+  border-color: var(--est-pagination-focus-ring-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--est-pagination-focus-ring-color) 15%, transparent);
+}
+
+/* ─── Nav section ──────────────────────────────────────────────────────────── */
+
+.est-pagination__nav {
+  @apply flex items-center gap-1;
+}
+
+.est-pagination__nav-btn {
+  @apply mx-3 w-8 h-8 flex items-center justify-center rounded-md border bg-white cursor-pointer transition-all;
+  color: var(--est-pagination-text-color);
+  border-color: var(--est-pagination-border-color);
+  transition-duration: 150ms;
+}
+
+.est-pagination__nav-btn:hover:not(:disabled) {
+  background-color: var(--est-pagination-btn-hover-bg);
+  border-color: var(--est-pagination-btn-hover-border);
+}
+
+.est-pagination__nav-btn:disabled {
+  @apply opacity-40 cursor-not-allowed;
+}
+
+.est-pagination__page-btn {
+  @apply min-w-8 h-8 px-1.5 flex items-center justify-center rounded-md border border-transparent bg-transparent cursor-pointer transition-all;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--est-pagination-text-color);
+  transition-duration: 150ms;
+}
+
+.est-pagination__page-btn:hover {
+  background-color: var(--est-pagination-btn-hover-bg);
+}
+
+.est-pagination__page-btn--active {
+  @apply font-semibold shadow-xs;
+  background-color: var(--est-pagination-active-bg);
+  border-color: var(--est-pagination-active-border);
+}
+
+.est-pagination__ellipsis {
+  @apply min-w-8 h-8 flex items-center justify-center select-none;
+  font-size: 0.8125rem;
+  color: var(--est-pagination-muted-color);
+}
+
+/* ─── Rows section ─────────────────────────────────────────────────────────── */
+
+.est-pagination__rows {
+  @apply flex items-center gap-2;
+}
+
+.est-pagination__rows-label {
+  @apply whitespace-nowrap;
+  font-size: 0.8125rem;
+  color: var(--est-pagination-text-color);
+}
+
+.est-pagination__rows-dropdown {
+  @apply relative outline-none;
+}
+
+.est-pagination__rows-trigger {
+  @apply flex items-center gap-1 py-1.5 px-2 min-w-14 justify-between border rounded-md bg-white cursor-pointer transition-all;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--est-pagination-text-color);
+  border-color: var(--est-pagination-border-color);
+  transition-duration: 150ms;
+}
+
+.est-pagination__rows-trigger:hover {
+  border-color: var(--est-pagination-btn-hover-border);
+}
+
+.est-pagination__rows-chevron {
+  color: var(--est-pagination-muted-color);
+  transition: transform 150ms ease;
+}
+
+.est-pagination__rows-chevron--open {
+  transform: rotate(180deg);
+}
+
+.est-pagination__rows-menu {
+  @apply absolute bottom-[calc(100%+4px)] right-0 min-w-full bg-white rounded-md z-10 overflow-hidden;
+  border: 1px solid var(--est-pagination-border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.est-pagination__rows-option {
+  @apply block w-full py-1.5 px-3 bg-transparent border-0 cursor-pointer text-left transition-colors;
+  font-size: 0.8125rem;
+  color: var(--est-pagination-text-color);
+  transition-duration: 100ms;
+}
+
+.est-pagination__rows-option:hover {
+  background-color: var(--est-pagination-btn-hover-bg);
+}
+
+.est-pagination__rows-option--active {
+  @apply font-semibold;
+  background-color: var(--est-pagination-option-active-bg);
+  color: var(--est-pagination-option-active-color);
+}
+
+.est-pagination__rows-option--active:hover {
+  background-color: var(--est-pagination-option-active-bg);
+}

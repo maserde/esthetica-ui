@@ -1,0 +1,17 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-table-bg: #ffffff;
+    --est-table-border: var(--est-color-neutral-200);
+    --est-table-header-bg: var(--est-color-neutral-50);
+    --est-table-header-color: var(--est-color-neutral-500);
+    --est-table-body-color: var(--est-color-neutral-700);
+    --est-table-row-border: var(--est-color-neutral-100);
+    --est-table-striped-bg: var(--est-color-neutral-50);
+    --est-table-hover-bg: var(--est-color-neutral-50);
+    --est-table-empty-color: var(--est-color-neutral-400);
+    --est-table-slot-border: var(--est-color-neutral-100);
+    --est-table-slot-padding-x: 1.25rem;
+    --est-table-slot-padding-y-header: 1rem;
+    --est-table-slot-padding-y-footer: 0.75rem;
+  }
+}

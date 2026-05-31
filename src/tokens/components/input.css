@@ -1,0 +1,24 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-input-radius: var(--est-radius);
+    --est-input-bg: #ffffff;
+    --est-input-readonly-bg: var(--est-color-neutral-50);
+    --est-input-color: var(--est-color-neutral-800);
+    --est-input-placeholder-color: var(--est-color-neutral-400);
+    --est-input-border: var(--est-color-neutral-300);
+    --est-input-label-color: var(--est-color-neutral-700);
+    --est-input-icon-color: var(--est-color-neutral-400);
+    --est-input-icon-hover-color: var(--est-color-neutral-600);
+    --est-input-focus-border: transparent;
+    --est-input-focus-ring-color: var(--est-color-primary);
+    --est-input-error-border: var(--est-color-danger-500);
+    --est-input-error-ring-color: var(--est-color-danger-300);
+    --est-input-error-color: var(--est-color-danger-500);
+    --est-input-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.08) inset;
+    --est-input-padding-x: 1rem;
+    --est-input-padding-y: 0.75rem;
+    --est-input-padding-x-with-icon: calc(1rem + 2.0625rem);
+    --est-input-font-size: 0.875rem;
+    --est-input-transition-duration: 150ms;
+  }
+}

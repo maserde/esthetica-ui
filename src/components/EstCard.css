@@ -1,0 +1,78 @@
+.est-card {
+  @apply rounded-lg;
+  border-radius: var(--est-card-radius);
+}
+
+.est-card:not(.est-card--borderless) {
+  @apply border;
+}
+
+/* When header is present, remove card's top border and top rounding (header provides both) */
+.est-card--with-header:not(.est-card--borderless) {
+  @apply rounded-tl-none rounded-tr-none;
+  border-top: none;
+}
+
+/* Variants */
+.est-card--default {
+  background-color: var(--est-card-default-bg);
+  color: var(--est-card-default-color);
+  border-color: var(--est-card-default-border);
+}
+
+.est-card--primary {
+  background-color: var(--est-card-primary-bg);
+  color: var(--est-card-primary-color);
+  border-color: var(--est-card-primary-border);
+}
+
+.est-card--success {
+  background-color: var(--est-card-success-bg);
+  color: var(--est-card-success-color);
+  border-color: var(--est-card-success-border);
+}
+
+.est-card--info {
+  background-color: var(--est-card-info-bg);
+  color: var(--est-card-info-color);
+  border-color: var(--est-card-info-border);
+}
+
+.est-card--warning {
+  background-color: var(--est-card-warning-bg);
+  color: var(--est-card-warning-color);
+  border-color: var(--est-card-warning-border);
+}
+
+.est-card--danger {
+  background-color: var(--est-card-danger-bg);
+  color: var(--est-card-danger-color);
+  border-color: var(--est-card-danger-border);
+}
+
+/* Header */
+.est-card__header {
+  @apply py-2 px-3;
+  border-top-left-radius: var(--est-card-radius);
+  border-top-right-radius: var(--est-card-radius);
+}
+
+.est-card__header--bordered {
+  @apply border-t border-b;
+  border-color: inherit;
+}
+
+/* Body */
+.est-card__body {
+  padding: var(--est-card-padding-y) var(--est-card-padding-x);
+}
+
+/* Footer */
+.est-card__footer {
+  @apply py-2 px-3 rounded-bl-lg rounded-br-lg;
+}
+
+.est-card__footer--bordered {
+  @apply border-t;
+  border-color: inherit;
+}

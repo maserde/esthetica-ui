@@ -1,0 +1,51 @@
+.est-otp {
+  @apply flex flex-col gap-1.5;
+}
+
+.est-otp__label {
+  @apply text-sm font-semibold;
+  color: var(--est-input-label-color);
+}
+
+.est-otp__cells {
+  @apply flex gap-4;
+}
+
+.est-otp__cell {
+  @apply w-full border text-center text-lg font-semibold outline-none transition-colors;
+  border-radius: var(--est-input-radius);
+  background-color: var(--est-input-bg);
+  color: var(--est-input-color);
+  border-color: var(--est-input-border);
+  padding: var(--est-input-padding-y) var(--est-input-padding-x);
+  box-shadow: var(--est-input-shadow);
+  transition-duration: var(--est-input-transition-duration);
+}
+
+.est-otp__cell:focus {
+  border-color: var(--est-input-focus-border);
+  box-shadow:
+    var(--est-input-shadow),
+    0 0 0 2px var(--est-input-focus-ring-color),
+    0 0 0 4px color-mix(in srgb, var(--est-input-focus-ring-color) 20%, transparent);
+}
+
+.est-otp__cell:disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+.est-otp__cell--error {
+  border-color: var(--est-input-error-border);
+}
+
+.est-otp__cell--error:focus {
+  border-color: var(--est-input-error-border);
+  box-shadow:
+    var(--est-input-shadow),
+    0 0 0 2px var(--est-input-error-ring-color);
+}
+
+.est-otp__error {
+  @apply flex items-center gap-1 text-xs;
+  color: var(--est-input-error-color);
+}

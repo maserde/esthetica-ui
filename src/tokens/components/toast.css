@@ -1,0 +1,15 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-toast-max-width: 420px;
+    --est-toast-radius: var(--est-radius);
+    --est-toast-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --est-toast-progress-track-bg: rgba(0, 0, 0, 0.08);
+    --est-toast-progress-height: 3px;
+
+    --est-toast-primary-progress: var(--est-color-primary-500);
+    --est-toast-success-progress: var(--est-color-success);
+    --est-toast-info-progress: var(--est-color-info);
+    --est-toast-warning-progress: var(--est-color-warning);
+    --est-toast-danger-progress: var(--est-color-danger);
+  }
+}

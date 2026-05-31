@@ -1,0 +1,20 @@
+.est-skeleton {
+  @apply block animate-pulse;
+  background-color: var(--est-skeleton-color);
+}
+
+.est-skeleton--none {
+  border-radius: 0;
+}
+.est-skeleton--sm {
+  @apply rounded-sm;
+}
+.est-skeleton--md {
+  @apply rounded-md;
+}
+.est-skeleton--lg {
+  @apply rounded-lg;
+}
+.est-skeleton--full {
+  @apply rounded-full;
+}

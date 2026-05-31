@@ -36,6 +36,7 @@
     --est-color-info-400: #38bdf8;
     --est-color-info-500: #0ea5e9;
     --est-color-info-700: #075985;
+    --est-color-info-900: #0c4a6e;
     --est-color-info: var(--est-color-info-500);
     --est-color-info-hover: var(--est-color-info-400);
     --est-color-info-fg: var(--est-color-white);
@@ -45,6 +46,7 @@
     --est-color-warning-400: #fbbf24;
     --est-color-warning-500: #f59e0b;
     --est-color-warning-700: #92400e;
+    --est-color-warning-900: #78350f;
     --est-color-warning: var(--est-color-warning-500);
     --est-color-warning-hover: var(--est-color-warning-400);
     --est-color-warning-fg: var(--est-color-white);
@@ -54,6 +56,7 @@
     --est-color-success-400: #34d399;
     --est-color-success-500: #059669;
     --est-color-success-700: #065f46;
+    --est-color-success-900: #064e3b;
     --est-color-success: var(--est-color-success-500);
     --est-color-success-hover: var(--est-color-success-400);
     --est-color-success-fg: var(--est-color-white);
@@ -64,6 +67,7 @@
     --est-color-danger-400: #fb7185;
     --est-color-danger-500: #e11d48;
     --est-color-danger-700: #9f1239;
+    --est-color-danger-900: #881337;
     --est-color-danger: var(--est-color-danger-500);
     --est-color-danger-hover: var(--est-color-danger-400);
     --est-color-danger-fg: var(--est-color-white);

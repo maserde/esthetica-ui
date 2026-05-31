@@ -1,0 +1,35 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-alert-icon-size: 1.5rem;
+
+    --est-alert-primary-icon-color: var(--est-color-primary-700);
+    --est-alert-primary-title-color: var(--est-color-primary-700);
+    --est-alert-primary-body-color: var(--est-color-primary-700);
+    --est-alert-primary-close-color: var(--est-color-primary-700);
+    --est-alert-primary-close-hover: var(--est-color-primary-900);
+
+    --est-alert-success-icon-color: var(--est-color-success-700);
+    --est-alert-success-title-color: var(--est-color-success-700);
+    --est-alert-success-body-color: var(--est-color-success-700);
+    --est-alert-success-close-color: var(--est-color-success-700);
+    --est-alert-success-close-hover: var(--est-color-success-900);
+
+    --est-alert-info-icon-color: var(--est-color-info-700);
+    --est-alert-info-title-color: var(--est-color-info-700);
+    --est-alert-info-body-color: var(--est-color-info-700);
+    --est-alert-info-close-color: var(--est-color-info-700);
+    --est-alert-info-close-hover: var(--est-color-info-900);
+
+    --est-alert-warning-icon-color: var(--est-color-warning-700);
+    --est-alert-warning-title-color: var(--est-color-warning-700);
+    --est-alert-warning-body-color: var(--est-color-warning-700);
+    --est-alert-warning-close-color: var(--est-color-warning-700);
+    --est-alert-warning-close-hover: var(--est-color-warning-900);
+
+    --est-alert-danger-icon-color: var(--est-color-danger-700);
+    --est-alert-danger-title-color: var(--est-color-danger-700);
+    --est-alert-danger-body-color: var(--est-color-danger-700);
+    --est-alert-danger-close-color: var(--est-color-danger-700);
+    --est-alert-danger-close-hover: var(--est-color-danger-900);
+  }
+}
