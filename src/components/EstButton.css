@@ -61,7 +61,7 @@
 }
 
 .est-button--md {
-  @apply p-[--est-btn-md-padding] min-h-10;
+  @apply p-[--est-btn-md-padding] min-h-8;
   font-size: var(--est-btn-md-font-size);
 }
 

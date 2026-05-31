@@ -11,16 +11,16 @@
   @apply flex items-center gap-2;
   border-radius: var(--est-input-radius);
   background-color: var(--est-input-bg);
-  border: 1px solid var(--est-input-border);
+  outline: 1px solid var(--est-input-border);
   padding: 0 var(--est-input-padding-x);
   box-shadow: var(--est-input-shadow);
-  transition-property: border-color, box-shadow;
+  transition-property: outline-color, box-shadow;
   transition-duration: var(--est-input-transition-duration);
   transition-timing-function: ease;
 }
 
 .est-input__wrapper:focus-within {
-  border-color: var(--est-input-focus-border);
+  outline-color: var(--est-input-focus-border);
   box-shadow:
     var(--est-input-shadow),
     0 0 0 2px var(--est-input-focus-ring-offset),
@@ -28,11 +28,11 @@
 }
 
 .est-input__wrapper--error {
-  border-color: var(--est-input-error-border);
+  outline-color: var(--est-input-error-border);
 }
 
 .est-input__wrapper--error:focus-within {
-  border-color: var(--est-input-error-border);
+  outline-color: var(--est-input-error-border);
   box-shadow:
     var(--est-input-shadow),
     0 0 0 2px var(--est-input-error-ring-color);
@@ -50,6 +50,7 @@
   @apply flex-1 min-w-0 border-0 outline-none bg-transparent;
   color: var(--est-input-color);
   font-size: var(--est-input-font-size);
+  line-height: var(--est-input-font-line-height);
   padding: var(--est-input-padding-y) 0;
 }
 

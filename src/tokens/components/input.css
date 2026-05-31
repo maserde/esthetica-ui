@@ -14,9 +14,10 @@
     --est-input-error-ring-color: var(--est-color-danger-300);
     --est-input-error-color: var(--est-color-danger-500);
     --est-input-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.08) inset;
-    --est-input-padding-x: 1rem;
-    --est-input-padding-y: 0.75rem;
-    --est-input-font-size: 0.875rem;
+    --est-input-padding-x: 0.75rem;
+    --est-input-padding-y: 0.5rem;
+    --est-input-font-size: 0.75rem;
+    --est-input-font-line-height: 1rem;
     --est-input-transition-duration: 150ms;
   }
 }

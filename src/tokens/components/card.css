@@ -24,7 +24,7 @@
     --est-card-warning-color: var(--est-color-warning-700);
     --est-card-warning-border: var(--est-color-warning-700);
 
-    --est-card-danger-bg: var(--est-color-danger-100);
+    --est-card-danger-bg: var(--est-color-danger-50);
     --est-card-danger-color: var(--est-color-danger-700);
     --est-card-danger-border: var(--est-color-danger-700);
   }

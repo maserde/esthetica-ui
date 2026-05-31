@@ -46,11 +46,11 @@
     --est-btn-ghost-bg-hover: var(--est-color-muted);
 
     --est-btn-sm-padding: 0.5rem 0.5rem;
-    --est-btn-md-padding: 0.75rem 0.75rem;
+    --est-btn-md-padding: 0.2rem 0.75rem;
     --est-btn-lg-padding: 1rem 1.5rem;
 
     --est-btn-sm-font-size: 0.75rem;
-    --est-btn-md-font-size: 0.875rem;
+    --est-btn-md-font-size: 0.75rem;
     --est-btn-lg-font-size: 1rem;
   }
 }
