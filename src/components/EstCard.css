@@ -1,47 +1,50 @@
+/* Variants */
+.est-card--default {
+  --est-card-bg: var(--est-card-default-bg);
+  --est-card-color: var(--est-card-default-color);
+  --est-card-border: var(--est-card-default-border);
+}
+
+.est-card--primary {
+  --est-card-bg: var(--est-card-primary-bg);
+  --est-card-color: var(--est-card-primary-color);
+  --est-card-border: var(--est-card-primary-border);
+}
+
+.est-card--success {
+  --est-card-bg: var(--est-card-success-bg);
+  --est-card-color: var(--est-card-success-color);
+  --est-card-border: var(--est-card-success-border);
+}
+
+.est-card--info {
+  --est-card-bg: var(--est-card-info-bg);
+  --est-card-color: var(--est-card-info-color);
+  --est-card-border: var(--est-card-info-border);
+}
+
+.est-card--warning {
+  --est-card-bg: var(--est-card-warning-bg);
+  --est-card-color: var(--est-card-warning-color);
+  --est-card-border: var(--est-card-warning-border);
+}
+
+.est-card--danger {
+  --est-card-bg: var(--est-card-danger-bg);
+  --est-card-color: var(--est-card-danger-color);
+  --est-card-border: var(--est-card-danger-border);
+}
+
 .est-card {
   @apply overflow-hidden;
   border-radius: var(--est-card-radius);
+  background-color: var(--est-card-bg);
+  color: var(--est-card-color);
 }
 
 .est-card:not(.est-card--borderless) {
   @apply border;
-}
-
-/* Variants */
-.est-card--default {
-  background-color: var(--est-card-default-bg);
-  color: var(--est-card-default-color);
-  border-color: var(--est-card-default-border);
-}
-
-.est-card--primary {
-  background-color: var(--est-card-primary-bg);
-  color: var(--est-card-primary-color);
-  border-color: var(--est-card-primary-border);
-}
-
-.est-card--success {
-  background-color: var(--est-card-success-bg);
-  color: var(--est-card-success-color);
-  border-color: var(--est-card-success-border);
-}
-
-.est-card--info {
-  background-color: var(--est-card-info-bg);
-  color: var(--est-card-info-color);
-  border-color: var(--est-card-info-border);
-}
-
-.est-card--warning {
-  background-color: var(--est-card-warning-bg);
-  color: var(--est-card-warning-color);
-  border-color: var(--est-card-warning-border);
-}
-
-.est-card--danger {
-  background-color: var(--est-card-danger-bg);
-  color: var(--est-card-danger-color);
-  border-color: var(--est-card-danger-border);
+  border-color: var(--est-card-border);
 }
 
 /* Header */

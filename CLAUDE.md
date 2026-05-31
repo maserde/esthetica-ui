@@ -56,6 +56,86 @@ Design tokens are plain CSS custom properties organised under `src/tokens/`:
 
 `src/style.css` imports all token files in order. Token files use `@layer esthetica-ui-tokens` so they stay below any consumer overrides. Component tokens must always reference global or color tokens via `var()` — never hardcode raw values (hex colours, pixel sizes, etc.). Hardcoding bypasses the token system and silently breaks consumer theming.
 
+#### Component token file structure
+
+Every `src/tokens/components/foo.css` must follow this exact shape:
+
+```css
+@layer esthetica-ui-tokens {
+  :root {
+    /* ── Base tokens (what the component reads directly) ─────────── */
+    --est-foo-padding: ...;
+    --est-foo-min-height: ...;
+    --est-foo-font-size: ...;
+    --est-foo-bg-color: var(--est-color-primary);
+    --est-foo-color: var(--est-color-primary-fg);
+    /* ... all other "live" properties the component element consumes */
+
+    /* ── Size variant presets ────────────────────────────────────── */
+    --est-foo-sm-padding: ...;
+    --est-foo-sm-min-height: ...;
+    --est-foo-sm-font-size: ...;
+
+    --est-foo-md-padding: ...;
+    --est-foo-md-min-height: ...;
+    --est-foo-md-font-size: ...;
+
+    --est-foo-lg-padding: ...;
+    --est-foo-lg-min-height: ...;
+    --est-foo-lg-font-size: ...;
+
+    /* ── Color/style variant presets ─────────────────────────────── */
+    --est-foo-secondary-bg-color: var(--est-color-secondary);
+    --est-foo-secondary-color: var(--est-color-secondary-fg);
+    --est-foo-secondary-bg-hover: var(--est-color-secondary-hover);
+    /* ... one group per named variant */
+  }
+}
+```
+
+Three ordered sections, separated by comments:
+1. **Base tokens** — the "live" CSS variables the component element reads. These are what `var(--est-foo-*)` in `EstFoo.css` references.
+2. **Size variant presets** — `--est-foo-{sm|md|lg}-{property}` — one group per size.
+3. **Color/style variant presets** — `--est-foo-{variant}-{property}` — one group per named variant.
+
+#### Component CSS structure (CSS variable indirection)
+
+The `EstFoo.css` file uses a **CSS custom property indirection** pattern. Modifier classes re-point the base tokens; the base class reads only the base tokens. There is a **single rendering path**.
+
+```css
+/* 1. Modifier classes come FIRST and redirect base tokens to variant presets */
+.est-foo--sm {
+  --est-foo-padding: var(--est-foo-sm-padding);
+  --est-foo-min-height: var(--est-foo-sm-min-height);
+  --est-foo-font-size: var(--est-foo-sm-font-size);
+}
+
+.est-foo--secondary {
+  --est-foo-bg-color: var(--est-foo-secondary-bg-color);
+  --est-foo-color: var(--est-foo-secondary-color);
+  --est-foo-bg-hover: var(--est-foo-secondary-bg-hover);
+}
+
+/* 2. Base class comes LAST and reads only the base tokens — never variant tokens directly */
+.est-foo {
+  padding: var(--est-foo-padding);
+  min-height: var(--est-foo-min-height);
+  font-size: var(--est-foo-font-size);
+  background-color: var(--est-foo-bg-color);
+  color: var(--est-foo-color);
+}
+
+.est-foo:hover {
+  background-color: var(--est-foo-bg-hover);
+}
+```
+
+Rules:
+- Modifier classes always appear **before** the base class in the file.
+- The base class **never** references `--est-foo-{variant}-*` or `--est-foo-{size}-*` tokens directly — only the base `--est-foo-*` tokens.
+- If a modifier does not need to change a property, it simply omits that token override — the base token's default value applies.
+- Use `@apply` only for structural / layout utilities (Tailwind/UnoCSS). Theme-able values (colours, spacing, typography) must use CSS custom properties.
+
 ### Component conventions
 
 Each component lives in `src/components/` as three sibling files:

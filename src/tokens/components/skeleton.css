@@ -1,6 +1,15 @@
 @layer esthetica-ui-tokens {
   :root {
     --est-skeleton-color: var(--est-color-neutral-200);
-    --est-skeleton-radius: var(--est-radius);
+
+    /* Base */
+    --est-skeleton-radius: var(--est-skeleton-md-radius);
+
+    /* Size variant presets */
+    --est-skeleton-none-radius: 0;
+    --est-skeleton-sm-radius: 0.125rem;
+    --est-skeleton-md-radius: 0.375rem;
+    --est-skeleton-lg-radius: 0.5rem;
+    --est-skeleton-full-radius: 9999px;
   }
 }

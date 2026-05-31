@@ -8,6 +8,10 @@
     --est-toast-animation-duration: 0.3s;
     --est-toast-progress-transition-duration: 50ms;
 
+    /* Base */
+    --est-toast-progress-color: var(--est-toast-success-progress);
+
+    /* Colors */
     --est-toast-primary-progress: var(--est-color-primary-500);
     --est-toast-success-progress: var(--est-color-success);
     --est-toast-info-progress: var(--est-color-info);

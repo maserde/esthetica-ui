@@ -2,6 +2,14 @@
   :root {
     --est-alert-icon-size: 1.5rem;
 
+    /* Base */
+    --est-alert-icon-color: var(--est-alert-success-icon-color);
+    --est-alert-title-color: var(--est-alert-success-title-color);
+    --est-alert-body-color: var(--est-alert-success-body-color);
+    --est-alert-close-color: var(--est-alert-success-close-color);
+    --est-alert-close-hover-color: var(--est-alert-success-close-hover);
+
+    /* Colors */
     --est-alert-primary-icon-color: var(--est-color-primary-700);
     --est-alert-primary-title-color: var(--est-color-primary-700);
     --est-alert-primary-body-color: var(--est-color-primary-700);
