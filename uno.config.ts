@@ -1,7 +1,9 @@
 import { defineConfig, presetWind4, presetWebFonts, presetIcons,  transformerDirectives } from 'unocss'
+import riIcons from '@iconify-json/ri/icons.json'
 
 
 export default defineConfig({
+  safelist: Object.keys(riIcons.icons).map(name => `i-ri-${name}`),
   presets: [
     presetWind4(),
     presetWebFonts({
