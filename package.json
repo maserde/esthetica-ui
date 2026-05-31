@@ -46,8 +46,8 @@
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
     "format": "oxfmt src/",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook": "cross-env NODE_OPTIONS=--max-old-space-size=4096 storybook dev -p 6006",
+    "build-storybook": "cross-env NODE_OPTIONS=--max-old-space-size=4096 storybook build",
     "prepublishOnly": "npm run build",
     "release:patch": "npm version patch && npm publish --access public",
     "release:minor": "npm version minor && npm publish --access public",
@@ -74,6 +74,7 @@
     "@vue/eslint-config-typescript": "^14.7.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.9.1",
+    "cross-env": "^10.1.0",
     "eslint": "^10.2.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-oxlint": "~1.60.0",
@@ -104,7 +105,12 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "lint-staged": {
-    "src/**/*.{vue,ts,js,css}": ["oxfmt"],
-    "src/**/*.{vue,ts,js}": ["oxlint --fix", "eslint --fix --cache"]
+    "src/**/*.{vue,ts,js,css}": [
+      "oxfmt"
+    ],
+    "src/**/*.{vue,ts,js}": [
+      "oxlint --fix",
+      "eslint --fix --cache"
+    ]
   }
 }

@@ -1,7 +1,7 @@
 @layer esthetica-ui-tokens {
   :root {
     --est-input-radius: var(--est-radius);
-    --est-input-bg: #ffffff;
+    --est-input-bg: var(--est-color-white);
     --est-input-readonly-bg: var(--est-color-neutral-50);
     --est-input-color: var(--est-color-neutral-800);
     --est-input-placeholder-color: var(--est-color-neutral-400);

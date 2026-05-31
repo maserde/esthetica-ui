@@ -3,10 +3,10 @@
     --est-pagination-border-color: var(--est-color-neutral-200);
     --est-pagination-text-color: var(--est-color-neutral-950);
     --est-pagination-muted-color: var(--est-color-neutral-400);
-    --est-pagination-btn-bg: #ffffff;
+    --est-pagination-btn-bg: var(--est-color-surface);
     --est-pagination-btn-hover-bg: var(--est-color-neutral-50);
     --est-pagination-btn-hover-border: var(--est-color-neutral-300);
-    --est-pagination-active-bg: #ffffff;
+    --est-pagination-active-bg: var(--est-color-surface);
     --est-pagination-active-border: var(--est-color-neutral-200);
     --est-pagination-focus-ring-color: var(--est-color-primary);
     --est-pagination-focus-ring-offset: var(--est-pagination-btn-bg);

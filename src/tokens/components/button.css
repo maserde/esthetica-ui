@@ -6,7 +6,7 @@
     --est-btn-active-transition-duration: 80ms;
     --est-btn-spinner-duration: 580ms;
     --est-btn-focus-ring: initial;
-    --est-btn-focus-ring-offset: #fff;
+    --est-btn-focus-ring-offset: var(--est-color-surface);
 
     --est-btn-primary-bg: var(--est-color-primary);
     --est-btn-primary-bg-hover: var(--est-color-primary-hover);
