@@ -22,8 +22,9 @@
     --est-color-primary-700: #01754f;
     --est-color-primary-800: #004c33;
     --est-color-primary-900: #002d1e;
-    --est-color-primary: var(--est-color-primary-700);
-    --est-color-primary-hover: var(--est-color-primary-600);
+    /*--est-color-primary: var(--est-color-primary-700);*/
+    --est-color-primary: #de370dff;
+    --est-color-primary-hover: #f55f36;
     --est-color-primary-fg: var(--est-color-white);
 
     --est-color-secondary: #e7e5e4;
