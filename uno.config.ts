@@ -2,7 +2,12 @@ import { defineConfig, presetWind4, presetWebFonts, presetIcons, transformerDire
 
 export default defineConfig({
   content: {
-    filesystem: ['./src/**/*.{vue,ts}'],
+    pipeline: {
+      include: [
+        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        'src/**/*.ts',
+      ],
+    },
   },
   presets: [
     presetWind4(),
