@@ -127,7 +127,7 @@ function handleFocus(event: FocusEvent) {
 </script>
 
 <template>
-  <div v-bind="$attrs" class="est-otp">
+  <div v-bind="$attrs" class="est-otp" :aria-disabled="disabled || undefined">
     <label v-if="label" :for="inputId" class="est-otp__label">
       {{ label }}
     </label>

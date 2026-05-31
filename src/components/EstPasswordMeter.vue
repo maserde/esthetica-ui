@@ -76,7 +76,9 @@ const requirements = computed(() => [
         />
       </div>
       <span
-        v-if="props.password.length > 0"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
         :class="{
           'est-password-meter__label': true,
           'est-password-meter__label--weak': strengthModifier === 'weak',

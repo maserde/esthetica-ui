@@ -17,11 +17,11 @@
 .est-pagination__page-input {
   @apply w-8 h-8 border rounded-md text-center outline-none transition;
   background-color: var(--est-pagination-btn-bg);
-  font-size: 0.8125rem;
+  font-size: var(--est-pagination-font-size);
   font-weight: 400;
   color: var(--est-pagination-text-color);
   border-color: var(--est-pagination-border-color);
-  transition-duration: 150ms;
+  transition-duration: var(--est-pagination-transition-duration);
 }
 
 .est-pagination__page-input:focus {
@@ -42,7 +42,7 @@
   background-color: var(--est-pagination-btn-bg);
   color: var(--est-pagination-text-color);
   border-color: var(--est-pagination-border-color);
-  transition-duration: 150ms;
+  transition-duration: var(--est-pagination-transition-duration);
 }
 
 .est-pagination__nav-btn:hover:not(:disabled) {
@@ -56,10 +56,10 @@
 
 .est-pagination__page-btn {
   @apply min-w-8 h-8 px-1.5 flex items-center justify-center rounded-md border border-transparent bg-transparent cursor-pointer transition-all;
-  font-size: 0.8125rem;
+  font-size: var(--est-pagination-font-size);
   font-weight: 500;
   color: var(--est-pagination-text-color);
-  transition-duration: 150ms;
+  transition-duration: var(--est-pagination-transition-duration);
 }
 
 .est-pagination__page-btn:hover {
@@ -74,7 +74,7 @@
 
 .est-pagination__ellipsis {
   @apply min-w-8 h-8 flex items-center justify-center select-none;
-  font-size: 0.8125rem;
+  font-size: var(--est-pagination-font-size);
   color: var(--est-pagination-muted-color);
 }
 
@@ -86,7 +86,7 @@
 
 .est-pagination__rows-label {
   @apply whitespace-nowrap;
-  font-size: 0.8125rem;
+  font-size: var(--est-pagination-font-size);
   color: var(--est-pagination-text-color);
 }
 
@@ -97,11 +97,11 @@
 .est-pagination__rows-trigger {
   @apply flex items-center gap-1 py-1.5 px-2 min-w-14 justify-between border rounded-md cursor-pointer transition-all;
   background-color: var(--est-pagination-btn-bg);
-  font-size: 0.8125rem;
+  font-size: var(--est-pagination-font-size);
   font-weight: 500;
   color: var(--est-pagination-text-color);
   border-color: var(--est-pagination-border-color);
-  transition-duration: 150ms;
+  transition-duration: var(--est-pagination-transition-duration);
 }
 
 .est-pagination__rows-trigger:hover {
@@ -126,9 +126,9 @@
 
 .est-pagination__rows-option {
   @apply block w-full py-1.5 px-3 bg-transparent border-0 cursor-pointer text-left transition-colors;
-  font-size: 0.8125rem;
+  font-size: var(--est-pagination-font-size);
   color: var(--est-pagination-text-color);
-  transition-duration: 100ms;
+  transition-duration: var(--est-pagination-option-transition-duration);
 }
 
 .est-pagination__rows-option:hover {

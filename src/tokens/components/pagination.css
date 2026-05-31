@@ -14,5 +14,8 @@
     --est-pagination-option-active-color: var(--est-color-primary-700);
     --est-pagination-menu-bg: var(--est-pagination-btn-bg);
     --est-pagination-menu-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --est-pagination-font-size: 0.8125rem;
+    --est-pagination-transition-duration: 150ms;
+    --est-pagination-option-transition-duration: 100ms;
   }
 }

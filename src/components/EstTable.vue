@@ -18,7 +18,7 @@ export interface Props {
   borderless?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   loading: false,
   skeletonRowCount: 5,
   striped: false,
@@ -30,23 +30,16 @@ const slots = useSlots()
 
 const hasHeaderSlot = computed(() => !!slots.header)
 const hasFooterSlot = computed(() => !!slots.footer)
-
-const containerClasses = computed(() => ({
-  'est-table': true,
-  'est-table--borderless': props.borderless,
-}))
-
-function rowClasses(index: number) {
-  return {
-    'est-table__row': true,
-    'est-table__row--striped': props.striped && index % 2 === 1,
-    'est-table__row--hoverable': props.hoverable,
-  }
-}
 </script>
 
 <template>
-  <div :class="containerClasses" :aria-busy="loading || undefined">
+  <div
+    :class="{
+      'est-table': true,
+      'est-table--borderless': borderless,
+    }"
+    :aria-busy="loading || undefined"
+  >
     <div v-if="hasHeaderSlot" class="est-table__slot-header">
       <slot name="header" />
     </div>
@@ -92,7 +85,15 @@ function rowClasses(index: number) {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(row, index) in rows" :key="index" :class="rowClasses(index)">
+          <tr
+            v-for="(row, index) in rows"
+            :key="index"
+            :class="{
+              'est-table__row': true,
+              'est-table__row--striped': striped && index % 2 === 1,
+              'est-table__row--hoverable': hoverable,
+            }"
+          >
             <td v-for="column in columns" :key="column.key" class="est-table__body-cell">
               <slot :name="`cell-${column.key}`" :row="row" :value="row[column.key]">
                 {{ row[column.key] }}

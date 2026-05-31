@@ -36,7 +36,7 @@ function handleInput(event: Event) {
 </script>
 
 <template>
-  <div class="est-input">
+  <div class="est-input" :aria-disabled="disabled || undefined">
     <label v-if="label" :for="inputId" class="est-input__label">
       {{ label }}
     </label>

@@ -27,16 +27,28 @@ const hasTitle = computed(() => !!slots.title)
   <EstCard :variant="variant" borderless>
     <div class="est-alert__inner">
       <span
+        v-if="variant === 'primary' || variant === 'success'"
+        class="i-ri-checkbox-circle-fill"
         :class="{
           'est-alert__icon': true,
           'est-alert__icon--primary': variant === 'primary',
           'est-alert__icon--success': variant === 'success',
-          'est-alert__icon--info': variant === 'info',
+        }"
+        aria-hidden="true"
+      />
+      <span
+        v-else-if="variant === 'info'"
+        class="i-ri-information-fill"
+        :class="{ 'est-alert__icon': true, 'est-alert__icon--info': true }"
+        aria-hidden="true"
+      />
+      <span
+        v-else
+        class="i-ri-error-warning-fill"
+        :class="{
+          'est-alert__icon': true,
           'est-alert__icon--warning': variant === 'warning',
           'est-alert__icon--danger': variant === 'danger',
-          'i-ri-checkbox-circle-fill': variant === 'primary' || variant === 'success',
-          'i-ri-information-fill': variant === 'info',
-          'i-ri-error-warning-fill': variant === 'warning' || variant === 'danger',
         }"
         aria-hidden="true"
       />
