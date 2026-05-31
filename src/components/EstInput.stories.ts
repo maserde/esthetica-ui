@@ -107,7 +107,7 @@ export const WithButton: Story = {
   render: () => ({
     components: { EstInput, EstButton },
     template: `
-      <div class="flex items-end">
+      <div class="flex items-end gap-2">
         <EstInput label="Search" placeholder="Search..." style="width:320px;"></EstInput>
         <EstButton>Submit</EstButton>
       </div>
