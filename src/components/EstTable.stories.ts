@@ -60,6 +60,7 @@ export const Borderless: Story = {
 
 export const AllVariants: Story = {
   name: 'All Variants',
+  args: { columns, rows },
   render: () => ({
     components: { EstTable },
     setup() {
