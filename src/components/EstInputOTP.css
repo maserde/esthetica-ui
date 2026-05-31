@@ -12,7 +12,7 @@
 }
 
 .est-otp__cell {
-  @apply w-full border text-center text-lg font-semibold outline-none transition-colors;
+  @apply w-full border text-center text-lg font-semibold outline-none transition;
   border-radius: var(--est-input-radius);
   background-color: var(--est-input-bg);
   color: var(--est-input-color);
@@ -26,8 +26,8 @@
   border-color: var(--est-input-focus-border);
   box-shadow:
     var(--est-input-shadow),
-    0 0 0 2px var(--est-input-focus-ring-color),
-    0 0 0 4px color-mix(in srgb, var(--est-input-focus-ring-color) 20%, transparent);
+    0 0 0 2px #ffffff,
+    0 0 0 4px var(--est-input-focus-ring-color);
 }
 
 .est-otp__cell:disabled {

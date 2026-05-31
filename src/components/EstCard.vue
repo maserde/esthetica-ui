@@ -47,7 +47,6 @@ const footerClasses = computed(() => ({
       'est-card--warning': variant === 'warning',
       'est-card--danger': variant === 'danger',
       'est-card--borderless': borderless,
-      'est-card--with-header': hasHeaderSlot,
     }"
   >
     <div v-if="hasHeaderSlot" :class="headerClasses">

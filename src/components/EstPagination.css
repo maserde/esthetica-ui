@@ -15,7 +15,7 @@
 }
 
 .est-pagination__page-input {
-  @apply w-8 h-8 border rounded-md text-center bg-white outline-none transition-colors;
+  @apply w-8 h-8 border rounded-md text-center bg-white outline-none transition;
   font-size: 0.8125rem;
   font-weight: 400;
   color: var(--est-pagination-text-color);
@@ -25,7 +25,9 @@
 
 .est-pagination__page-input:focus {
   border-color: var(--est-pagination-focus-ring-color);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--est-pagination-focus-ring-color) 15%, transparent);
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 0 4px var(--est-pagination-focus-ring-color);
 }
 
 /* ─── Nav section ──────────────────────────────────────────────────────────── */

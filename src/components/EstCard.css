@@ -1,16 +1,10 @@
 .est-card {
-  @apply rounded-lg;
+  @apply rounded-lg overflow-hidden;
   border-radius: var(--est-card-radius);
 }
 
 .est-card:not(.est-card--borderless) {
   @apply border;
-}
-
-/* When header is present, remove card's top border and top rounding (header provides both) */
-.est-card--with-header:not(.est-card--borderless) {
-  @apply rounded-tl-none rounded-tr-none;
-  border-top: none;
 }
 
 /* Variants */
@@ -53,12 +47,10 @@
 /* Header */
 .est-card__header {
   @apply py-2 px-3;
-  border-top-left-radius: var(--est-card-radius);
-  border-top-right-radius: var(--est-card-radius);
 }
 
 .est-card__header--bordered {
-  @apply border-t border-b;
+  @apply border-b;
   border-color: inherit;
 }
 
@@ -69,7 +61,7 @@
 
 /* Footer */
 .est-card__footer {
-  @apply py-2 px-3 rounded-bl-lg rounded-br-lg;
+  @apply py-2 px-3;
 }
 
 .est-card__footer--bordered {
