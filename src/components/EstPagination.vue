@@ -123,7 +123,7 @@ const visiblePages = computed(() => {
         :disabled="isPrevDisabled"
         :aria-disabled="isPrevDisabled"
         aria-label="Previous page"
-        @click="goToPage(currentPage - 1)"
+        @click="goToPage(props.currentPage - 1)"
       >
         <span class="i-ri-arrow-left-s-line w-[18px] h-[18px]" aria-hidden="true" />
       </button>
@@ -148,7 +148,7 @@ const visiblePages = computed(() => {
         :disabled="isNextDisabled"
         :aria-disabled="isNextDisabled"
         aria-label="Next page"
-        @click="goToPage(currentPage + 1)"
+        @click="goToPage(props.currentPage + 1)"
       >
         <span class="i-ri-arrow-right-s-line w-[18px] h-[18px]" aria-hidden="true" />
       </button>
@@ -165,9 +165,8 @@ const visiblePages = computed(() => {
         >
           <span>{{ rowsPerPage }}</span>
           <span
-            class="i-ri-arrow-down-s-line est-pagination__rows-chevron"
+            class="i-ri-arrow-down-s-line w-4 h-4 est-pagination__rows-chevron"
             :class="{ 'est-pagination__rows-chevron--open': isRowsDropdownOpen }"
-            style="width: 16px; height: 16px"
             aria-hidden="true"
           />
         </button>

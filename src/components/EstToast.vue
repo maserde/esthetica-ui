@@ -102,7 +102,10 @@ onBeforeUnmount(() => {
   <Transition name="est-toast">
     <div
       v-if="isVisible"
-      :class="['est-toast', isLeaving ? 'est-toast--leaving' : '']"
+      :class="{
+        'est-toast': true,
+        'est-toast--leaving': isLeaving,
+      }"
       role="alert"
       aria-live="assertive"
     >
@@ -113,7 +116,7 @@ onBeforeUnmount(() => {
         <slot />
       </EstAlert>
 
-      <div v-if="duration > 0" class="est-toast__progress-track">
+      <div v-if="props.duration > 0" class="est-toast__progress-track">
         <div
           :class="['est-toast__progress-bar', progressBarClass]"
           :style="{ width: `${progress}%` }"

@@ -33,7 +33,7 @@ const footerClasses = computed(() => ({
 </script>
 
 <template>
-  <div v-if="loading">
+  <div v-if="loading" aria-busy="true">
     <EstSkeleton class="h-20 w-full" rounded="lg" />
   </div>
   <div

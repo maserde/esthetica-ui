@@ -1,6 +1,6 @@
 .est-pagination {
   @apply flex items-center justify-between gap-4 py-3;
-  font-family: var(--est-font-sans);
+  font-family: var(--est-font-sans), sans-serif;
 }
 
 /* ─── Info section ─────────────────────────────────────────────────────────── */
@@ -15,7 +15,8 @@
 }
 
 .est-pagination__page-input {
-  @apply w-8 h-8 border rounded-md text-center bg-white outline-none transition;
+  @apply w-8 h-8 border rounded-md text-center outline-none transition;
+  background-color: var(--est-pagination-btn-bg);
   font-size: 0.8125rem;
   font-weight: 400;
   color: var(--est-pagination-text-color);
@@ -37,7 +38,8 @@
 }
 
 .est-pagination__nav-btn {
-  @apply mx-3 w-8 h-8 flex items-center justify-center rounded-md border bg-white cursor-pointer transition-all;
+  @apply mx-3 w-8 h-8 flex items-center justify-center rounded-md border cursor-pointer transition-all;
+  background-color: var(--est-pagination-btn-bg);
   color: var(--est-pagination-text-color);
   border-color: var(--est-pagination-border-color);
   transition-duration: 150ms;
@@ -93,7 +95,8 @@
 }
 
 .est-pagination__rows-trigger {
-  @apply flex items-center gap-1 py-1.5 px-2 min-w-14 justify-between border rounded-md bg-white cursor-pointer transition-all;
+  @apply flex items-center gap-1 py-1.5 px-2 min-w-14 justify-between border rounded-md cursor-pointer transition-all;
+  background-color: var(--est-pagination-btn-bg);
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--est-pagination-text-color);
@@ -115,9 +118,10 @@
 }
 
 .est-pagination__rows-menu {
-  @apply absolute bottom-[calc(100%+4px)] right-0 min-w-full bg-white rounded-md z-10 overflow-hidden;
+  @apply absolute bottom-[calc(100%+4px)] right-0 min-w-full rounded-md z-10 overflow-hidden;
+  background-color: var(--est-pagination-menu-bg);
   border: 1px solid var(--est-pagination-border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--est-pagination-menu-shadow);
 }
 
 .est-pagination__rows-option {

@@ -46,7 +46,7 @@ function rowClasses(index: number) {
 </script>
 
 <template>
-  <div :class="containerClasses">
+  <div :class="containerClasses" :aria-busy="loading || undefined">
     <div v-if="hasHeaderSlot" class="est-table__slot-header">
       <slot name="header" />
     </div>

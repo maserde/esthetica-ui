@@ -16,7 +16,10 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(), {
   modelValue: '',
   length: 4,
+  label: undefined,
   disabled: false,
+  error: undefined,
+  id: undefined,
 })
 
 const emit = defineEmits<{

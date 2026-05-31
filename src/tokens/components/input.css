@@ -11,6 +11,7 @@
     --est-input-icon-hover-color: var(--est-color-neutral-600);
     --est-input-focus-border: transparent;
     --est-input-focus-ring-color: var(--est-color-primary);
+    --est-input-focus-ring-offset: var(--est-input-bg);
     --est-input-error-border: var(--est-color-danger-500);
     --est-input-error-ring-color: var(--est-color-danger-300);
     --est-input-error-color: var(--est-color-danger-500);

@@ -9,7 +9,7 @@ export interface Props {
   dismissible?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   variant: 'success',
   dismissible: true,
 })
@@ -21,36 +21,50 @@ const emit = defineEmits<{
 const slots = useSlots()
 
 const hasTitle = computed(() => !!slots.title)
-
-const ICON_MAP: Record<AlertVariant, string> = {
-  primary: 'i-ri-checkbox-circle-fill',
-  success: 'i-ri-checkbox-circle-fill',
-  info: 'i-ri-information-fill',
-  warning: 'i-ri-error-warning-fill',
-  danger: 'i-ri-error-warning-fill',
-}
-
-const iconClass = computed(() => ICON_MAP[props.variant])
 </script>
 
 <template>
   <EstCard :variant="variant" borderless>
     <div class="est-alert__inner">
       <span
-        :class="['est-alert__icon', `est-alert__icon--${variant}`, iconClass, 'w-6 h-6']"
+        :class="{
+          'est-alert__icon': true,
+          'est-alert__icon--primary': variant === 'primary',
+          'est-alert__icon--success': variant === 'success',
+          'est-alert__icon--info': variant === 'info',
+          'est-alert__icon--warning': variant === 'warning',
+          'est-alert__icon--danger': variant === 'danger',
+          'i-ri-checkbox-circle-fill': variant === 'primary' || variant === 'success',
+          'i-ri-information-fill': variant === 'info',
+          'i-ri-error-warning-fill': variant === 'warning' || variant === 'danger',
+        }"
         aria-hidden="true"
       />
 
       <div class="est-alert__content">
-        <div v-if="hasTitle" :class="['est-alert__title', `est-alert__title--${variant}`]">
+        <div
+          v-if="hasTitle"
+          :class="{
+            'est-alert__title': true,
+            'est-alert__title--primary': variant === 'primary',
+            'est-alert__title--success': variant === 'success',
+            'est-alert__title--info': variant === 'info',
+            'est-alert__title--warning': variant === 'warning',
+            'est-alert__title--danger': variant === 'danger',
+          }"
+        >
           <slot name="title" />
         </div>
         <div
-          :class="[
-            'est-alert__body',
-            `est-alert__body--${variant}`,
-            { 'est-alert__body--with-title': hasTitle },
-          ]"
+          :class="{
+            'est-alert__body': true,
+            'est-alert__body--primary': variant === 'primary',
+            'est-alert__body--success': variant === 'success',
+            'est-alert__body--info': variant === 'info',
+            'est-alert__body--warning': variant === 'warning',
+            'est-alert__body--danger': variant === 'danger',
+            'est-alert__body--with-title': hasTitle,
+          }"
         >
           <slot />
         </div>
@@ -59,11 +73,18 @@ const iconClass = computed(() => ICON_MAP[props.variant])
       <button
         v-if="dismissible"
         type="button"
-        :class="['est-alert__close', `est-alert__close--${variant}`]"
+        :class="{
+          'est-alert__close': true,
+          'est-alert__close--primary': variant === 'primary',
+          'est-alert__close--success': variant === 'success',
+          'est-alert__close--info': variant === 'info',
+          'est-alert__close--warning': variant === 'warning',
+          'est-alert__close--danger': variant === 'danger',
+        }"
         aria-label="Dismiss alert"
         @click="emit('dismiss')"
       >
-        <span class="i-ri-close-line" style="width: 18px; height: 18px" aria-hidden="true" />
+        <span class="i-ri-close-line w-[18px] h-[18px]" aria-hidden="true" />
       </button>
     </div>
   </EstCard>

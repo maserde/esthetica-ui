@@ -53,17 +53,25 @@ const requirements = computed(() => [
           v-for="index in 4"
           :key="index"
           class="est-password-meter__bar"
-          :class="
-            index <= passedCount && password.length > 0
-              ? `est-password-meter__bar--${strengthModifier}`
-              : 'est-password-meter__bar--empty'
-          "
+          :class="{
+            'est-password-meter__bar--empty': !(index <= passedCount && props.password.length > 0),
+            'est-password-meter__bar--weak': index <= passedCount && strengthModifier === 'weak',
+            'est-password-meter__bar--fair': index <= passedCount && strengthModifier === 'fair',
+            'est-password-meter__bar--good': index <= passedCount && strengthModifier === 'good',
+            'est-password-meter__bar--strong':
+              index <= passedCount && strengthModifier === 'strong',
+          }"
         />
       </div>
       <span
-        v-if="password.length > 0"
-        class="est-password-meter__label"
-        :class="`est-password-meter__label--${strengthModifier}`"
+        v-if="props.password.length > 0"
+        :class="{
+          'est-password-meter__label': true,
+          'est-password-meter__label--weak': strengthModifier === 'weak',
+          'est-password-meter__label--fair': strengthModifier === 'fair',
+          'est-password-meter__label--good': strengthModifier === 'good',
+          'est-password-meter__label--strong': strengthModifier === 'strong',
+        }"
       >
         {{ strengthLabel }}
       </span>
@@ -73,16 +81,18 @@ const requirements = computed(() => [
       <li v-for="req in requirements" :key="req.label" class="est-password-meter__requirement">
         <span
           class="i-ri-checkbox-circle-line est-password-meter__req-icon"
-          :class="
-            req.met ? 'est-password-meter__req-icon--met' : 'est-password-meter__req-icon--unmet'
-          "
+          :class="{
+            'est-password-meter__req-icon--met': req.met,
+            'est-password-meter__req-icon--unmet': !req.met,
+          }"
           aria-hidden="true"
         />
         <span
           class="est-password-meter__req-label"
-          :class="
-            req.met ? 'est-password-meter__req-label--met' : 'est-password-meter__req-label--unmet'
-          "
+          :class="{
+            'est-password-meter__req-label--met': req.met,
+            'est-password-meter__req-label--unmet': !req.met,
+          }"
         >
           {{ req.label }}
         </span>

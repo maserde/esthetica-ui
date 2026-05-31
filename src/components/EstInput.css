@@ -23,7 +23,7 @@
   border-color: var(--est-input-focus-border);
   box-shadow:
     var(--est-input-shadow),
-    0 0 0 2px #ffffff,
+    0 0 0 2px var(--est-input-focus-ring-offset),
     0 0 0 4px var(--est-input-focus-ring-color);
 }
 

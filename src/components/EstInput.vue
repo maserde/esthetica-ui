@@ -8,7 +8,9 @@ export interface Props {
   label?: string
   placeholder?: string
   leftIcon?: string
+  leftIconLabel?: string
   rightIcon?: string
+  rightIconLabel?: string
   disabled?: boolean
   readonly?: boolean
   error?: string
@@ -17,8 +19,16 @@ export interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: '',
+  label: undefined,
+  placeholder: undefined,
+  leftIcon: undefined,
+  leftIconLabel: undefined,
+  rightIcon: undefined,
+  rightIconLabel: undefined,
   disabled: false,
   readonly: false,
+  error: undefined,
+  id: undefined,
 })
 
 const emit = defineEmits<{
@@ -54,11 +64,10 @@ function handleInput(event: Event) {
         type="button"
         class="est-input__icon-left"
         :disabled="disabled"
-        aria-hidden="true"
-        tabindex="-1"
+        :aria-label="leftIconLabel"
         @click="emit('left-icon-click')"
       >
-        <span :class="[leftIcon, 'w-6 h-6']" aria-hidden="true" />
+        <span class="w-6 h-6" :class="{ [leftIcon]: true }" aria-hidden="true" />
       </button>
 
       <input
@@ -78,11 +87,10 @@ function handleInput(event: Event) {
         type="button"
         class="est-input__icon-right"
         :disabled="disabled"
-        aria-hidden="true"
-        tabindex="-1"
+        :aria-label="rightIconLabel"
         @click="emit('right-icon-click')"
       >
-        <span :class="[rightIcon, 'w-6 h-6']" aria-hidden="true" />
+        <span class="w-6 h-6" :class="{ [rightIcon]: true }" aria-hidden="true" />
       </button>
     </div>
 

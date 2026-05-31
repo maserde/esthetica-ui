@@ -11,6 +11,12 @@ export { default as EstPagination } from './components/EstPagination.vue'
 export { default as EstTable } from './components/EstTable.vue'
 export { default as EstPasswordMeter } from './components/EstPasswordMeter.vue'
 
+export type {
+  Variant as ButtonVariant,
+  Size as ButtonSize,
+  ButtonType,
+  Props as ButtonProps,
+} from './components/EstButton.vue'
 export type { SkeletonRounded, Props as SkeletonProps } from './components/EstSkeleton.vue'
 export type { CardVariant, Props as CardProps } from './components/EstCard.vue'
 export type { Props as InputProps } from './components/EstInput.vue'

@@ -3,7 +3,7 @@
 }
 
 .est-alert__icon {
-  @apply shrink-0;
+  @apply shrink-0 w-6 h-6;
 }
 
 .est-alert__icon--primary {
