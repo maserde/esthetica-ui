@@ -26,7 +26,7 @@
 
 .est-button:active:not(:disabled) {
   @apply translate-y-0 scale-[0.98];
-  transition-duration: 80ms !important;
+  transition-duration: var(--est-btn-active-transition-duration) !important;
 }
 
 .est-button__content {
@@ -45,7 +45,7 @@
 .est-button__spinner {
   @apply absolute top-1/2 left-1/2 w-[1em] h-[1em];
   @apply mt-[-0.5em] ml-[-0.5em];
-  animation: est-button-spin 580ms linear infinite;
+  animation: est-button-spin var(--est-btn-spinner-duration) linear infinite;
 }
 
 @keyframes est-button-spin {

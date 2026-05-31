@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import EstAlert from './EstAlert.vue'
 
 export type ToastVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
@@ -71,8 +71,6 @@ function handleDismiss() {
   }, 300)
 }
 
-const progressBarClass = computed(() => `est-toast__progress-bar--${props.variant}`)
-
 watch(
   () => props.modelValue,
   (val) => {
@@ -118,7 +116,14 @@ onBeforeUnmount(() => {
 
       <div v-if="props.duration > 0" class="est-toast__progress-track">
         <div
-          :class="['est-toast__progress-bar', progressBarClass]"
+          :class="{
+            'est-toast__progress-bar': true,
+            'est-toast__progress-bar--primary': variant === 'primary',
+            'est-toast__progress-bar--success': variant === 'success',
+            'est-toast__progress-bar--info': variant === 'info',
+            'est-toast__progress-bar--warning': variant === 'warning',
+            'est-toast__progress-bar--danger': variant === 'danger',
+          }"
           :style="{ width: `${progress}%` }"
         />
       </div>

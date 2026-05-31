@@ -71,6 +71,24 @@ export const NotDismissible: Story = {
   args: { variant: 'info', dismissible: false },
 }
 
+export const AllStates: Story = {
+  name: 'All States',
+  render: () => ({
+    components: { EstAlert },
+    template: `
+      <div style="display:flex;flex-direction:column;gap:12px;width:400px;">
+        <EstAlert variant="success">
+          <template #title>With Title</template>
+          An alert with a title and body text.
+        </EstAlert>
+        <EstAlert variant="info" :dismissible="false">
+          Not dismissible — no close button shown.
+        </EstAlert>
+      </div>
+    `,
+  }),
+}
+
 // ─── All variants overview ────────────────────────────────────────────────────
 
 export const AllVariants: Story = {

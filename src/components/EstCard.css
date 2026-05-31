@@ -1,5 +1,5 @@
 .est-card {
-  @apply rounded-lg overflow-hidden;
+  @apply overflow-hidden;
   border-radius: var(--est-card-radius);
 }
 

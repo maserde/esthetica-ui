@@ -3,6 +3,8 @@
     --est-btn-font-family: var(--est-font-sans);
     --est-btn-radius: var(--est-radius);
     --est-btn-transition-duration: 160ms;
+    --est-btn-active-transition-duration: 80ms;
+    --est-btn-spinner-duration: 580ms;
     --est-btn-focus-ring: initial;
     --est-btn-focus-ring-offset: #fff;
 

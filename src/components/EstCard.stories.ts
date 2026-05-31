@@ -61,6 +61,20 @@ export const Loading: Story = {
   args: { loading: true },
 }
 
+export const AllStates: Story = {
+  name: 'All States',
+  render: () => ({
+    components: { EstCard },
+    template: `
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <EstCard style="width:200px;">Default</EstCard>
+        <EstCard style="width:200px;" borderless>Borderless</EstCard>
+        <EstCard style="width:200px;" loading>Loading</EstCard>
+      </div>
+    `,
+  }),
+}
+
 // ─── Slots ────────────────────────────────────────────────────────────────────
 
 export const WithHeader: Story = {

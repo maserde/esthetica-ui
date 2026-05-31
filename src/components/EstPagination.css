@@ -27,7 +27,7 @@
 .est-pagination__page-input:focus {
   border-color: var(--est-pagination-focus-ring-color);
   box-shadow:
-    0 0 0 2px #ffffff,
+    0 0 0 2px var(--est-pagination-focus-ring-offset),
     0 0 0 4px var(--est-pagination-focus-ring-color);
 }
 

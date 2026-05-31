@@ -58,6 +58,36 @@ export const Borderless: Story = {
   args: { columns, rows, borderless: true },
 }
 
+export const AllVariants: Story = {
+  name: 'All Variants',
+  render: () => ({
+    components: { EstTable },
+    setup() {
+      return { columns, rows }
+    },
+    template: `
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Default</p>
+          <EstTable :columns="columns" :rows="rows" />
+        </div>
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Striped</p>
+          <EstTable :columns="columns" :rows="rows" striped />
+        </div>
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Hoverable</p>
+          <EstTable :columns="columns" :rows="rows" hoverable />
+        </div>
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Borderless</p>
+          <EstTable :columns="columns" :rows="rows" borderless />
+        </div>
+      </div>
+    `,
+  }),
+}
+
 // ─── States ───────────────────────────────────────────────────────────────────
 
 export const Loading: Story = {
