@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/vue3-vite';
-import type { InlineConfig } from 'vite';
 
 const config: StorybookConfig = {
   staticDirs: ['../public'],
@@ -13,9 +12,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
   ],
-  viteFinal(config: InlineConfig) {
-    return { ...config, base: '/' };
-  },
+  managerHead: (head) => `${head}<base href="/">`,
   framework: {
     name: '@storybook/vue3-vite',
     options: {
