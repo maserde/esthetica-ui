@@ -35,7 +35,7 @@
     --est-btn-danger-bg-pressed: var(--est-color-danger-700);
     --est-btn-danger-color: var(--est-color-danger-fg);
 
-    --est-btn-outlined-border: var(--est-color-neutral-200);
+    --est-btn-outlined-border: var(--est-color-neutral-500);
     --est-btn-outlined-border-hover: var(--est-color-neutral-300);
     --est-btn-outlined-color: var(--est-color-neutral-500);
     --est-btn-outlined-bg-hover: var(--est-color-surface);

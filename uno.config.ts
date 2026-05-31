@@ -7,7 +7,7 @@ export default defineConfig({
     presetWebFonts({
     provider: 'google',
     fonts: {
-      sans: 'Inter',
+      sans: [{ name: 'Inter', weights: ['400', '500', '600', '700'] }],
       serif: 'Roboto Slab',
       mono: 'Fira Code',
     },
