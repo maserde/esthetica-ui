@@ -8,14 +8,6 @@
     --est-btn-focus-ring: initial;
     --est-btn-focus-ring-offset: var(--est-color-surface);
 
-    --est-btn-outlined-border: var(--est-color-neutral-500);
-    --est-btn-outlined-border-hover: var(--est-color-neutral-300);
-    --est-btn-outlined-color: var(--est-color-neutral-500);
-    --est-btn-outlined-bg-hover: var(--est-color-surface);
-
-    --est-btn-ghost-color: var(--est-color-muted-fg);
-    --est-btn-ghost-bg-hover: var(--est-color-muted);
-
     /* Base */
 
     --est-btn-padding: 0.2rem 0.75rem;
@@ -74,5 +66,13 @@
     --est-btn-danger-bg-pressed: var(--est-color-danger-700);
     --est-btn-danger-color: var(--est-color-danger-fg);
     --est-btn-danger-focus-ring-color: var(--est-color-danger);
+
+    --est-btn-outlined-border: var(--est-color-neutral-500);
+    --est-btn-outlined-border-hover: var(--est-color-neutral-300);
+    --est-btn-outlined-color: var(--est-color-neutral-500);
+    --est-btn-outlined-bg-hover: var(--est-color-surface);
+
+    --est-btn-ghost-color: var(--est-color-muted-fg);
+    --est-btn-ghost-bg-hover: var(--est-color-muted);
   }
 }
