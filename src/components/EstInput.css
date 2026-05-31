@@ -19,7 +19,7 @@
   transition-timing-function: ease;
 }
 
-.est-input__wrapper:focus-within {
+.est-input__wrapper:focus-within:not(.est-input__wrapper--readonly) {
   outline-color: var(--est-input-focus-border);
   box-shadow:
     var(--est-input-shadow),

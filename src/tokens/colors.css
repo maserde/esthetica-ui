@@ -1,7 +1,7 @@
 @layer esthetica-ui-tokens {
   :root {
     --est-color-black: #070707;
-    --est-color-white: #fafaf9;
+    --est-color-white: white;
 
     --est-color-neutral-50: #f8fafc;
     --est-color-neutral-100: #f1f5f9;
