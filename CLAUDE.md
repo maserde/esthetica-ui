@@ -72,7 +72,7 @@ Do not write inline `<style>` blocks in `.vue` files. All component styles live 
 
 Props are typed with `defineProps<Interface>()` + `withDefaults`. Every prop, including optional ones, must have an explicit entry in `withDefaults` — missing entries cause Vue runtime warnings and leave consumers without a guaranteed default. Emits are typed with `defineEmits<{ event: [args] }>()`. Types (`Variant`, `Size`, etc.) are exported from the `<script setup>` block so consumers can import them.
 
-Named slots follow a consistent convention: `leading` for icons/content before the label, `trailing` for icons/content after the label, and the default slot for the primary label text.
+Named slots follow a consistent convention: `leading` for content before the label, `trailing` for content after the label, and the default slot for the primary label text. When placing icons in these slots, use a `<span>` with a UnoCSS icon class (e.g. `<span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />`). Never use inline SVGs for icons.
 
 Class bindings use object syntax with one explicit BEM modifier class per condition. Do not use string concatenation, array syntax, or computed class strings:
 

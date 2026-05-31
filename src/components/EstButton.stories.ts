@@ -1,14 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import EstButton from './EstButton.vue'
 
-const PlusIcon = `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M8 2.75a.75.75 0 0 0-1.5 0V7H2.75a.75.75 0 0 0 0 1.5H6.5v4.25a.75.75 0 0 0 1.5 0V8.5h4.25a.75.75 0 0 0 0-1.5H8V2.75Z" fill="currentColor"/>
-</svg>`
-
-const DownloadIcon = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M7 1.75a.75.75 0 0 1 .75.75v5.19l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3A.75.75 0 1 1 4.53 5.97L6.25 7.69V2.5A.75.75 0 0 1 7 1.75ZM1.75 11.5a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"/>
-</svg>`
-
 const meta = {
   title: 'Components/EstButton',
   component: EstButton,
@@ -130,11 +122,11 @@ export const AllStates: Story = {
 export const WithLeadingIcon: Story = {
   name: 'With Leading Icon',
   render: () => ({
-    components: { EstButton: EstButton },
+    components: { EstButton },
     template: `
       <EstButton variant="primary">
         <template #leading>
-          ${PlusIcon}
+          <span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />
         </template>
         Add item
       </EstButton>
@@ -145,14 +137,38 @@ export const WithLeadingIcon: Story = {
 export const WithTrailingIcon: Story = {
   name: 'With Trailing Icon',
   render: () => ({
-    components: { EstButton: EstButton },
+    components: { EstButton },
     template: `
       <EstButton variant="outlined">
         Export
         <template #trailing>
-          ${DownloadIcon}
+          <span class="i-ri-download-line w-[1em] h-[1em]" aria-hidden="true" />
         </template>
       </EstButton>
+    `,
+  }),
+}
+
+export const AllIcons: Story = {
+  name: 'All Icons',
+  render: () => ({
+    components: { EstButton },
+    template: `
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <EstButton>
+          <template #leading><span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+          Add item
+        </EstButton>
+        <EstButton variant="outlined">
+          Export
+          <template #trailing><span class="i-ri-download-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+        </EstButton>
+        <EstButton variant="secondary">
+          <template #leading><span class="i-ri-search-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+          Search
+          <template #trailing><span class="i-ri-arrow-right-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+        </EstButton>
+      </div>
     `,
   }),
 }
