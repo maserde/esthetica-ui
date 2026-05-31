@@ -70,7 +70,7 @@ Components use the `Est` prefix. CSS classes follow BEM: `.est-foo`, `.est-foo--
 
 Do not write inline `<style>` blocks in `.vue` files. All component styles live in the sibling `.css` file, linked with `<style scoped src="./EstFoo.css" />`.
 
-Props are typed with `defineProps<Interface>()` + `withDefaults`. Every prop, including optional ones, must have an explicit entry in `withDefaults` — missing entries cause Vue runtime warnings and leave consumers without a guaranteed default. Emits are typed with `defineEmits<{ event: [args] }>()`. Types (`Variant`, `Size`, etc.) are exported from the `<script setup>` block so consumers can import them.
+Props are typed with `defineProps<Interface>()` + `withDefaults`. Every prop, including optional ones, must have an explicit entry in `withDefaults` — missing entries cause Vue runtime warnings and leave consumers without a guaranteed default. Only assign the result to `const props` when props need to be accessed in script code; omit the assignment when props are only used in the template, otherwise the linter will report an unused-variable error. Emits are typed with `defineEmits<{ event: [args] }>()`. Types (`Variant`, `Size`, etc.) are exported from the `<script setup>` block so consumers can import them.
 
 Named slots follow a consistent convention: `leading` for content before the label, `trailing` for content after the label, and the default slot for the primary label text. When placing icons in these slots, use a `<span>` with a UnoCSS icon class (e.g. `<span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />`). Never use inline SVGs for icons.
 

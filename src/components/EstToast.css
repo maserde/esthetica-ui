@@ -4,7 +4,7 @@
   border-radius: var(--est-toast-radius);
   overflow: hidden;
   box-shadow: var(--est-toast-shadow);
-  animation: est-toast-enter 0.3s ease-out;
+  animation: est-toast-enter var(--est-toast-animation-duration) ease-out;
 }
 
 .est-toast__progress-track {
@@ -14,7 +14,7 @@
 
 .est-toast__progress-bar {
   height: 100%;
-  transition: width 50ms linear;
+  transition: width var(--est-toast-progress-transition-duration) linear;
 }
 
 .est-toast__progress-bar--primary {
@@ -56,9 +56,9 @@
 }
 
 .est-toast-enter-active {
-  animation: est-toast-enter 0.3s ease-out;
+  animation: est-toast-enter var(--est-toast-animation-duration) ease-out;
 }
 
 .est-toast-leave-active {
-  animation: est-toast-leave 0.3s ease-in;
+  animation: est-toast-leave var(--est-toast-animation-duration) ease-in;
 }

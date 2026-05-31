@@ -46,7 +46,7 @@
 
 /* Header */
 .est-card__header {
-  @apply py-2 px-3;
+  padding: var(--est-card-padding-y) var(--est-card-padding-x);
 }
 
 .est-card__header--bordered {
@@ -61,7 +61,7 @@
 
 /* Footer */
 .est-card__footer {
-  @apply py-2 px-3;
+  padding: var(--est-card-padding-y) var(--est-card-padding-x);
 }
 
 .est-card__footer--bordered {

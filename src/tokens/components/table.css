@@ -13,5 +13,9 @@
     --est-table-slot-padding-x: 1.25rem;
     --est-table-slot-padding-y-header: 1rem;
     --est-table-slot-padding-y-footer: 0.75rem;
+    --est-table-cell-padding-x: 1rem;
+    --est-table-header-cell-padding-y: 0.75rem;
+    --est-table-body-cell-padding-y: 0.875rem;
+    --est-table-empty-padding-y: 2rem;
   }
 }

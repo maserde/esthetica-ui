@@ -110,7 +110,7 @@
 
 .est-pagination__rows-chevron {
   color: var(--est-pagination-muted-color);
-  transition: transform 150ms ease;
+  transition: transform var(--est-pagination-transition-duration) ease;
 }
 
 .est-pagination__rows-chevron--open {

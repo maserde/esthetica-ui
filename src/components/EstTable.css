@@ -31,7 +31,8 @@
 }
 
 .est-table__header-cell {
-  @apply px-4 py-3 text-left text-xs font-semibold tracking-wide;
+  @apply text-left text-xs font-semibold tracking-wide;
+  padding: var(--est-table-header-cell-padding-y) var(--est-table-cell-padding-x);
   color: var(--est-table-header-color);
 }
 
@@ -53,11 +54,13 @@
 }
 
 .est-table__body-cell {
-  @apply px-4 py-3.5 text-sm;
+  @apply text-sm;
+  padding: var(--est-table-body-cell-padding-y) var(--est-table-cell-padding-x);
   color: var(--est-table-body-color);
 }
 
 .est-table__empty {
-  @apply px-4 py-8 text-center text-sm;
+  @apply text-center text-sm;
+  padding: var(--est-table-empty-padding-y) var(--est-table-cell-padding-x);
   color: var(--est-table-empty-color);
 }
