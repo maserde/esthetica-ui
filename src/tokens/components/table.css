@@ -1,6 +1,6 @@
 @layer esthetica-ui-tokens {
   :root {
-    --est-table-bg: var(--est-color-surface);
+    --est-table-bg: var(--est-color-white);
     --est-table-border: var(--est-color-neutral-200);
     --est-table-header-bg: var(--est-color-neutral-50);
     --est-table-header-color: var(--est-color-neutral-500);

@@ -10,7 +10,7 @@
     --est-card-border: var(--est-card-default-border);
 
     /* Colors */
-    --est-card-default-bg: var(--est-color-surface);
+    --est-card-default-bg: var(--est-color-white);
     --est-card-default-color: var(--est-color-neutral-800);
     --est-card-default-border: rgba(0, 0, 0, 0.1);
 
