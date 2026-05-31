@@ -19,7 +19,7 @@ const meta = {
     setup() {
       return { args }
     },
-    template: `<EstInputOTP v-bind="args" style="width:280px;" />`,
+    template: `<EstInputOTP v-bind="args" />`,
   }),
 } satisfies Meta<typeof EstInputOTP>
 

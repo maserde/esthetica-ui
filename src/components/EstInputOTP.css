@@ -8,16 +8,20 @@
 }
 
 .est-otp__cells {
-  @apply flex gap-4;
+  @apply flex;
+  gap: var(--est-otp-cell-gap);
 }
 
 .est-otp__cell {
-  @apply w-full border text-center text-lg font-semibold outline-none transition;
+  @apply border text-center font-semibold outline-none transition shrink-0;
+  width: var(--est-otp-cell-size);
+  height: var(--est-otp-cell-size);
+  font-size: var(--est-otp-cell-font-size);
+  padding: 0;
   border-radius: var(--est-input-radius);
   background-color: var(--est-input-bg);
   color: var(--est-input-color);
   border-color: var(--est-input-border);
-  padding: var(--est-input-padding-y) var(--est-input-padding-x);
   box-shadow: var(--est-input-shadow);
   transition-duration: var(--est-input-transition-duration);
 }

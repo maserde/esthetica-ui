@@ -1,0 +1,7 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-otp-cell-size: 3rem;
+    --est-otp-cell-gap: 0.75rem;
+    --est-otp-cell-font-size: 1.125rem;
+  }
+}
