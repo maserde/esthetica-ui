@@ -24,7 +24,6 @@ const emit = defineEmits<{
 }>()
 
 const isVisible = ref(props.modelValue)
-const isLeaving = ref(false)
 const progress = ref(100)
 
 let timer: ReturnType<typeof setTimeout> | null = null
@@ -62,13 +61,12 @@ function clearTimers() {
 
 function handleDismiss() {
   clearTimers()
-  isLeaving.value = true
+  isVisible.value = false
+}
 
-  setTimeout(() => {
-    isVisible.value = false
-    emit('update:modelValue', false)
-    emit('dismiss')
-  }, 300)
+function onAfterLeave() {
+  emit('update:modelValue', false)
+  emit('dismiss')
 }
 
 watch(
@@ -76,7 +74,6 @@ watch(
   (val) => {
     if (val) {
       isVisible.value = true
-      isLeaving.value = false
       progress.value = 100
       startTimer()
     } else {
@@ -97,16 +94,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <Transition name="est-toast">
-    <div
-      v-if="isVisible"
-      :class="{
-        'est-toast': true,
-        'est-toast--leaving': isLeaving,
-      }"
-      role="alert"
-      aria-live="assertive"
-    >
+  <Transition name="est-toast" @after-leave="onAfterLeave">
+    <div v-if="isVisible" class="est-toast" role="alert" aria-live="assertive">
       <EstAlert :variant="variant" :dismissible="dismissible" @dismiss="handleDismiss">
         <template v-if="$slots.title" #title>
           <slot name="title" />

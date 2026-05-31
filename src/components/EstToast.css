@@ -7,10 +7,6 @@
   animation: est-toast-enter 0.3s ease-out;
 }
 
-.est-toast--leaving {
-  animation: est-toast-leave 0.3s ease-in forwards;
-}
-
 .est-toast__progress-track {
   height: var(--est-toast-progress-height);
   background-color: var(--est-toast-progress-track-bg);
