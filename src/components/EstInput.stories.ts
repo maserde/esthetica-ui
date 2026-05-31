@@ -9,16 +9,10 @@ const meta = {
     modelValue: { control: 'text' },
     label: { control: 'text' },
     placeholder: { control: 'text' },
-    leftIcon: { control: 'text' },
-    leftIconLabel: { control: 'text' },
-    rightIcon: { control: 'text' },
-    rightIconLabel: { control: 'text' },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
     error: { control: 'text' },
     'onUpdate:modelValue': { action: 'update:modelValue' },
-    'onLeft-icon-click': { action: 'left-icon-click' },
-    'onRight-icon-click': { action: 'right-icon-click' },
   },
   render: (args) => ({
     components: { EstInput },
@@ -56,34 +50,55 @@ export const Readonly: Story = {
   args: { label: 'Email', modelValue: 'user@example.com', readonly: true },
 }
 
-// ─── Icon variants ────────────────────────────────────────────────────────────
+// ─── Slot variants ────────────────────────────────────────────────────────────
 
-export const WithLeftIcon: Story = {
-  name: 'With Left Icon',
-  args: {
-    label: 'Email',
-    placeholder: 'Enter your email',
-    leftIcon: 'i-ri-mail-line',
-  },
+export const WithLeadingIcon: Story = {
+  name: 'With Leading Icon',
+  render: () => ({
+    components: { EstInput },
+    template: `
+      <EstInput label="Email" placeholder="Enter your email" style="width:320px;">
+        <template #leading>
+          <span class="i-ri-mail-line w-6 h-6 flex-shrink-0" aria-hidden="true" />
+        </template>
+      </EstInput>
+    `,
+  }),
 }
 
-export const WithRightIcon: Story = {
-  name: 'With Right Icon',
-  args: {
-    label: 'Password',
-    placeholder: 'Enter your password',
-    rightIcon: 'i-ri-eye-line',
-  },
+export const WithTrailingIcon: Story = {
+  name: 'With Trailing Icon',
+  render: () => ({
+    components: { EstInput },
+    template: `
+      <EstInput label="Password" placeholder="Enter your password" style="width:320px;">
+        <template #trailing>
+          <button type="button" class="flex items-center flex-shrink-0 bg-transparent border-none p-0 cursor-pointer" aria-label="Show password">
+            <span class="i-ri-eye-line w-6 h-6" aria-hidden="true" />
+          </button>
+        </template>
+      </EstInput>
+    `,
+  }),
 }
 
-export const WithBothIcons: Story = {
-  name: 'With Both Icons',
-  args: {
-    label: 'Search',
-    placeholder: 'Search...',
-    leftIcon: 'i-ri-search-line',
-    rightIcon: 'i-ri-close-line',
-  },
+export const WithBothSlots: Story = {
+  name: 'With Both Slots',
+  render: () => ({
+    components: { EstInput },
+    template: `
+      <EstInput label="Search" placeholder="Search..." style="width:320px;">
+        <template #leading>
+          <span class="i-ri-search-line w-6 h-6 flex-shrink-0" aria-hidden="true" />
+        </template>
+        <template #trailing>
+          <button type="button" class="flex items-center flex-shrink-0 bg-transparent border-none p-0 cursor-pointer" aria-label="Clear">
+            <span class="i-ri-close-line w-6 h-6" aria-hidden="true" />
+          </button>
+        </template>
+      </EstInput>
+    `,
+  }),
 }
 
 // ─── All states overview ──────────────────────────────────────────────────────
@@ -96,7 +111,11 @@ export const AllStates: Story = {
       <div style="display:flex;flex-direction:column;gap:16px;width:320px;">
         <EstInput label="Default" placeholder="Placeholder text" />
         <EstInput label="With value" model-value="user@example.com" />
-        <EstInput label="With icon" placeholder="Search..." left-icon="i-ri-search-line" />
+        <EstInput label="With icon" placeholder="Search...">
+          <template #leading>
+            <span class="i-ri-search-line w-6 h-6 flex-shrink-0" aria-hidden="true" />
+          </template>
+        </EstInput>
         <EstInput label="Error" model-value="invalid" error="This field is required." />
         <EstInput label="Disabled" placeholder="Disabled" :disabled="true" />
         <EstInput label="Read-only" model-value="read-only value" :readonly="true" />

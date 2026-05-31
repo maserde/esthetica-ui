@@ -46,24 +46,6 @@
   @apply opacity-50 pointer-events-none;
 }
 
-.est-input__icon-left,
-.est-input__icon-right {
-  @apply flex items-center flex-shrink-0;
-  @apply bg-transparent border-none p-0 cursor-pointer outline-none;
-  color: var(--est-input-icon-color);
-  transition: color var(--est-input-transition-duration) ease;
-}
-
-.est-input__icon-left:hover:not(:disabled),
-.est-input__icon-right:hover:not(:disabled) {
-  color: var(--est-input-icon-hover-color);
-}
-
-.est-input__icon-left:focus-visible,
-.est-input__icon-right:focus-visible {
-  color: var(--est-input-icon-hover-color);
-}
-
 .est-input__field {
   @apply flex-1 min-w-0 border-0 outline-none bg-transparent;
   color: var(--est-input-color);

@@ -7,10 +7,6 @@ export interface Props {
   modelValue?: string
   label?: string
   placeholder?: string
-  leftIcon?: string
-  leftIconLabel?: string
-  rightIcon?: string
-  rightIconLabel?: string
   disabled?: boolean
   readonly?: boolean
   error?: string
@@ -21,10 +17,6 @@ const props = withDefaults(defineProps<Props>(), {
   modelValue: '',
   label: undefined,
   placeholder: undefined,
-  leftIcon: undefined,
-  leftIconLabel: undefined,
-  rightIcon: undefined,
-  rightIconLabel: undefined,
   disabled: false,
   readonly: false,
   error: undefined,
@@ -33,8 +25,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<{
   'update:modelValue': [value: string]
-  'left-icon-click': []
-  'right-icon-click': []
 }>()
 
 const generatedId = useId()
@@ -59,16 +49,7 @@ function handleInput(event: Event) {
         'est-input__wrapper--readonly': readonly,
       }"
     >
-      <button
-        v-if="leftIcon"
-        type="button"
-        class="est-input__icon-left"
-        :disabled="disabled"
-        :aria-label="leftIconLabel"
-        @click="emit('left-icon-click')"
-      >
-        <span class="w-6 h-6" :class="{ [leftIcon]: true }" aria-hidden="true" />
-      </button>
+      <slot name="leading" />
 
       <input
         v-bind="$attrs"
@@ -82,16 +63,7 @@ function handleInput(event: Event) {
         @input="handleInput"
       />
 
-      <button
-        v-if="rightIcon"
-        type="button"
-        class="est-input__icon-right"
-        :disabled="disabled"
-        :aria-label="rightIconLabel"
-        @click="emit('right-icon-click')"
-      >
-        <span class="w-6 h-6" :class="{ [rightIcon]: true }" aria-hidden="true" />
-      </button>
+      <slot name="trailing" />
     </div>
 
     <p v-if="error" class="est-input__error" role="alert">
