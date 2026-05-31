@@ -5,7 +5,7 @@ addons.setConfig({
   theme: create({
     base: 'dark',
     brandTitle: 'Esthetic UI',
-    brandImage: '/esthetica-logo-white.svg',
+    brandImage: '/esthetica-logo.svg',
     brandTarget: '_self',
   }),
 });
