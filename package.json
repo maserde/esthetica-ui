@@ -48,7 +48,7 @@
     "format": "oxfmt src/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "serve-storybook": "npx http-server ./storybook-static",
+    "serve-storybook": "npx http-server -p 9990 ./storybook-static",
     "prepublishOnly": "npm run build",
     "release:patch": "npm version patch && npm publish --access public",
     "release:minor": "npm version minor && npm publish --access public",
