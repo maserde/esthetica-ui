@@ -1,11 +1,11 @@
-import { addons } from '@storybook/manager-api';
-import { create } from '@storybook/theming/create';
+import { addons } from 'storybook/manager-api';
+import { create } from 'storybook/theming/create';
 
 addons.setConfig({
   theme: create({
-    base: 'light',
+    base: 'dark',
     brandTitle: 'Esthetic UI',
-    brandImage: '/esthetica-logo.svg',
+    brandImage: '/esthetica-logo-white.svg',
     brandTarget: '_self',
   }),
 });
