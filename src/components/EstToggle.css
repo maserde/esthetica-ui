@@ -78,11 +78,13 @@
 }
 
 .est-toggle__label {
-  @apply text-sm font-medium;
   color: var(--est-toggle-label-color);
+  font-size: var(--est-toggle-label-font-size);
+  font-weight: var(--est-toggle-label-font-weight);
 }
 
 .est-toggle__description {
-  @apply text-xs font-normal;
   color: var(--est-toggle-description-color);
+  font-size: var(--est-toggle-description-font-size);
+  font-weight: var(--est-toggle-description-font-weight);
 }
