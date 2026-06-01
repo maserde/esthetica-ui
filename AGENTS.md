@@ -135,6 +135,7 @@ Rules:
 - The base class **never** references `--est-foo-{variant}-*` or `--est-foo-{size}-*` tokens directly — only the base `--est-foo-*` tokens.
 - If a modifier does not need to change a property, it simply omits that token override — the base token's default value applies.
 - Use `@apply` only for structural / layout utilities (Tailwind/UnoCSS). Theme-able values (colours, spacing, typography) must use CSS custom properties.
+- Use `:deep()` only when a CSS custom property override is not sufficient — i.e., for structural properties that the child component does not expose as a token (e.g. `width`, `height`, `text-align`). Prefer overriding `--est-foo-*` variables at a parent scope first; reach for `:deep()` only for what is left.
 
 ### Component conventions
 
