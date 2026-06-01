@@ -46,7 +46,9 @@
 
 .est-tag {
   @apply inline-flex items-center justify-center;
-  @apply text-xs font-semibold uppercase tracking-wide whitespace-nowrap select-none;
+  @apply tracking-wide whitespace-nowrap select-none;
+  font-size: var(--est-tag-font-size);
+  font-weight: var(--est-tag-font-weight);
   padding: var(--est-tag-padding);
   border-radius: var(--est-tag-border-radius);
   background-color: var(--est-tag-bg-color);

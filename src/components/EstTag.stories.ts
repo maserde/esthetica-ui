@@ -14,7 +14,7 @@ const meta = {
     setup() {
       return { args }
     },
-    template: `<EstTag v-bind="args">TAG</EstTag>`,
+    template: `<EstTag v-bind="args">Content</EstTag>`,
   }),
 } satisfies Meta<typeof EstTag>
 
@@ -58,16 +58,16 @@ export const AllVariants: Story = {
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <EstTag variant="info" type="secondary">INFO</EstTag>
-          <EstTag variant="success" type="secondary">SUCCESS</EstTag>
-          <EstTag variant="warning" type="secondary">WARNING</EstTag>
-          <EstTag variant="danger" type="secondary">DANGER</EstTag>
+          <EstTag variant="info" type="secondary">Confirmed</EstTag>
+          <EstTag variant="success" type="secondary">Sent</EstTag>
+          <EstTag variant="warning" type="secondary">On-hold</EstTag>
+          <EstTag variant="danger" type="secondary">Error</EstTag>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <EstTag variant="info" type="primary">INFO</EstTag>
-          <EstTag variant="success" type="primary">SUCCESS</EstTag>
-          <EstTag variant="warning" type="primary">WARNING</EstTag>
-          <EstTag variant="danger" type="primary">DANGER</EstTag>
+          <EstTag variant="info" type="primary">Info</EstTag>
+          <EstTag variant="success" type="primary">Success</EstTag>
+          <EstTag variant="warning" type="primary">Warning</EstTag>
+          <EstTag variant="danger" type="primary">Danger</EstTag>
         </div>
       </div>
     `,
