@@ -5,6 +5,8 @@
     --est-tag-border-radius: 0.25rem;
     --est-tag-bg-color: var(--est-tag-success-secondary-bg-color);
     --est-tag-color: var(--est-tag-success-secondary-color);
+    --est-tag-font-size: var(--est-font-size-sm);
+    --est-tag-font-weight: var(--est-font-weight-semibold);
 
     /* ── Color/style variant presets ─────────────────────────────── */
     --est-tag-info-secondary-bg-color: var(--est-color-info-100);
