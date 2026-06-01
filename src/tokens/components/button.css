@@ -15,7 +15,7 @@
     --est-btn-bg-color: var(--est-color-primary);
     --est-btn-bg-hover: var(--est-color-primary-hover);
     --est-btn-bg-pressed: var(--est-color-primary-700);
-    --est-btn-color: var(--est-color-primary-fg);
+    --est-btn-color: var(--est-color-primary-foreground);
     --est-btn-focus-ring-color: var(--est-color-primary-700);
     --est-btn-border-color: var(--est-color-border);
     --est-btn-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
@@ -43,31 +43,31 @@
     --est-btn-secondary-bg-color: var(--est-color-secondary);
     --est-btn-secondary-bg-hover: var(--est-color-secondary-hover);
     --est-btn-secondary-bg-pressed: var(--est-color-secondary-pressed);
-    --est-btn-secondary-color: var(--est-color-secondary-fg);
+    --est-btn-secondary-color: var(--est-color-secondary-foreground);
     --est-btn-secondary-focus-ring-color: var(--est-color-border);
 
     --est-btn-info-bg-color: var(--est-color-info);
     --est-btn-info-bg-hover: var(--est-color-info-hover);
     --est-btn-info-bg-pressed: var(--est-color-info-700);
-    --est-btn-info-color: var(--est-color-info-fg);
+    --est-btn-info-color: var(--est-color-info-foreground);
     --est-btn-info-focus-ring-color: var(--est-color-info);
 
     --est-btn-warning-bg-color: var(--est-color-warning);
     --est-btn-warning-bg-hover: var(--est-color-warning-hover);
     --est-btn-warning-bg-pressed: var(--est-color-warning-700);
-    --est-btn-warning-color: var(--est-color-warning-fg);
+    --est-btn-warning-color: var(--est-color-warning-foreground);
     --est-btn-warning-focus-ring-color: var(--est-color-warning);
 
     --est-btn-success-bg-color: var(--est-color-success);
     --est-btn-success-bg-hover: var(--est-color-success-hover);
     --est-btn-success-bg-pressed: var(--est-color-success-700);
-    --est-btn-success-color: var(--est-color-success-fg);
+    --est-btn-success-color: var(--est-color-success-foreground);
     --est-btn-success-focus-ring-color: var(--est-color-success);
 
     --est-btn-danger-bg-color: var(--est-color-danger);
     --est-btn-danger-bg-hover: var(--est-color-danger-hover);
     --est-btn-danger-bg-pressed: var(--est-color-danger-700);
-    --est-btn-danger-color: var(--est-color-danger-fg);
+    --est-btn-danger-color: var(--est-color-danger-foreground);
     --est-btn-danger-focus-ring-color: var(--est-color-danger);
 
     --est-btn-outlined-border: var(--est-color-neutral-500);

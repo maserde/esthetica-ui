@@ -18,7 +18,7 @@
     --est-color-secondary: #e7e5e4;
     --est-color-secondary-hover: #d6d3d1;
     --est-color-secondary-pressed: #c6c3c1;
-    --est-color-secondary-fg: #1c1917;
+    --est-color-secondary-foreground: #1c1917;
 
     --est-color-primary-50: #fef1ee;
     --est-color-primary-100: #fcd5cb;
@@ -33,7 +33,7 @@
     --est-color-primary-950: #671906;
     --est-color-primary: var(--est-color-primary-600);
     --est-color-primary-hover: var(--est-color-primary-500);
-    --est-color-primary-fg: var(--est-color-white);
+    --est-color-primary-foreground: var(--est-color-white);
 
     --est-color-info-100: #e0f2fe;
     --est-color-info-300: #7dd3fc;
@@ -43,7 +43,7 @@
     --est-color-info-900: #0c4a6e;
     --est-color-info: var(--est-color-info-500);
     --est-color-info-hover: var(--est-color-info-400);
-    --est-color-info-fg: var(--est-color-white);
+    --est-color-info-foreground: var(--est-color-white);
 
     --est-color-warning-100: #fef3c7;
     --est-color-warning-300: #fcd34d;
@@ -53,7 +53,7 @@
     --est-color-warning-900: #78350f;
     --est-color-warning: var(--est-color-warning-500);
     --est-color-warning-hover: var(--est-color-warning-400);
-    --est-color-warning-fg: var(--est-color-white);
+    --est-color-warning-foreground: var(--est-color-white);
 
     --est-color-success-100: #d1fae5;
     --est-color-success-300: #6ee7b7;
@@ -63,7 +63,7 @@
     --est-color-success-900: #064e3b;
     --est-color-success: var(--est-color-success-500);
     --est-color-success-hover: var(--est-color-success-400);
-    --est-color-success-fg: var(--est-color-white);
+    --est-color-success-foreground: var(--est-color-white);
 
     --est-color-danger-50: #ffe6e6;
     --est-color-danger-100: #ffb5b5;
@@ -78,7 +78,7 @@
     --est-color-danger-950: #460000;
     --est-color-danger: var(--est-color-danger-600);
     --est-color-danger-hover: var(--est-color-danger-500);
-    --est-color-danger-fg: var(--est-color-white);
+    --est-color-danger-foreground: var(--est-color-white);
 
     --est-color-border: #a8a29e;
     --est-color-border-strong: #1c1917;
