@@ -2,18 +2,21 @@
   --est-btn-padding: var(--est-btn-sm-padding);
   --est-btn-min-height: var(--est-btn-sm-min-height);
   --est-btn-font-size: var(--est-btn-sm-font-size);
+  --est-btn-radius: var(--est-btn-sm-radius);
 }
 
 .est-button--md {
   --est-btn-padding: var(--est-btn-md-padding);
   --est-btn-min-height: var(--est-btn-md-min-height);
   --est-btn-font-size: var(--est-btn-md-font-size);
+  --est-btn-radius: var(--est-btn-md-radius);
 }
 
 .est-button--lg {
   --est-btn-padding: var(--est-btn-lg-padding);
   --est-btn-min-height: var(--est-btn-lg-min-height);
   --est-btn-font-size: var(--est-btn-lg-font-size);
+  --est-btn-radius: var(--est-btn-lg-radius);
 }
 
 .est-button--secondary {

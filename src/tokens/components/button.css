@@ -1,7 +1,6 @@
 @layer esthetica-ui-tokens {
   :root {
     --est-btn-font-family: var(--est-font-sans);
-    --est-btn-radius: var(--est-radius);
     --est-btn-transition-duration: 160ms;
     --est-btn-active-transition-duration: 80ms;
     --est-btn-spinner-duration: 580ms;
@@ -20,6 +19,7 @@
     --est-btn-focus-ring-color: var(--est-color-primary-700);
     --est-btn-border-color: var(--est-color-border);
     --est-btn-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+    --est-btn-radius: 4px;
 
     /* Variants */
 
@@ -27,14 +27,17 @@
     --est-btn-sm-padding: 0.5rem 0.5rem;
     --est-btn-sm-min-height: 2rem;
     --est-btn-sm-font-size: 0.75rem;
+    --est-btn-sm-radius: 4px;
 
     --est-btn-md-padding: 0.2rem 0.75rem;
     --est-btn-md-min-height: 2rem;
     --est-btn-md-font-size: 0.75rem;
+    --est-btn-md-radius: 4px;
 
     --est-btn-lg-padding: 1rem 1.5rem;
     --est-btn-lg-min-height: 2rem;
     --est-btn-lg-font-size: 1rem;
+    --est-btn-lg-radius: 8px;
 
     /* Colors */
     --est-btn-secondary-bg-color: var(--est-color-secondary);
