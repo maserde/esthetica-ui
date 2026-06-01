@@ -3,8 +3,9 @@
 }
 
 .est-input__label {
-  @apply text-sm font-semibold;
   color: var(--est-input-label-color);
+  font-size: var(--est-input-label-font-size);
+  font-weight: var(--est-input-label-font-weight);
 }
 
 .est-input__wrapper--error {
@@ -63,6 +64,8 @@
 }
 
 .est-input__error {
-  @apply flex items-center gap-1 text-xs;
+  @apply flex items-center gap-1;
   color: var(--est-input-error-color);
+  font-size: var(--est-input-error-font-size);
+  font-weight: var(--est-input-error-font-weight);
 }
