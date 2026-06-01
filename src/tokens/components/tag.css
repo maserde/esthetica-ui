@@ -1,0 +1,30 @@
+@layer esthetica-ui-tokens {
+  :root {
+    /* ── Base tokens (what the component reads directly) ─────────── */
+    --est-tag-padding: 0.25rem 0.5rem;
+    --est-tag-border-radius: 0.25rem;
+    --est-tag-bg-color: var(--est-tag-success-secondary-bg-color);
+    --est-tag-color: var(--est-tag-success-secondary-color);
+
+    /* ── Color/style variant presets ─────────────────────────────── */
+    --est-tag-info-secondary-bg-color: var(--est-color-info-100);
+    --est-tag-info-secondary-color: var(--est-color-info-700);
+    --est-tag-info-primary-bg-color: var(--est-color-info-700);
+    --est-tag-info-primary-color: var(--est-color-white);
+
+    --est-tag-success-secondary-bg-color: var(--est-color-success-100);
+    --est-tag-success-secondary-color: var(--est-color-success-700);
+    --est-tag-success-primary-bg-color: var(--est-color-success-700);
+    --est-tag-success-primary-color: var(--est-color-white);
+
+    --est-tag-warning-secondary-bg-color: var(--est-color-warning-100);
+    --est-tag-warning-secondary-color: var(--est-color-warning-700);
+    --est-tag-warning-primary-bg-color: var(--est-color-warning-700);
+    --est-tag-warning-primary-color: var(--est-color-white);
+
+    --est-tag-danger-secondary-bg-color: var(--est-color-danger-100);
+    --est-tag-danger-secondary-color: var(--est-color-danger-700);
+    --est-tag-danger-primary-bg-color: var(--est-color-danger-700);
+    --est-tag-danger-primary-color: var(--est-color-white);
+  }
+}

@@ -10,6 +10,8 @@ export { default as EstToast } from './components/EstToast.vue'
 export { default as EstPagination } from './components/EstPagination.vue'
 export { default as EstTable } from './components/EstTable.vue'
 export { default as EstPasswordMeter } from './components/EstPasswordMeter.vue'
+export { default as EstTag } from './components/EstTag.vue'
+export { default as EstToggle } from './components/EstToggle.vue'
 
 export type {
   Variant as ButtonVariant,
@@ -26,3 +28,5 @@ export type { ToastVariant, Props as ToastProps } from './components/EstToast.vu
 export type { Props as PaginationProps } from './components/EstPagination.vue'
 export type { TableColumn, Props as TableProps } from './components/EstTable.vue'
 export type { Props as PasswordMeterProps } from './components/EstPasswordMeter.vue'
+export type { TagVariant, TagType, Props as TagProps } from './components/EstTag.vue'
+export type { ToggleSize, Props as ToggleProps } from './components/EstToggle.vue'
