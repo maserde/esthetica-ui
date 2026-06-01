@@ -24,7 +24,7 @@
 }
 
 .est-alert__content {
-  @apply flex-1 min-w-0;
+  @apply flex-1 min-w-0 gap-4;
 }
 
 .est-alert__title--primary {
