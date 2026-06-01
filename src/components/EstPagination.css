@@ -7,28 +7,32 @@
 
 .est-pagination__info {
   @apply flex items-center gap-2;
+  --est-input-bg: var(--est-pagination-btn-bg);
+  --est-input-border: var(--est-pagination-border-color);
+  --est-input-color: var(--est-pagination-text-color);
+  --est-input-font-size: var(--est-pagination-font-size);
+  --est-input-focus-border: var(--est-pagination-focus-ring-color);
+  --est-input-focus-ring-color: var(--est-pagination-focus-ring-color);
+  --est-input-focus-ring-offset: var(--est-pagination-focus-ring-offset);
+  --est-input-padding-x: 0;
+  --est-input-padding-y: 0;
+  --est-input-transition-duration: var(--est-pagination-transition-duration);
 }
 
 .est-pagination__info-text {
-  @apply text-xs font-normal whitespace-nowrap;
+  @apply whitespace-nowrap;
   color: var(--est-pagination-text-color);
-}
-
-.est-pagination__page-input {
-  @apply w-8 h-8 border rounded-md text-center outline-none transition;
-  background-color: var(--est-pagination-btn-bg);
   font-size: var(--est-pagination-font-size);
-  font-weight: 400;
-  color: var(--est-pagination-text-color);
-  border-color: var(--est-pagination-border-color);
-  transition-duration: var(--est-pagination-transition-duration);
+  font-weight: var(--est-pagination-font-weight);
 }
 
-.est-pagination__page-input:focus {
-  border-color: var(--est-pagination-focus-ring-color);
-  box-shadow:
-    0 0 0 2px var(--est-pagination-focus-ring-offset),
-    0 0 0 4px var(--est-pagination-focus-ring-color);
+.est-pagination__info :deep(.est-input__wrapper) {
+  @apply w-8 h-8;
+}
+
+.est-pagination__info :deep(.est-input__field) {
+  @apply text-center;
+  font-weight: var(--est-pagination-font-weight);
 }
 
 /* ─── Nav section ──────────────────────────────────────────────────────────── */
@@ -86,8 +90,9 @@
 
 .est-pagination__rows-label {
   @apply whitespace-nowrap;
-  font-size: var(--est-pagination-font-size);
   color: var(--est-pagination-text-color);
+  font-size: var(--est-pagination-font-size);
+  font-weight: var(--est-pagination-font-weight);
 }
 
 .est-pagination__rows-dropdown {

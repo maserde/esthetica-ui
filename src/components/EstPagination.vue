@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import EstInput from './EstInput.vue'
 
 export interface Props {
   currentPage?: number
@@ -104,13 +105,11 @@ const visiblePages = computed(() => {
   <div class="est-pagination">
     <div class="est-pagination__info">
       <span class="est-pagination__info-text">Showing page</span>
-      <input
-        :value="pageInputValue"
-        class="est-pagination__page-input"
+      <EstInput
+        v-model="pageInputValue"
         type="text"
         inputmode="numeric"
         aria-label="Current page"
-        @input="pageInputValue = ($event.target as HTMLInputElement).value"
         @blur="handlePageInputChange"
         @keydown="handlePageInputKeydown"
       />
