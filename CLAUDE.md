@@ -134,7 +134,7 @@ Rules:
 - Modifier classes always appear **before** the base class in the file.
 - The base class **never** references `--est-foo-{variant}-*` or `--est-foo-{size}-*` tokens directly — only the base `--est-foo-*` tokens.
 - If a modifier does not need to change a property, it simply omits that token override — the base token's default value applies.
-- Use `@apply` only for structural / layout utilities (Tailwind/UnoCSS). Theme-able values (colours, spacing, typography) must use CSS custom properties.
+- Use `@apply` for structural / layout utilities (e.g. `flex`, `items-center`, `w-full`) and for typography utilities (`text-{size}`, `font-{weight}`). Typography utilities are safe because `uno.config.ts` maps them to `--est-font-*` CSS custom properties — `@apply text-sm font-semibold` compiles to `font-size: var(--est-font-size-sm); line-height: var(--est-font-line-height-sm); font-weight: var(--est-font-weight-semibold);`, which consumers can override. Colours must always use CSS custom properties directly (`var(--est-color-*)`); never use colour utility classes with `@apply`.
 
 ### Component conventions
 

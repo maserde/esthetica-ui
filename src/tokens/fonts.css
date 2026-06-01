@@ -1,0 +1,29 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-font-size-xs: 0.75rem;
+    --est-font-size-sm: 0.875rem;
+    --est-font-size-base: 1rem;
+    --est-font-size-lg: 1.125rem;
+    --est-font-size-xl: 1.25rem;
+    --est-font-size-2xl: 1.5rem;
+    --est-font-size-3xl: 1.75rem;
+    --est-font-size-4xl: 2rem;
+
+    --est-font-line-height-xs: 130%;
+    --est-font-line-height-sm: 142%;
+    --est-font-line-height-base: 150%;
+    --est-font-line-height-lg: 156%;
+    --est-font-line-height-xl: 140%;
+    --est-font-line-height-2xl: 132%;
+    --est-font-line-height-3xl: 120%;
+    --est-font-line-height-4xl: 111%;
+
+    --est-font-weight-normal: 400;
+    --est-font-weight-light: 300;
+    --est-font-weight-medium: 500;
+    --est-font-weight-semibold: 600;
+    --est-font-weight-bold: 700;
+    --est-font-weight-extrabold: 800;
+    --est-font-weight-black: 900;
+  }
+}
