@@ -1,6 +1,9 @@
 @layer esthetica-ui-tokens {
   :root {
     --est-alert-icon-size: 1.5rem;
+    --est-alert-body-font-size: var(--est-font-size-sm);
+    --est-alert-title-font-size: var(--est-font-size-sm);
+    --est-alert-title-font-weight: var(--est-font-weight-semibold);
 
     /* Base */
     --est-alert-icon-color: var(--est-alert-success-icon-color);
