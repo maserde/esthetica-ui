@@ -1,4 +1,5 @@
 @import './tokens/global.css';
+@import './tokens/fonts.css';
 @import './tokens/colors.css';
 
 @import './tokens/components/button.css';
