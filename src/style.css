@@ -12,3 +12,5 @@
 @import './tokens/components/table.css';
 @import './tokens/components/password-meter.css';
 @import './tokens/components/otp.css';
+@import './tokens/components/tag.css';
+@import './tokens/components/toggle.css';

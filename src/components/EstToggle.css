@@ -1,0 +1,88 @@
+/* ── Size modifiers ──────────────────────────────────────────────── */
+
+.est-toggle--sm {
+  --est-toggle-track-width: var(--est-toggle-sm-track-width);
+  --est-toggle-track-height: var(--est-toggle-sm-track-height);
+  --est-toggle-thumb-size: var(--est-toggle-sm-thumb-size);
+  --est-toggle-thumb-translate: var(--est-toggle-sm-thumb-translate);
+}
+
+.est-toggle--md {
+  --est-toggle-track-width: var(--est-toggle-md-track-width);
+  --est-toggle-track-height: var(--est-toggle-md-track-height);
+  --est-toggle-thumb-size: var(--est-toggle-md-thumb-size);
+  --est-toggle-thumb-translate: var(--est-toggle-md-thumb-translate);
+}
+
+/* ── Base class ──────────────────────────────────────────────────── */
+
+.est-toggle {
+  @apply inline-flex items-center gap-2 select-none cursor-pointer;
+}
+
+.est-toggle--has-description {
+  @apply items-start;
+}
+
+.est-toggle--disabled {
+  @apply cursor-not-allowed;
+}
+
+/* ── Track ───────────────────────────────────────────────────────── */
+
+.est-toggle__track {
+  @apply relative inline-flex shrink-0 items-center rounded-full border-2 border-transparent;
+  width: var(--est-toggle-track-width);
+  height: var(--est-toggle-track-height);
+  background-color: var(--est-toggle-track-bg);
+  transition: background-color 200ms ease-in-out;
+}
+
+.est-toggle__track:focus-visible {
+  outline: 2px solid var(--est-toggle-focus-ring-color);
+  outline-offset: 2px;
+}
+
+.est-toggle__track--checked {
+  background-color: var(--est-toggle-track-bg-checked);
+}
+
+.est-toggle__track--disabled {
+  background-color: var(--est-toggle-track-bg-disabled);
+  @apply cursor-not-allowed;
+}
+
+/* ── Thumb ───────────────────────────────────────────────────────── */
+
+.est-toggle__thumb {
+  @apply pointer-events-none inline-block rounded-full shadow-sm ring-0;
+  width: var(--est-toggle-thumb-size);
+  height: var(--est-toggle-thumb-size);
+  background-color: var(--est-toggle-thumb-bg);
+  transform: translateX(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.est-toggle__thumb--checked {
+  transform: translateX(var(--est-toggle-thumb-translate));
+}
+
+.est-toggle__thumb--disabled {
+  background-color: var(--est-toggle-thumb-bg-disabled);
+}
+
+/* ── Label content ───────────────────────────────────────────────── */
+
+.est-toggle__content {
+  @apply flex flex-col;
+}
+
+.est-toggle__label {
+  @apply text-sm font-medium;
+  color: var(--est-toggle-label-color);
+}
+
+.est-toggle__description {
+  @apply text-xs font-normal;
+  color: var(--est-toggle-description-color);
+}
