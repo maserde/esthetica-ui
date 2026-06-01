@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import EstInput from './EstInput.vue'
+import EstButton from './EstButton.vue'
 
 export interface Props {
   currentPage?: number
@@ -117,21 +118,20 @@ const visiblePages = computed(() => {
     </div>
 
     <div class="est-pagination__nav" role="navigation" aria-label="Page navigation">
-      <button
+      <EstButton
         class="est-pagination__nav-btn"
         :disabled="isPrevDisabled"
-        :aria-disabled="isPrevDisabled"
         aria-label="Previous page"
         @click="goToPage(props.currentPage - 1)"
       >
         <span class="i-ri-arrow-left-s-line w-[18px] h-[18px]" aria-hidden="true" />
-      </button>
+      </EstButton>
 
       <template v-for="(page, index) in visiblePages" :key="index">
         <span v-if="page === 'ellipsis'" class="est-pagination__ellipsis" aria-hidden="true"
           >…</span
         >
-        <button
+        <EstButton
           v-else
           class="est-pagination__page-btn"
           :class="{ 'est-pagination__page-btn--active': currentPage === page }"
@@ -139,38 +139,39 @@ const visiblePages = computed(() => {
           @click="goToPage(page)"
         >
           {{ page }}
-        </button>
+        </EstButton>
       </template>
 
-      <button
+      <EstButton
         class="est-pagination__nav-btn"
         :disabled="isNextDisabled"
-        :aria-disabled="isNextDisabled"
         aria-label="Next page"
         @click="goToPage(props.currentPage + 1)"
       >
         <span class="i-ri-arrow-right-s-line w-[18px] h-[18px]" aria-hidden="true" />
-      </button>
+      </EstButton>
     </div>
 
     <div class="est-pagination__rows">
       <span class="est-pagination__rows-label">Rows per page</span>
       <div class="est-pagination__rows-dropdown" tabindex="0" @blur="handleDropdownBlur">
-        <button
+        <EstButton
           class="est-pagination__rows-trigger"
           :aria-expanded="isRowsDropdownOpen"
           aria-haspopup="listbox"
           @click="toggleRowsDropdown"
         >
-          <span>{{ rowsPerPage }}</span>
-          <span
-            class="i-ri-arrow-down-s-line w-4 h-4 est-pagination__rows-chevron"
-            :class="{ 'est-pagination__rows-chevron--open': isRowsDropdownOpen }"
-            aria-hidden="true"
-          />
-        </button>
+          {{ rowsPerPage }}
+          <template #trailing>
+            <span
+              class="i-ri-arrow-down-s-line w-4 h-4 est-pagination__rows-chevron"
+              :class="{ 'est-pagination__rows-chevron--open': isRowsDropdownOpen }"
+              aria-hidden="true"
+            />
+          </template>
+        </EstButton>
         <div v-if="isRowsDropdownOpen" class="est-pagination__rows-menu" role="listbox">
-          <button
+          <EstButton
             v-for="option in rowsPerPageOptions"
             :key="option"
             class="est-pagination__rows-option"
@@ -180,7 +181,7 @@ const visiblePages = computed(() => {
             @mousedown.prevent="handleRowsPerPageChange(option)"
           >
             {{ option }}
-          </button>
+          </EstButton>
         </div>
       </div>
     </div>
