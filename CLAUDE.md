@@ -62,34 +62,34 @@ Every `src/tokens/components/foo.css` must follow this exact shape:
 
 ```css
 @layer esthetica-ui-tokens {
-  :root {
-    /* ── Base tokens (what the component reads directly) ─────────── */
-    --est-foo-padding: ...;
-    --est-foo-min-height: ...;
-    --est-foo-font-size: ...;
-    --est-foo-bg-color: var(--est-color-primary);
-    --est-foo-color: var(--est-color-primary-fg);
-    /* ... all other "live" properties the component element consumes */
+    :root {
+        /* ── Base tokens (what the component reads directly) ─────────── */
+        --est-foo-padding: . . .;
+        --est-foo-min-height: . . .;
+        --est-foo-font-size: . . .;
+        --est-foo-bg-color: var(--est-color-primary);
+        --est-foo-color: var(--est-color-primary-foreground);
+        /* ... all other "live" properties the component element consumes */
 
-    /* ── Size variant presets ────────────────────────────────────── */
-    --est-foo-sm-padding: ...;
-    --est-foo-sm-min-height: ...;
-    --est-foo-sm-font-size: ...;
+        /* ── Size variant presets ────────────────────────────────────── */
+        --est-foo-sm-padding: . . .;
+        --est-foo-sm-min-height: . . .;
+        --est-foo-sm-font-size: . . .;
 
-    --est-foo-md-padding: ...;
-    --est-foo-md-min-height: ...;
-    --est-foo-md-font-size: ...;
+        --est-foo-md-padding: . . .;
+        --est-foo-md-min-height: . . .;
+        --est-foo-md-font-size: . . .;
 
-    --est-foo-lg-padding: ...;
-    --est-foo-lg-min-height: ...;
-    --est-foo-lg-font-size: ...;
+        --est-foo-lg-padding: . . .;
+        --est-foo-lg-min-height: . . .;
+        --est-foo-lg-font-size: . . .;
 
-    /* ── Color/style variant presets ─────────────────────────────── */
-    --est-foo-secondary-bg-color: var(--est-color-secondary);
-    --est-foo-secondary-color: var(--est-color-secondary-fg);
-    --est-foo-secondary-bg-hover: var(--est-color-secondary-hover);
-    /* ... one group per named variant */
-  }
+        /* ── Color/style variant presets ─────────────────────────────── */
+        --est-foo-secondary-bg-color: var(--est-color-secondary);
+        --est-foo-secondary-color: var(--est-color-secondary-foreground);
+        --est-foo-secondary-bg-hover: var(--est-color-secondary-hover);
+        /* ... one group per named variant */
+    }
 }
 ```
 
