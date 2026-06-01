@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { ref } from 'vue'
 import EstToggle from './EstToggle.vue'
+import EstButton from './EstButton.vue'
 
 const meta = {
   title: 'Components/EstToggle',
@@ -110,6 +111,26 @@ export const AllStates: Story = {
         <EstToggle v-model="on" label="On" />
         <EstToggle v-model="disabledOff" label="Disabled (off)" disabled />
         <EstToggle v-model="disabledOn" label="Disabled (on)" disabled />
+      </div>
+    `,
+  }),
+}
+
+export const UpdatingValue: Story = {
+  name: 'Toggle Controls',
+  render: () => ({
+    components: { EstToggle, EstButton },
+    setup() {
+      const value = ref(true)
+      const handleResetValue = () => {
+        value.value = false
+      }
+      return { value, handleResetValue }
+    },
+    template: `
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <EstToggle v-model="value" label="Toggle A" />
+        <EstButton @click="handleResetValue" class="max-w-32">Reset State</EstButton>
       </div>
     `,
   }),
