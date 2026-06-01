@@ -18,6 +18,10 @@
     --est-input-padding-y: 0.5rem;
     --est-input-font-size: 0.75rem;
     --est-input-font-line-height: 1rem;
+    --est-input-label-font-size: var(--est-font-size-sm);
+    --est-input-label-font-weight: var(--est-font-weight-semibold);
+    --est-input-error-font-size: var(--est-font-size-xs);
+    --est-input-error-font-weight: var(--est-font-weight-normal);
     --est-input-transition-duration: 150ms;
   }
 }

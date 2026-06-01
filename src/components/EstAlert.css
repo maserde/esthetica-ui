@@ -44,8 +44,10 @@
 }
 
 .est-alert__title {
-  @apply text-sm font-semibold leading-snug;
+  @apply leading-snug;
   color: var(--est-alert-title-color);
+  font-size: var(--est-alert-title-font-size);
+  font-weight: var(--est-alert-title-font-weight);
 }
 
 .est-alert__body--primary {
@@ -65,8 +67,9 @@
 }
 
 .est-alert__body {
-  @apply text-sm leading-snug;
+  @apply leading-snug;
   color: var(--est-alert-body-color);
+  font-size: var(--est-alert-body-font-size);
 }
 
 .est-alert__body--with-title {
