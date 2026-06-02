@@ -50,6 +50,14 @@ export default defineConfig({
       '3xl': ['var(--est-font-size-3xl)', { lineHeight: 'var(--est-font-line-height-3xl)' }],
       '4xl': ['var(--est-font-size-4xl)', { lineHeight: 'var(--est-font-line-height-4xl)' }],
     },
+    borderRadius: {
+      0: 'var(--est-radius-0)',
+      4: 'var(--est-radius-4)',
+      8: 'var(--est-radius-8)',
+      12: 'var(--est-radius-12)',
+      16: 'var(--est-radius-16)',
+      full: 'var(--est-radius-full)',
+    },
     fontWeight: {
       light: 'var(--est-font-weight-light)',
       normal: 'var(--est-font-weight-normal)',

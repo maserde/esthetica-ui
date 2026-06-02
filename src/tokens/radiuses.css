@@ -1,0 +1,10 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-radius-0: 0px;
+    --est-radius-4: 0.25rem;
+    --est-radius-8: 0.5rem;
+    --est-radius-12: 0.75rem;
+    --est-radius-16: 1rem;
+    --est-radius-full: 9999px;
+  }
+}
