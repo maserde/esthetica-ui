@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, useSlots } from 'vue'
 import EstSkeleton from './EstSkeleton.vue'
+import { useVariantClasses } from '@/composables/useVariantClasses'
 
 export type CardVariant = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
@@ -16,6 +17,8 @@ withDefaults(defineProps<Props>(), {
   loading: false,
 })
 
+const { buildVariant } = useVariantClasses()
+
 const slots = useSlots()
 
 const hasHeaderSlot = computed(() => !!slots.header)
@@ -29,13 +32,7 @@ const hasFooterSlot = computed(() => !!slots.footer)
   <div
     v-else
     :class="{
-      'est-card': true,
-      'est-card--default': variant === 'default',
-      'est-card--primary': variant === 'primary',
-      'est-card--success': variant === 'success',
-      'est-card--info': variant === 'info',
-      'est-card--warning': variant === 'warning',
-      'est-card--danger': variant === 'danger',
+      ...buildVariant('est-card', variant ?? 'default'),
       'est-card--borderless': borderless,
     }"
   >

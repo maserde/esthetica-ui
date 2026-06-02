@@ -155,12 +155,20 @@ Props are typed with `defineProps<Interface>()` + `withDefaults`. Every prop, in
 
 Named slots follow a consistent convention: `leading` for content before the label, `trailing` for content after the label, and the default slot for the primary label text. When placing icons in these slots, use a `<span>` with a UnoCSS icon class (e.g. `<span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />`). Never use inline SVGs for icons.
 
-Class bindings use object syntax with one explicit BEM modifier class per condition. Do not use string concatenation, array syntax, or computed class strings:
+Class bindings use object syntax with one explicit BEM modifier class per condition. Do not use string concatenation, array syntax, or computed class strings.
+
+For variant modifiers, use `buildVariant` from `useVariantClasses` (see [Composables](#composables)) and spread its result into the `:class` binding alongside any extra modifiers:
+
+```html
+<!-- variant modifier via composable, extra modifiers stay explicit -->
+:class="{ ...buildVariant('est-foo', variant ?? 'default'), 'est-foo--borderless': borderless }"
+```
+
+For modifiers that are not a direct 1-to-1 BEM name match to a prop value — `disabled`, `loading`, structural modifiers like `with-title` — keep them as explicit key/value pairs:
 
 ```html
 :class="{
   'est-foo': true,
-  'est-foo--primary': variant === 'primary',
   'est-foo--sm': size === 'sm',
   'est-foo--disabled': disabled,
 }"
@@ -173,6 +181,37 @@ Class bindings use object syntax with one explicit BEM modifier class per condit
 4. `src/tokens/components/foo.css` — component design tokens using `--est-foo-*` naming, wrapped in `@layer esthetica-ui-tokens`
 5. Add `@import './tokens/components/foo.css';` to `src/style.css`
 6. Add `export { default as EstFoo } from './components/EstFoo.vue'` to `src/index.ts`
+
+### Composables
+
+Shared, reusable Vue logic lives in `src/composables/`. Each file exports a single `use*` function that returns a plain object of utilities. Composables must be pure — no module-level side effects, no direct DOM access outside of `onMounted`/`onUnmounted`.
+
+#### When to extract logic into a composable
+
+Extract to a composable when **at least one** of the following is true:
+
+- The same logic is used in two or more components (DRY).
+- The logic is non-trivial enough that inlining it obscures the template's intent.
+- The pattern is a Vue-specific idiom (class binding helpers, slot inspection, focus management) that will recur across the library as it grows.
+
+Do **not** extract to a composable for:
+
+- Logic used in exactly one component — keep it local.
+- Simple one-line computed values trivially derivable from props.
+- CSS decisions — these belong in the token/CSS layer, not JavaScript.
+- Pure utility functions with no Vue dependency — export those from `src/utils/` as plain TypeScript instead.
+
+#### `useVariantClasses`
+
+```ts
+import { useVariantClasses } from '@/composables/useVariantClasses'
+
+const { buildVariant } = useVariantClasses()
+```
+
+`buildVariant(base, variant)` returns `{ [base]: true, [\`${base}--${variant}\`]: true }`. Use it on any element whose only dynamic BEM modifier maps directly to a variant prop value.
+
+**Token cascade first.** Before reaching for `buildVariant` on a sub-element, ask whether the sub-element can inherit the variant color from a parent's CSS custom property scope instead. If a parent component already sets `--est-foo-color` via its own variant modifier class (which children inherit through CSS cascade), the sub-element needs **no** variant modifier class — its base token resolves to the correct value automatically. Reserve `buildVariant` for the element that **owns** the variant scope in the BEM sense (typically the component root).
 
 ### Accessibility (mandatory)
 

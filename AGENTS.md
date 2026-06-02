@@ -155,16 +155,82 @@ Props are typed with `defineProps<Interface>()` + `withDefaults`. Every prop, in
 
 Named slots follow a consistent convention: `leading` for icons/content before the label, `trailing` for icons/content after the label, and the default slot for the primary label text.
 
-Class bindings use object syntax with one explicit BEM modifier class per condition. Do not use string concatenation, array syntax, or computed class strings:
+Class bindings use object syntax with one explicit BEM modifier class per condition. Do not use string concatenation, array syntax, or computed class strings.
+
+For variant modifiers use `buildVariant` from `useVariantClasses` and spread the result into `:class`. For all other modifiers keep explicit key/value pairs:
 
 ```html
+<!-- variant modifier — use buildVariant -->
+:class="{ ...buildVariant('est-foo', variant ?? 'default'), 'est-foo--borderless': borderless }"
+
+<!-- non-variant modifiers — keep explicit -->
 :class="{
   'est-foo': true,
-  'est-foo--primary': variant === 'primary',
   'est-foo--sm': size === 'sm',
   'est-foo--disabled': disabled,
 }"
 ```
+
+Never write a per-variant object block like `'est-foo--primary': variant === 'primary', 'est-foo--success': variant === 'success', ...`. That is the pattern this codebase is eliminating. Replace it with `buildVariant`, or — if the element is a sub-element inside a component that already owns the variant scope — remove the class entirely and let the CSS cascade carry the color (see **Composable and variant class decisions** below).
+
+## Composable and variant class decisions
+
+### When to extract logic into a composable
+
+| Question | Answer → action |
+|---|---|
+| Is the same logic already used in another component? | Yes → extract to `src/composables/` |
+| Is it a Vue-specific idiom (class binding helpers, slot inspection, focus trapping) that will recur? | Yes → extract to `src/composables/` |
+| Is it a pure function with no Vue dependency? | Yes → put in `src/utils/` instead |
+| Is it a CSS/styling decision? | Yes → solve in the token/CSS layer, not JS |
+| Is it a one-liner used in exactly one place? | Yes → keep inline |
+
+When in doubt, keep it inline. Extract only when the pattern genuinely repeats.
+
+### Variant class binding — decision tree
+
+Work top-to-bottom and stop at the first match:
+
+**1. Can the element inherit the variant color from a parent's CSS cascade?**
+Check whether an ancestor already sets `--est-{component}-color` (or equivalent) via its variant modifier class. Children inherit CSS custom properties — so if the ancestor's modifier already resolved the right color value onto `--est-card-color`, the child reads it automatically with no class needed.
+→ Remove all per-variant modifier classes from the sub-element and its token group.
+
+**2. Does the element own the variant scope (it is the component root or the element that must set the CSS custom property scope)?**
+→ Use `buildVariant` from `useVariantClasses`:
+```ts
+import { useVariantClasses } from '@/composables/useVariantClasses'
+const { buildVariant } = useVariantClasses()
+```
+```html
+:class="{ ...buildVariant('est-foo', variant ?? 'default'), 'est-foo--other': condition }"
+```
+
+**3. Is the modifier not a direct 1-to-1 name match to the prop value (e.g. `disabled`, `loading`, `with-title`)?**
+→ Explicit key/value pair:
+```html
+:class="{ 'est-foo': true, 'est-foo--disabled': disabled }"
+```
+
+### Token cascade — sub-element color rules
+
+When a component wraps another that already manages variant tokens (e.g. `EstAlert` wrapping `EstCard`):
+
+- Internal sub-elements do **not** need per-variant modifier classes for color. They inherit `--est-card-color` and `--est-card-color-hover` from the wrapping card's CSS scope automatically.
+- The wrapping component's token file should point its base color tokens at the wrapper's tokens:
+  ```css
+  --est-alert-icon-color: var(--est-card-color);
+  --est-alert-close-hover-color: var(--est-card-color-hover);
+  ```
+- Per-variant color groups (`--est-alert-primary-icon-color`, etc.) and corresponding CSS modifier blocks (`est-alert__icon--primary`, etc.) are then unnecessary — do not add them.
+- If you need a "hover" shade, use `--est-card-color-hover` (which resolves to the `{variant}-900` palette step) rather than hardcoding a specific palette value.
+
+### Expanding `buildVariant` vs adding a new composable
+
+`buildVariant(base, variant)` covers the single `base--variant` BEM pattern only. Do not stretch it for multi-dimensional patterns. If a new orthogonal dimension appears (e.g. size), add a separate function (`buildSize`, etc.) inside `useVariantClasses` — do not add arguments to `buildVariant`.
+
+Add a new composable file only when the logic is conceptually distinct from everything in `src/composables/` today.
+
+Do **not** export composables from `src/index.ts` — they are internal utilities, not public API.
 
 **Adding a new component — required steps (in order):**
 1. `src/components/EstFoo.vue` — component logic and template
