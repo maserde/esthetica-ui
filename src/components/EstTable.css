@@ -36,11 +36,6 @@
   color: var(--est-table-header-color);
 }
 
-.est-table__row {
-  @apply border-t;
-  border-color: var(--est-table-row-border);
-}
-
 .est-table__row--striped {
   background-color: var(--est-table-striped-bg);
 }
@@ -51,6 +46,11 @@
 
 .est-table__row--hoverable:hover {
   background-color: var(--est-table-hover-bg);
+}
+
+.est-table__row {
+  @apply border-t;
+  border-color: var(--est-table-row-border);
 }
 
 .est-table__body-cell {

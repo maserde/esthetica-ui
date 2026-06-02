@@ -48,7 +48,8 @@
 }
 
 .est-input__field {
-  @apply flex-1 min-w-0 border-0 outline-none bg-transparent;
+  @apply flex-1 min-w-0 border-0 outline-none;
+  background-color: transparent;
   color: var(--est-input-color);
   font-size: var(--est-input-font-size);
   line-height: var(--est-input-font-line-height);

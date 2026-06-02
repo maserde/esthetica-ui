@@ -55,7 +55,7 @@
 }
 
 .est-button--outlined {
-  @apply bg-transparent border-2;
+  @apply border-2;
   --est-btn-focus-ring-color: var(--est-btn-outlined-border);
   --est-btn-bg-color: transparent;
   --est-btn-color: var(--est-btn-outlined-color);
@@ -73,7 +73,7 @@
 .est-button {
   @apply relative inline-flex items-center justify-center;
   @apply font-medium leading-none tracking-[0.01em] whitespace-nowrap;
-  @apply border-solid border-[1.5px] border-transparent;
+  @apply border-solid border-[1.5px];
   @apply cursor-pointer select-none outline-none no-underline;
   font-family: var(--est-btn-font-family), 'sans-serif';
   padding: var(--est-btn-padding);

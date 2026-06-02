@@ -49,9 +49,7 @@ function handleClick(event: MouseEvent) {
     :aria-busy="loading"
     :class="{
       ...buildVariant('est-button', variant ?? 'primary'),
-      'est-button--sm': size === 'sm',
-      'est-button--md': size === 'md',
-      'est-button--lg': size === 'lg',
+      ...buildVariant('est-button', size ?? 'md', false),
       'est-button--loading': loading,
       'est-button--disabled': disabled,
     }"

@@ -24,7 +24,7 @@ const hasTitle = computed(() => !!slots.title)
 </script>
 
 <template>
-  <EstCard :variant="variant" borderless>
+  <EstCard :variant="variant" borderless role="alert">
     <div class="est-alert__inner">
       <span
         v-if="variant === 'primary' || variant === 'success'"

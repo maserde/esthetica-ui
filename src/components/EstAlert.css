@@ -35,8 +35,9 @@
 
 .est-alert__close {
   @apply shrink-0 flex items-center justify-center;
-  @apply bg-transparent border-none p-0.5 rounded cursor-pointer;
+  @apply border-none p-0.5 rounded cursor-pointer;
   @apply transition-colors outline-none;
+  background-color: transparent;
   color: var(--est-alert-close-color);
 }
 

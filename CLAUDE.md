@@ -157,22 +157,22 @@ Named slots follow a consistent convention: `leading` for content before the lab
 
 Class bindings use object syntax with one explicit BEM modifier class per condition. Do not use string concatenation, array syntax, or computed class strings.
 
-For variant modifiers, use `buildVariant` from `useVariantClasses` (see [Composables](#composables)) and spread its result into the `:class` binding alongside any extra modifiers:
+For any prop whose value maps directly and 1-to-1 to a BEM modifier name, use `buildVariant` from `useVariantClasses` (see [Composables](#composables)) and spread the result into `:class`. This covers both colour/style variants (`variant`) and orthogonal dimensions (`size`, `rounded`, `type`, etc.). Pass `declareBase: false` (third argument) when the base class is already declared by another `buildVariant` spread on the same element. Only use explicit key/value pairs for modifiers that do **not** have a direct 1-to-1 name match (`disabled`, `loading`, structural modifiers like `with-title`):
 
 ```html
-<!-- variant modifier via composable, extra modifiers stay explicit -->
-:class="{ ...buildVariant('est-foo', variant ?? 'default'), 'est-foo--borderless': borderless }"
-```
-
-For modifiers that are not a direct 1-to-1 BEM name match to a prop value — `disabled`, `loading`, structural modifiers like `with-title` — keep them as explicit key/value pairs:
-
-```html
+<!-- variant declares the base class; size is a 1-to-1 match, base already declared -->
 :class="{
-  'est-foo': true,
-  'est-foo--sm': size === 'sm',
+  ...buildVariant('est-foo', variant ?? 'default'),
+  ...buildVariant('est-foo', size ?? 'md', false),
   'est-foo--disabled': disabled,
+  'est-foo--loading': loading,
 }"
+
+<!-- single dynamic modifier that also declares the base class -->
+:class="{ ...buildVariant('est-foo', rounded ?? 'md') }"
 ```
+
+This means adding a new `size` or `variant` member requires only a CSS modifier and a token — the template never needs touching.
 
 **Adding a new component — required steps (in order):**
 1. `src/components/EstFoo.vue` — component logic and template
@@ -209,7 +209,9 @@ import { useVariantClasses } from '@/composables/useVariantClasses'
 const { buildVariant } = useVariantClasses()
 ```
 
-`buildVariant(base, variant)` returns `{ [base]: true, [\`${base}--${variant}\`]: true }`. Use it on any element whose only dynamic BEM modifier maps directly to a variant prop value.
+`buildVariant(base, value, declareBase?)` returns a class object for any prop that maps 1-to-1 to a BEM modifier name:
+- `declareBase: true` (default) — returns `{ [base]: true, [base--value]: true }`. Use for the primary scope-owning modifier (`variant`); declares the base class.
+- `declareBase: false` — returns `{ [base--value]: true }` only. Use for secondary orthogonal dimensions (`size`, `rounded`, `type`) when the base class is already declared.
 
 **Token cascade first.** Before reaching for `buildVariant` on a sub-element, ask whether the sub-element can inherit the variant color from a parent's CSS custom property scope instead. If a parent component already sets `--est-foo-color` via its own variant modifier class (which children inherit through CSS cascade), the sub-element needs **no** variant modifier class — its base token resolves to the correct value automatically. Reserve `buildVariant` for the element that **owns** the variant scope in the BEM sense (typically the component root).
 
