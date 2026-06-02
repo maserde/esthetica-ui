@@ -25,7 +25,7 @@
 
     /* Box Model */
     --est-btn-sm-padding: 0.5rem 0.5rem;
-    --est-btn-sm-min-height: 2rem;
+    --est-btn-sm-min-height: 1.5rem;
     --est-btn-sm-font-size: 0.75rem;
     --est-btn-sm-radius: 4px;
 
@@ -34,9 +34,9 @@
     --est-btn-md-font-size: 0.75rem;
     --est-btn-md-radius: 4px;
 
-    --est-btn-lg-padding: 1rem 1.5rem;
-    --est-btn-lg-min-height: 2rem;
-    --est-btn-lg-font-size: 1rem;
+    --est-btn-lg-padding: 0.75rem 1.25rem;
+    --est-btn-lg-min-height: 2.5rem;
+    --est-btn-lg-font-size: 0.875rem;
     --est-btn-lg-radius: 8px;
 
     /* Colors */

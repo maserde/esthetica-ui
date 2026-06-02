@@ -7,6 +7,26 @@
   --est-alert-close-hover-color: var(--est-card-color-hover);
 }
 
+.est-alert__inner--primary {
+  --est-alert-icon-color: var(--est-color-primary-500);
+}
+
+.est-alert__inner--success {
+  --est-alert-icon-color: var(--est-color-success-500);
+}
+
+.est-alert__inner--info {
+  --est-alert-icon-color: var(--est-color-info-500);
+}
+
+.est-alert__inner--warning {
+  --est-alert-icon-color: var(--est-color-warning-500);
+}
+
+.est-alert__inner--danger {
+  --est-alert-icon-color: var(--est-color-danger-500);
+}
+
 .est-alert__icon {
   @apply shrink-0 w-6 h-6;
   color: var(--est-alert-icon-color);
