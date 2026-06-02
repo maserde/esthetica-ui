@@ -1,6 +1,7 @@
 @import './tokens/global.css';
 @import './tokens/fonts.css';
 @import './tokens/colors.css';
+@import './tokens/spacings.css';
 
 @import './tokens/components/button.css';
 @import './tokens/components/skeleton.css';
