@@ -4,12 +4,5 @@
     --est-alert-body-font-size: var(--est-font-size-sm);
     --est-alert-title-font-size: var(--est-font-size-sm);
     --est-alert-title-font-weight: var(--est-font-weight-semibold);
-
-    /* Base — resolved via EstCard's variant scope in the CSS cascade */
-    --est-alert-icon-color: var(--est-card-color);
-    --est-alert-title-color: var(--est-card-color);
-    --est-alert-body-color: var(--est-card-color);
-    --est-alert-close-color: var(--est-card-color);
-    --est-alert-close-hover-color: var(--est-card-color-hover);
   }
 }

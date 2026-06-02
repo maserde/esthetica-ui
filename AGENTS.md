@@ -216,13 +216,31 @@ const { buildVariant } = useVariantClasses()
 When a component wraps another that already manages variant tokens (e.g. `EstAlert` wrapping `EstCard`):
 
 - Internal sub-elements do **not** need per-variant modifier classes for color. They inherit `--est-card-color` and `--est-card-color-hover` from the wrapping card's CSS scope automatically.
-- The wrapping component's token file should point its base color tokens at the wrapper's tokens:
-  ```css
-  --est-alert-icon-color: var(--est-card-color);
-  --est-alert-close-hover-color: var(--est-card-color-hover);
-  ```
 - Per-variant color groups (`--est-alert-primary-icon-color`, etc.) and corresponding CSS modifier blocks (`est-alert__icon--primary`, etc.) are then unnecessary — do not add them.
 - If you need a "hover" shade, use `--est-card-color-hover` (which resolves to the `{variant}-900` palette step) rather than hardcoding a specific palette value.
+
+**Critical — never reference another component's variant token from `:root`.**
+
+Token files use `@layer esthetica-ui-tokens` at `:root`. A `var()` reference inside a `:root` token is resolved at `:root`'s scope. Card variant modifier classes (`.est-card--success { --est-card-color: ... }`) live on the card element, not `:root`, so they are invisible from `:root`. Writing `--est-alert-icon-color: var(--est-card-color)` in the token file at `:root` will always resolve to the default card color (neutral-800, near-black) regardless of which variant is active.
+
+**The correct pattern:** define those token assignments in the **component CSS file** on a descendant element that lives below the parent's variant scope in the DOM — not in the token file:
+
+```css
+/* ✅ EstAlert.css — .est-alert__inner is a DOM child of .est-card--{variant} */
+/* var(--est-card-color) resolves correctly because the card ancestor is in scope */
+.est-alert__inner {
+  --est-alert-icon-color: var(--est-card-color);
+  --est-alert-close-hover-color: var(--est-card-color-hover);
+}
+
+/* ❌ alert.css (token file at :root) — var(--est-card-color) resolves to the default */
+/* color here because :root cannot see the card's variant modifier classes           */
+:root {
+  --est-alert-icon-color: var(--est-card-color); /* broken — always neutral-800 */
+}
+```
+
+The token file (`alert.css`) should only define non-color structural tokens at `:root` (sizes, font weights, radii, etc.). Color tokens that depend on an ancestor's variant scope belong in the component CSS on the correct descendant element.
 
 ### Expanding `buildVariant` vs adding a new composable
 

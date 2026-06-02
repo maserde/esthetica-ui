@@ -213,6 +213,21 @@ const { buildVariant } = useVariantClasses()
 
 **Token cascade first.** Before reaching for `buildVariant` on a sub-element, ask whether the sub-element can inherit the variant color from a parent's CSS custom property scope instead. If a parent component already sets `--est-foo-color` via its own variant modifier class (which children inherit through CSS cascade), the sub-element needs **no** variant modifier class — its base token resolves to the correct value automatically. Reserve `buildVariant` for the element that **owns** the variant scope in the BEM sense (typically the component root).
 
+**Critical — never reference another component's variant token from `:root`.** Token files define values at `:root` inside `@layer esthetica-ui-tokens`. If a token there references a variant-scoped custom property from another component (e.g. `--est-alert-icon-color: var(--est-card-color)`), the `var()` is resolved at `:root`'s scope, where only the default card color exists — the card variant overrides (`.est-card--success { --est-card-color: ... }`) are invisible from `:root`. The result is that all variants render with the default (near-black) color.
+
+The correct pattern when a component wraps another that owns the variant scope: define those token assignments inside the component CSS file on a descendant element that actually lives in the DOM tree below the parent's variant scope — **not** in the token file at `:root`:
+
+```css
+/* EstAlert.css — .est-alert__inner is a descendant of .est-card--{variant} */
+/* var(--est-card-color) resolves correctly here because the card ancestor is in scope */
+.est-alert__inner {
+  --est-alert-icon-color: var(--est-card-color);
+  --est-alert-close-hover-color: var(--est-card-color-hover);
+}
+```
+
+The token file (`alert.css`) keeps only non-color structural tokens (sizes, font weights, etc.) at `:root`.
+
 ### Accessibility (mandatory)
 
 Accessibility is not optional. Every component must ship with correct ARIA semantics. Do not consider a component complete without addressing all applicable points below:

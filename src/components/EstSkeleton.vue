@@ -1,27 +1,21 @@
 <script setup lang="ts">
+import { useVariantClasses } from '@/composables/useVariantClasses'
+
 export type SkeletonRounded = 'none' | 'sm' | 'md' | 'lg' | 'full'
 
 export interface Props {
   rounded?: SkeletonRounded
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   rounded: 'md',
 })
+
+const { buildVariant } = useVariantClasses()
 </script>
 
 <template>
-  <div
-    :class="{
-      'est-skeleton': true,
-      'est-skeleton--none': props.rounded === 'none',
-      'est-skeleton--sm': props.rounded === 'sm',
-      'est-skeleton--md': props.rounded === 'md',
-      'est-skeleton--lg': props.rounded === 'lg',
-      'est-skeleton--full': props.rounded === 'full',
-    }"
-    aria-hidden="true"
-  />
+  <div :class="{ ...buildVariant('est-skeleton', rounded ?? 'md') }" aria-hidden="true" />
 </template>
 
 <style scoped src="./EstSkeleton.css" />
