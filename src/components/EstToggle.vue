@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useVariantClasses } from '@/composables/useVariantClasses'
+
 export type ToggleSize = 'sm' | 'md'
 
 export interface Props {
@@ -17,6 +19,8 @@ const props = withDefaults(defineProps<Props>(), {
   size: 'md',
 })
 
+const { buildVariant } = useVariantClasses()
+
 const emit = defineEmits<{
   'update:modelValue': [value: boolean]
 }>()
@@ -32,8 +36,7 @@ function handleToggle() {
     :aria-disabled="disabled || undefined"
     :class="{
       'est-toggle': true,
-      'est-toggle--sm': size === 'sm',
-      'est-toggle--md': size === 'md',
+      ...buildVariant('est-toggle', size ?? 'md', false),
       'est-toggle--has-description': !!description,
       'est-toggle--disabled': disabled,
     }"

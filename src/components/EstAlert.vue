@@ -24,57 +24,27 @@ const hasTitle = computed(() => !!slots.title)
 </script>
 
 <template>
-  <EstCard :variant="variant" borderless>
+  <EstCard :variant="variant" borderless role="alert">
     <div class="est-alert__inner">
       <span
         v-if="variant === 'primary' || variant === 'success'"
-        class="i-ri-checkbox-circle-fill"
-        :class="{
-          'est-alert__icon': true,
-          'est-alert__icon--primary': variant === 'primary',
-          'est-alert__icon--success': variant === 'success',
-        }"
+        class="i-ri-checkbox-circle-fill est-alert__icon"
         aria-hidden="true"
       />
       <span
         v-else-if="variant === 'info'"
-        class="i-ri-information-fill"
-        :class="{ 'est-alert__icon': true, 'est-alert__icon--info': true }"
+        class="i-ri-information-fill est-alert__icon"
         aria-hidden="true"
       />
-      <span
-        v-else
-        class="i-ri-error-warning-fill"
-        :class="{
-          'est-alert__icon': true,
-          'est-alert__icon--warning': variant === 'warning',
-          'est-alert__icon--danger': variant === 'danger',
-        }"
-        aria-hidden="true"
-      />
+      <span v-else class="i-ri-error-warning-fill est-alert__icon" aria-hidden="true" />
 
       <div class="est-alert__content">
-        <div
-          v-if="hasTitle"
-          :class="{
-            'est-alert__title': true,
-            'est-alert__title--primary': variant === 'primary',
-            'est-alert__title--success': variant === 'success',
-            'est-alert__title--info': variant === 'info',
-            'est-alert__title--warning': variant === 'warning',
-            'est-alert__title--danger': variant === 'danger',
-          }"
-        >
+        <div v-if="hasTitle" class="est-alert__title">
           <slot name="title" />
         </div>
         <div
           :class="{
             'est-alert__body': true,
-            'est-alert__body--primary': variant === 'primary',
-            'est-alert__body--success': variant === 'success',
-            'est-alert__body--info': variant === 'info',
-            'est-alert__body--warning': variant === 'warning',
-            'est-alert__body--danger': variant === 'danger',
             'est-alert__body--with-title': hasTitle,
           }"
         >
@@ -85,14 +55,7 @@ const hasTitle = computed(() => !!slots.title)
       <button
         v-if="dismissible"
         type="button"
-        :class="{
-          'est-alert__close': true,
-          'est-alert__close--primary': variant === 'primary',
-          'est-alert__close--success': variant === 'success',
-          'est-alert__close--info': variant === 'info',
-          'est-alert__close--warning': variant === 'warning',
-          'est-alert__close--danger': variant === 'danger',
-        }"
+        class="est-alert__close"
         aria-label="Dismiss alert"
         @click="emit('dismiss')"
       >

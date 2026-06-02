@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useVariantClasses } from '@/composables/useVariantClasses'
+
 export type TagVariant = 'info' | 'success' | 'warning' | 'danger'
 export type TagType = 'primary' | 'secondary'
 
@@ -11,18 +13,15 @@ withDefaults(defineProps<Props>(), {
   variant: 'success',
   type: 'secondary',
 })
+
+const { buildVariant } = useVariantClasses()
 </script>
 
 <template>
   <span
     :class="{
-      'est-tag': true,
-      'est-tag--info': variant === 'info',
-      'est-tag--success': variant === 'success',
-      'est-tag--warning': variant === 'warning',
-      'est-tag--danger': variant === 'danger',
+      ...buildVariant('est-tag', variant ?? 'success'),
       'est-tag--primary': type === 'primary',
-      'est-tag--secondary': type === 'secondary',
     }"
   >
     <slot />

@@ -1,16 +1,16 @@
-.est-toast__progress-bar--primary {
+.est-toast--primary {
   --est-toast-progress-color: var(--est-toast-primary-progress);
 }
-.est-toast__progress-bar--success {
+.est-toast--success {
   --est-toast-progress-color: var(--est-toast-success-progress);
 }
-.est-toast__progress-bar--info {
+.est-toast--info {
   --est-toast-progress-color: var(--est-toast-info-progress);
 }
-.est-toast__progress-bar--warning {
+.est-toast--warning {
   --est-toast-progress-color: var(--est-toast-warning-progress);
 }
-.est-toast__progress-bar--danger {
+.est-toast--danger {
   --est-toast-progress-color: var(--est-toast-danger-progress);
 }
 

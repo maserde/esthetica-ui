@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useVariantClasses } from '@/composables/useVariantClasses'
 import EstAlert from './EstAlert.vue'
 
 export type ToastVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
@@ -91,11 +92,18 @@ onMounted(() => {
 onBeforeUnmount(() => {
   clearTimers()
 })
+
+const { buildVariant } = useVariantClasses()
 </script>
 
 <template>
   <Transition name="est-toast" @after-leave="onAfterLeave">
-    <div v-if="isVisible" class="est-toast" role="alert" aria-live="assertive">
+    <div
+      v-if="isVisible"
+      :class="{ ...buildVariant('est-toast', variant ?? 'success') }"
+      role="alert"
+      aria-live="assertive"
+    >
       <EstAlert :variant="variant" :dismissible="dismissible" @dismiss="handleDismiss">
         <template v-if="$slots.title" #title>
           <slot name="title" />
@@ -104,17 +112,7 @@ onBeforeUnmount(() => {
       </EstAlert>
 
       <div v-if="props.duration > 0" class="est-toast__progress-track">
-        <div
-          :class="{
-            'est-toast__progress-bar': true,
-            'est-toast__progress-bar--primary': variant === 'primary',
-            'est-toast__progress-bar--success': variant === 'success',
-            'est-toast__progress-bar--info': variant === 'info',
-            'est-toast__progress-bar--warning': variant === 'warning',
-            'est-toast__progress-bar--danger': variant === 'danger',
-          }"
-          :style="{ width: `${progress}%` }"
-        />
+        <div class="est-toast__progress-bar" :style="{ width: `${progress}%` }" />
       </div>
     </div>
   </Transition>

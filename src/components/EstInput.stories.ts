@@ -103,7 +103,7 @@ export const WithBothSlots: Story = {
 }
 
 export const WithButton: Story = {
-  name: 'With Both Slots',
+  name: 'With Button',
   render: () => ({
     components: { EstInput, EstButton },
     template: `

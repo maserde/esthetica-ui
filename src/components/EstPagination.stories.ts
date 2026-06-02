@@ -47,3 +47,32 @@ export const ManyPages: Story = {
   name: 'Many Pages',
   args: { currentPage: 50, totalPages: 200, rowsPerPage: 25 },
 }
+
+// ─── Overview ─────────────────────────────────────────────────────────────────
+
+export const AllStates: Story = {
+  name: 'All States',
+  render: () => ({
+    components: { EstPagination },
+    template: `
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Few pages (≤7)</p>
+          <EstPagination :current-page="3" :total-pages="5" :rows-per-page="10" />
+        </div>
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">First page</p>
+          <EstPagination :current-page="1" :total-pages="10" :rows-per-page="10" />
+        </div>
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Middle page</p>
+          <EstPagination :current-page="5" :total-pages="10" :rows-per-page="10" />
+        </div>
+        <div>
+          <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Last page</p>
+          <EstPagination :current-page="10" :total-pages="10" :rows-per-page="10" />
+        </div>
+      </div>
+    `,
+  }),
+}

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useVariantClasses } from '@/composables/useVariantClasses'
+
 export type Variant =
   | 'primary'
   | 'secondary'
@@ -27,6 +29,8 @@ const props = withDefaults(defineProps<Props>(), {
   type: 'button',
 })
 
+const { buildVariant } = useVariantClasses()
+
 const emit = defineEmits<{
   click: [event: MouseEvent]
 }>()
@@ -44,18 +48,8 @@ function handleClick(event: MouseEvent) {
     :aria-disabled="disabled || loading"
     :aria-busy="loading"
     :class="{
-      'est-button': true,
-      'est-button--primary': variant === 'primary',
-      'est-button--secondary': variant === 'secondary',
-      'est-button--info': variant === 'info',
-      'est-button--success': variant === 'success',
-      'est-button--warning': variant === 'warning',
-      'est-button--danger': variant === 'danger',
-      'est-button--outlined': variant === 'outlined',
-      'est-button--ghost': variant === 'ghost',
-      'est-button--sm': size === 'sm',
-      'est-button--md': size === 'md',
-      'est-button--lg': size === 'lg',
+      ...buildVariant('est-button', variant ?? 'primary'),
+      ...buildVariant('est-button', size ?? 'md', false),
       'est-button--loading': loading,
       'est-button--disabled': disabled,
     }"

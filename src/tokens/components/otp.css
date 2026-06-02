@@ -3,5 +3,9 @@
     --est-otp-cell-size: 3rem;
     --est-otp-cell-gap: 0.75rem;
     --est-otp-cell-font-size: 1.125rem;
+
+    /* ── Variant presets ─────────────────────────────────────────────── */
+    --est-otp-cell-border: var(--est-input-border);
+    --est-otp-cell-error-border: var(--est-input-error-border);
   }
 }
