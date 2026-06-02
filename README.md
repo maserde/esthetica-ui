@@ -10,15 +10,15 @@ A minimalist Vue 3 component library built with TypeScript and UnoCSS.
 ## Installation
 
 ```sh
-pnpm add @ardiprasetiyo/esthetica-ui
+pnpm add esthetica-ui
 # or
-npm install @ardiprasetiyo/esthetica-ui
+npm install esthetica-ui
 ```
 
 Import the component styles in your entry file:
 
 ```ts
-import '@ardiprasetiyo/esthetica-ui/style.css'
+import 'esthetica-ui/style.css'
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ import {
   EstSkeleton,
   EstTable,
   EstToast,
-} from '@ardiprasetiyo/esthetica-ui'
+} from 'esthetica-ui'
 ```
 
 All component prop types are also exported:
@@ -60,7 +60,7 @@ import type {
   TableColumn,
   TableProps,
   PasswordMeterProps,
-} from '@ardiprasetiyo/esthetica-ui'
+} from 'esthetica-ui'
 ```
 
 ## Components

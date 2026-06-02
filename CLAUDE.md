@@ -34,11 +34,11 @@ pnpm vitest run src/__tests__/App.spec.ts
 
 ## Architecture
 
-This is a **Vue 3 component library** published to npm as `@ardiprasetiyo/esthetica-ui`. The build output (`dist/`) ships an ES module, a UMD bundle, and a compiled CSS file. Vue is an external peer dependency — it is not bundled.
+This is a **Vue 3 component library** published to npm as `esthetica-ui`. The build output (`dist/`) ships an ES module, a UMD bundle, and a compiled CSS file. Vue is an external peer dependency — it is not bundled.
 
 ### Entry point
 
-`src/index.ts` is the library entry. Every component exported here becomes part of the public API. It also imports `virtual:uno.css` and `src/style.css` so consumers get styles with a single `import '@ardiprasetiyo/esthetica-ui/style.css'`.
+`src/index.ts` is the library entry. Every component exported here becomes part of the public API. It also imports `virtual:uno.css` and `src/style.css` so consumers get styles with a single `import 'esthetica-ui/style.css'`.
 
 `virtual:uno.css` is a virtual module injected by the UnoCSS Vite plugin at build time — it does not exist as a real file and should never be created or deleted manually.
 
