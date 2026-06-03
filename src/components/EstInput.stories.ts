@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>
 // ─── States ───────────────────────────────────────────────────────────────────
 
 export const Default: Story = {
-  args: { label: 'Email', placeholder: 'Enter your email' },
+  args: { label: '', placeholder: 'Type your text here' },
 }
 
 export const WithValue: Story = {

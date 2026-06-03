@@ -59,7 +59,7 @@
 }
 
 .est-card__header--bordered {
-  @apply border-b border-solid;
+  @apply border-0 border-b-1 border-solid;
   border-color: inherit;
 }
 
@@ -74,6 +74,6 @@
 }
 
 .est-card__footer--bordered {
-  @apply border-t border-solid;
+  @apply border-0 border-t border-solid;
   border-color: inherit;
 }

@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>
 // ─── States ───────────────────────────────────────────────────────────────────
 
 export const Default: Story = {
-  args: { label: 'Verification code', length: 4 },
+  args: { label: '', length: 4 },
 }
 
 export const WithValue: Story = {
