@@ -71,6 +71,16 @@
   --est-btn-bg-hover: var(--est-color-surface);
 }
 
+.est-button--disabled {
+  --est-btn-color: var(--est-btn-disabled-color);
+  --est-btn-bg-color: var(--est-btn-disabled-bg-color);
+  --est-btn-border-color: transparent;
+}
+
+.est-button:hover:not(.est-button--disabled):not(.est-button--loading) {
+  --est-btn-bg-color: var(--est-btn-bg-hover);
+}
+
 .est-button {
   @apply relative inline-flex items-center justify-center;
   @apply font-medium leading-none tracking-[0.01em] whitespace-nowrap;
@@ -94,8 +104,12 @@
   box-shadow: var(--est-btn-box-shadow);
 }
 
-.est-button:hover {
-  background-color: var(--est-btn-bg-hover);
+.est-button--disabled {
+  @apply cursor-not-allowed;
+}
+
+.est-button--loading {
+  @apply cursor-wait;
 }
 
 .est-button:focus-visible,

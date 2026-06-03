@@ -78,5 +78,8 @@
     --est-btn-ghost-color: var(--est-color-muted-fg);
     --est-btn-ghost-bg-hover: var(--est-color-muted);
     --est-btn-ghost-border-color: transparent;
+
+    --est-btn-disabled-bg-color: var(--est-color-neutral-200);
+    --est-btn-disabled-color: var(--est-color-neutral-400);
   }
 }
