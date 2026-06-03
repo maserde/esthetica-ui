@@ -5,7 +5,10 @@ export { default as EstSkeleton } from './components/EstSkeleton.vue'
 export { default as EstCard } from './components/EstCard.vue'
 export { default as EstInput } from './components/EstInput.vue'
 export { default as EstInputOTP } from './components/EstInputOTP.vue'
-export { default as EstAlert } from './components/EstAlert.vue'
+export { default as EstAlert } from './components/EstAlert/EstAlert.vue'
+export { default as EstAlertIcon } from './components/EstAlert/EstAlertIcon.vue'
+export { default as EstAlertTitle } from './components/EstAlert/EstAlertTitle.vue'
+export { default as EstAlertDescription } from './components/EstAlert/EstAlertDescription.vue'
 export { default as EstToast } from './components/EstToast.vue'
 export { default as EstPagination } from './components/EstPagination.vue'
 export { default as EstTable } from './components/EstTable.vue'
@@ -23,7 +26,7 @@ export type { SkeletonRounded, Props as SkeletonProps } from './components/EstSk
 export type { CardVariant, Props as CardProps } from './components/EstCard.vue'
 export type { Props as InputProps } from './components/EstInput.vue'
 export type { Props as InputOTPProps } from './components/EstInputOTP.vue'
-export type { AlertVariant, Props as AlertProps } from './components/EstAlert.vue'
+export type { AlertVariant, Props as AlertProps } from './components/EstAlert/EstAlert.vue'
 export type { ToastVariant, Props as ToastProps } from './components/EstToast.vue'
 export type { Props as PaginationProps } from './components/EstPagination.vue'
 export type { TableColumn, Props as TableProps } from './components/EstTable.vue'
@@ -33,7 +36,10 @@ export type { ToggleSize, Props as ToggleProps } from './components/EstToggle.vu
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    EstAlert: (typeof import('./components/EstAlert.vue'))['default']
+    EstAlert: (typeof import('./components/EstAlert/EstAlert.vue'))['default']
+    EstAlertIcon: (typeof import('./components/EstAlert/EstAlertIcon.vue'))['default']
+    EstAlertTitle: (typeof import('./components/EstAlert/EstAlertTitle.vue'))['default']
+    EstAlertDescription: (typeof import('./components/EstAlert/EstAlertDescription.vue'))['default']
     EstButton: (typeof import('./components/EstButton.vue'))['default']
     EstCard: (typeof import('./components/EstCard.vue'))['default']
     EstInput: (typeof import('./components/EstInput.vue'))['default']

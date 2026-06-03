@@ -188,6 +188,115 @@ Three sibling files in `src/components/`:
 5. Add `@import './tokens/components/foo.css';` to `src/style.css`
 6. Add `export { default as EstFoo } from './components/EstFoo.vue'` to `src/index.ts`
 
+### Composite components
+
+Use the composite pattern when the consumer chooses **which structural parts to include** (icon, title, description) rather than toggling props. If the internal layout is fixed and only text/slot content changes, use named slots on a single component instead.
+
+| Condition | Choose |
+|---|---|
+| Consumer may omit or reorder structural parts | Composite |
+| Content is slot-swapping only, layout is fixed | Single component with named slots |
+| A wrapper component uses another component family internally (e.g. Toast wrapping Alert) | Composite — the wrapper uses sub-components internally |
+
+**File structure** — group the family in a named subfolder:
+
+```
+src/components/EstFoo/
+  EstFoo.vue            ← root; owns layout shell, provides context
+  EstFooIcon.vue        ← sub-component
+  EstFooTitle.vue       ← sub-component
+  EstFooDescription.vue ← sub-component
+  EstFoo.css            ← single CSS file for the whole family
+  EstFoo.stories.ts     ← all stories use composite API
+```
+
+**Sharing variant context via `provide`/`inject`:**
+
+The root provides its variant as a reactive ref. Sub-components inject it to adapt automatically (e.g. icon selection).
+
+```ts
+// EstFoo.vue — root
+const props = withDefaults(defineProps<Props>(), { variant: 'success' })
+provide('est-foo-variant', toRef(props, 'variant'))
+```
+
+```ts
+// EstFooIcon.vue — sub-component
+const variant = inject<Ref<FooVariant>>('est-foo-variant')
+```
+
+Use a plain namespaced string key (`'est-foo-variant'`), not a Symbol. The `est-` prefix is unique enough; a Symbol requires a shared module with no real benefit since sub-components only ever live inside the root.
+
+**Variant-to-value maps — `Record`, never if/else chains:**
+
+```ts
+const VARIANT_ICON: Record<FooVariant, string> = {
+  primary: 'i-ri-checkbox-circle-fill',
+  success: 'i-ri-checkbox-circle-fill',
+  info:    'i-ri-information-fill',
+  warning: 'i-ri-error-warning-fill',
+  danger:  'i-ri-error-warning-fill',
+}
+const iconClass = computed(() => VARIANT_ICON[variant?.value ?? 'success'])
+```
+
+TypeScript errors immediately when a new variant is added to the union but not to the record. An if/else chain silently falls through to a default.
+
+**CSS — one file for the whole family:**
+
+Vue stamps the parent's scoped `data-v-*` attribute onto the **root element** of every direct child component. `EstFoo.css` selectors therefore already match sub-component root elements without `:deep()`. Sub-components do not need their own CSS files.
+
+Use CSS grid for the layout shell so icon, content, and close button occupy named columns without a JS-managed wrapper:
+
+```css
+.est-foo__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* icon | content | close */
+  column-gap: 12px;
+  row-gap: 2px;
+  align-items: start;
+}
+
+/* Collapse empty columns when parts are absent */
+.est-foo__inner:not(:has(.est-foo__icon))  { grid-template-columns: 1fr auto; }
+.est-foo__inner:not(:has(.est-foo__close)) { grid-template-columns: auto 1fr; }
+.est-foo__inner:not(:has(.est-foo__icon)):not(:has(.est-foo__close)) { grid-template-columns: 1fr; }
+
+.est-foo__icon  { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+.est-foo__title { grid-column: 2; }
+.est-foo__body  { grid-column: 2; }
+.est-foo__close { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+```
+
+**New composite component checklist (in order):**
+1. `src/components/EstFoo/EstFoo.vue` — `provide` context, layout shell with `<slot />`
+2. `src/components/EstFoo/EstFooIcon.vue` — `inject` variant, `Record<Variant, string>` icon map
+3. `src/components/EstFoo/EstFooTitle.vue` — thin wrapper (`div.est-foo__title` + `<slot />`)
+4. `src/components/EstFoo/EstFooDescription.vue` — thin wrapper (`div.est-foo__body` + `<slot />`)
+5. `src/components/EstFoo/EstFoo.css` — grid layout + all sub-component element styles
+6. `src/components/EstFoo/EstFoo.stories.ts` — all stories use composite API
+7. `src/tokens/components/foo.css` — structural tokens at `:root`; variant colors on `.est-foo__inner` descendants (never `:root`)
+8. Add `@import './tokens/components/foo.css';` to `src/style.css`
+9. Export all from `src/index.ts`:
+```ts
+export { default as EstFoo } from './components/EstFoo/EstFoo.vue'
+export { default as EstFooIcon } from './components/EstFoo/EstFooIcon.vue'
+export { default as EstFooTitle } from './components/EstFoo/EstFooTitle.vue'
+export { default as EstFooDescription } from './components/EstFoo/EstFooDescription.vue'
+export type { FooVariant, Props as FooProps } from './components/EstFoo/EstFoo.vue'
+```
+10. Add all sub-components to `GlobalComponents` in `src/index.ts`
+
+**Consumer usage:**
+
+```html
+<EstFoo variant="success">
+  <EstFooIcon />
+  <EstFooTitle>Title text</EstFooTitle>
+  <EstFooDescription>Body text goes here.</EstFooDescription>
+</EstFoo>
+```
+
 ### Composables
 
 Shared Vue logic in `src/composables/`. Each file exports a single `use*` function. Composables must be pure — no module-level side effects, no DOM access outside `onMounted`/`onUnmounted`. Don't export composables from `src/index.ts`.

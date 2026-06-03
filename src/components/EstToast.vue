@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useVariantClasses } from '@/composables/useVariantClasses'
-import EstAlert from './EstAlert.vue'
+import EstAlert from './EstAlert/EstAlert.vue'
+import EstAlertIcon from './EstAlert/EstAlertIcon.vue'
+import EstAlertTitle from './EstAlert/EstAlertTitle.vue'
+import EstAlertDescription from './EstAlert/EstAlertDescription.vue'
 
 export type ToastVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
@@ -105,10 +108,13 @@ const { buildVariant } = useVariantClasses()
       aria-live="assertive"
     >
       <EstAlert :variant="variant" :dismissible="dismissible" @dismiss="handleDismiss">
-        <template v-if="$slots.title" #title>
+        <EstAlertIcon />
+        <EstAlertTitle v-if="$slots.title">
           <slot name="title" />
-        </template>
-        <slot />
+        </EstAlertTitle>
+        <EstAlertDescription>
+          <slot />
+        </EstAlertDescription>
       </EstAlert>
 
       <div v-if="props.duration > 0" class="est-toast__progress-track">
