@@ -1,4 +1,4 @@
-import { defineConfig, presetWind4, presetWebFonts, presetIcons, transformerDirectives } from 'unocss'
+import { defineConfig, presetMini, presetWebFonts, presetIcons, transformerDirectives } from 'unocss'
 
 export default defineConfig({
   content: {
@@ -32,18 +32,20 @@ export default defineConfig({
       black: 'var(--est-font-weight-black)',
     },
   }),
+
   presets: [
-    presetWind4(),
+    presetMini(),
     presetWebFonts({
-    provider: 'google',
-    fonts: {
-      sans: [{ name: 'Inter', weights: ['400', '500', '600', '700'] }],
-      serif: 'Roboto Slab',
-      mono: 'Fira Code',
-    },
-  }),
-  presetIcons({
-    scale: 1
-  })],
+      provider: 'google',
+      fonts: {
+        sans: [{ name: 'Inter', weights: ['400', '500', '600', '700'] }],
+        serif: 'Roboto Slab',
+        mono: 'Fira Code',
+      },
+    }),
+    presetIcons({
+      scale: 1,
+    }),
+  ],
   transformers: [transformerDirectives()],
 })

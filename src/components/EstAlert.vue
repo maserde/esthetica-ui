@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, useSlots } from 'vue'
+import { useVariantClasses } from '../composables/useVariantClasses'
 import EstCard from './EstCard.vue'
 
 export type AlertVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
@@ -21,11 +22,16 @@ const emit = defineEmits<{
 const slots = useSlots()
 
 const hasTitle = computed(() => !!slots.title)
+const { buildVariant } = useVariantClasses()
 </script>
 
 <template>
-  <EstCard :variant="variant" borderless role="alert">
-    <div class="est-alert__inner">
+  <EstCard :variant="variant" role="alert">
+    <div
+      :class="{
+        ...buildVariant('est-alert__inner', variant ?? 'primary'),
+      }"
+    >
       <span
         v-if="variant === 'primary' || variant === 'success'"
         class="i-ri-checkbox-circle-fill est-alert__icon"
@@ -59,7 +65,7 @@ const hasTitle = computed(() => !!slots.title)
         aria-label="Dismiss alert"
         @click="emit('dismiss')"
       >
-        <span class="i-ri-close-line w-[18px] h-[18px]" aria-hidden="true" />
+        <span class="i-ri-close-line w-[1.4em] h-[1.4em]" aria-hidden="true" />
       </button>
     </div>
   </EstCard>

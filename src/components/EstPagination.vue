@@ -124,7 +124,7 @@ const visiblePages = computed(() => {
         aria-label="Previous page"
         @click="goToPage(props.currentPage - 1)"
       >
-        <span class="i-ri-arrow-left-s-line w-[18px] h-[18px]" aria-hidden="true" />
+        <span class="i-ri-arrow-left-s-line w-[1em] h-[1em]" aria-hidden="true" />
       </EstButton>
 
       <template v-for="(page, index) in visiblePages" :key="index">
@@ -148,7 +148,7 @@ const visiblePages = computed(() => {
         aria-label="Next page"
         @click="goToPage(props.currentPage + 1)"
       >
-        <span class="i-ri-arrow-right-s-line w-[18px] h-[18px]" aria-hidden="true" />
+        <span class="i-ri-arrow-right-s-line w-[1em] h-[1em]" aria-hidden="true" />
       </EstButton>
     </div>
 
@@ -164,7 +164,7 @@ const visiblePages = computed(() => {
           {{ rowsPerPage }}
           <template #trailing>
             <span
-              class="i-ri-arrow-down-s-line w-4 h-4 est-pagination__rows-chevron"
+              class="i-ri-arrow-down-s-line w-[1em] h-[1em] est-pagination__rows-chevron"
               :class="{ 'est-pagination__rows-chevron--open': isRowsDropdownOpen }"
               aria-hidden="true"
             />

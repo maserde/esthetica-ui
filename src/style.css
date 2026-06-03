@@ -1,6 +1,6 @@
 @import './tokens/global.css';
-@import './tokens/fonts.css';
 @import './tokens/colors.css';
+@import './tokens/fonts.css';
 
 @import './tokens/components/button.css';
 @import './tokens/components/skeleton.css';
@@ -14,3 +14,8 @@
 @import './tokens/components/otp.css';
 @import './tokens/components/tag.css';
 @import './tokens/components/toggle.css';
+
+[class^='est-'],
+[class*=' est-'] {
+  font-family: var(--est-font-sans), sans-serif;
+}

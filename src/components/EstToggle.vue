@@ -35,8 +35,7 @@ function handleToggle() {
   <label
     :aria-disabled="disabled || undefined"
     :class="{
-      'est-toggle': true,
-      ...buildVariant('est-toggle', size ?? 'md', false),
+      ...buildVariant('est-toggle', size ?? 'md'),
       'est-toggle--has-description': !!description,
       'est-toggle--disabled': disabled,
     }"
@@ -52,7 +51,7 @@ function handleToggle() {
         'est-toggle__track--checked': modelValue,
         'est-toggle__track--disabled': disabled,
       }"
-      @click="handleToggle"
+      @click.stop="handleToggle"
     >
       <span
         :class="{

@@ -14,12 +14,6 @@
   --est-toggle-thumb-translate: var(--est-toggle-md-thumb-translate);
 }
 
-/* ── Base class ──────────────────────────────────────────────────── */
-
-.est-toggle {
-  @apply inline-flex items-center gap-2 select-none cursor-pointer;
-}
-
 .est-toggle--has-description {
   @apply items-start;
 }
@@ -28,11 +22,23 @@
   @apply cursor-not-allowed;
 }
 
+/* ── Base class ──────────────────────────────────────────────────── */
+
+.est-toggle {
+  @apply inline-flex items-center gap-2 select-none;
+}
+
+:not(.est-toggle--disabled) > .est-toggle__track,
+.est-toggle__thumb {
+  @apply cursor-pointer;
+}
+
 /* ── Track ───────────────────────────────────────────────────────── */
 
 .est-toggle__track {
-  @apply relative inline-flex shrink-0 items-center rounded-full border-2;
-  border-color: transparent;
+  @apply relative inline-flex shrink-0 items-center rounded-full;
+  padding: 2px;
+  border: none;
   width: var(--est-toggle-track-width);
   height: var(--est-toggle-track-height);
   background-color: var(--est-toggle-track-bg);
@@ -56,7 +62,8 @@
 /* ── Thumb ───────────────────────────────────────────────────────── */
 
 .est-toggle__thumb {
-  @apply pointer-events-none inline-block rounded-full shadow-sm ring-0;
+  @apply pointer-events-none inline-block rounded-full;
+  box-shadow: var(--est-shadow-sm);
   width: var(--est-toggle-thumb-size);
   height: var(--est-toggle-thumb-size);
   background-color: var(--est-toggle-thumb-bg);

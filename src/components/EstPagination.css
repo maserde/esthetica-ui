@@ -86,7 +86,8 @@
 
 .est-pagination__nav :deep(.est-pagination__page-btn--active),
 .est-pagination__rows-dropdown :deep(.est-pagination__rows-trigger--active) {
-  @apply font-semibold shadow-xs;
+  @apply font-semibold;
+  box-shadow: var(--est-shadow-xs);
   --est-btn-bg-color: var(--est-pagination-active-bg);
   --est-btn-bg-hover: var(--est-pagination-active-bg);
   --est-btn-border-color: var(--est-pagination-active-border);

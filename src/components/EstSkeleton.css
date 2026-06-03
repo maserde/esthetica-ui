@@ -14,8 +14,19 @@
   --est-skeleton-radius: var(--est-skeleton-full-radius);
 }
 
+@keyframes est-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .est-skeleton {
-  @apply block animate-pulse;
+  @apply block;
+  animation: est-skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   background-color: var(--est-skeleton-color);
   border-radius: var(--est-skeleton-radius);
 }
