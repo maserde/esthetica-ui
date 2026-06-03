@@ -51,6 +51,6 @@
 }
 
 .est-otp__error {
-  @apply flex items-center gap-1 text-xs;
+  @apply flex items-center gap-1 text-xs my-2;
   color: var(--est-input-error-color);
 }
