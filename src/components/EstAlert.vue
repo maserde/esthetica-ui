@@ -65,7 +65,7 @@ const { buildVariant } = useVariantClasses()
         aria-label="Dismiss alert"
         @click="emit('dismiss')"
       >
-        <span class="i-ri-close-line w-[18px] h-[18px]" aria-hidden="true" />
+        <span class="i-ri-close-line w-[1.4em] h-[1.4em]" aria-hidden="true" />
       </button>
     </div>
   </EstCard>

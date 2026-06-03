@@ -67,7 +67,7 @@ function handleInput(event: Event) {
     </div>
 
     <p v-if="error" class="est-input__error" role="alert">
-      <span class="i-ri-error-warning-line w-4 h-4" aria-hidden="true" />
+      <span class="i-ri-error-warning-line w-[1em] h-[1em]" aria-hidden="true" />
       <span>{{ error }}</span>
     </p>
   </div>

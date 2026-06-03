@@ -1,12 +1,3 @@
-.est-alert__inner {
-  @apply flex items-center gap-3;
-  --est-alert-icon-color: var(--est-card-color);
-  --est-alert-title-color: var(--est-card-color);
-  --est-alert-body-color: var(--est-card-color);
-  --est-alert-close-color: var(--est-card-color);
-  --est-alert-close-hover-color: var(--est-card-color-hover);
-}
-
 .est-alert__inner--primary {
   --est-alert-icon-color: var(--est-color-primary-500);
 }
@@ -25,6 +16,15 @@
 
 .est-alert__inner--danger {
   --est-alert-icon-color: var(--est-color-danger-500);
+}
+
+.est-alert__inner {
+  @apply flex items-center gap-3;
+  --est-alert-icon-color: var(--est-card-color);
+  --est-alert-title-color: var(--est-card-color);
+  --est-alert-body-color: var(--est-card-color);
+  --est-alert-close-color: var(--est-card-color);
+  --est-alert-close-hover-color: var(--est-card-color-hover);
 }
 
 .est-alert__icon {

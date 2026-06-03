@@ -14,6 +14,14 @@
   --est-toggle-thumb-translate: var(--est-toggle-md-thumb-translate);
 }
 
+.est-toggle--has-description {
+  @apply items-start;
+}
+
+.est-toggle--disabled {
+  @apply cursor-not-allowed;
+}
+
 /* ── Base class ──────────────────────────────────────────────────── */
 
 .est-toggle {
@@ -23,14 +31,6 @@
 :not(.est-toggle--disabled) > .est-toggle__track,
 .est-toggle__thumb {
   @apply cursor-pointer;
-}
-
-.est-toggle--has-description {
-  @apply items-start;
-}
-
-.est-toggle--disabled {
-  @apply cursor-not-allowed;
 }
 
 /* ── Track ───────────────────────────────────────────────────────── */
