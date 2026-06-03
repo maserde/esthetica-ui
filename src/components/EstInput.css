@@ -65,7 +65,7 @@
 }
 
 .est-input__error {
-  @apply flex items-center gap-1;
+  @apply flex items-center gap-1 my-2;
   color: var(--est-input-error-color);
   font-size: var(--est-input-error-font-size);
   font-weight: var(--est-input-error-font-weight);
