@@ -46,7 +46,7 @@
   grid-template-columns: 1fr;
 }
 
-.est-alert__icon {
+:deep(.est-alert__icon) {
   @apply shrink-0 flex items-center justify-center;
   grid-column: 1;
   grid-row: 1 / span 2;
@@ -56,7 +56,7 @@
   color: var(--est-alert-icon-color);
 }
 
-.est-alert__title {
+:deep(.est-alert__title) {
   @apply leading-snug;
   grid-column: 2;
   color: var(--est-alert-title-color);
@@ -64,7 +64,7 @@
   font-weight: var(--est-alert-title-font-weight);
 }
 
-.est-alert__body {
+:deep(.est-alert__body) {
   @apply leading-snug;
   grid-column: 2;
   color: var(--est-alert-body-color);

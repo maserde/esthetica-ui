@@ -244,7 +244,9 @@ TypeScript errors immediately when a new variant is added to the union but not t
 
 **CSS — one file for the whole family:**
 
-Vue stamps the parent's scoped `data-v-*` attribute onto the **root element** of every direct child component. `EstFoo.css` selectors therefore already match sub-component root elements without `:deep()`. Sub-components do not need their own CSS files.
+Sub-components are rendered by the **consumer** inside `<slot />`, so they compile in the consumer's scope — not EstFoo's. Vue's scoped `data-v-*` attribute is **not** stamped on slot content, so plain scoped selectors like `.est-foo__icon` won't match. Use `:deep()` for all sub-component element rules. CSS custom properties still cascade naturally through the DOM without `:deep()`, so token inheritance works regardless.
+
+Sub-components do not need their own CSS files.
 
 Use CSS grid for the layout shell so icon, content, and close button occupy named columns without a JS-managed wrapper:
 

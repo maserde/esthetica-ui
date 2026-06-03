@@ -41,4 +41,4 @@ const { buildVariant } = useVariantClasses()
   </EstCard>
 </template>
 
-<style scoped src="EstAlert.css" />
+<style scoped src="./EstAlert.css" />
