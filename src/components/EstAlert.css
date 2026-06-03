@@ -54,9 +54,8 @@
 }
 
 .est-alert__close {
-  @apply shrink-0 flex items-center justify-center;
-  @apply border-none p-0.5 rounded cursor-pointer;
-  @apply transition-colors outline-none;
+  @apply shrink-0 flex items-center justify-center border-none p-0.5 rounded cursor-pointer
+  transition-colors outline-none;
   background-color: transparent;
   color: var(--est-alert-close-color);
 }
@@ -66,5 +65,6 @@
 }
 
 .est-alert__close:focus-visible {
-  @apply ring-2 ring-offset-1;
+  outline: 2px solid var(--est-alert-focus-ring-color);
+  outline-offset: 1px;
 }

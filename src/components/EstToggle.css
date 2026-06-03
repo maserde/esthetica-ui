@@ -56,7 +56,8 @@
 /* ── Thumb ───────────────────────────────────────────────────────── */
 
 .est-toggle__thumb {
-  @apply pointer-events-none inline-block rounded-full shadow-sm ring-0;
+  @apply pointer-events-none inline-block rounded-full;
+  box-shadow: var(--est-shadow-sm);
   width: var(--est-toggle-thumb-size);
   height: var(--est-toggle-thumb-size);
   background-color: var(--est-toggle-thumb-bg);

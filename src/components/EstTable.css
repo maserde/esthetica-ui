@@ -4,7 +4,7 @@
 }
 
 .est-table:not(.est-table--borderless) {
-  @apply border;
+  @apply border border-solid;
   border-color: var(--est-table-border);
 }
 
@@ -13,7 +13,7 @@
 }
 
 .est-table__slot-footer {
-  @apply border-t;
+  @apply border-t border-solid;
   border-color: var(--est-table-slot-border);
   padding: var(--est-table-slot-padding-y-footer) var(--est-table-slot-padding-x);
 }
@@ -23,7 +23,9 @@
 }
 
 .est-table__table {
-  @apply w-full table-auto;
+  @apply w-full;
+  table-layout: auto;
+  border-collapse: collapse;
 }
 
 .est-table__header-row {
@@ -49,7 +51,7 @@
 }
 
 .est-table__row {
-  @apply border-t;
+  @apply border-t border-solid;
   border-color: var(--est-table-row-border);
 }
 

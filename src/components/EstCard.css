@@ -49,7 +49,7 @@
 }
 
 .est-card:not(.est-card--borderless) {
-  @apply border;
+  @apply border border-solid;
   border-color: var(--est-card-border);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .est-card__header--bordered {
-  @apply border-b;
+  @apply border-b border-solid;
   border-color: inherit;
 }
 
@@ -74,6 +74,6 @@
 }
 
 .est-card__footer--bordered {
-  @apply border-t;
+  @apply border-t border-solid;
   border-color: inherit;
 }

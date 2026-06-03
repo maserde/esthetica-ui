@@ -67,7 +67,7 @@
   --est-btn-focus-ring-color: var(--est-btn-outlined-border);
   --est-btn-bg-color: transparent;
   --est-btn-color: var(--est-btn-ghost-color);
-  --est-btn-border-color: var(--est-btn-outlined-border);
+  --est-btn-border-color: var(--est-btn-ghost-border-color);
   --est-btn-bg-hover: var(--est-color-surface);
 }
 

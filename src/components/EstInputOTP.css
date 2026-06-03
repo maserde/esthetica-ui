@@ -25,7 +25,7 @@
 }
 
 .est-otp__cell {
-  @apply border text-center font-semibold outline-none transition shrink-0;
+  @apply border border-solid text-center font-semibold outline-none transition shrink-0;
   width: var(--est-otp-cell-size);
   height: var(--est-otp-cell-size);
   font-size: var(--est-otp-cell-font-size);

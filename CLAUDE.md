@@ -138,7 +138,54 @@ Rules:
 - Modifier classes always appear **before** the base class in the file.
 - The base class **never** references `--est-foo-{variant}-*` or `--est-foo-{size}-*` tokens directly — only the base `--est-foo-*` tokens.
 - If a modifier does not need to change a property, it simply omits that token override — the base token's default value applies.
-- Use `@apply` for structural / layout utilities (e.g. `flex`, `items-center`, `w-full`) and for typography utilities (`text-{size}`, `font-{weight}`). Typography utilities are safe because `uno.config.ts` maps them to `--est-font-*` CSS custom properties — `@apply text-sm font-semibold` compiles to `font-size: var(--est-font-size-sm); line-height: var(--est-font-line-height-sm); font-weight: var(--est-font-weight-semibold);`, which consumers can override. Colours must always use CSS custom properties directly (`var(--est-color-*)`); never use colour utility classes with `@apply`.
+- Use `@apply` for **structural / layout utilities** (`flex`, `inline-flex`, `items-center`, `justify-between`, `gap-2`, `overflow-hidden`, `relative`, `cursor-pointer`, `select-none`, etc.) and for **typography utilities** (`text-{size}`, `font-{weight}`, `leading-*`, `tracking-*`). Typography utilities are safe because `uno.config.ts` maps them through `extendTheme` to `--est-font-*` CSS custom properties — `@apply text-sm font-semibold` compiles to `font-size: var(--est-font-size-sm); font-weight: var(--est-font-weight-semibold);`, which consumers can override via tokens. Colours must **always** use CSS custom properties directly (`var(--est-color-*)`); never use colour utility classes with `@apply`.
+- **presetMini utility reference** — verified against `@unocss/preset-mini@66.7.0` source. When in doubt, grep the package before assuming a utility works.
+
+  **Available via `@apply`** (confirmed in source):
+  - Display: `block`, `inline-block`, `inline`, `flex`, `inline-flex`, `grid`, `inline-grid`, `hidden`, `contents`, `flow-root`
+  - Position: `relative`, `absolute`, `fixed`, `sticky`, `static`, `inset-*`, `top-*`, `left-*`, `right-*`, `bottom-*`, `z-*`
+  - Flex: `flex-row`, `flex-col`, `flex-wrap`, `flex-nowrap`, `flex-1`, `flex-auto`, `flex-none`, `shrink-*`, `grow-*`, `basis-*`
+  - Grid: `grid-cols-*`, `grid-rows-*`, `col-span-*`, `row-span-*`, `col-start/end-*`, `row-start/end-*`, `auto-cols-*`, `auto-rows-*`
+  - Alignment: `items-*`, `self-*`, `justify-*`, `justify-items-*`, `justify-self-*`, `content-*`, `place-*`
+  - Spacing: `p-*`, `m-*`, `gap-*` — all read from `theme.spacing`; `extendTheme` maps these to `--est-spacing-*` CSS vars
+  - Sizing: `w-*`, `h-*`, `min-w-*`, `max-w-*`, `min-h-*`, `max-h-*`, `size-*`
+  - Border: `border`, `border-t`, `border-b`, `border-l`, `border-r`, `border-x`, `border-y`, `border-{n}`, `border-solid`, `border-dashed`, `border-dotted`, `border-none`, `border-0`, `rounded-*` (reads `theme.borderRadius`)
+  - Background: `bg-*`, `bg-gradient-*`
+  - Typography: `text-{size}`, `font-{weight}`, `font-{family}`, `leading-*`, `tracking-*`, `text-left/center/right/justify`, `italic`, `not-italic`, `underline`, `no-underline`, `truncate`, `whitespace-*`, `text-wrap`, `text-nowrap`, `text-ellipsis`
+  - Overflow: `overflow-*`, `overflow-x-*`, `overflow-y-*`
+  - Transitions: `transition`, `transition-colors`, `transition-opacity`, `transition-shadow`, `transition-transform`, `transition-all`, `transition-none`, `duration-*`, `ease-*`, `delay-*`
+  - Transforms: `translate-*`, `rotate-*`, `scale-*`, `skew-*`, `origin-*`
+  - Shadow: `shadow` (DEFAULT), `shadow-sm`, `shadow-md`, `shadow-lg`, `shadow-xl`, `shadow-2xl`, `shadow-inner`, `shadow-none` — reads `theme.boxShadow`
+  - Ring: `ring`, `ring-{n}`, `ring-{color}`, `ring-offset-{n}`, `ring-inset` — reads `theme.ringWidth`
+  - Outline: `outline`, `outline-none`, `outline-{color}`, `outline-{width}`, `outline-offset-*`, `outline-solid/dashed/dotted/double/hidden`
+  - Opacity: `opacity-*`, `op-*`
+  - Cursor: `cursor-pointer`, `cursor-not-allowed`, `cursor-default`, `cursor-*`
+  - User select: `select-none`, `select-auto`, `select-all`, `select-text`
+  - Pointer events: `pointer-events-none`, `pointer-events-auto`
+  - Box sizing: `box-border`, `box-content`
+  - Aspect ratio: `aspect-*`
+  - Float: `float-*`, `clear-*`
+  - Resize: `resize`, `resize-x`, `resize-y`, `resize-none`
+  - Appearance: `appearance-none`, `appearance-auto`
+  - Vertical align: `align-*`, `vertical-*`
+  - Visibility: `visible`, `invisible`
+  - Text transform: `case-upper`, `case-lower`, `case-capital`, `case-normal`
+  - Will change: `will-change-*`
+  - SVG: `fill-*`, `stroke-*`
+
+  **NOT available in presetMini** — use explicit CSS instead (verified absent from source):
+  - `animate-*` (`animate-pulse`, `animate-spin`, `animate-bounce`, `animate-ping`) → define a scoped `@keyframes est-*` and set `animation:` directly
+  - `table-auto` / `table-fixed` → `table-layout: auto` / `table-layout: fixed`
+  - `border-collapse` / `border-separate` → `border-collapse: collapse` / `border-collapse: separate`
+  - `shadow-xs` → `box-shadow: var(--est-shadow-xs)` (not in `theme.boxShadow`; only sm/md/lg/xl/2xl/inner/none exist)
+  - `list-disc` / `list-decimal` / `list-none` → `list-style-type: disc` etc.
+  - `sr-only` / `not-sr-only` → explicit CSS
+
+  **Critical presetMini behaviour — `border` without `border-solid` is invisible.** presetMini ships no preflight/base reset. `border-style` defaults to `none` in CSS, so `@apply border` / `@apply border-t` / `@apply border-b` only set `border-width` — the border is invisible without a style. Always pair: `@apply border border-solid`, `@apply border-t border-solid`, `@apply border-b border-solid`.
+
+  **Design choices that look like missing utilities but are not:**
+  - Focus rings use `outline` (explicit CSS) instead of `@apply ring-2 ring-offset-1` — ring-* works in presetMini, but `outline` is more explicit and avoids the box-shadow composition chain.
+  - `shadow-sm` on the toggle thumb uses `box-shadow: var(--est-shadow-sm)` instead of `@apply shadow-sm` — shadow-sm works in presetMini, but the token approach lets consumers override it.
 - Use `:deep()` only when a CSS custom property override is not sufficient — i.e., for structural properties that the child component does not expose as a token (e.g. `width`, `height`, `text-align`). Prefer overriding `--est-foo-*` variables at a parent scope first; reach for `:deep()` only for what is left.
 
 ### Component conventions
@@ -282,7 +329,8 @@ Stories are organised in groups: individual variant stories first, then individu
 
 ### Toolchain
 
-- **UnoCSS** with `presetWind4`, `presetWebFonts` (Inter/Roboto Slab/Fira Code via Google), `presetIcons` (Remix Icon set via `@iconify-json/ri`), and `transformerDirectives` (enables `@apply` in plain CSS files). Icons are used as utility classes directly on elements: `i-ri-loader-4-line`, `i-ri-arrow-right-line`, etc. Do not import icon components or add other icon libraries.
+- **UnoCSS** with `presetMini`, `presetWebFonts` (Inter/Roboto Slab/Fira Code via Google), `presetIcons` (Remix Icon set via `@iconify-json/ri`), and `transformerDirectives` (enables `@apply` in plain CSS files). Icons are used as utility classes directly on elements: `i-ri-loader-4-line`, `i-ri-arrow-right-line`, etc. Do not import icon components or add other icon libraries.
+- **`extendTheme` in `uno.config.ts`** maps typography and spacing utility keys to CSS custom properties so that `@apply text-sm` compiles to `font-size: var(--est-font-size-sm)` and `@apply gap-8` compiles to `gap: var(--est-spacing-8)`. Only keys present in `extendTheme` are tokenized. Spacing keys are pixel values (key `8` = `--est-spacing-8` = 8 px), so utility names match pixel sizes directly — `gap-8` = 8 px, `w-32` = 32 px. If a spacing key is not in `extendTheme` (e.g. `gap-3`, `gap-5`), the utility still generates CSS but resolves to presetMini's default rem-based value rather than a token.
 - **Lint**: oxlint first, then eslint (both with `--fix`). Husky + lint-staged enforce this on every commit for staged files under `src/`
 - **Format**: oxfmt (not Prettier)
 - **Type-checking**: `vue-tsc --build` against `tsconfig.app.json`

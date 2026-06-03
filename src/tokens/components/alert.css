@@ -4,5 +4,6 @@
     --est-alert-body-font-size: var(--est-font-size-sm);
     --est-alert-title-font-size: var(--est-font-size-sm);
     --est-alert-title-font-weight: var(--est-font-weight-semibold);
+    --est-alert-focus-ring-color: currentColor;
   }
 }

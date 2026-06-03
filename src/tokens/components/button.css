@@ -17,7 +17,7 @@
     --est-btn-bg-pressed: var(--est-color-primary-700);
     --est-btn-color: var(--est-color-primary-foreground);
     --est-btn-focus-ring-color: var(--est-color-primary);
-    --est-btn-border-color: var(--est-color-border);
+    --est-btn-border-color: transparent;
     --est-btn-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
     --est-btn-radius: 4px;
 
@@ -77,5 +77,6 @@
 
     --est-btn-ghost-color: var(--est-color-muted-fg);
     --est-btn-ghost-bg-hover: var(--est-color-muted);
+    --est-btn-ghost-border-color: transparent;
   }
 }
