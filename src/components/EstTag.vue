@@ -11,7 +11,7 @@ export interface Props {
 
 withDefaults(defineProps<Props>(), {
   variant: 'success',
-  type: 'secondary',
+  type: 'primary',
 })
 
 const { buildVariant } = useVariantClasses()
@@ -21,7 +21,7 @@ const { buildVariant } = useVariantClasses()
   <span
     :class="{
       ...buildVariant('est-tag', variant ?? 'success'),
-      'est-tag--primary': type === 'primary',
+      'est-tag--secondary': type === 'secondary',
     }"
   >
     <slot />
