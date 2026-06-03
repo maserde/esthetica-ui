@@ -8,6 +8,7 @@ const meta = {
   component: EstToggle,
   tags: ['autodocs'],
   argTypes: {
+    variant: { control: 'select', options: ['primary', 'success', 'info', 'warning', 'error'] },
     size: { control: 'select', options: ['sm', 'md'] },
     disabled: { control: 'boolean' },
     modelValue: { control: 'boolean' },
@@ -67,6 +68,30 @@ export const DisabledChecked: Story = {
 }
 
 // ── All sizes overview ────────────────────────────────────────────
+
+export const AllVariants: Story = {
+  name: 'All Variants',
+  render: () => ({
+    components: { EstToggle },
+    setup() {
+      const primary = ref(true)
+      const success = ref(true)
+      const info = ref(true)
+      const warning = ref(true)
+      const error = ref(true)
+      return { primary, success, info, warning, error }
+    },
+    template: `
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <EstToggle v-model="primary" variant="primary" label="Primary" />
+        <EstToggle v-model="success" variant="success" label="Success" />
+        <EstToggle v-model="info" variant="info" label="Info" />
+        <EstToggle v-model="warning" variant="warning" label="Warning" />
+        <EstToggle v-model="error" variant="error" label="Error" />
+      </div>
+    `,
+  }),
+}
 
 export const AllSizes: Story = {
   name: 'All Sizes',

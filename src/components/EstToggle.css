@@ -1,3 +1,30 @@
+/* ── Variant modifiers ───────────────────────────────────────────── */
+
+.est-toggle--primary {
+  --est-toggle-track-bg-checked: var(--est-toggle-primary-track-bg-checked);
+  --est-toggle-focus-ring-color: var(--est-toggle-primary-focus-ring-color);
+}
+
+.est-toggle--success {
+  --est-toggle-track-bg-checked: var(--est-toggle-success-track-bg-checked);
+  --est-toggle-focus-ring-color: var(--est-toggle-success-focus-ring-color);
+}
+
+.est-toggle--info {
+  --est-toggle-track-bg-checked: var(--est-toggle-info-track-bg-checked);
+  --est-toggle-focus-ring-color: var(--est-toggle-info-focus-ring-color);
+}
+
+.est-toggle--warning {
+  --est-toggle-track-bg-checked: var(--est-toggle-warning-track-bg-checked);
+  --est-toggle-focus-ring-color: var(--est-toggle-warning-focus-ring-color);
+}
+
+.est-toggle--error {
+  --est-toggle-track-bg-checked: var(--est-toggle-error-track-bg-checked);
+  --est-toggle-focus-ring-color: var(--est-toggle-error-focus-ring-color);
+}
+
 /* ── Size modifiers ──────────────────────────────────────────────── */
 
 .est-toggle--sm {

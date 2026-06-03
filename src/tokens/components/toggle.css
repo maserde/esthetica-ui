@@ -18,6 +18,22 @@
     --est-toggle-description-font-size: var(--est-font-size-xs);
     --est-toggle-description-font-weight: var(--est-font-weight-normal);
 
+    /* ── Color variant presets ──────────────────────────────────── */
+    --est-toggle-primary-track-bg-checked: var(--est-color-primary);
+    --est-toggle-primary-focus-ring-color: var(--est-color-primary);
+
+    --est-toggle-success-track-bg-checked: var(--est-color-success);
+    --est-toggle-success-focus-ring-color: var(--est-color-success);
+
+    --est-toggle-info-track-bg-checked: var(--est-color-info);
+    --est-toggle-info-focus-ring-color: var(--est-color-info);
+
+    --est-toggle-warning-track-bg-checked: var(--est-color-warning);
+    --est-toggle-warning-focus-ring-color: var(--est-color-warning);
+
+    --est-toggle-error-track-bg-checked: var(--est-color-danger);
+    --est-toggle-error-focus-ring-color: var(--est-color-danger);
+
     /* ── Size variant presets ────────────────────────────────────── */
     --est-toggle-sm-track-width: 2.25rem;
     --est-toggle-sm-track-height: 1.25rem;
