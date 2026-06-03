@@ -30,3 +30,20 @@ export type { TableColumn, Props as TableProps } from './components/EstTable.vue
 export type { Props as PasswordMeterProps } from './components/EstPasswordMeter.vue'
 export type { TagVariant, TagType, Props as TagProps } from './components/EstTag.vue'
 export type { ToggleSize, Props as ToggleProps } from './components/EstToggle.vue'
+
+declare module '@vue/runtime-core' {
+  export interface GlobalComponents {
+    EstAlert: (typeof import('./components/EstAlert.vue'))['default']
+    EstButton: (typeof import('./components/EstButton.vue'))['default']
+    EstCard: (typeof import('./components/EstCard.vue'))['default']
+    EstInput: (typeof import('./components/EstInput.vue'))['default']
+    EstInputOTP: (typeof import('./components/EstInputOTP.vue'))['default']
+    EstPagination: (typeof import('./components/EstPagination.vue'))['default']
+    EstPasswordMeter: (typeof import('./components/EstPasswordMeter.vue'))['default']
+    EstSkeleton: (typeof import('./components/EstSkeleton.vue'))['default']
+    EstTable: (typeof import('./components/EstTable.vue'))['default']
+    EstTag: (typeof import('./components/EstTag.vue'))['default']
+    EstToast: (typeof import('./components/EstToast.vue'))['default']
+    EstToggle: (typeof import('./components/EstToggle.vue'))['default']
+  }
+}
