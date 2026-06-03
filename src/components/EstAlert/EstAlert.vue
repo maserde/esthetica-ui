@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { provide, toRef } from 'vue'
-import { useVariantClasses } from '@/composables/useVariantClasses.ts'
 import EstCard from '@/components/EstCard.vue'
 
 export type AlertVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
@@ -20,13 +19,11 @@ const emit = defineEmits<{
 }>()
 
 provide('est-alert-variant', toRef(props, 'variant'))
-
-const { buildVariant } = useVariantClasses()
 </script>
 
 <template>
-  <EstCard :variant="props.variant" role="alert">
-    <div :class="{ ...buildVariant('est-alert__inner', props.variant ?? 'primary') }">
+  <EstCard :variant="props.variant">
+    <div class="est-alert__inner" role="alert">
       <slot />
       <button
         v-if="props.dismissible"
