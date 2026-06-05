@@ -186,7 +186,8 @@ Three sibling files in `src/components/`:
 
 - BEM: `.est-foo`, `.est-foo--modifier`, `.est-foo__element`. No inline `<style>` in `.vue`.
 - **Props**: `defineProps<Interface>()` + `withDefaults`. Every prop must have an explicit `withDefaults` entry. Only `const props = withDefaults(...)` when script code accesses props — omit when template-only to avoid lint errors.
-- **Emits**: `defineEmits<{ event: [args] }>()`. Export `Variant`, `Size`, etc. from `<script setup>`.
+- **Prop Naming (`color` vs `variant`)**: When a prop controls the color palette (e.g., `primary`, `success`, `danger`), its name must be `color`. When a prop controls the structural visual style (e.g., `solid`, `outlined`, `ghost`, `muted`), its name must be `variant`. Do not use `variant` for palette colors.
+- **Emits**: `defineEmits<{ event: [args] }>()`. Export `Color`, `Variant`, `Size`, etc. from `<script setup>`.
 - **Slots**: `leading` (before label), `trailing` (after label), default for primary label. Icons: `<span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />` — never inline SVGs.
 - **Class bindings**: object syntax only — no string concatenation, array syntax, or computed strings.
 - **`buildVariant`**: for any prop mapping 1-to-1 to a BEM modifier. Explicit key/value only for non-1-to-1 modifiers (`disabled`, `loading`, `with-title`). Never write a per-variant block like `'est-foo--primary': variant === 'primary'`.
