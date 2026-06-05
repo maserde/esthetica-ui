@@ -1,9 +1,8 @@
 .est-alert__inner {
-  display: grid;
+  @apply grid items-start;
   grid-template-columns: auto 1fr auto;
   column-gap: 12px;
   row-gap: 2px;
-  align-items: start;
   --est-alert-icon-color: var(--est-card-color);
   --est-alert-title-color: var(--est-card-color);
   --est-alert-body-color: var(--est-card-color);

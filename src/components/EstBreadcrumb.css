@@ -66,17 +66,17 @@
 }
 
 .est-breadcrumb__separator {
+  @apply select-none;
   color: var(--est-breadcrumb-separator-color);
   font-weight: var(--est-font-weight-normal);
   text-decoration: none;
-  @apply select-none;
   flex-shrink: 0;
 }
 
 .est-breadcrumb__ellipsis {
+  @apply select-none;
   color: var(--est-breadcrumb-ellipsis-color);
   font-weight: var(--est-font-weight-normal);
   text-decoration: none;
-  @apply select-none;
   letter-spacing: 0.1em;
 }

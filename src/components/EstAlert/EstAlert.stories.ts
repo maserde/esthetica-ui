@@ -76,22 +76,6 @@ export const NotDismissible: Story = {
   args: { variant: 'info', dismissible: false },
 }
 
-export const CustomIcon: Story = {
-  name: 'Custom Icon',
-  render: () => ({
-    components: { EstAlert, EstAlertIcon, EstAlertTitle, EstAlertDescription },
-    template: `
-      <EstAlert variant="warning" style="width:400px;">
-        <EstAlertIcon>
-          <span class="i-ri-alarm-warning-fill w-6 h-6" />
-        </EstAlertIcon>
-        <EstAlertTitle>Custom Icon</EstAlertTitle>
-        <EstAlertDescription>Use the default slot on EstAlertIcon to provide a custom icon.</EstAlertDescription>
-      </EstAlert>
-    `,
-  }),
-}
-
 export const AllStates: Story = {
   name: 'All States',
   render: () => ({
@@ -108,6 +92,22 @@ export const AllStates: Story = {
           <EstAlertDescription>Not dismissible — no close button shown.</EstAlertDescription>
         </EstAlert>
       </div>
+    `,
+  }),
+}
+
+export const CustomIcon: Story = {
+  name: 'Custom Icon',
+  render: () => ({
+    components: { EstAlert, EstAlertIcon, EstAlertTitle, EstAlertDescription },
+    template: `
+      <EstAlert variant="warning" style="width:400px;">
+        <EstAlertIcon>
+          <span class="i-ri-alarm-warning-fill w-6 h-6" />
+        </EstAlertIcon>
+        <EstAlertTitle>Custom Icon</EstAlertTitle>
+        <EstAlertDescription>Use the default slot on EstAlertIcon to provide a custom icon.</EstAlertDescription>
+      </EstAlert>
     `,
   }),
 }
