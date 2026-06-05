@@ -21,7 +21,13 @@ export { default as EstPagination } from './components/EstPagination/EstPaginati
 export { default as EstPaginationPageInput } from './components/EstPagination/EstPaginationPageInput.vue'
 export { default as EstPaginationPages } from './components/EstPagination/EstPaginationPages.vue'
 export { default as EstPaginationRowsPerPage } from './components/EstPagination/EstPaginationRowsPerPage.vue'
-export { default as EstTable } from './components/EstTable.vue'
+export { default as EstTable } from './components/EstTable/EstTable.vue'
+export { default as EstTableHeader } from './components/EstTable/EstTableHeader.vue'
+export { default as EstTableBody } from './components/EstTable/EstTableBody.vue'
+export { default as EstTableRow } from './components/EstTable/EstTableRow.vue'
+export { default as EstTableHead } from './components/EstTable/EstTableHead.vue'
+export { default as EstTableCell } from './components/EstTable/EstTableCell.vue'
+export { default as EstTableEmpty } from './components/EstTable/EstTableEmpty.vue'
 export { default as EstPasswordMeter } from './components/EstPasswordMeter.vue'
 export { default as EstTag } from './components/EstTag.vue'
 export { default as EstToggle } from './components/EstToggle/EstToggle.vue'
@@ -45,7 +51,10 @@ export type { Props as InputOTPProps } from './components/EstInputOTP.vue'
 export type { AlertColor, Props as AlertProps } from './components/EstAlert/EstAlert.vue'
 export type { ToastColor, Props as ToastProps } from './components/EstToast.vue'
 export type { Props as PaginationProps } from './components/EstPagination/EstPagination.vue'
-export type { TableColumn, Props as TableProps } from './components/EstTable.vue'
+export type { Props as TableProps } from './components/EstTable/EstTable.vue'
+export type { Props as TableRowProps } from './components/EstTable/EstTableRow.vue'
+export type { Props as TableHeadProps } from './components/EstTable/EstTableHead.vue'
+export type { Props as TableEmptyProps } from './components/EstTable/EstTableEmpty.vue'
 export type { Props as PasswordMeterProps } from './components/EstPasswordMeter.vue'
 export type { TagColor, TagVariant, Props as TagProps } from './components/EstTag.vue'
 export type {
@@ -78,7 +87,13 @@ declare module '@vue/runtime-core' {
     EstPaginationRowsPerPage: (typeof import('./components/EstPagination/EstPaginationRowsPerPage.vue'))['default']
     EstPasswordMeter: (typeof import('./components/EstPasswordMeter.vue'))['default']
     EstSkeleton: (typeof import('./components/EstSkeleton.vue'))['default']
-    EstTable: (typeof import('./components/EstTable.vue'))['default']
+    EstTable: (typeof import('./components/EstTable/EstTable.vue'))['default']
+    EstTableHeader: (typeof import('./components/EstTable/EstTableHeader.vue'))['default']
+    EstTableBody: (typeof import('./components/EstTable/EstTableBody.vue'))['default']
+    EstTableRow: (typeof import('./components/EstTable/EstTableRow.vue'))['default']
+    EstTableHead: (typeof import('./components/EstTable/EstTableHead.vue'))['default']
+    EstTableCell: (typeof import('./components/EstTable/EstTableCell.vue'))['default']
+    EstTableEmpty: (typeof import('./components/EstTable/EstTableEmpty.vue'))['default']
     EstTag: (typeof import('./components/EstTag.vue'))['default']
     EstToast: (typeof import('./components/EstToast.vue'))['default']
     EstToggle: (typeof import('./components/EstToggle/EstToggle.vue'))['default']

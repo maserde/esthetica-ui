@@ -28,40 +28,44 @@
   border-collapse: collapse;
 }
 
-.est-table__header-row {
+:deep(.est-table__header) {
   background-color: var(--est-table-default-header-bg-color);
 }
 
-.est-table__header-cell {
+:deep(.est-table__header .est-table__row) {
+  border-top: none;
+}
+
+:deep(.est-table__header-cell) {
   @apply text-left text-xs font-semibold tracking-wide;
   padding: var(--est-table-header-cell-padding-y) var(--est-table-cell-padding-x);
   color: var(--est-table-default-header-color);
 }
 
-.est-table__row--striped {
+:deep(.est-table__row--striped) {
   background-color: var(--est-table-default-striped-bg-color);
 }
 
-.est-table__row--hoverable {
+:deep(.est-table__row--hoverable) {
   @apply transition-colors;
 }
 
-.est-table__row--hoverable:hover {
+:deep(.est-table__row--hoverable:hover) {
   background-color: var(--est-table-default-hover-bg-color);
 }
 
-.est-table__row {
+:deep(.est-table__row) {
   @apply border-t border-solid;
   border-color: var(--est-table-default-row-border-color);
 }
 
-.est-table__body-cell {
+:deep(.est-table__body-cell) {
   @apply text-sm;
   padding: var(--est-table-body-cell-padding-y) var(--est-table-cell-padding-x);
   color: var(--est-table-default-body-color);
 }
 
-.est-table__empty {
+:deep(.est-table__empty) {
   @apply text-center text-sm;
   padding: var(--est-table-empty-padding-y) var(--est-table-cell-padding-x);
   color: var(--est-table-default-empty-color);
