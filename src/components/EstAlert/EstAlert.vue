@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { provide, toRef } from 'vue'
+import { provide, type Ref, ref, toRef } from 'vue'
 import EstCard from '@/components/EstCard/EstCard.vue'
 
 export type AlertColor = 'primary' | 'success' | 'info' | 'warning' | 'danger'
@@ -13,6 +13,14 @@ const props = withDefaults(defineProps<Props>(), {
   color: 'success',
   dismissible: true,
 })
+
+const hasTitle: Ref<boolean> = ref(false)
+const setHasTitle = (value: boolean) => {
+  hasTitle.value = value
+}
+
+provide('est-alert-has-title', hasTitle)
+provide('est-alert-set-has-title', setHasTitle)
 
 const emit = defineEmits<{
   dismiss: []

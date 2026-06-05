@@ -30,7 +30,7 @@
   @apply shrink-0 flex items-center justify-center;
   grid-column: 1;
   grid-row: 1 / span 2;
-  align-self: center;
+  align-self: start;
   width: var(--est-alert-icon-size);
   height: var(--est-alert-icon-size);
   color: var(--est-alert-icon-color);
@@ -49,6 +49,11 @@
   grid-column: 2;
   color: var(--est-alert-body-color);
   font-size: var(--est-alert-body-font-size);
+  padding: 0.12em 0;
+}
+
+:deep(.est-alert__body--has-title) {
+  @apply p-0;
 }
 
 .est-alert__close {
@@ -56,7 +61,7 @@
   transition-colors outline-none;
   grid-column: 3;
   grid-row: 1 / span 2;
-  align-self: center;
+  align-self: start;
   background-color: transparent;
   color: var(--est-alert-close-color);
 }
