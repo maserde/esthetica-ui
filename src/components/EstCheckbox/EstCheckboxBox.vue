@@ -33,8 +33,8 @@ function handleChange(event: Event) {
       @change="handleChange"
     />
     <div class="est-checkbox__box" aria-hidden="true">
-      <span v-if="indeterminate" class="est-checkbox__icon i-ri-subtract-line" />
-      <span v-else-if="modelValue" class="est-checkbox__icon i-ri-check-line" />
+      <span v-if="indeterminate" class="est-checkbox__icon i-ri-subtract-fill" />
+      <span v-else-if="modelValue" class="est-checkbox__icon i-ri-check-fill" />
     </div>
   </div>
 </template>
