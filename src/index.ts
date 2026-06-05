@@ -1,5 +1,9 @@
 import 'virtual:uno.css'
 import './style.css'
+export { default as EstCheckbox } from './components/EstCheckbox/EstCheckbox.vue'
+export { default as EstCheckboxBox } from './components/EstCheckbox/EstCheckboxBox.vue'
+export { default as EstCheckboxLabel } from './components/EstCheckbox/EstCheckboxLabel.vue'
+export { default as EstCheckboxDescription } from './components/EstCheckbox/EstCheckboxDescription.vue'
 export { default as EstButton } from './components/EstButton/EstButton.vue'
 
 export { default as EstSkeleton } from './components/EstSkeleton.vue'
@@ -43,6 +47,11 @@ export type {
   ButtonType,
   Props as ButtonProps,
 } from './components/EstButton/EstButton.vue'
+export type {
+  CheckboxColor,
+  CheckboxSize,
+  Props as CheckboxProps,
+} from './components/EstCheckbox/EstCheckbox.vue'
 export type { SkeletonRounded, Props as SkeletonProps } from './components/EstSkeleton.vue'
 export type { CardColor, Props as CardProps } from './components/EstCard/EstCard.vue'
 export type { Props as FieldProps } from './components/EstField/EstField.vue'
@@ -71,6 +80,10 @@ declare module '@vue/runtime-core' {
     EstAlertTitle: (typeof import('./components/EstAlert/EstAlertTitle.vue'))['default']
     EstAlertBody: (typeof import('./components/EstAlert/EstAlertBody.vue'))['default']
     EstButton: (typeof import('./components/EstButton/EstButton.vue'))['default']
+    EstCheckbox: (typeof import('./components/EstCheckbox/EstCheckbox.vue'))['default']
+    EstCheckboxBox: (typeof import('./components/EstCheckbox/EstCheckboxBox.vue'))['default']
+    EstCheckboxLabel: (typeof import('./components/EstCheckbox/EstCheckboxLabel.vue'))['default']
+    EstCheckboxDescription: (typeof import('./components/EstCheckbox/EstCheckboxDescription.vue'))['default']
 
     EstCard: (typeof import('./components/EstCard/EstCard.vue'))['default']
     EstCardHeader: (typeof import('./components/EstCard/EstCardHeader.vue'))['default']

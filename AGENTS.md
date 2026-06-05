@@ -401,6 +401,7 @@ Don't add parameters to `buildVariant`. For compound modifiers combining two pro
 
 ```ts
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import { ref } from 'vue'
 import EstFoo from './EstFoo.vue'
 
 const meta = {
@@ -416,8 +417,12 @@ const meta = {
   },
   render: (args) => ({
     components: { EstFoo },
-    setup() { return { args } },
-    template: `<EstFoo v-bind="args">{{ args.default ?? 'Label' }}</EstFoo>`,
+    setup() {
+      // For interactive components (v-model), use a local ref
+      const value = ref(args.modelValue ?? '')
+      return { args, value }
+    },
+    template: `<EstFoo v-bind="args" v-model="value">{{ args.default ?? 'Label' }}</EstFoo>`,
   }),
 } satisfies Meta<typeof EstFoo>        // use satisfies, not a type annotation
 

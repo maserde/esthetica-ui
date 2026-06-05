@@ -6,6 +6,7 @@
 @import './tokens/components/skeleton.css';
 @import './tokens/components/card.css';
 @import './tokens/components/field.css';
+@import './tokens/components/checkbox.css';
 @import './tokens/components/alert.css';
 @import './tokens/components/toast.css';
 @import './tokens/components/pagination.css';
