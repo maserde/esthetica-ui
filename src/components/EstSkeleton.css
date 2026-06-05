@@ -1,17 +1,17 @@
 .est-skeleton--none {
-  --est-skeleton-radius: var(--est-skeleton-none-radius);
+  --est-skeleton-default-radius: var(--est-skeleton-none-radius);
 }
 .est-skeleton--sm {
-  --est-skeleton-radius: var(--est-skeleton-sm-radius);
+  --est-skeleton-default-radius: var(--est-skeleton-sm-radius);
 }
 .est-skeleton--md {
-  --est-skeleton-radius: var(--est-skeleton-md-radius);
+  --est-skeleton-default-radius: var(--est-skeleton-md-radius);
 }
 .est-skeleton--lg {
-  --est-skeleton-radius: var(--est-skeleton-lg-radius);
+  --est-skeleton-default-radius: var(--est-skeleton-lg-radius);
 }
 .est-skeleton--full {
-  --est-skeleton-radius: var(--est-skeleton-full-radius);
+  --est-skeleton-default-radius: var(--est-skeleton-full-radius);
 }
 
 @keyframes est-skeleton-pulse {
@@ -28,5 +28,5 @@
   @apply block;
   animation: est-skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   background-color: var(--est-skeleton-default-bg-color);
-  border-radius: var(--est-skeleton-radius);
+  border-radius: var(--est-skeleton-default-radius);
 }

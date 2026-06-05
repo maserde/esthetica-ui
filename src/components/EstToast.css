@@ -1,17 +1,17 @@
 .est-toast--primary {
-  --est-toast-progress-bg-color: var(--est-toast-primary-progress-bg-color);
+  --est-toast-default-progress-bg-color: var(--est-toast-primary-progress-bg-color);
 }
 .est-toast--success {
-  --est-toast-progress-bg-color: var(--est-toast-success-progress-bg-color);
+  --est-toast-default-progress-bg-color: var(--est-toast-success-progress-bg-color);
 }
 .est-toast--info {
-  --est-toast-progress-bg-color: var(--est-toast-info-progress-bg-color);
+  --est-toast-default-progress-bg-color: var(--est-toast-info-progress-bg-color);
 }
 .est-toast--warning {
-  --est-toast-progress-bg-color: var(--est-toast-warning-progress-bg-color);
+  --est-toast-default-progress-bg-color: var(--est-toast-warning-progress-bg-color);
 }
 .est-toast--danger {
-  --est-toast-progress-bg-color: var(--est-toast-danger-progress-bg-color);
+  --est-toast-default-progress-bg-color: var(--est-toast-danger-progress-bg-color);
 }
 
 .est-toast {
@@ -30,7 +30,7 @@
 
 .est-toast__progress-bar {
   height: 100%;
-  background-color: var(--est-toast-progress-bg-color);
+  background-color: var(--est-toast-default-progress-bg-color);
   transition: width var(--est-toast-progress-transition-duration) linear;
 }
 

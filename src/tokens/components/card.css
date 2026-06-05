@@ -4,18 +4,13 @@
     --est-card-padding-x: 0.75rem;
     --est-card-padding-y: 0.5rem;
 
-    /* Base */
-    --est-card-bg-color: var(--est-card-default-bg-color);
-    --est-card-color: var(--est-card-default-color);
-    --est-card-hover-color: var(--est-card-default-hover-color);
-    --est-card-border-color: var(--est-card-default-border-color);
-
-    /* Colors */
+    /* ── Base/Default tokens ─────────────────────────────────────── */
     --est-card-default-bg-color: var(--est-color-white);
     --est-card-default-color: var(--est-color-neutral-800);
     --est-card-default-hover-color: var(--est-color-neutral-900);
     --est-card-default-border-color: rgba(0, 0, 0, 0.1);
 
+    /* ── Color variant presets ───────────────────────────────────── */
     --est-card-primary-bg-color: var(--est-color-primary-50);
     --est-card-primary-color: var(--est-color-primary-600);
     --est-card-primary-hover-color: var(--est-color-primary-900);

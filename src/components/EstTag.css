@@ -1,49 +1,49 @@
-/* ── Variant modifiers — set secondary (default type) colors ────── */
+/* ── Color modifiers — primary (solid) style by default ──────────── */
 
 .est-tag--info {
-  --est-tag-bg-color: var(--est-tag-info-primary-bg-color);
-  --est-tag-color: var(--est-tag-info-primary-color);
+  --est-tag-default-bg-color: var(--est-tag-info-primary-bg-color);
+  --est-tag-default-color: var(--est-tag-info-primary-color);
 }
 
 .est-tag--success {
-  --est-tag-bg-color: var(--est-tag-success-primary-bg-color);
-  --est-tag-color: var(--est-tag-success-primary-color);
+  --est-tag-default-bg-color: var(--est-tag-success-primary-bg-color);
+  --est-tag-default-color: var(--est-tag-success-primary-color);
 }
 
 .est-tag--warning {
-  --est-tag-bg-color: var(--est-tag-warning-primary-bg-color);
-  --est-tag-color: var(--est-tag-warning-primary-color);
+  --est-tag-default-bg-color: var(--est-tag-warning-primary-bg-color);
+  --est-tag-default-color: var(--est-tag-warning-primary-color);
 }
 
 .est-tag--danger {
-  --est-tag-bg-color: var(--est-tag-danger-primary-bg-color);
-  --est-tag-color: var(--est-tag-danger-primary-color);
+  --est-tag-default-bg-color: var(--est-tag-danger-primary-bg-color);
+  --est-tag-default-color: var(--est-tag-danger-primary-color);
 }
 
-/* ── Primary type overrides (variant + primary compound selectors) ─ */
+/* ── Secondary variant overrides (compound selectors) ────────────── */
 
 .est-tag--secondary.est-tag--info {
-  --est-tag-bg-color: var(--est-tag-info-secondary-bg-color);
-  --est-tag-color: var(--est-tag-info-secondary-color);
-  --est-tag-border-color: var(--est-tag-info-secondary-border-color);
+  --est-tag-default-bg-color: var(--est-tag-info-secondary-bg-color);
+  --est-tag-default-color: var(--est-tag-info-secondary-color);
+  --est-tag-default-border-color: var(--est-tag-info-secondary-border-color);
 }
 
 .est-tag--secondary.est-tag--success {
-  --est-tag-bg-color: var(--est-tag-success-secondary-bg-color);
-  --est-tag-color: var(--est-tag-success-secondary-color);
-  --est-tag-border-color: var(--est-tag-success-secondary-border-color);
+  --est-tag-default-bg-color: var(--est-tag-success-secondary-bg-color);
+  --est-tag-default-color: var(--est-tag-success-secondary-color);
+  --est-tag-default-border-color: var(--est-tag-success-secondary-border-color);
 }
 
 .est-tag--secondary.est-tag--warning {
-  --est-tag-bg-color: var(--est-tag-warning-secondary-bg-color);
-  --est-tag-color: var(--est-tag-warning-secondary-color);
-  --est-tag-border-color: var(--est-tag-warning-secondary-border-color);
+  --est-tag-default-bg-color: var(--est-tag-warning-secondary-bg-color);
+  --est-tag-default-color: var(--est-tag-warning-secondary-color);
+  --est-tag-default-border-color: var(--est-tag-warning-secondary-border-color);
 }
 
 .est-tag--secondary.est-tag--danger {
-  --est-tag-bg-color: var(--est-tag-danger-secondary-bg-color);
-  --est-tag-color: var(--est-tag-danger-secondary-color);
-  --est-tag-border-color: var(--est-tag-danger-secondary-border-color);
+  --est-tag-default-bg-color: var(--est-tag-danger-secondary-bg-color);
+  --est-tag-default-color: var(--est-tag-danger-secondary-color);
+  --est-tag-default-border-color: var(--est-tag-danger-secondary-border-color);
 }
 
 /* ── Base class ──────────────────────────────────────────────────── */
@@ -56,7 +56,7 @@
   font-weight: var(--est-tag-font-weight);
   padding: var(--est-tag-padding);
   border-radius: var(--est-tag-border-radius);
-  border-color: var(--est-tag-border-color);
-  background-color: var(--est-tag-bg-color);
-  color: var(--est-tag-color);
+  border-color: var(--est-tag-default-border-color);
+  background-color: var(--est-tag-default-bg-color);
+  color: var(--est-tag-default-color);
 }

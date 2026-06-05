@@ -2,43 +2,43 @@
 
 .est-toggle--primary {
   --est-toggle-default-checked-track-bg-color: var(--est-toggle-primary-checked-track-bg-color);
-  --est-toggle-focus-ring-color: var(--est-toggle-primary-focus-ring-color);
+  --est-toggle-default-focus-ring-color: var(--est-toggle-primary-focus-ring-color);
 }
 
 .est-toggle--success {
   --est-toggle-default-checked-track-bg-color: var(--est-toggle-success-checked-track-bg-color);
-  --est-toggle-focus-ring-color: var(--est-toggle-success-focus-ring-color);
+  --est-toggle-default-focus-ring-color: var(--est-toggle-success-focus-ring-color);
 }
 
 .est-toggle--info {
   --est-toggle-default-checked-track-bg-color: var(--est-toggle-info-checked-track-bg-color);
-  --est-toggle-focus-ring-color: var(--est-toggle-info-focus-ring-color);
+  --est-toggle-default-focus-ring-color: var(--est-toggle-info-focus-ring-color);
 }
 
 .est-toggle--warning {
   --est-toggle-default-checked-track-bg-color: var(--est-toggle-warning-checked-track-bg-color);
-  --est-toggle-focus-ring-color: var(--est-toggle-warning-focus-ring-color);
+  --est-toggle-default-focus-ring-color: var(--est-toggle-warning-focus-ring-color);
 }
 
 .est-toggle--error {
   --est-toggle-default-checked-track-bg-color: var(--est-toggle-error-checked-track-bg-color);
-  --est-toggle-focus-ring-color: var(--est-toggle-error-focus-ring-color);
+  --est-toggle-default-focus-ring-color: var(--est-toggle-error-focus-ring-color);
 }
 
 /* ── Size modifiers ──────────────────────────────────────────────── */
 
 .est-toggle--sm {
-  --est-toggle-track-width: var(--est-toggle-sm-track-width);
-  --est-toggle-track-height: var(--est-toggle-sm-track-height);
-  --est-toggle-thumb-size: var(--est-toggle-sm-thumb-size);
-  --est-toggle-thumb-translate: var(--est-toggle-sm-thumb-translate);
+  --est-toggle-default-track-width: var(--est-toggle-sm-track-width);
+  --est-toggle-default-track-height: var(--est-toggle-sm-track-height);
+  --est-toggle-default-thumb-size: var(--est-toggle-sm-thumb-size);
+  --est-toggle-default-thumb-translate: var(--est-toggle-sm-thumb-translate);
 }
 
 .est-toggle--md {
-  --est-toggle-track-width: var(--est-toggle-md-track-width);
-  --est-toggle-track-height: var(--est-toggle-md-track-height);
-  --est-toggle-thumb-size: var(--est-toggle-md-thumb-size);
-  --est-toggle-thumb-translate: var(--est-toggle-md-thumb-translate);
+  --est-toggle-default-track-width: var(--est-toggle-md-track-width);
+  --est-toggle-default-track-height: var(--est-toggle-md-track-height);
+  --est-toggle-default-thumb-size: var(--est-toggle-md-thumb-size);
+  --est-toggle-default-thumb-translate: var(--est-toggle-md-thumb-translate);
 }
 
 .est-toggle--disabled {
@@ -71,14 +71,14 @@
   @apply relative inline-flex shrink-0 items-center rounded-full;
   padding: 2px;
   border: none;
-  width: var(--est-toggle-track-width);
-  height: var(--est-toggle-track-height);
+  width: var(--est-toggle-default-track-width);
+  height: var(--est-toggle-default-track-height);
   background-color: var(--est-toggle-default-track-bg-color);
   transition: background-color 200ms ease-in-out;
 }
 
 :deep(.est-toggle__track:focus-visible) {
-  outline: 2px solid var(--est-toggle-focus-ring-color);
+  outline: 2px solid var(--est-toggle-default-focus-ring-color);
   outline-offset: 2px;
 }
 
@@ -96,15 +96,15 @@
 :deep(.est-toggle__thumb) {
   @apply pointer-events-none inline-block rounded-full;
   box-shadow: var(--est-shadow-sm);
-  width: var(--est-toggle-thumb-size);
-  height: var(--est-toggle-thumb-size);
+  width: var(--est-toggle-default-thumb-size);
+  height: var(--est-toggle-default-thumb-size);
   background-color: var(--est-toggle-default-thumb-bg-color);
   transform: translateX(0);
   transition: transform 200ms ease-in-out;
 }
 
 :deep(.est-toggle__thumb--checked) {
-  transform: translateX(var(--est-toggle-thumb-translate));
+  transform: translateX(var(--est-toggle-default-thumb-translate));
 }
 
 :deep(.est-toggle__thumb--disabled) {

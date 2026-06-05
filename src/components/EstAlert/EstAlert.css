@@ -4,11 +4,11 @@
   column-gap: 12px;
   row-gap: 2px;
   padding: var(--est-alert-padding-y) var(--est-alert-padding-x);
-  --est-alert-icon-color: var(--est-card-color);
-  --est-alert-title-color: var(--est-card-color);
-  --est-alert-body-color: var(--est-card-color);
-  --est-alert-close-color: var(--est-card-color);
-  --est-alert-hover-close-color: var(--est-card-hover-color);
+  --est-alert-icon-color: var(--est-card-default-color);
+  --est-alert-title-color: var(--est-card-default-color);
+  --est-alert-body-color: var(--est-card-default-color);
+  --est-alert-close-color: var(--est-card-default-color);
+  --est-alert-hover-close-color: var(--est-card-default-hover-color);
 }
 
 /* Collapse empty icon column when no icon is present */

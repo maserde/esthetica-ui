@@ -14,7 +14,7 @@
 }
 
 .est-otp__cell--error {
-  --est-otp-cell-border-color: var(--est-otp-cell-error-border-color);
+  --est-otp-cell-default-border-color: var(--est-otp-cell-error-border-color);
 }
 
 .est-otp__cell--error:focus-visible {
@@ -33,7 +33,7 @@
   border-radius: var(--est-field-radius);
   background-color: var(--est-field-bg-color);
   color: var(--est-field-color);
-  border-color: var(--est-otp-cell-border-color);
+  border-color: var(--est-otp-cell-default-border-color);
   box-shadow: var(--est-field-shadow);
   transition-duration: var(--est-field-transition-duration);
 }

@@ -39,15 +39,15 @@
 
 :deep(.est-pagination__pages),
 :deep(.est-pagination__rows-per-page-dropdown) {
-  --est-btn-bg-color: var(--est-pagination-default-btn-bg-color);
-  --est-btn-hover-bg-color: var(--est-pagination-default-hover-btn-bg-color);
-  --est-btn-color: var(--est-pagination-text-color);
-  --est-btn-border-color: var(--est-pagination-default-border-color);
+  --est-btn-default-bg-color: var(--est-pagination-default-btn-bg-color);
+  --est-btn-default-hover-bg-color: var(--est-pagination-default-hover-btn-bg-color);
+  --est-btn-default-color: var(--est-pagination-text-color);
+  --est-btn-default-border-color: var(--est-pagination-default-border-color);
   --est-btn-md-font-size: var(--est-pagination-font-size);
   --est-btn-md-radius: var(--est-pagination-btn-radius);
-  --est-btn-focus-ring-color: var(--est-pagination-focus-ring-color);
+  --est-btn-default-focus-ring-color: var(--est-pagination-focus-ring-color);
   --est-btn-focus-ring-offset: var(--est-pagination-default-btn-bg-color);
-  --est-btn-box-shadow: none;
+  --est-btn-default-box-shadow: none;
   --est-btn-transition-duration: var(--est-pagination-transition-duration);
 }
 
@@ -76,24 +76,24 @@
   .est-pagination__rows-per-page-dropdown,
   .est-pagination__rows-per-page-trigger:hover:not(:disabled)
 ) {
-  --est-btn-border-color: var(--est-pagination-default-hover-btn-border-color);
+  --est-btn-default-border-color: var(--est-pagination-default-hover-btn-border-color);
 }
 
 /* Page number buttons: borderless by default, bordered when active */
 :deep(.est-pagination__pages .est-pagination__page-btn) {
   @apply min-w-8 h-8 px-1.5;
-  --est-btn-border-color: transparent;
-  --est-btn-bg-color: transparent;
-  --est-btn-hover-bg-color: transparent;
+  --est-btn-default-border-color: transparent;
+  --est-btn-default-bg-color: transparent;
+  --est-btn-default-hover-bg-color: transparent;
 }
 
 :deep(.est-pagination__pages .est-pagination__page-btn--active),
 :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger--active) {
   @apply font-semibold;
   box-shadow: var(--est-shadow-xs);
-  --est-btn-bg-color: var(--est-pagination-default-active-bg-color);
-  --est-btn-hover-bg-color: var(--est-pagination-default-active-bg-color);
-  --est-btn-border-color: var(--est-pagination-default-active-border-color);
+  --est-btn-default-bg-color: var(--est-pagination-default-active-bg-color);
+  --est-btn-default-hover-bg-color: var(--est-pagination-default-active-bg-color);
+  --est-btn-default-border-color: var(--est-pagination-default-active-border-color);
 }
 
 :deep(.est-pagination__pages .est-pagination__page-btn:not(.est-pagination__page-btn--active)) {
@@ -158,14 +158,14 @@
   @apply block w-full text-left;
   padding: 0.375rem 0.75rem;
   border: none;
-  --est-btn-bg-color: transparent;
+  --est-btn-default-bg-color: transparent;
   --est-btn-md-radius: 0;
   --est-btn-transition-duration: var(--est-pagination-option-transition-duration);
 }
 
 :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-option--active) {
   @apply font-semibold;
-  --est-btn-bg-color: var(--est-pagination-default-active-option-bg-color);
-  --est-btn-hover-bg-color: var(--est-pagination-default-active-option-bg-color);
-  --est-btn-color: var(--est-pagination-option-active-color);
+  --est-btn-default-bg-color: var(--est-pagination-default-active-option-bg-color);
+  --est-btn-default-hover-bg-color: var(--est-pagination-default-active-option-bg-color);
+  --est-btn-default-color: var(--est-pagination-option-active-color);
 }

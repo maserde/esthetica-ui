@@ -8,10 +8,10 @@
     --est-toast-animation-duration: 0.3s;
     --est-toast-progress-transition-duration: 50ms;
 
-    /* Base */
-    --est-toast-progress-bg-color: var(--est-toast-success-progress-bg-color);
+    /* ── Base/Default tokens ─────────────────────────────────────── */
+    --est-toast-default-progress-bg-color: var(--est-toast-success-progress-bg-color);
 
-    /* Colors */
+    /* ── Color variant presets ───────────────────────────────────── */
     --est-toast-primary-progress-bg-color: var(--est-color-primary-500);
     --est-toast-success-progress-bg-color: var(--est-color-success);
     --est-toast-info-progress-bg-color: var(--est-color-info);

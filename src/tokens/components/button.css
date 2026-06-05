@@ -7,24 +7,7 @@
     --est-btn-focus-ring: initial;
     --est-btn-focus-ring-offset: var(--est-color-surface);
 
-    /* Base */
-
-    --est-btn-padding: 0.2rem 0.75rem;
-    --est-btn-min-height: 2rem;
-    --est-btn-font-size: 0.75rem;
-    --est-btn-bg-color: var(--est-color-primary);
-    --est-btn-hover-bg-color: var(--est-color-primary-hover);
-    --est-btn-pressed-bg-color: var(--est-color-primary-700);
-    --est-btn-color: var(--est-color-primary-foreground);
-    --est-btn-focus-ring-color: var(--est-color-primary);
-    --est-btn-border-color: transparent;
-    --est-btn-border-width: 1.5px;
-    --est-btn-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
-    --est-btn-radius: 4px;
-
-    /* Variants */
-
-    /* Box Model */
+    /* ── Size variant presets ────────────────────────────────────── */
     --est-btn-sm-padding: 0.5rem 0.5rem;
     --est-btn-sm-min-height: 1.5rem;
     --est-btn-sm-font-size: 0.75rem;
@@ -40,7 +23,21 @@
     --est-btn-lg-font-size: 0.875rem;
     --est-btn-lg-radius: 8px;
 
-    /* Colors */
+    /* ── Base/Default tokens ─────────────────────────────────────── */
+    --est-btn-default-padding: 0.2rem 0.75rem;
+    --est-btn-default-min-height: 2rem;
+    --est-btn-default-font-size: 0.75rem;
+    --est-btn-default-bg-color: var(--est-color-primary);
+    --est-btn-default-hover-bg-color: var(--est-color-primary-hover);
+    --est-btn-default-pressed-bg-color: var(--est-color-primary-700);
+    --est-btn-default-color: var(--est-color-primary-foreground);
+    --est-btn-default-focus-ring-color: var(--est-color-primary);
+    --est-btn-default-border-color: transparent;
+    --est-btn-default-border-width: 1.5px;
+    --est-btn-default-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+    --est-btn-default-radius: 4px;
+
+    /* ── Color/style variant presets ─────────────────────────────── */
     --est-btn-secondary-bg-color: var(--est-color-secondary);
     --est-btn-secondary-hover-bg-color: var(--est-color-secondary-hover);
     --est-btn-secondary-pressed-bg-color: var(--est-color-secondary-pressed);

@@ -33,7 +33,7 @@ provide('est-field-emit', (value: string) => emit('update:modelValue', value))
 </script>
 
 <template>
-  <div class="est-field" :aria-disabled="disabled || undefined">
+  <div class="est-field" :aria-disabled="disabled ? 'true' : undefined">
     <slot />
   </div>
 </template>
