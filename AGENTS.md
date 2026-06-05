@@ -49,18 +49,28 @@ Tokens are CSS custom properties in `src/tokens/`:
 
 `src/style.css` imports all token files under `@layer esthetica-ui-tokens`. Component tokens must reference globals/colors via `var()` — never hardcode raw values.
 
+#### Token naming convention
+
+All component tokens **must** strictly follow this pattern:
+`--est-[componentName]-[componentVariant]-[state]-[element]-[modifier]`
+
+- `[componentName]`: e.g. `card`, `button`, `foo`.
+- `[componentVariant]`: e.g. `default`, `primary`, `success`. **Always include a `default` variant slot** even if the component does not accept a variant prop.
+- `[state]`: e.g. `hover`, `active`, `checked`, `disabled`. Use state-first order. Omit if default state.
+- `[element]`: e.g. `btn`, `track`, `icon`, `label`. Omit if targeting the component root.
+- `[modifier]`: e.g. `bg-color`, `border-color`, `color`, `padding`. Always use standard CSS property names (e.g. `bg-color` instead of `bg`, `border-color` instead of `border` for colors).
+
+**Examples:**
+- `--est-card-default-bg-color: var(--est-color-white);`
+- `--est-button-primary-hover-bg-color: var(--est-color-primary-600);`
+- `--est-pagination-default-hover-btn-bg-color: var(--est-color-neutral-100);`
+- `--est-toggle-success-checked-track-bg-color: var(--est-color-success);`
+
 #### Component token file structure
 
 ```css
 @layer esthetica-ui-tokens {
     :root {
-        /* ── Base tokens (what the component reads directly) ─────────── */
-        --est-foo-padding: ...;
-        --est-foo-min-height: ...;
-        --est-foo-font-size: ...;
-        --est-foo-bg-color: var(--est-color-primary);
-        --est-foo-color: var(--est-color-primary-foreground);
-
         /* ── Size variant presets ────────────────────────────────────── */
         --est-foo-sm-padding: ...;
         --est-foo-sm-min-height: ...;
@@ -74,48 +84,57 @@ Tokens are CSS custom properties in `src/tokens/`:
         --est-foo-lg-min-height: ...;
         --est-foo-lg-font-size: ...;
 
+        /* ── Base/Default tokens ─────────────────────────────────────── */
+        /* Always include a 'default' variant */
+        --est-foo-default-padding: var(--est-foo-md-padding);
+        --est-foo-default-min-height: var(--est-foo-md-min-height);
+        --est-foo-default-font-size: var(--est-foo-md-font-size);
+        --est-foo-default-bg-color: var(--est-color-primary);
+        --est-foo-default-color: var(--est-color-primary-foreground);
+        --est-foo-default-hover-bg-color: var(--est-color-primary-hover);
+
         /* ── Color/style variant presets ─────────────────────────────── */
         --est-foo-secondary-bg-color: var(--est-color-secondary);
         --est-foo-secondary-color: var(--est-color-secondary-foreground);
-        --est-foo-secondary-bg-hover: var(--est-color-secondary-hover);
+        --est-foo-secondary-hover-bg-color: var(--est-color-secondary-hover);
         /* ... one group per named variant */
     }
 }
 ```
 
-Three sections: (1) base tokens the component reads, (2) size presets `--est-foo-{sm|md|lg}-{prop}`, (3) variant presets `--est-foo-{variant}-{prop}`.
+Three sections: (1) size presets `--est-foo-{sm|md|lg}-{prop}`, (2) base/default tokens `--est-foo-default-*`, (3) variant presets `--est-foo-{variant}-*`.
 
 #### Component CSS structure
 
-Modifier classes re-point base tokens; base class reads only base tokens — single rendering path.
+Modifier classes re-point base/default tokens; base class reads only base/default tokens — single rendering path.
 
 ```css
 /* 1. Modifier classes FIRST */
 .est-foo--sm {
-  --est-foo-padding: var(--est-foo-sm-padding);
-  --est-foo-min-height: var(--est-foo-sm-min-height);
-  --est-foo-font-size: var(--est-foo-sm-font-size);
+  --est-foo-default-padding: var(--est-foo-sm-padding);
+  --est-foo-default-min-height: var(--est-foo-sm-min-height);
+  --est-foo-default-font-size: var(--est-foo-sm-font-size);
 }
 .est-foo--secondary {
-  --est-foo-bg-color: var(--est-foo-secondary-bg-color);
-  --est-foo-color: var(--est-foo-secondary-color);
-  --est-foo-bg-hover: var(--est-foo-secondary-bg-hover);
+  --est-foo-default-bg-color: var(--est-foo-secondary-bg-color);
+  --est-foo-default-color: var(--est-foo-secondary-color);
+  --est-foo-default-hover-bg-color: var(--est-foo-secondary-hover-bg-color);
 }
 
-/* 2. Base class LAST — only reads base tokens, never variant tokens directly */
+/* 2. Base class LAST — only reads default tokens, never variant tokens directly */
 .est-foo {
-  padding: var(--est-foo-padding);
-  min-height: var(--est-foo-min-height);
-  font-size: var(--est-foo-font-size);
-  background-color: var(--est-foo-bg-color);
-  color: var(--est-foo-color);
+  padding: var(--est-foo-default-padding);
+  min-height: var(--est-foo-default-min-height);
+  font-size: var(--est-foo-default-font-size);
+  background-color: var(--est-foo-default-bg-color);
+  color: var(--est-foo-default-color);
 }
-.est-foo:hover { background-color: var(--est-foo-bg-hover); }
+.est-foo:hover { background-color: var(--est-foo-default-hover-bg-color); }
 ```
 
 Rules:
 - Modifier classes always before base class.
-- Base class never references `--est-foo-{variant|size}-*` directly — only base `--est-foo-*`.
+- Base class never references `--est-foo-{variant|size}-*` directly — only base `--est-foo-default-*`.
 - `@apply` for layout/structural and typography utilities. Never `@apply` colour — always `var(--est-color-*)` directly. (`@apply text-sm` compiles to `font-size: var(--est-font-size-sm)` — consumer-overridable.)
 - `:deep()` only for structural properties not exposed as a token (`width`, `height`, `text-align`). Prefer CSS custom property overrides first.
 
