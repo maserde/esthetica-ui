@@ -1,14 +1,15 @@
 /* 1. Modifier classes FIRST */
 .est-checkbox--sm {
+  --est-checkbox-default-border-radius: var(--est-checkbox-sm-border-radius);
   --est-checkbox-default-size: var(--est-checkbox-sm-size);
   --est-checkbox-default-icon-size: var(--est-checkbox-sm-icon-size);
-  --est-checkbox-label-font-size: var(--est-checkbox-sm-label-font-size);
+  --est-checkbox-default-label-font-size: var(--est-checkbox-sm-label-font-size);
 }
 
 .est-checkbox--lg {
   --est-checkbox-default-size: var(--est-checkbox-lg-size);
   --est-checkbox-default-icon-size: var(--est-checkbox-lg-icon-size);
-  --est-checkbox-label-font-size: var(--est-checkbox-lg-label-font-size);
+  --est-checkbox-default-label-font-size: var(--est-checkbox-lg-label-font-size);
 }
 
 .est-checkbox--primary {
@@ -51,38 +52,35 @@
   --est-checkbox-default-focus-ring-color: var(--est-checkbox-info-focus-ring-color);
 }
 
-/* 2. Base class LAST */
+/* 2. Modifier classes (state-based) */
+.est-checkbox--disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+/* 3. Base class LAST */
 .est-checkbox {
-  @apply select-none inline-flex cursor-pointer;
-  position: relative;
+  @apply select-none inline-flex relative cursor-pointer;
 }
 
 .est-checkbox__inner {
-  display: grid;
+  @apply grid items-start;
   grid-template-columns: auto 1fr;
   column-gap: 8px;
   row-gap: 2px;
-  align-items: start;
 }
 
 .est-checkbox__inner:not(:has(.est-checkbox__box-wrapper)) {
   grid-template-columns: 1fr;
 }
 
-.est-checkbox--disabled {
-  @apply cursor-not-allowed opacity-50;
-}
-
 :deep(.est-checkbox__box-wrapper) {
-  @apply relative inline-flex shrink-0;
+  @apply relative inline-flex shrink-0 self-center;
   grid-column: 1;
   grid-row: 1 / span 2;
-  /* margin-top removed as we will align via line-height */
 }
 
 :deep(.est-checkbox__input) {
-  @apply absolute opacity-0 w-0 h-0;
-  pointer-events: none;
+  @apply absolute opacity-0 w-0 h-0 pointer-events-none;
 }
 
 :deep(.est-checkbox__box) {
@@ -123,14 +121,15 @@
 :deep(.est-checkbox__label) {
   @apply block;
   grid-column: 2;
-  font-size: var(--est-checkbox-label-font-size, var(--est-checkbox-md-label-font-size));
-  line-height: var(--est-checkbox-default-size); /* Matches box height exactly */
-  color: var(--est-color-neutral-700);
+  font-size: var(--est-checkbox-default-label-font-size);
+  line-height: var(--est-checkbox-default-size);
+  color: var(--est-checkbox-default-label-color);
+  margin-top: 0.2em;
 }
 
 :deep(.est-checkbox__description) {
   @apply text-xs block;
   grid-column: 2;
   line-height: 1.4;
-  color: var(--est-color-neutral-500);
+  color: var(--est-checkbox-default-description-color);
 }

@@ -4,6 +4,7 @@
     --est-checkbox-sm-size: 1rem;
     --est-checkbox-sm-icon-size: 0.75rem;
     --est-checkbox-sm-label-font-size: 0.75rem;
+    --est-checkbox-sm-border-radius: 9999px;
 
     --est-checkbox-md-size: 1.25rem;
     --est-checkbox-md-icon-size: 0.875rem;
@@ -17,6 +18,9 @@
     --est-checkbox-default-size: var(--est-checkbox-md-size);
     --est-checkbox-default-border-radius: var(--est-radius);
     --est-checkbox-default-icon-size: var(--est-checkbox-md-icon-size);
+    --est-checkbox-default-label-font-size: var(--est-checkbox-md-label-font-size);
+    --est-checkbox-default-label-color: var(--est-color-neutral-700);
+    --est-checkbox-default-description-color: var(--est-color-neutral-500);
     --est-checkbox-transition-duration: 150ms;
     --est-checkbox-focus-ring-offset: var(--est-color-surface, var(--est-color-white));
 
