@@ -38,6 +38,7 @@
 }
 
 .est-accordion :deep(.est-accordion__trigger:hover) {
+  @apply underline;
   color: var(--est-accordion-default-trigger-hover-color);
 }
 
