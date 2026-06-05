@@ -1,0 +1,67 @@
+@layer esthetica-ui-tokens {
+  :root {
+    /* ── Size presets ────────────────────────────────────── */
+    --est-checkbox-sm-size: 1rem;
+    --est-checkbox-sm-icon-size: 0.75rem;
+    --est-checkbox-sm-label-font-size: 0.75rem;
+    --est-checkbox-sm-border-radius: 9999px;
+
+    --est-checkbox-md-size: 1.25rem;
+    --est-checkbox-md-icon-size: 0.875rem;
+    --est-checkbox-md-label-font-size: 0.75rem; /* same as md button font size */
+
+    --est-checkbox-lg-size: 1.5rem;
+    --est-checkbox-lg-icon-size: 1.125rem;
+    --est-checkbox-lg-label-font-size: 0.875rem;
+
+    /* ── Base/Default tokens ─────────────────────────────────────── */
+    --est-checkbox-default-size: var(--est-checkbox-md-size);
+    --est-checkbox-default-border-radius: var(--est-radius);
+    --est-checkbox-default-icon-size: var(--est-checkbox-md-icon-size);
+    --est-checkbox-default-label-font-size: var(--est-checkbox-md-label-font-size);
+    --est-checkbox-default-label-color: var(--est-color-neutral-700);
+    --est-checkbox-default-description-color: var(--est-color-neutral-500);
+    --est-checkbox-transition-duration: 150ms;
+    --est-checkbox-focus-ring-offset: var(--est-color-surface, var(--est-color-white));
+
+    --est-checkbox-default-bg-color: var(--est-color-white);
+    --est-checkbox-default-border-color: var(--est-color-neutral-300);
+    --est-checkbox-default-hover-border-color: var(--est-color-primary);
+
+    --est-checkbox-default-checked-bg-color: var(--est-color-primary);
+    --est-checkbox-default-checked-border-color: var(--est-color-primary);
+    --est-checkbox-default-checked-icon-color: var(--est-color-primary-foreground);
+    --est-checkbox-default-focus-ring-color: var(--est-color-primary-300);
+
+    /* ── Color variant presets ─────────────────────────────── */
+    --est-checkbox-primary-hover-border-color: var(--est-color-primary);
+    --est-checkbox-primary-checked-bg-color: var(--est-color-primary);
+    --est-checkbox-primary-checked-border-color: var(--est-color-primary);
+    --est-checkbox-primary-checked-icon-color: var(--est-color-primary-foreground);
+    --est-checkbox-primary-focus-ring-color: var(--est-color-primary-300);
+
+    --est-checkbox-success-hover-border-color: var(--est-color-success);
+    --est-checkbox-success-checked-bg-color: var(--est-color-success);
+    --est-checkbox-success-checked-border-color: var(--est-color-success);
+    --est-checkbox-success-checked-icon-color: var(--est-color-success-foreground);
+    --est-checkbox-success-focus-ring-color: var(--est-color-success-300);
+
+    --est-checkbox-danger-hover-border-color: var(--est-color-danger);
+    --est-checkbox-danger-checked-bg-color: var(--est-color-danger);
+    --est-checkbox-danger-checked-border-color: var(--est-color-danger);
+    --est-checkbox-danger-checked-icon-color: var(--est-color-danger-foreground);
+    --est-checkbox-danger-focus-ring-color: var(--est-color-danger-300);
+
+    --est-checkbox-warning-hover-border-color: var(--est-color-warning);
+    --est-checkbox-warning-checked-bg-color: var(--est-color-warning);
+    --est-checkbox-warning-checked-border-color: var(--est-color-warning);
+    --est-checkbox-warning-checked-icon-color: var(--est-color-warning-foreground);
+    --est-checkbox-warning-focus-ring-color: var(--est-color-warning-300);
+
+    --est-checkbox-info-hover-border-color: var(--est-color-info);
+    --est-checkbox-info-checked-bg-color: var(--est-color-info);
+    --est-checkbox-info-checked-border-color: var(--est-color-info);
+    --est-checkbox-info-checked-icon-color: var(--est-color-info-foreground);
+    --est-checkbox-info-focus-ring-color: var(--est-color-info-300);
+  }
+}

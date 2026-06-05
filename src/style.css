@@ -5,7 +5,8 @@
 @import './tokens/components/button.css';
 @import './tokens/components/skeleton.css';
 @import './tokens/components/card.css';
-@import './tokens/components/input.css';
+@import './tokens/components/field.css';
+@import './tokens/components/checkbox.css';
 @import './tokens/components/alert.css';
 @import './tokens/components/toast.css';
 @import './tokens/components/pagination.css';
@@ -14,6 +15,7 @@
 @import './tokens/components/otp.css';
 @import './tokens/components/tag.css';
 @import './tokens/components/toggle.css';
+@import './tokens/components/breadcrumb.css';
 
 [class^='est-'],
 [class*=' est-'] {

@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useVariantClasses } from '@/composables/useVariantClasses'
-import EstAlert from './EstAlert.vue'
+import EstAlert from './EstAlert/EstAlert.vue'
+import EstAlertIcon from './EstAlert/EstAlertIcon.vue'
+import EstAlertTitle from './EstAlert/EstAlertTitle.vue'
+import EstAlertBody from './EstAlert/EstAlertBody.vue'
 
-export type ToastVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
+export type ToastColor = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
 export interface Props {
-  variant?: ToastVariant
+  color?: ToastColor
   duration?: number
   dismissible?: boolean
   modelValue?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  variant: 'success',
+  color: 'success',
   duration: 5000,
   dismissible: true,
   modelValue: true,
@@ -100,15 +103,17 @@ const { buildVariant } = useVariantClasses()
   <Transition name="est-toast" @after-leave="onAfterLeave">
     <div
       v-if="isVisible"
-      :class="{ ...buildVariant('est-toast', variant ?? 'success') }"
-      role="alert"
+      :class="{ ...buildVariant('est-toast', color ?? 'success') }"
       aria-live="assertive"
     >
-      <EstAlert :variant="variant" :dismissible="dismissible" @dismiss="handleDismiss">
-        <template v-if="$slots.title" #title>
+      <EstAlert :color="color" :dismissible="dismissible" @dismiss="handleDismiss">
+        <EstAlertIcon />
+        <EstAlertTitle v-if="$slots.title">
           <slot name="title" />
-        </template>
-        <slot />
+        </EstAlertTitle>
+        <EstAlertBody>
+          <slot />
+        </EstAlertBody>
       </EstAlert>
 
       <div v-if="props.duration > 0" class="est-toast__progress-track">

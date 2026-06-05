@@ -1,0 +1,72 @@
+/* Variants */
+.est-card--primary {
+  --est-card-default-bg-color: var(--est-card-primary-bg-color);
+  --est-card-default-color: var(--est-card-primary-color);
+  --est-card-default-hover-color: var(--est-card-primary-hover-color);
+  --est-card-default-border-color: var(--est-card-primary-border-color);
+}
+
+.est-card--success {
+  --est-card-default-bg-color: var(--est-card-success-bg-color);
+  --est-card-default-color: var(--est-card-success-color);
+  --est-card-default-hover-color: var(--est-card-success-hover-color);
+  --est-card-default-border-color: var(--est-card-success-border-color);
+}
+
+.est-card--info {
+  --est-card-default-bg-color: var(--est-card-info-bg-color);
+  --est-card-default-color: var(--est-card-info-color);
+  --est-card-default-hover-color: var(--est-card-info-hover-color);
+  --est-card-default-border-color: var(--est-card-info-border-color);
+}
+
+.est-card--warning {
+  --est-card-default-bg-color: var(--est-card-warning-bg-color);
+  --est-card-default-color: var(--est-card-warning-color);
+  --est-card-default-hover-color: var(--est-card-warning-hover-color);
+  --est-card-default-border-color: var(--est-card-warning-border-color);
+}
+
+.est-card--danger {
+  --est-card-default-bg-color: var(--est-card-danger-bg-color);
+  --est-card-default-color: var(--est-card-danger-color);
+  --est-card-default-hover-color: var(--est-card-danger-hover-color);
+  --est-card-default-border-color: var(--est-card-danger-border-color);
+}
+
+.est-card {
+  @apply overflow-hidden;
+  border-radius: var(--est-card-radius);
+  background-color: var(--est-card-default-bg-color);
+  color: var(--est-card-default-color);
+}
+
+.est-card:not(.est-card--borderless) {
+  @apply border border-solid;
+  border-color: var(--est-card-default-border-color);
+}
+
+/* Header */
+:deep(.est-card__header) {
+  padding: var(--est-card-padding-y) var(--est-card-padding-x);
+}
+
+:deep(.est-card__header--bordered) {
+  @apply border-0 border-b-1 border-solid;
+  border-color: inherit;
+}
+
+/* Body */
+:deep(.est-card__body) {
+  padding: var(--est-card-padding-y) var(--est-card-padding-x);
+}
+
+/* Footer */
+:deep(.est-card__footer) {
+  padding: var(--est-card-padding-y) var(--est-card-padding-x);
+}
+
+:deep(.est-card__footer--bordered) {
+  @apply border-0 border-t border-solid;
+  border-color: inherit;
+}

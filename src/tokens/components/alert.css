@@ -1,5 +1,7 @@
 @layer esthetica-ui-tokens {
   :root {
+    --est-alert-padding-x: var(--est-card-padding-x);
+    --est-alert-padding-y: var(--est-card-padding-y);
     --est-alert-icon-size: 1.5rem;
     --est-alert-body-font-size: var(--est-font-size-sm);
     --est-alert-title-font-size: var(--est-font-size-sm);

@@ -1,17 +1,17 @@
 .est-toast--primary {
-  --est-toast-progress-color: var(--est-toast-primary-progress);
+  --est-toast-default-progress-bg-color: var(--est-toast-primary-progress-bg-color);
 }
 .est-toast--success {
-  --est-toast-progress-color: var(--est-toast-success-progress);
+  --est-toast-default-progress-bg-color: var(--est-toast-success-progress-bg-color);
 }
 .est-toast--info {
-  --est-toast-progress-color: var(--est-toast-info-progress);
+  --est-toast-default-progress-bg-color: var(--est-toast-info-progress-bg-color);
 }
 .est-toast--warning {
-  --est-toast-progress-color: var(--est-toast-warning-progress);
+  --est-toast-default-progress-bg-color: var(--est-toast-warning-progress-bg-color);
 }
 .est-toast--danger {
-  --est-toast-progress-color: var(--est-toast-danger-progress);
+  --est-toast-default-progress-bg-color: var(--est-toast-danger-progress-bg-color);
 }
 
 .est-toast {
@@ -25,12 +25,12 @@
 
 .est-toast__progress-track {
   height: var(--est-toast-progress-height);
-  background-color: var(--est-toast-progress-track-bg);
+  background-color: var(--est-toast-default-progress-track-bg-color);
 }
 
 .est-toast__progress-bar {
   height: 100%;
-  background-color: var(--est-toast-progress-color);
+  background-color: var(--est-toast-default-progress-bg-color);
   transition: width var(--est-toast-progress-transition-duration) linear;
 }
 

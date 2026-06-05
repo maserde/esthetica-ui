@@ -1,0 +1,143 @@
+.est-button--sm {
+  --est-btn-default-padding: var(--est-btn-sm-padding);
+  --est-btn-default-min-height: var(--est-btn-sm-min-height);
+  --est-btn-default-font-size: var(--est-btn-sm-font-size);
+  --est-btn-default-radius: var(--est-btn-sm-radius);
+}
+
+.est-button--md {
+  --est-btn-default-padding: var(--est-btn-md-padding);
+  --est-btn-default-min-height: var(--est-btn-md-min-height);
+  --est-btn-default-font-size: var(--est-btn-md-font-size);
+  --est-btn-default-radius: var(--est-btn-md-radius);
+}
+
+.est-button--lg {
+  --est-btn-default-padding: var(--est-btn-lg-padding);
+  --est-btn-default-min-height: var(--est-btn-lg-min-height);
+  --est-btn-default-font-size: var(--est-btn-lg-font-size);
+  --est-btn-default-radius: var(--est-btn-lg-radius);
+}
+
+.est-button--secondary {
+  --est-btn-default-focus-ring-color: var(--est-btn-secondary-focus-ring-color);
+  --est-btn-default-bg-color: var(--est-btn-secondary-bg-color);
+  --est-btn-default-color: var(--est-btn-secondary-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-secondary-hover-bg-color);
+}
+
+.est-button--info {
+  --est-btn-default-focus-ring-color: var(--est-btn-info-focus-ring-color);
+  --est-btn-default-bg-color: var(--est-btn-info-bg-color);
+  --est-btn-default-color: var(--est-btn-info-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-info-hover-bg-color);
+}
+
+.est-button--success {
+  --est-btn-default-focus-ring-color: var(--est-btn-success-focus-ring-color);
+  --est-btn-default-bg-color: var(--est-btn-success-bg-color);
+  --est-btn-default-color: var(--est-btn-success-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-success-hover-bg-color);
+}
+
+.est-button--warning {
+  --est-btn-default-focus-ring-color: var(--est-btn-warning-focus-ring-color);
+  --est-btn-default-bg-color: var(--est-btn-warning-bg-color);
+  --est-btn-default-color: var(--est-btn-warning-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-warning-hover-bg-color);
+}
+
+.est-button--danger {
+  --est-btn-default-focus-ring-color: var(--est-btn-danger-focus-ring-color);
+  --est-btn-default-bg-color: var(--est-btn-danger-bg-color);
+  --est-btn-default-color: var(--est-btn-danger-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-danger-hover-bg-color);
+}
+
+.est-button--outlined {
+  --est-btn-default-border-width: 2px;
+  --est-btn-default-focus-ring-color: var(--est-btn-outlined-border-color);
+  --est-btn-default-bg-color: transparent;
+  --est-btn-default-color: var(--est-btn-outlined-color);
+  --est-btn-default-border-color: var(--est-btn-outlined-border-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-outlined-hover-bg-color);
+}
+
+.est-button--ghost {
+  --est-btn-default-focus-ring-color: var(--est-btn-outlined-border-color);
+  --est-btn-default-bg-color: transparent;
+  --est-btn-default-color: var(--est-btn-ghost-color);
+  --est-btn-default-border-color: var(--est-btn-ghost-border-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-ghost-hover-bg-color);
+}
+
+.est-button--disabled {
+  @apply cursor-not-allowed;
+  --est-btn-default-color: var(--est-btn-disabled-color);
+  --est-btn-default-bg-color: var(--est-btn-disabled-bg-color);
+  --est-btn-default-border-color: transparent;
+}
+
+.est-button--loading {
+  @apply cursor-wait;
+}
+
+.est-button:hover:not(.est-button--disabled):not(.est-button--loading) {
+  --est-btn-default-bg-color: var(--est-btn-default-hover-bg-color);
+}
+
+.est-button {
+  @apply relative inline-flex items-center justify-center;
+  @apply font-medium leading-none tracking-[0.01em] whitespace-nowrap;
+  @apply border-solid;
+  @apply cursor-pointer select-none outline-none no-underline;
+  border-width: var(--est-btn-default-border-width);
+  font-family: var(--est-btn-font-family), 'sans-serif';
+  padding: var(--est-btn-default-padding);
+  min-height: var(--est-btn-default-min-height);
+  font-size: var(--est-btn-default-font-size);
+  border-radius: var(--est-btn-default-radius);
+  border-color: var(--est-btn-default-border-color);
+  color: var(--est-btn-default-color);
+  background-color: var(--est-btn-default-bg-color);
+  transition:
+    background-color var(--est-btn-transition-duration) ease,
+    border-color var(--est-btn-transition-duration) ease,
+    color var(--est-btn-transition-duration) ease,
+    box-shadow var(--est-btn-transition-duration) ease,
+    opacity var(--est-btn-transition-duration) ease,
+    transform var(--est-btn-transition-duration) ease;
+  box-shadow: var(--est-btn-default-box-shadow);
+}
+
+.est-button:focus-visible,
+.est-button:focus:not(:disabled) {
+  box-shadow:
+    0 0 0 1px var(--est-btn-focus-ring-offset),
+    0 0 0 3px var(--est-btn-default-focus-ring-color, transparent);
+}
+
+.est-button__content {
+  @apply inline-flex items-center gap-[0.4375em] transition-opacity;
+  transition-duration: var(--est-btn-transition-duration, 160ms);
+}
+
+.est-button__content--hidden {
+  @apply opacity-0;
+}
+
+:deep(.est-button__icon) {
+  @apply inline-flex items-center shrink-0;
+}
+
+.est-button__spinner {
+  @apply absolute top-1/2 left-1/2 w-[1em] h-[1em];
+  @apply mt-[-0.5em] ml-[-0.5em];
+  animation: est-button-spin var(--est-btn-spinner-duration) linear infinite;
+}
+
+@keyframes est-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

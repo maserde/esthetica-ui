@@ -1,0 +1,72 @@
+.est-table {
+  @apply rounded-lg overflow-hidden;
+  background-color: var(--est-table-default-bg-color);
+}
+
+.est-table:not(.est-table--borderless) {
+  @apply border border-solid;
+  border-color: var(--est-table-default-border-color);
+}
+
+.est-table__slot-header {
+  padding: var(--est-table-slot-padding-y-header) var(--est-table-slot-padding-x);
+}
+
+.est-table__slot-footer {
+  @apply border-t border-solid;
+  border-color: var(--est-table-default-slot-border-color);
+  padding: var(--est-table-slot-padding-y-footer) var(--est-table-slot-padding-x);
+}
+
+.est-table__scroll {
+  @apply overflow-x-auto;
+}
+
+.est-table__table {
+  @apply w-full;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+:deep(.est-table__header) {
+  background-color: var(--est-table-default-header-bg-color);
+}
+
+:deep(.est-table__header .est-table__row) {
+  border-top: none;
+}
+
+:deep(.est-table__header-cell) {
+  @apply text-left text-xs font-semibold tracking-wide;
+  padding: var(--est-table-header-cell-padding-y) var(--est-table-cell-padding-x);
+  color: var(--est-table-default-header-color);
+}
+
+:deep(.est-table__row--striped) {
+  background-color: var(--est-table-default-striped-bg-color);
+}
+
+:deep(.est-table__row--hoverable) {
+  @apply transition-colors;
+}
+
+:deep(.est-table__row--hoverable:hover) {
+  background-color: var(--est-table-default-hover-bg-color);
+}
+
+:deep(.est-table__row) {
+  @apply border-t border-solid;
+  border-color: var(--est-table-default-row-border-color);
+}
+
+:deep(.est-table__body-cell) {
+  @apply text-sm;
+  padding: var(--est-table-body-cell-padding-y) var(--est-table-cell-padding-x);
+  color: var(--est-table-default-body-color);
+}
+
+:deep(.est-table__empty) {
+  @apply text-center text-sm;
+  padding: var(--est-table-empty-padding-y) var(--est-table-cell-padding-x);
+  color: var(--est-table-default-empty-color);
+}

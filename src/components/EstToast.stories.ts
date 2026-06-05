@@ -6,7 +6,7 @@ const meta = {
   component: EstToast,
   tags: ['autodocs'],
   argTypes: {
-    variant: {
+    color: {
       control: 'select',
       options: ['primary', 'success', 'info', 'warning', 'danger'],
     },
@@ -35,23 +35,23 @@ type Story = StoryObj<typeof meta>
 // ─── Variants ────────────────────────────────────────────────────────────────
 
 export const Success: Story = {
-  args: { variant: 'success', modelValue: true, duration: 0 },
+  args: { color: 'success', modelValue: true, duration: 0 },
 }
 
 export const Primary: Story = {
-  args: { variant: 'primary', modelValue: true, duration: 0 },
+  args: { color: 'primary', modelValue: true, duration: 0 },
 }
 
 export const Info: Story = {
-  args: { variant: 'info', modelValue: true, duration: 0 },
+  args: { color: 'info', modelValue: true, duration: 0 },
 }
 
 export const Warning: Story = {
-  args: { variant: 'warning', modelValue: true, duration: 0 },
+  args: { color: 'warning', modelValue: true, duration: 0 },
 }
 
 export const Danger: Story = {
-  args: { variant: 'danger', modelValue: true, duration: 0 },
+  args: { color: 'danger', modelValue: true, duration: 0 },
 }
 
 // ─── States ───────────────────────────────────────────────────────────────────
@@ -61,7 +61,7 @@ export const WithTitle: Story = {
   render: () => ({
     components: { EstToast },
     template: `
-      <EstToast variant="success" :model-value="true" :duration="0">
+      <EstToast color="success" :model-value="true" :duration="0">
         <template #title>Saved successfully</template>
         Your changes have been saved.
       </EstToast>
@@ -71,12 +71,12 @@ export const WithTitle: Story = {
 
 export const WithProgress: Story = {
   name: 'With Progress Bar',
-  args: { variant: 'info', modelValue: true, duration: 5000 },
+  args: { color: 'info', modelValue: true, duration: 5000 },
 }
 
 export const NotDismissible: Story = {
   name: 'Not Dismissible',
-  args: { variant: 'warning', modelValue: true, duration: 0, dismissible: false },
+  args: { color: 'warning', modelValue: true, duration: 0, dismissible: false },
 }
 
 // ─── All variants overview ────────────────────────────────────────────────────
@@ -87,11 +87,11 @@ export const AllVariants: Story = {
     components: { EstToast },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <EstToast variant="primary" :model-value="true" :duration="0">Primary toast</EstToast>
-        <EstToast variant="success" :model-value="true" :duration="0">Success toast</EstToast>
-        <EstToast variant="info" :model-value="true" :duration="0">Info toast</EstToast>
-        <EstToast variant="warning" :model-value="true" :duration="0">Warning toast</EstToast>
-        <EstToast variant="danger" :model-value="true" :duration="0">Danger toast</EstToast>
+        <EstToast color="primary" :model-value="true" :duration="0">Primary toast</EstToast>
+        <EstToast color="success" :model-value="true" :duration="0">Success toast</EstToast>
+        <EstToast color="info" :model-value="true" :duration="0">Info toast</EstToast>
+        <EstToast color="warning" :model-value="true" :duration="0">Warning toast</EstToast>
+        <EstToast color="danger" :model-value="true" :duration="0">Danger toast</EstToast>
       </div>
     `,
   }),

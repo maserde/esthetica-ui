@@ -6,8 +6,8 @@ const meta = {
   component: EstTag,
   tags: ['autodocs'],
   argTypes: {
-    variant: { control: 'select', options: ['info', 'success', 'warning', 'danger'] },
-    type: { control: 'select', options: ['primary', 'secondary'] },
+    color: { control: 'select', options: ['info', 'success', 'warning', 'danger'] },
+    variant: { control: 'select', options: ['primary', 'secondary'] },
   },
   render: (args) => ({
     components: { EstTag },
@@ -24,29 +24,29 @@ type Story = StoryObj<typeof meta>
 // ── Variant stories ───────────────────────────────────────────────
 
 export const Info: Story = {
-  args: { variant: 'info' },
+  args: { color: 'info' },
 }
 
 export const Success: Story = {
-  args: { variant: 'success' },
+  args: { color: 'success' },
 }
 
 export const Warning: Story = {
-  args: { variant: 'warning' },
+  args: { color: 'warning' },
 }
 
 export const Danger: Story = {
-  args: { variant: 'danger' },
+  args: { color: 'danger' },
 }
 
 // ── Type stories ──────────────────────────────────────────────────
 
 export const Secondary: Story = {
-  args: { type: 'secondary' },
+  args: { variant: 'secondary' },
 }
 
 export const Primary: Story = {
-  args: { type: 'primary' },
+  args: { variant: 'primary' },
 }
 
 // ── All overview ──────────────────────────────────────────────────
@@ -58,16 +58,16 @@ export const AllVariants: Story = {
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <EstTag variant="info" type="secondary">Confirmed</EstTag>
-          <EstTag variant="success" type="secondary">Sent</EstTag>
-          <EstTag variant="warning" type="secondary">On-hold</EstTag>
-          <EstTag variant="danger" type="secondary">Error</EstTag>
+          <EstTag color="info" variant="secondary">Confirmed</EstTag>
+          <EstTag color="success" variant="secondary">Sent</EstTag>
+          <EstTag color="warning" variant="secondary">On-hold</EstTag>
+          <EstTag color="danger" variant="secondary">Error</EstTag>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <EstTag variant="info" type="primary">Info</EstTag>
-          <EstTag variant="success" type="primary">Success</EstTag>
-          <EstTag variant="warning" type="primary">Warning</EstTag>
-          <EstTag variant="danger" type="primary">Danger</EstTag>
+          <EstTag color="info" variant="primary">Info</EstTag>
+          <EstTag color="success" variant="primary">Success</EstTag>
+          <EstTag color="warning" variant="primary">Warning</EstTag>
+          <EstTag color="danger" variant="primary">Danger</EstTag>
         </div>
       </div>
     `,

@@ -1,0 +1,27 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-field-radius: 0.25rem;
+    --est-field-bg-color: var(--est-color-white);
+    --est-field-readonly-bg-color: var(--est-color-neutral-50);
+    --est-field-color: var(--est-color-neutral-800);
+    --est-field-placeholder-color: var(--est-color-neutral-400);
+    --est-field-border-color: var(--est-color-neutral-300);
+    --est-field-label-color: var(--est-color-neutral-700);
+    --est-field-focus-border-color: transparent;
+    --est-field-focus-ring-color: var(--est-color-primary);
+    --est-field-focus-ring-offset: var(--est-field-bg-color);
+    --est-field-error-border-color: var(--est-color-danger-500);
+    --est-field-error-ring-color: var(--est-color-danger-300);
+    --est-field-error-color: var(--est-color-danger-500);
+    --est-field-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.08) inset;
+    --est-field-padding-x: 0.75rem;
+    --est-field-padding-y: 0.5rem;
+    --est-field-font-size: 0.75rem;
+    --est-field-font-line-height: 1rem;
+    --est-field-label-font-size: var(--est-font-size-sm);
+    --est-field-label-font-weight: var(--est-font-weight-semibold);
+    --est-field-error-font-size: var(--est-font-size-xs);
+    --est-field-error-font-weight: var(--est-font-weight-normal);
+    --est-field-transition-duration: 150ms;
+  }
+}

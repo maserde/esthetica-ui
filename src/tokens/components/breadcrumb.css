@@ -1,0 +1,26 @@
+@layer esthetica-ui-tokens {
+  :root {
+    /* ── Structural & Size tokens ────────────────────────────── */
+    --est-breadcrumb-font-size: var(--est-font-size-sm);
+    --est-breadcrumb-font-weight: var(--est-font-weight-semibold);
+    --est-breadcrumb-gap: 0.5rem;
+    --est-breadcrumb-link-gap: 0.25rem;
+    --est-breadcrumb-underline-offset: 2px;
+    --est-breadcrumb-icon-size: 1em;
+    --est-breadcrumb-focus-ring-radius: 2px;
+    --est-breadcrumb-transition-duration: 150ms;
+
+    /* ── Base/Default tokens ─────────────────────────────────── */
+    --est-breadcrumb-default-link-color: var(--est-color-primary-500);
+    --est-breadcrumb-default-hover-link-color: var(--est-color-primary-400);
+    --est-breadcrumb-default-link-underline: underline;
+
+    --est-breadcrumb-default-page-color: var(--est-color-neutral-950);
+    --est-breadcrumb-default-page-font-weight: var(--est-font-weight-medium);
+
+    --est-breadcrumb-default-separator-color: var(--est-color-neutral-300);
+    --est-breadcrumb-default-icon-color: var(--est-color-primary-500);
+    --est-breadcrumb-default-ellipsis-color: var(--est-color-primary-500);
+    --est-breadcrumb-default-focus-ring-color: var(--est-color-primary);
+  }
+}

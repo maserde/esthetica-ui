@@ -98,7 +98,7 @@ const requirements = computed(() => [
         class="est-password-meter__requirement"
       >
         <span
-          class="i-ri-checkbox-circle-line est-password-meter__req-icon"
+          class="i-ri-checkbox-circle-line w-[1em] h-[1em] est-password-meter__req-icon"
           :class="{
             'est-password-meter__req-icon--met': requirement.met,
             'est-password-meter__req-icon--unmet': !requirement.met,
