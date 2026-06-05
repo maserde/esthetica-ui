@@ -45,6 +45,11 @@ export { default as EstBreadcrumbLink } from './components/EstBreadcrumb/EstBrea
 export { default as EstBreadcrumbPage } from './components/EstBreadcrumb/EstBreadcrumbPage.vue'
 export { default as EstBreadcrumbSeparator } from './components/EstBreadcrumb/EstBreadcrumbSeparator.vue'
 export { default as EstBreadcrumbEllipsis } from './components/EstBreadcrumb/EstBreadcrumbEllipsis.vue'
+export { default as EstAccordion } from './components/EstAccordion/EstAccordion.vue'
+export { default as EstAccordionItem } from './components/EstAccordion/EstAccordionItem.vue'
+export { default as EstAccordionTrigger } from './components/EstAccordion/EstAccordionTrigger.vue'
+export { default as EstAccordionContent } from './components/EstAccordion/EstAccordionContent.vue'
+export { default as EstAccordionIcon } from './components/EstAccordion/EstAccordionIcon.vue'
 
 export type {
   ButtonColor,
@@ -77,9 +82,18 @@ export type {
   ToggleSize,
   Props as ToggleProps,
 } from './components/EstToggle/EstToggle.vue'
-export type { BreadcrumbItem, Props as BreadcrumbProps } from './components/EstBreadcrumb/EstBreadcrumb.vue'
+export type {
+  BreadcrumbItem,
+  Props as BreadcrumbProps,
+} from './components/EstBreadcrumb/EstBreadcrumb.vue'
 export type { Props as BreadcrumbLinkProps } from './components/EstBreadcrumb/EstBreadcrumbLink.vue'
 export type { Props as BreadcrumbPageProps } from './components/EstBreadcrumb/EstBreadcrumbPage.vue'
+export type {
+  AccordionColor,
+  AccordionType,
+  Props as AccordionProps,
+} from './components/EstAccordion/EstAccordion.vue'
+export type { Props as AccordionItemProps } from './components/EstAccordion/EstAccordionItem.vue'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
@@ -128,5 +142,10 @@ declare module '@vue/runtime-core' {
     EstBreadcrumbPage: (typeof import('./components/EstBreadcrumb/EstBreadcrumbPage.vue'))['default']
     EstBreadcrumbSeparator: (typeof import('./components/EstBreadcrumb/EstBreadcrumbSeparator.vue'))['default']
     EstBreadcrumbEllipsis: (typeof import('./components/EstBreadcrumb/EstBreadcrumbEllipsis.vue'))['default']
+    EstAccordion: (typeof import('./components/EstAccordion/EstAccordion.vue'))['default']
+    EstAccordionItem: (typeof import('./components/EstAccordion/EstAccordionItem.vue'))['default']
+    EstAccordionTrigger: (typeof import('./components/EstAccordion/EstAccordionTrigger.vue'))['default']
+    EstAccordionContent: (typeof import('./components/EstAccordion/EstAccordionContent.vue'))['default']
+    EstAccordionIcon: (typeof import('./components/EstAccordion/EstAccordionIcon.vue'))['default']
   }
 }

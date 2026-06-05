@@ -1,0 +1,28 @@
+@layer esthetica-ui-tokens {
+  :root {
+    --est-accordion-border-width: 1px;
+    --est-accordion-border-color: var(--est-color-neutral-200);
+
+    --est-accordion-trigger-padding-y: 1rem;
+    --est-accordion-trigger-font-size: var(--est-font-size-base);
+    --est-accordion-trigger-font-weight: var(--est-font-weight-medium);
+
+    --est-accordion-content-padding-b: 1rem;
+    --est-accordion-content-padding-x: 0.3rem;
+    --est-accordion-content-padding-y: 0.3rem;
+    --est-accordion-content-font-size: var(--est-font-size-sm);
+
+    --est-accordion-icon-size: 1.25rem;
+    --est-accordion-transition-duration: 250ms;
+
+    /* Default variant colors */
+    --est-accordion-default-trigger-color: var(--est-color-neutral-900);
+    --est-accordion-default-trigger-hover-color: var(--est-color-primary);
+    --est-accordion-default-content-color: var(--est-color-neutral-600);
+
+    /* Primary variant colors */
+    --est-accordion-primary-trigger-color: var(--est-color-primary-900);
+    --est-accordion-primary-trigger-hover-color: var(--est-color-primary-700);
+    --est-accordion-primary-content-color: var(--est-color-primary-800);
+  }
+}

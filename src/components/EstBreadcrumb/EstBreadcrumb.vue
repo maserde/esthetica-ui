@@ -59,21 +59,31 @@ function isLastItem(item: BreadcrumbItem): boolean {
               :class="{ 'est-breadcrumb__link--icon-only': !!item.icon }"
               :aria-label="item.icon ? item.label : undefined"
             >
-              <span v-if="item.icon" :class="[item.icon, 'est-breadcrumb__icon']" aria-hidden="true" />
+              <span
+                v-if="item.icon"
+                :class="[item.icon, 'est-breadcrumb__icon']"
+                aria-hidden="true"
+              />
               <span v-else>{{ item.label }}</span>
             </EstBreadcrumbLink>
-            
+
             <EstBreadcrumbPage v-else :aria-label="item.icon ? item.label : undefined">
-              <span v-if="item.icon" :class="[item.icon, 'est-breadcrumb__icon']" aria-hidden="true" />
+              <span
+                v-if="item.icon"
+                :class="[item.icon, 'est-breadcrumb__icon']"
+                aria-hidden="true"
+              />
               <span v-else>{{ item.label }}</span>
             </EstBreadcrumbPage>
           </EstBreadcrumbItem>
-          
-          <EstBreadcrumbSeparator v-if="idx < visibleItems.before.length - 1 || visibleItems.collapsed">
+
+          <EstBreadcrumbSeparator
+            v-if="idx < visibleItems.before.length - 1 || visibleItems.collapsed"
+          >
             {{ separator }}
           </EstBreadcrumbSeparator>
         </template>
-        
+
         <!-- Ellipsis -->
         <template v-if="visibleItems.collapsed">
           <EstBreadcrumbItem>
@@ -83,7 +93,7 @@ function isLastItem(item: BreadcrumbItem): boolean {
             {{ separator }}
           </EstBreadcrumbSeparator>
         </template>
-        
+
         <!-- After items -->
         <template v-for="(item, idx) in visibleItems.after" :key="'a-' + idx">
           <EstBreadcrumbItem>
@@ -93,12 +103,20 @@ function isLastItem(item: BreadcrumbItem): boolean {
               :class="{ 'est-breadcrumb__link--icon-only': !!item.icon }"
               :aria-label="item.icon ? item.label : undefined"
             >
-              <span v-if="item.icon" :class="[item.icon, 'est-breadcrumb__icon']" aria-hidden="true" />
+              <span
+                v-if="item.icon"
+                :class="[item.icon, 'est-breadcrumb__icon']"
+                aria-hidden="true"
+              />
               <span v-else>{{ item.label }}</span>
             </EstBreadcrumbLink>
 
             <EstBreadcrumbPage v-else :aria-label="item.icon ? item.label : undefined">
-              <span v-if="item.icon" :class="[item.icon, 'est-breadcrumb__icon']" aria-hidden="true" />
+              <span
+                v-if="item.icon"
+                :class="[item.icon, 'est-breadcrumb__icon']"
+                aria-hidden="true"
+              />
               <span v-else>{{ item.label }}</span>
             </EstBreadcrumbPage>
           </EstBreadcrumbItem>
