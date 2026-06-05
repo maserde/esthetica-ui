@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import EstButton from './EstButton.vue'
-import EstButtonIcon from './EstButtonIcon.vue'
 
 const meta = {
   title: 'Components/EstButton',
@@ -123,12 +122,12 @@ export const AllStates: Story = {
 export const WithLeadingIcon: Story = {
   name: 'With Leading Icon',
   render: () => ({
-    components: { EstButton, EstButtonIcon },
+    components: { EstButton },
     template: `
       <EstButton variant="primary">
-        <EstButtonIcon>
-          <span class="i-ri-add-line w-[1em] h-[1em]" />
-        </EstButtonIcon>
+        <template #leading>
+          <span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />
+        </template>
         Add item
       </EstButton>
     `,
@@ -138,13 +137,13 @@ export const WithLeadingIcon: Story = {
 export const WithTrailingIcon: Story = {
   name: 'With Trailing Icon',
   render: () => ({
-    components: { EstButton, EstButtonIcon },
+    components: { EstButton },
     template: `
       <EstButton variant="outlined">
         Export
-        <EstButtonIcon>
-          <span class="i-ri-download-line w-[1em] h-[1em]" />
-        </EstButtonIcon>
+        <template #trailing>
+          <span class="i-ri-download-line w-[1em] h-[1em]" aria-hidden="true" />
+        </template>
       </EstButton>
     `,
   }),
@@ -153,21 +152,21 @@ export const WithTrailingIcon: Story = {
 export const AllIcons: Story = {
   name: 'All Icons',
   render: () => ({
-    components: { EstButton, EstButtonIcon },
+    components: { EstButton },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
         <EstButton>
-          <EstButtonIcon><span class="i-ri-add-line w-[1em] h-[1em]" /></EstButtonIcon>
+          <template #leading><span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" /></template>
           Add item
         </EstButton>
         <EstButton variant="outlined">
           Export
-          <EstButtonIcon><span class="i-ri-download-line w-[1em] h-[1em]" /></EstButtonIcon>
+          <template #trailing><span class="i-ri-download-line w-[1em] h-[1em]" aria-hidden="true" /></template>
         </EstButton>
         <EstButton variant="secondary">
-          <EstButtonIcon><span class="i-ri-search-line w-[1em] h-[1em]" /></EstButtonIcon>
+          <template #leading><span class="i-ri-search-line w-[1em] h-[1em]" aria-hidden="true" /></template>
           Search
-          <EstButtonIcon><span class="i-ri-arrow-right-line w-[1em] h-[1em]" /></EstButtonIcon>
+          <template #trailing><span class="i-ri-arrow-right-line w-[1em] h-[1em]" aria-hidden="true" /></template>
         </EstButton>
       </div>
     `,

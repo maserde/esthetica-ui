@@ -1,7 +1,7 @@
 import 'virtual:uno.css'
 import './style.css'
 export { default as EstButton } from './components/EstButton/EstButton.vue'
-export { default as EstButtonIcon } from './components/EstButton/EstButtonIcon.vue'
+
 export { default as EstSkeleton } from './components/EstSkeleton.vue'
 export { default as EstCard } from './components/EstCard/EstCard.vue'
 export { default as EstCardHeader } from './components/EstCard/EstCardHeader.vue'
@@ -54,7 +54,7 @@ declare module '@vue/runtime-core' {
     EstAlertTitle: (typeof import('./components/EstAlert/EstAlertTitle.vue'))['default']
     EstAlertDescription: (typeof import('./components/EstAlert/EstAlertDescription.vue'))['default']
     EstButton: (typeof import('./components/EstButton/EstButton.vue'))['default']
-    EstButtonIcon: (typeof import('./components/EstButton/EstButtonIcon.vue'))['default']
+
     EstCard: (typeof import('./components/EstCard/EstCard.vue'))['default']
     EstCardHeader: (typeof import('./components/EstCard/EstCardHeader.vue'))['default']
     EstCardBody: (typeof import('./components/EstCard/EstCardBody.vue'))['default']
