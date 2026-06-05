@@ -38,7 +38,13 @@ export { default as EstToggle } from './components/EstToggle/EstToggle.vue'
 export { default as EstToggleTrack } from './components/EstToggle/EstToggleTrack.vue'
 export { default as EstToggleLabel } from './components/EstToggle/EstToggleLabel.vue'
 export { default as EstToggleDescription } from './components/EstToggle/EstToggleDescription.vue'
-export { default as EstBreadcrumb } from './components/EstBreadcrumb.vue'
+export { default as EstBreadcrumb } from './components/EstBreadcrumb/EstBreadcrumb.vue'
+export { default as EstBreadcrumbList } from './components/EstBreadcrumb/EstBreadcrumbList.vue'
+export { default as EstBreadcrumbItem } from './components/EstBreadcrumb/EstBreadcrumbItem.vue'
+export { default as EstBreadcrumbLink } from './components/EstBreadcrumb/EstBreadcrumbLink.vue'
+export { default as EstBreadcrumbPage } from './components/EstBreadcrumb/EstBreadcrumbPage.vue'
+export { default as EstBreadcrumbSeparator } from './components/EstBreadcrumb/EstBreadcrumbSeparator.vue'
+export { default as EstBreadcrumbEllipsis } from './components/EstBreadcrumb/EstBreadcrumbEllipsis.vue'
 
 export type {
   ButtonColor,
@@ -71,7 +77,9 @@ export type {
   ToggleSize,
   Props as ToggleProps,
 } from './components/EstToggle/EstToggle.vue'
-export type { BreadcrumbItem, Props as BreadcrumbProps } from './components/EstBreadcrumb.vue'
+export type { BreadcrumbItem, Props as BreadcrumbProps } from './components/EstBreadcrumb/EstBreadcrumb.vue'
+export type { Props as BreadcrumbLinkProps } from './components/EstBreadcrumb/EstBreadcrumbLink.vue'
+export type { Props as BreadcrumbPageProps } from './components/EstBreadcrumb/EstBreadcrumbPage.vue'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
@@ -113,6 +121,12 @@ declare module '@vue/runtime-core' {
     EstToggleTrack: (typeof import('./components/EstToggle/EstToggleTrack.vue'))['default']
     EstToggleLabel: (typeof import('./components/EstToggle/EstToggleLabel.vue'))['default']
     EstToggleDescription: (typeof import('./components/EstToggle/EstToggleDescription.vue'))['default']
-    EstBreadcrumb: (typeof import('./components/EstBreadcrumb.vue'))['default']
+    EstBreadcrumb: (typeof import('./components/EstBreadcrumb/EstBreadcrumb.vue'))['default']
+    EstBreadcrumbList: (typeof import('./components/EstBreadcrumb/EstBreadcrumbList.vue'))['default']
+    EstBreadcrumbItem: (typeof import('./components/EstBreadcrumb/EstBreadcrumbItem.vue'))['default']
+    EstBreadcrumbLink: (typeof import('./components/EstBreadcrumb/EstBreadcrumbLink.vue'))['default']
+    EstBreadcrumbPage: (typeof import('./components/EstBreadcrumb/EstBreadcrumbPage.vue'))['default']
+    EstBreadcrumbSeparator: (typeof import('./components/EstBreadcrumb/EstBreadcrumbSeparator.vue'))['default']
+    EstBreadcrumbEllipsis: (typeof import('./components/EstBreadcrumb/EstBreadcrumbEllipsis.vue'))['default']
   }
 }
