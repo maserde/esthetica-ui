@@ -47,9 +47,9 @@ function goToPage(page: number) {
 </script>
 
 <template>
-  <div class="est-pagination__nav" role="navigation" aria-label="Page navigation">
+  <div class="est-pagination__pages" role="navigation" aria-label="Page navigation">
     <EstButton
-      class="est-pagination__nav-btn"
+      class="est-pagination__pages-btn"
       :disabled="isPrevDisabled"
       aria-label="Previous page"
       @click="goToPage(currentPage - 1)"
@@ -71,7 +71,7 @@ function goToPage(page: number) {
     </template>
 
     <EstButton
-      class="est-pagination__nav-btn"
+      class="est-pagination__pages-btn"
       :disabled="isNextDisabled"
       aria-label="Next page"
       @click="goToPage(currentPage + 1)"

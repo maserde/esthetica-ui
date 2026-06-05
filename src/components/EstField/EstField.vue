@@ -24,18 +24,18 @@ const emit = defineEmits<{
 const generatedId = useId()
 const inputId = computed(() => props.id ?? generatedId)
 
-provide('est-input-id', inputId)
-provide('est-input-value', toRef(props, 'modelValue'))
-provide('est-input-disabled', toRef(props, 'disabled'))
-provide('est-input-readonly', toRef(props, 'readonly'))
-provide('est-input-error', toRef(props, 'error'))
-provide('est-input-emit', (value: string) => emit('update:modelValue', value))
+provide('est-field-id', inputId)
+provide('est-field-value', toRef(props, 'modelValue'))
+provide('est-field-disabled', toRef(props, 'disabled'))
+provide('est-field-readonly', toRef(props, 'readonly'))
+provide('est-field-error', toRef(props, 'error'))
+provide('est-field-emit', (value: string) => emit('update:modelValue', value))
 </script>
 
 <template>
-  <div class="est-input" :aria-disabled="disabled || undefined">
+  <div class="est-field" :aria-disabled="disabled || undefined">
     <slot />
   </div>
 </template>
 
-<style scoped src="./EstInput.css" />
+<style scoped src="./EstField.css" />

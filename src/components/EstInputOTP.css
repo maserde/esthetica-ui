@@ -3,9 +3,9 @@
 }
 
 .est-otp__label {
-  color: var(--est-input-label-color);
-  font-size: var(--est-input-label-font-size);
-  font-weight: var(--est-input-label-font-weight);
+  color: var(--est-field-label-color);
+  font-size: var(--est-field-label-font-size);
+  font-weight: var(--est-field-label-font-weight);
 }
 
 .est-otp__cells {
@@ -20,8 +20,8 @@
 .est-otp__cell--error:focus-visible {
   border-color: var(--est-otp-cell-error-border);
   box-shadow:
-    var(--est-input-shadow),
-    0 0 0 2px var(--est-input-error-ring-color);
+    var(--est-field-shadow),
+    0 0 0 2px var(--est-field-error-ring-color);
 }
 
 .est-otp__cell {
@@ -30,20 +30,20 @@
   height: var(--est-otp-cell-size);
   font-size: var(--est-otp-cell-font-size);
   padding: 0;
-  border-radius: var(--est-input-radius);
-  background-color: var(--est-input-bg);
-  color: var(--est-input-color);
+  border-radius: var(--est-field-radius);
+  background-color: var(--est-field-bg);
+  color: var(--est-field-color);
   border-color: var(--est-otp-cell-border);
-  box-shadow: var(--est-input-shadow);
-  transition-duration: var(--est-input-transition-duration);
+  box-shadow: var(--est-field-shadow);
+  transition-duration: var(--est-field-transition-duration);
 }
 
 .est-otp__cell:focus-visible {
-  border-color: var(--est-input-focus-border);
+  border-color: var(--est-field-focus-border);
   box-shadow:
-    var(--est-input-shadow),
-    0 0 0 2px var(--est-input-focus-ring-offset),
-    0 0 0 4px var(--est-input-focus-ring-color);
+    var(--est-field-shadow),
+    0 0 0 2px var(--est-field-focus-ring-offset),
+    0 0 0 4px var(--est-field-focus-ring-color);
 }
 
 .est-otp__cell:disabled {
@@ -52,5 +52,5 @@
 
 .est-otp__error {
   @apply flex items-center gap-1 text-xs my-2;
-  color: var(--est-input-error-color);
+  color: var(--est-field-error-color);
 }

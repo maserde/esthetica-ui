@@ -2,11 +2,11 @@
 import { inject } from 'vue'
 import type { ComputedRef } from 'vue'
 
-const inputId = inject<ComputedRef<string>>('est-input-id')
+const inputId = inject<ComputedRef<string>>('est-field-id')
 </script>
 
 <template>
-  <label :for="inputId" class="est-input__label">
+  <label :for="inputId" class="est-field__label">
     <slot />
   </label>
 </template>

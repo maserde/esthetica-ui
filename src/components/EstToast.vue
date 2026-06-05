@@ -4,7 +4,7 @@ import { useVariantClasses } from '@/composables/useVariantClasses'
 import EstAlert from './EstAlert/EstAlert.vue'
 import EstAlertIcon from './EstAlert/EstAlertIcon.vue'
 import EstAlertTitle from './EstAlert/EstAlertTitle.vue'
-import EstAlertDescription from './EstAlert/EstAlertDescription.vue'
+import EstAlertBody from './EstAlert/EstAlertBody.vue'
 
 export type ToastVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
@@ -111,9 +111,9 @@ const { buildVariant } = useVariantClasses()
         <EstAlertTitle v-if="$slots.title">
           <slot name="title" />
         </EstAlertTitle>
-        <EstAlertDescription>
+        <EstAlertBody>
           <slot />
-        </EstAlertDescription>
+        </EstAlertBody>
       </EstAlert>
 
       <div v-if="props.duration > 0" class="est-toast__progress-track">

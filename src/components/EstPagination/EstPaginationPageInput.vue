@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { inject, ref, watch } from 'vue'
 import type { Ref } from 'vue'
-import EstInput from '../EstInput/EstInput.vue'
-import EstInputField from '../EstInput/EstInputField.vue'
+import EstField from '../EstField/EstField.vue'
+import EstInput from '../EstField/EstInput.vue'
 
 const currentPage = inject<Ref<number>>('est-pagination-current-page')!
 const totalPages = inject<Ref<number>>('est-pagination-total-pages')!
@@ -31,17 +31,17 @@ function handlePageInputKeydown(event: KeyboardEvent) {
 </script>
 
 <template>
-  <div class="est-pagination__info">
-    <span class="est-pagination__info-text">Showing page</span>
-    <EstInput v-model="pageInputValue">
-      <EstInputField
+  <div class="est-pagination__page-input">
+    <span class="est-pagination__page-input-text">Showing page</span>
+    <EstField v-model="pageInputValue">
+      <EstInput
         type="text"
         inputmode="numeric"
         aria-label="Current page"
         @blur="handlePageInputChange"
         @keydown="handlePageInputKeydown"
       />
-    </EstInput>
-    <span class="est-pagination__info-text">of {{ totalPages }}</span>
+    </EstField>
+    <span class="est-pagination__page-input-text">of {{ totalPages }}</span>
   </div>
 </template>

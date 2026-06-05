@@ -12,12 +12,12 @@ withDefaults(defineProps<Props>(), {
   placeholder: undefined,
 })
 
-const inputId = inject<ComputedRef<string>>('est-input-id')
-const modelValue = inject<Ref<string>>('est-input-value')
-const disabled = inject<Ref<boolean>>('est-input-disabled')
-const readonly = inject<Ref<boolean>>('est-input-readonly')
-const error = inject<Ref<string | undefined>>('est-input-error')
-const emitUpdate = inject<(value: string) => void>('est-input-emit')
+const inputId = inject<ComputedRef<string>>('est-field-id')
+const modelValue = inject<Ref<string>>('est-field-value')
+const disabled = inject<Ref<boolean>>('est-field-disabled')
+const readonly = inject<Ref<boolean>>('est-field-readonly')
+const error = inject<Ref<string | undefined>>('est-field-error')
+const emitUpdate = inject<(value: string) => void>('est-field-emit')
 
 function handleInput(event: Event) {
   emitUpdate?.((event.target as HTMLInputElement).value)
@@ -26,11 +26,11 @@ function handleInput(event: Event) {
 
 <template>
   <div
-    class="est-input__wrapper"
+    class="est-field__wrapper"
     :class="{
-      'est-input__wrapper--error': !!error,
-      'est-input__wrapper--disabled': disabled,
-      'est-input__wrapper--readonly': readonly,
+      'est-field__wrapper--error': !!error,
+      'est-field__wrapper--disabled': disabled,
+      'est-field__wrapper--readonly': readonly,
     }"
   >
     <slot name="leading" />
@@ -43,7 +43,7 @@ function handleInput(event: Event) {
       :disabled="disabled"
       :readonly="readonly"
       :aria-invalid="!!error"
-      class="est-input__field"
+      class="est-field__field"
       @input="handleInput"
     />
 

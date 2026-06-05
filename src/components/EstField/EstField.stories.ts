@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import EstField from './EstField.vue'
+import EstLabel from './EstLabel.vue'
 import EstInput from './EstInput.vue'
-import EstInputLabel from './EstInputLabel.vue'
-import EstInputField from './EstInputField.vue'
-import EstInputError from './EstInputError.vue'
+import EstFieldError from './EstFieldError.vue'
 import EstButton from '../EstButton/EstButton.vue'
 
 const meta = {
-  title: 'Components/EstInput',
-  component: EstInput,
+  title: 'Components/EstField',
+  component: EstField,
   tags: ['autodocs'],
   argTypes: {
     modelValue: { control: 'text' },
@@ -17,19 +17,19 @@ const meta = {
     'onUpdate:modelValue': { action: 'update:modelValue' },
   },
   render: (args) => ({
-    components: { EstInput, EstInputLabel, EstInputField, EstInputError },
+    components: { EstField, EstLabel, EstInput, EstFieldError },
     setup() {
       return { args }
     },
     template: `
-      <EstInput v-bind="args" style="width:320px;">
-        <EstInputLabel>Email</EstInputLabel>
-        <EstInputField placeholder="Type your text here" />
-        <EstInputError />
-      </EstInput>
+      <EstField v-bind="args" style="width:320px;">
+        <EstLabel>Email</EstLabel>
+        <EstInput placeholder="Type your text here" />
+        <EstFieldError />
+      </EstField>
     `,
   }),
-} satisfies Meta<typeof EstInput>
+} satisfies Meta<typeof EstField>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -63,17 +63,17 @@ export const Readonly: Story = {
 export const WithLeadingIcon: Story = {
   name: 'With Leading Icon',
   render: () => ({
-    components: { EstInput, EstInputLabel, EstInputField, EstInputError },
+    components: { EstField, EstLabel, EstInput, EstFieldError },
     template: `
-      <EstInput style="width:320px;">
-        <EstInputLabel>Email</EstInputLabel>
-        <EstInputField placeholder="Enter your email">
+      <EstField style="width:320px;">
+        <EstLabel>Email</EstLabel>
+        <EstInput placeholder="Enter your email">
           <template #leading>
             <span class="i-ri-mail-line text-[--est-color-neutral-500] w-4 h-6 flex-shrink-0" aria-hidden="true" />
           </template>
-        </EstInputField>
-        <EstInputError />
-      </EstInput>
+        </EstInput>
+        <EstFieldError />
+      </EstField>
     `,
   }),
 }
@@ -81,19 +81,19 @@ export const WithLeadingIcon: Story = {
 export const WithTrailingIcon: Story = {
   name: 'With Trailing Icon',
   render: () => ({
-    components: { EstInput, EstInputLabel, EstInputField, EstInputError },
+    components: { EstField, EstLabel, EstInput, EstFieldError },
     template: `
-      <EstInput style="width:320px;">
-        <EstInputLabel>Password</EstInputLabel>
-        <EstInputField placeholder="Enter your password">
+      <EstField style="width:320px;">
+        <EstLabel>Password</EstLabel>
+        <EstInput placeholder="Enter your password">
           <template #trailing>
             <button type="button" class="flex items-center flex-shrink-0 bg-transparent border-none p-0 cursor-pointer" aria-label="Show password">
               <span class="i-ri-eye-line text-[--est-color-neutral-500] w-4 h-6" aria-hidden="true" />
             </button>
           </template>
-        </EstInputField>
-        <EstInputError />
-      </EstInput>
+        </EstInput>
+        <EstFieldError />
+      </EstField>
     `,
   }),
 }
@@ -101,11 +101,11 @@ export const WithTrailingIcon: Story = {
 export const WithBothSlots: Story = {
   name: 'With Both Slots',
   render: () => ({
-    components: { EstInput, EstInputLabel, EstInputField, EstInputError },
+    components: { EstField, EstLabel, EstInput, EstFieldError },
     template: `
-      <EstInput style="width:320px;">
-        <EstInputLabel>Search</EstInputLabel>
-        <EstInputField placeholder="Search...">
+      <EstField style="width:320px;">
+        <EstLabel>Search</EstLabel>
+        <EstInput placeholder="Search...">
           <template #leading>
             <span class="i-ri-search-line text-[--est-color-neutral-500] w-4 h-6 flex-shrink-0" aria-hidden="true" />
           </template>
@@ -114,9 +114,9 @@ export const WithBothSlots: Story = {
               <span class="i-ri-close-line text-[--est-color-neutral-500] w-4 h-6" aria-hidden="true" />
             </button>
           </template>
-        </EstInputField>
-        <EstInputError />
-      </EstInput>
+        </EstInput>
+        <EstFieldError />
+      </EstField>
     `,
   }),
 }
@@ -124,13 +124,13 @@ export const WithBothSlots: Story = {
 export const WithButton: Story = {
   name: 'With Button',
   render: () => ({
-    components: { EstInput, EstInputLabel, EstInputField, EstButton },
+    components: { EstField, EstLabel, EstInput, EstButton },
     template: `
       <div class="flex items-end gap-2">
-        <EstInput style="width:320px;">
-          <EstInputLabel>Search</EstInputLabel>
-          <EstInputField placeholder="Search..." />
-        </EstInput>
+        <EstField style="width:320px;">
+          <EstLabel>Search</EstLabel>
+          <EstInput placeholder="Search..." />
+        </EstField>
         <EstButton>Submit</EstButton>
       </div>
     `,
@@ -142,38 +142,38 @@ export const WithButton: Story = {
 export const AllStates: Story = {
   name: 'All States',
   render: () => ({
-    components: { EstInput, EstInputLabel, EstInputField, EstInputError },
+    components: { EstField, EstLabel, EstInput, EstFieldError },
     template: `
       <div style="display:flex;flex-direction:column;gap:16px;width:320px;">
-        <EstInput>
-          <EstInputLabel>Default</EstInputLabel>
-          <EstInputField placeholder="Placeholder text" />
-        </EstInput>
-        <EstInput model-value="user@example.com">
-          <EstInputLabel>With value</EstInputLabel>
-          <EstInputField />
-        </EstInput>
-        <EstInput>
-          <EstInputLabel>With icon</EstInputLabel>
-          <EstInputField placeholder="Search...">
+        <EstField>
+          <EstLabel>Default</EstLabel>
+          <EstInput placeholder="Placeholder text" />
+        </EstField>
+        <EstField model-value="user@example.com">
+          <EstLabel>With value</EstLabel>
+          <EstInput />
+        </EstField>
+        <EstField>
+          <EstLabel>With icon</EstLabel>
+          <EstInput placeholder="Search...">
             <template #leading>
               <span class="i-ri-search-line text-[--est-color-neutral-500] w-4 h-4 flex-shrink-0" aria-hidden="true" />
             </template>
-          </EstInputField>
-        </EstInput>
-        <EstInput model-value="invalid" error="This field is required.">
-          <EstInputLabel>Error</EstInputLabel>
-          <EstInputField />
-          <EstInputError />
-        </EstInput>
-        <EstInput :disabled="true">
-          <EstInputLabel>Disabled</EstInputLabel>
-          <EstInputField placeholder="Disabled" />
-        </EstInput>
-        <EstInput model-value="read-only value" :readonly="true">
-          <EstInputLabel>Read-only</EstInputLabel>
-          <EstInputField />
-        </EstInput>
+          </EstInput>
+        </EstField>
+        <EstField model-value="invalid" error="This field is required.">
+          <EstLabel>Error</EstLabel>
+          <EstInput />
+          <EstFieldError />
+        </EstField>
+        <EstField :disabled="true">
+          <EstLabel>Disabled</EstLabel>
+          <EstInput placeholder="Disabled" />
+        </EstField>
+        <EstField model-value="read-only value" :readonly="true">
+          <EstLabel>Read-only</EstLabel>
+          <EstInput />
+        </EstField>
       </div>
     `,
   }),
