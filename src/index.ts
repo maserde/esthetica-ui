@@ -33,7 +33,7 @@ export type { Props as PaginationProps } from './components/EstPagination.vue'
 export type { TableColumn, Props as TableProps } from './components/EstTable.vue'
 export type { Props as PasswordMeterProps } from './components/EstPasswordMeter.vue'
 export type { TagVariant, TagType, Props as TagProps } from './components/EstTag.vue'
-export type { ToggleSize, Props as ToggleProps } from './components/EstToggle.vue'
+export type { ToggleVariant, ToggleSize, Props as ToggleProps } from './components/EstToggle.vue'
 export type { BreadcrumbItem, Props as BreadcrumbProps } from './components/EstBreadcrumb.vue'
 
 declare module '@vue/runtime-core' {

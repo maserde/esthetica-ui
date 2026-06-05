@@ -27,47 +27,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-// ── State stories ─────────────────────────────────────────────────
-
-export const Default: Story = {
-  args: { label: 'Enable feature' },
-}
-
-export const Checked: Story = {
-  args: { modelValue: true, label: 'Enabled' },
-}
-
-// ── Size stories ──────────────────────────────────────────────────
-
-export const Small: Story = {
-  args: { size: 'sm', label: 'Small toggle' },
-}
-
-export const Medium: Story = {
-  args: { size: 'md', label: 'Medium toggle' },
-}
-
-// ── State stories ─────────────────────────────────────────────────
-
-export const WithDescription: Story = {
-  name: 'With Description',
-  args: {
-    label: 'Notifications',
-    description: 'Receive push notifications to your device',
-    modelValue: true,
-  },
-}
-
-export const Disabled: Story = {
-  args: { disabled: true, label: 'Disabled toggle' },
-}
-
-export const DisabledChecked: Story = {
-  name: 'Disabled (Checked)',
-  args: { disabled: true, modelValue: true, label: 'Disabled (on)' },
-}
-
-// ── All sizes overview ────────────────────────────────────────────
+// ── Variant overview ──────────────────────────────────────────────
 
 export const AllVariants: Story = {
   name: 'All Variants',
@@ -91,6 +51,16 @@ export const AllVariants: Story = {
       </div>
     `,
   }),
+}
+
+// ── Size stories ──────────────────────────────────────────────────
+
+export const Small: Story = {
+  args: { size: 'sm', label: 'Small toggle' },
+}
+
+export const Medium: Story = {
+  args: { size: 'md', label: 'Medium toggle' },
 }
 
 export const AllSizes: Story = {
@@ -117,6 +87,34 @@ export const AllSizes: Story = {
       </div>
     `,
   }),
+}
+
+// ── State stories ─────────────────────────────────────────────────
+
+export const Default: Story = {
+  args: { label: 'Enable feature' },
+}
+
+export const Checked: Story = {
+  args: { modelValue: true, label: 'Enabled' },
+}
+
+export const WithDescription: Story = {
+  name: 'With Description',
+  args: {
+    label: 'Notifications',
+    description: 'Receive push notifications to your device',
+    modelValue: true,
+  },
+}
+
+export const Disabled: Story = {
+  args: { disabled: true, label: 'Disabled toggle' },
+}
+
+export const DisabledChecked: Story = {
+  name: 'Disabled (Checked)',
+  args: { disabled: true, modelValue: true, label: 'Disabled (on)' },
 }
 
 export const AllStates: Story = {

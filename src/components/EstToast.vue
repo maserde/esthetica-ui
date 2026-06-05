@@ -104,7 +104,6 @@ const { buildVariant } = useVariantClasses()
     <div
       v-if="isVisible"
       :class="{ ...buildVariant('est-toast', variant ?? 'success') }"
-      role="alert"
       aria-live="assertive"
     >
       <EstAlert :variant="variant" :dismissible="dismissible" @dismiss="handleDismiss">

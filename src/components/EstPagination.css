@@ -53,7 +53,7 @@
 
 .est-pagination__nav :deep(.est-pagination__nav-btn),
 .est-pagination__rows-dropdown :deep(.est-pagination__rows-trigger) {
-  @apply w-8 h-8 border-1;
+  @apply w-8 h-8 border-1 border-solid;
   padding: 0;
 }
 

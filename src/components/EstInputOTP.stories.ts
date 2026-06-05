@@ -42,13 +42,13 @@ export const WithError: Story = {
   args: { label: 'Verification code', error: 'Invalid code. Please try again.' },
 }
 
-export const Disabled: Story = {
-  args: { label: 'Verification code', modelValue: '1234', disabled: true },
-}
-
 export const SixDigit: Story = {
   name: 'Six Digit',
   args: { label: 'Verification code', length: 6 },
+}
+
+export const Disabled: Story = {
+  args: { label: 'Verification code', modelValue: '1234', disabled: true },
 }
 
 // ─── All states overview ──────────────────────────────────────────────────────

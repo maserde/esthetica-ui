@@ -17,7 +17,7 @@
   --est-otp-cell-border: var(--est-otp-cell-error-border);
 }
 
-.est-otp__cell--error:focus {
+.est-otp__cell--error:focus-visible {
   border-color: var(--est-otp-cell-error-border);
   box-shadow:
     var(--est-input-shadow),
@@ -38,7 +38,7 @@
   transition-duration: var(--est-input-transition-duration);
 }
 
-.est-otp__cell:focus {
+.est-otp__cell:focus-visible {
   border-color: var(--est-input-focus-border);
   box-shadow:
     var(--est-input-shadow),

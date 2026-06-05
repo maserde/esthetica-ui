@@ -18,6 +18,7 @@
     --est-btn-color: var(--est-color-primary-foreground);
     --est-btn-focus-ring-color: var(--est-color-primary);
     --est-btn-border-color: transparent;
+    --est-btn-border-width: 1.5px;
     --est-btn-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
     --est-btn-radius: 4px;
 
