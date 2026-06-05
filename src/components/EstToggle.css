@@ -1,27 +1,27 @@
 /* ── Variant modifiers ───────────────────────────────────────────── */
 
 .est-toggle--primary {
-  --est-toggle-track-bg-checked: var(--est-toggle-primary-track-bg-checked);
+  --est-toggle-default-checked-track-bg-color: var(--est-toggle-primary-checked-track-bg-color);
   --est-toggle-focus-ring-color: var(--est-toggle-primary-focus-ring-color);
 }
 
 .est-toggle--success {
-  --est-toggle-track-bg-checked: var(--est-toggle-success-track-bg-checked);
+  --est-toggle-default-checked-track-bg-color: var(--est-toggle-success-checked-track-bg-color);
   --est-toggle-focus-ring-color: var(--est-toggle-success-focus-ring-color);
 }
 
 .est-toggle--info {
-  --est-toggle-track-bg-checked: var(--est-toggle-info-track-bg-checked);
+  --est-toggle-default-checked-track-bg-color: var(--est-toggle-info-checked-track-bg-color);
   --est-toggle-focus-ring-color: var(--est-toggle-info-focus-ring-color);
 }
 
 .est-toggle--warning {
-  --est-toggle-track-bg-checked: var(--est-toggle-warning-track-bg-checked);
+  --est-toggle-default-checked-track-bg-color: var(--est-toggle-warning-checked-track-bg-color);
   --est-toggle-focus-ring-color: var(--est-toggle-warning-focus-ring-color);
 }
 
 .est-toggle--error {
-  --est-toggle-track-bg-checked: var(--est-toggle-error-track-bg-checked);
+  --est-toggle-default-checked-track-bg-color: var(--est-toggle-error-checked-track-bg-color);
   --est-toggle-focus-ring-color: var(--est-toggle-error-focus-ring-color);
 }
 
@@ -68,7 +68,7 @@
   border: none;
   width: var(--est-toggle-track-width);
   height: var(--est-toggle-track-height);
-  background-color: var(--est-toggle-track-bg);
+  background-color: var(--est-toggle-default-track-bg-color);
   transition: background-color 200ms ease-in-out;
 }
 
@@ -78,11 +78,11 @@
 }
 
 .est-toggle__track--checked {
-  background-color: var(--est-toggle-track-bg-checked);
+  background-color: var(--est-toggle-default-checked-track-bg-color);
 }
 
 .est-toggle__track--disabled {
-  background-color: var(--est-toggle-track-bg-disabled);
+  background-color: var(--est-toggle-default-disabled-track-bg-color);
   @apply cursor-not-allowed;
 }
 
@@ -93,7 +93,7 @@
   box-shadow: var(--est-shadow-sm);
   width: var(--est-toggle-thumb-size);
   height: var(--est-toggle-thumb-size);
-  background-color: var(--est-toggle-thumb-bg);
+  background-color: var(--est-toggle-default-thumb-bg-color);
   transform: translateX(0);
   transition: transform 200ms ease-in-out;
 }
@@ -103,7 +103,7 @@
 }
 
 .est-toggle__thumb--disabled {
-  background-color: var(--est-toggle-thumb-bg-disabled);
+  background-color: var(--est-toggle-default-disabled-thumb-bg-color);
 }
 
 /* ── Label content ───────────────────────────────────────────────── */

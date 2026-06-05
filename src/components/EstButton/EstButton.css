@@ -23,52 +23,52 @@
   --est-btn-focus-ring-color: var(--est-btn-secondary-focus-ring-color);
   --est-btn-bg-color: var(--est-btn-secondary-bg-color);
   --est-btn-color: var(--est-btn-secondary-color);
-  --est-btn-bg-hover: var(--est-btn-secondary-bg-hover);
+  --est-btn-hover-bg-color: var(--est-btn-secondary-hover-bg-color);
 }
 
 .est-button--info {
   --est-btn-focus-ring-color: var(--est-btn-info-focus-ring-color);
   --est-btn-bg-color: var(--est-btn-info-bg-color);
   --est-btn-color: var(--est-btn-info-color);
-  --est-btn-bg-hover: var(--est-btn-info-bg-hover);
+  --est-btn-hover-bg-color: var(--est-btn-info-hover-bg-color);
 }
 
 .est-button--success {
   --est-btn-focus-ring-color: var(--est-btn-success-focus-ring-color);
   --est-btn-bg-color: var(--est-btn-success-bg-color);
   --est-btn-color: var(--est-btn-success-color);
-  --est-btn-bg-hover: var(--est-btn-success-bg-hover);
+  --est-btn-hover-bg-color: var(--est-btn-success-hover-bg-color);
 }
 
 .est-button--warning {
   --est-btn-focus-ring-color: var(--est-btn-warning-focus-ring-color);
   --est-btn-bg-color: var(--est-btn-warning-bg-color);
   --est-btn-color: var(--est-btn-warning-color);
-  --est-btn-bg-hover: var(--est-btn-warning-bg-hover);
+  --est-btn-hover-bg-color: var(--est-btn-warning-hover-bg-color);
 }
 
 .est-button--danger {
   --est-btn-focus-ring-color: var(--est-btn-danger-focus-ring-color);
   --est-btn-bg-color: var(--est-btn-danger-bg-color);
   --est-btn-color: var(--est-btn-danger-color);
-  --est-btn-bg-hover: var(--est-btn-danger-bg-hover);
+  --est-btn-hover-bg-color: var(--est-btn-danger-hover-bg-color);
 }
 
 .est-button--outlined {
   --est-btn-border-width: 2px;
-  --est-btn-focus-ring-color: var(--est-btn-outlined-border);
+  --est-btn-focus-ring-color: var(--est-btn-outlined-border-color);
   --est-btn-bg-color: transparent;
   --est-btn-color: var(--est-btn-outlined-color);
-  --est-btn-border-color: var(--est-btn-outlined-border);
-  --est-btn-bg-hover: var(--est-color-surface);
+  --est-btn-border-color: var(--est-btn-outlined-border-color);
+  --est-btn-hover-bg-color: var(--est-btn-outlined-hover-bg-color);
 }
 
 .est-button--ghost {
-  --est-btn-focus-ring-color: var(--est-btn-outlined-border);
+  --est-btn-focus-ring-color: var(--est-btn-outlined-border-color);
   --est-btn-bg-color: transparent;
   --est-btn-color: var(--est-btn-ghost-color);
   --est-btn-border-color: var(--est-btn-ghost-border-color);
-  --est-btn-bg-hover: var(--est-color-surface);
+  --est-btn-hover-bg-color: var(--est-btn-ghost-hover-bg-color);
 }
 
 .est-button--disabled {
@@ -83,7 +83,7 @@
 }
 
 .est-button:hover:not(.est-button--disabled):not(.est-button--loading) {
-  --est-btn-bg-color: var(--est-btn-bg-hover);
+  --est-btn-bg-color: var(--est-btn-hover-bg-color);
 }
 
 .est-button {

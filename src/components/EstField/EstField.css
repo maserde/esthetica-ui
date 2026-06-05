@@ -9,11 +9,11 @@
 }
 
 :deep(.est-field__wrapper--error) {
-  --est-field-border: var(--est-field-error-border);
+  --est-field-border-color: var(--est-field-error-border-color);
 }
 
 :deep(.est-field__wrapper--readonly) {
-  --est-field-bg: var(--est-field-readonly-bg);
+  --est-field-bg-color: var(--est-field-readonly-bg-color);
 }
 
 :deep(.est-field__wrapper--disabled) {
@@ -23,8 +23,8 @@
 :deep(.est-field__wrapper) {
   @apply flex items-center gap-2;
   border-radius: var(--est-field-radius);
-  background-color: var(--est-field-bg);
-  outline: 1px solid var(--est-field-border);
+  background-color: var(--est-field-bg-color);
+  outline: 1px solid var(--est-field-border-color);
   padding: 0 var(--est-field-padding-x);
   box-shadow: var(--est-field-shadow);
   transition-property: outline-color, box-shadow;
@@ -33,7 +33,7 @@
 }
 
 :deep(.est-field__wrapper:focus-within:not(.est-field__wrapper--readonly)) {
-  outline-color: var(--est-field-focus-border);
+  outline-color: var(--est-field-focus-border-color);
   box-shadow:
     var(--est-field-shadow),
     0 0 0 2px var(--est-field-focus-ring-offset),
@@ -41,7 +41,7 @@
 }
 
 :deep(.est-field__wrapper--error:focus-within) {
-  outline-color: var(--est-field-border);
+  outline-color: var(--est-field-border-color);
   box-shadow:
     var(--est-field-shadow),
     0 0 0 2px var(--est-field-error-ring-color);

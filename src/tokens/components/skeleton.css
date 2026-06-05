@@ -1,6 +1,6 @@
 @layer esthetica-ui-tokens {
   :root {
-    --est-skeleton-color: var(--est-color-neutral-200);
+    --est-skeleton-default-bg-color: var(--est-color-neutral-200);
 
     /* Base */
     --est-skeleton-radius: var(--est-skeleton-md-radius);

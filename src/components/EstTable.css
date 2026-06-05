@@ -1,11 +1,11 @@
 .est-table {
   @apply rounded-lg overflow-hidden;
-  background-color: var(--est-table-bg);
+  background-color: var(--est-table-default-bg-color);
 }
 
 .est-table:not(.est-table--borderless) {
   @apply border border-solid;
-  border-color: var(--est-table-border);
+  border-color: var(--est-table-default-border-color);
 }
 
 .est-table__slot-header {
@@ -14,7 +14,7 @@
 
 .est-table__slot-footer {
   @apply border-t border-solid;
-  border-color: var(--est-table-slot-border);
+  border-color: var(--est-table-default-slot-border-color);
   padding: var(--est-table-slot-padding-y-footer) var(--est-table-slot-padding-x);
 }
 
@@ -29,17 +29,17 @@
 }
 
 .est-table__header-row {
-  background-color: var(--est-table-header-bg);
+  background-color: var(--est-table-default-header-bg-color);
 }
 
 .est-table__header-cell {
   @apply text-left text-xs font-semibold tracking-wide;
   padding: var(--est-table-header-cell-padding-y) var(--est-table-cell-padding-x);
-  color: var(--est-table-header-color);
+  color: var(--est-table-default-header-color);
 }
 
 .est-table__row--striped {
-  background-color: var(--est-table-striped-bg);
+  background-color: var(--est-table-default-striped-bg-color);
 }
 
 .est-table__row--hoverable {
@@ -47,22 +47,22 @@
 }
 
 .est-table__row--hoverable:hover {
-  background-color: var(--est-table-hover-bg);
+  background-color: var(--est-table-default-hover-bg-color);
 }
 
 .est-table__row {
   @apply border-t border-solid;
-  border-color: var(--est-table-row-border);
+  border-color: var(--est-table-default-row-border-color);
 }
 
 .est-table__body-cell {
   @apply text-sm;
   padding: var(--est-table-body-cell-padding-y) var(--est-table-cell-padding-x);
-  color: var(--est-table-body-color);
+  color: var(--est-table-default-body-color);
 }
 
 .est-table__empty {
   @apply text-center text-sm;
   padding: var(--est-table-empty-padding-y) var(--est-table-cell-padding-x);
-  color: var(--est-table-empty-color);
+  color: var(--est-table-default-empty-color);
 }

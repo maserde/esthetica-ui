@@ -8,7 +8,7 @@
   --est-alert-title-color: var(--est-card-color);
   --est-alert-body-color: var(--est-card-color);
   --est-alert-close-color: var(--est-card-color);
-  --est-alert-close-hover-color: var(--est-card-color-hover);
+  --est-alert-hover-close-color: var(--est-card-hover-color);
 }
 
 /* Collapse empty icon column when no icon is present */
@@ -62,7 +62,7 @@
 }
 
 .est-alert__close:hover {
-  color: var(--est-alert-close-hover-color);
+  color: var(--est-alert-hover-close-color);
 }
 
 .est-alert__close:focus-visible {

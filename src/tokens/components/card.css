@@ -5,40 +5,40 @@
     --est-card-padding-y: 0.5rem;
 
     /* Base */
-    --est-card-bg: var(--est-card-default-bg);
+    --est-card-bg-color: var(--est-card-default-bg-color);
     --est-card-color: var(--est-card-default-color);
-    --est-card-color-hover: var(--est-card-default-color-hover);
-    --est-card-border: var(--est-card-default-border);
+    --est-card-hover-color: var(--est-card-default-hover-color);
+    --est-card-border-color: var(--est-card-default-border-color);
 
     /* Colors */
-    --est-card-default-bg: var(--est-color-white);
+    --est-card-default-bg-color: var(--est-color-white);
     --est-card-default-color: var(--est-color-neutral-800);
-    --est-card-default-color-hover: var(--est-color-neutral-900);
-    --est-card-default-border: rgba(0, 0, 0, 0.1);
+    --est-card-default-hover-color: var(--est-color-neutral-900);
+    --est-card-default-border-color: rgba(0, 0, 0, 0.1);
 
-    --est-card-primary-bg: var(--est-color-primary-50);
+    --est-card-primary-bg-color: var(--est-color-primary-50);
     --est-card-primary-color: var(--est-color-primary-600);
-    --est-card-primary-color-hover: var(--est-color-primary-900);
-    --est-card-primary-border: var(--est-color-primary-200);
+    --est-card-primary-hover-color: var(--est-color-primary-900);
+    --est-card-primary-border-color: var(--est-color-primary-200);
 
-    --est-card-success-bg: var(--est-color-success-50);
+    --est-card-success-bg-color: var(--est-color-success-50);
     --est-card-success-color: var(--est-color-success-500);
-    --est-card-success-color-hover: var(--est-color-success-900);
-    --est-card-success-border: var(--est-color-success-200);
+    --est-card-success-hover-color: var(--est-color-success-900);
+    --est-card-success-border-color: var(--est-color-success-200);
 
-    --est-card-info-bg: var(--est-color-info-50);
+    --est-card-info-bg-color: var(--est-color-info-50);
     --est-card-info-color: var(--est-color-info-500);
-    --est-card-info-color-hover: var(--est-color-info-900);
-    --est-card-info-border: var(--est-color-info-200);
+    --est-card-info-hover-color: var(--est-color-info-900);
+    --est-card-info-border-color: var(--est-color-info-200);
 
-    --est-card-warning-bg: var(--est-color-warning-50);
+    --est-card-warning-bg-color: var(--est-color-warning-50);
     --est-card-warning-color: var(--est-color-warning-700);
-    --est-card-warning-color-hover: var(--est-color-warning-900);
-    --est-card-warning-border: var(--est-color-warning-200);
+    --est-card-warning-hover-color: var(--est-color-warning-900);
+    --est-card-warning-border-color: var(--est-color-warning-200);
 
-    --est-card-danger-bg: var(--est-color-danger-50);
+    --est-card-danger-bg-color: var(--est-color-danger-50);
     --est-card-danger-color: var(--est-color-danger-400);
-    --est-card-danger-color-hover: var(--est-color-danger-900);
-    --est-card-danger-border: var(--est-color-danger-100);
+    --est-card-danger-hover-color: var(--est-color-danger-900);
+    --est-card-danger-border-color: var(--est-color-danger-100);
   }
 }

@@ -7,11 +7,11 @@
 
 :deep(.est-pagination__page-input) {
   @apply flex items-center gap-2;
-  --est-field-bg: var(--est-pagination-btn-bg);
-  --est-field-border: var(--est-pagination-border-color);
+  --est-field-bg-color: var(--est-pagination-default-btn-bg-color);
+  --est-field-border-color: var(--est-pagination-default-border-color);
   --est-field-color: var(--est-pagination-text-color);
   --est-field-font-size: var(--est-pagination-font-size);
-  --est-field-focus-border: var(--est-pagination-focus-ring-color);
+  --est-field-focus-border-color: var(--est-pagination-focus-ring-color);
   --est-field-focus-ring-color: var(--est-pagination-focus-ring-color);
   --est-field-focus-ring-offset: var(--est-pagination-focus-ring-offset);
   --est-field-padding-x: 0;
@@ -39,14 +39,14 @@
 
 :deep(.est-pagination__pages),
 :deep(.est-pagination__rows-per-page-dropdown) {
-  --est-btn-bg-color: var(--est-pagination-btn-bg);
-  --est-btn-bg-hover: var(--est-pagination-btn-hover-bg);
+  --est-btn-bg-color: var(--est-pagination-default-btn-bg-color);
+  --est-btn-hover-bg-color: var(--est-pagination-default-hover-btn-bg-color);
   --est-btn-color: var(--est-pagination-text-color);
-  --est-btn-border-color: var(--est-pagination-border-color);
+  --est-btn-border-color: var(--est-pagination-default-border-color);
   --est-btn-md-font-size: var(--est-pagination-font-size);
   --est-btn-md-radius: var(--est-pagination-btn-radius);
   --est-btn-focus-ring-color: var(--est-pagination-focus-ring-color);
-  --est-btn-focus-ring-offset: var(--est-pagination-btn-bg);
+  --est-btn-focus-ring-offset: var(--est-pagination-default-btn-bg-color);
   --est-btn-box-shadow: none;
   --est-btn-transition-duration: var(--est-pagination-transition-duration);
 }
@@ -76,7 +76,7 @@
   .est-pagination__rows-per-page-dropdown,
   .est-pagination__rows-per-page-trigger:hover:not(:disabled)
 ) {
-  --est-btn-border-color: var(--est-pagination-btn-hover-border);
+  --est-btn-border-color: var(--est-pagination-default-hover-btn-border-color);
 }
 
 /* Page number buttons: borderless by default, bordered when active */
@@ -84,16 +84,16 @@
   @apply min-w-8 h-8 px-1.5;
   --est-btn-border-color: transparent;
   --est-btn-bg-color: transparent;
-  --est-btn-bg-hover: transparent;
+  --est-btn-hover-bg-color: transparent;
 }
 
 :deep(.est-pagination__pages .est-pagination__page-btn--active),
 :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger--active) {
   @apply font-semibold;
   box-shadow: var(--est-shadow-xs);
-  --est-btn-bg-color: var(--est-pagination-active-bg);
-  --est-btn-bg-hover: var(--est-pagination-active-bg);
-  --est-btn-border-color: var(--est-pagination-active-border);
+  --est-btn-bg-color: var(--est-pagination-default-active-bg-color);
+  --est-btn-hover-bg-color: var(--est-pagination-default-active-bg-color);
+  --est-btn-border-color: var(--est-pagination-default-active-border-color);
 }
 
 :deep(.est-pagination__pages .est-pagination__page-btn:not(.est-pagination__page-btn--active)) {
@@ -148,8 +148,8 @@
 
 :deep(.est-pagination__rows-per-page-menu) {
   @apply absolute bottom-[calc(100%+4px)] right-0 min-w-full rounded-md z-10 overflow-hidden;
-  background-color: var(--est-pagination-menu-bg);
-  border: 1px solid var(--est-pagination-border-color);
+  background-color: var(--est-pagination-default-menu-bg-color);
+  border: 1px solid var(--est-pagination-default-border-color);
   box-shadow: var(--est-pagination-menu-shadow);
 }
 
@@ -165,7 +165,7 @@
 
 :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-option--active) {
   @apply font-semibold;
-  --est-btn-bg-color: var(--est-pagination-option-active-bg);
-  --est-btn-bg-hover: var(--est-pagination-option-active-bg);
+  --est-btn-bg-color: var(--est-pagination-default-active-option-bg-color);
+  --est-btn-hover-bg-color: var(--est-pagination-default-active-option-bg-color);
   --est-btn-color: var(--est-pagination-option-active-color);
 }

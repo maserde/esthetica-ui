@@ -1,56 +1,56 @@
 /* Variants */
 .est-card--default {
-  --est-card-bg: var(--est-card-default-bg);
+  --est-card-bg-color: var(--est-card-default-bg-color);
   --est-card-color: var(--est-card-default-color);
-  --est-card-color-hover: var(--est-card-default-color-hover);
-  --est-card-border: var(--est-card-default-border);
+  --est-card-hover-color: var(--est-card-default-hover-color);
+  --est-card-border-color: var(--est-card-default-border-color);
 }
 
 .est-card--primary {
-  --est-card-bg: var(--est-card-primary-bg);
+  --est-card-bg-color: var(--est-card-primary-bg-color);
   --est-card-color: var(--est-card-primary-color);
-  --est-card-color-hover: var(--est-card-primary-color-hover);
-  --est-card-border: var(--est-card-primary-border);
+  --est-card-hover-color: var(--est-card-primary-hover-color);
+  --est-card-border-color: var(--est-card-primary-border-color);
 }
 
 .est-card--success {
-  --est-card-bg: var(--est-card-success-bg);
+  --est-card-bg-color: var(--est-card-success-bg-color);
   --est-card-color: var(--est-card-success-color);
-  --est-card-color-hover: var(--est-card-success-color-hover);
-  --est-card-border: var(--est-card-success-border);
+  --est-card-hover-color: var(--est-card-success-hover-color);
+  --est-card-border-color: var(--est-card-success-border-color);
 }
 
 .est-card--info {
-  --est-card-bg: var(--est-card-info-bg);
+  --est-card-bg-color: var(--est-card-info-bg-color);
   --est-card-color: var(--est-card-info-color);
-  --est-card-color-hover: var(--est-card-info-color-hover);
-  --est-card-border: var(--est-card-info-border);
+  --est-card-hover-color: var(--est-card-info-hover-color);
+  --est-card-border-color: var(--est-card-info-border-color);
 }
 
 .est-card--warning {
-  --est-card-bg: var(--est-card-warning-bg);
+  --est-card-bg-color: var(--est-card-warning-bg-color);
   --est-card-color: var(--est-card-warning-color);
-  --est-card-color-hover: var(--est-card-warning-color-hover);
-  --est-card-border: var(--est-card-warning-border);
+  --est-card-hover-color: var(--est-card-warning-hover-color);
+  --est-card-border-color: var(--est-card-warning-border-color);
 }
 
 .est-card--danger {
-  --est-card-bg: var(--est-card-danger-bg);
+  --est-card-bg-color: var(--est-card-danger-bg-color);
   --est-card-color: var(--est-card-danger-color);
-  --est-card-color-hover: var(--est-card-danger-color-hover);
-  --est-card-border: var(--est-card-danger-border);
+  --est-card-hover-color: var(--est-card-danger-hover-color);
+  --est-card-border-color: var(--est-card-danger-border-color);
 }
 
 .est-card {
   @apply overflow-hidden;
   border-radius: var(--est-card-radius);
-  background-color: var(--est-card-bg);
+  background-color: var(--est-card-bg-color);
   color: var(--est-card-color);
 }
 
 .est-card:not(.est-card--borderless) {
   @apply border border-solid;
-  border-color: var(--est-card-border);
+  border-color: var(--est-card-border-color);
 }
 
 /* Header */

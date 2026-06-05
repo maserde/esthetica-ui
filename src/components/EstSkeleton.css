@@ -27,6 +27,6 @@
 .est-skeleton {
   @apply block;
   animation: est-skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  background-color: var(--est-skeleton-color);
+  background-color: var(--est-skeleton-default-bg-color);
   border-radius: var(--est-skeleton-radius);
 }

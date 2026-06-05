@@ -4,17 +4,17 @@
     --est-pagination-disabled-color: var(--est-pagination-muted-color);
     --est-pagination-text-color: var(--est-color-neutral-950);
     --est-pagination-text-color-inactive: var(--est-color-neutral-600);
-    --est-pagination-border-color: var(--est-color-neutral-200);
-    --est-pagination-active-border: var(--est-pagination-border-color);
-    --est-pagination-btn-bg: var(--est-color-white);
-    --est-pagination-active-bg: var(--est-color-neutral-100);
-    --est-pagination-btn-hover-bg: var(--est-color-neutral-50);
-    --est-pagination-btn-hover-border: var(--est-color-neutral-300);
+    --est-pagination-default-border-color: var(--est-color-neutral-200);
+    --est-pagination-default-active-border-color: var(--est-pagination-default-border-color);
+    --est-pagination-default-btn-bg-color: var(--est-color-white);
+    --est-pagination-default-active-bg-color: var(--est-color-neutral-100);
+    --est-pagination-default-hover-btn-bg-color: var(--est-color-neutral-50);
+    --est-pagination-default-hover-btn-border-color: var(--est-color-neutral-300);
     --est-pagination-focus-ring-color: var(--est-color-primary);
-    --est-pagination-focus-ring-offset: var(--est-pagination-btn-bg);
-    --est-pagination-option-active-bg: var(--est-color-primary-100);
+    --est-pagination-focus-ring-offset: var(--est-pagination-default-btn-bg-color);
+    --est-pagination-default-active-option-bg-color: var(--est-color-primary-100);
     --est-pagination-option-active-color: var(--est-color-primary-700);
-    --est-pagination-menu-bg: var(--est-pagination-btn-bg);
+    --est-pagination-default-menu-bg-color: var(--est-pagination-default-btn-bg-color);
 
     --est-pagination-menu-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 

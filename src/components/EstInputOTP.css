@@ -14,11 +14,11 @@
 }
 
 .est-otp__cell--error {
-  --est-otp-cell-border: var(--est-otp-cell-error-border);
+  --est-otp-cell-border-color: var(--est-otp-cell-error-border-color);
 }
 
 .est-otp__cell--error:focus-visible {
-  border-color: var(--est-otp-cell-error-border);
+  border-color: var(--est-otp-cell-error-border-color);
   box-shadow:
     var(--est-field-shadow),
     0 0 0 2px var(--est-field-error-ring-color);
@@ -31,15 +31,15 @@
   font-size: var(--est-otp-cell-font-size);
   padding: 0;
   border-radius: var(--est-field-radius);
-  background-color: var(--est-field-bg);
+  background-color: var(--est-field-bg-color);
   color: var(--est-field-color);
-  border-color: var(--est-otp-cell-border);
+  border-color: var(--est-otp-cell-border-color);
   box-shadow: var(--est-field-shadow);
   transition-duration: var(--est-field-transition-duration);
 }
 
 .est-otp__cell:focus-visible {
-  border-color: var(--est-field-focus-border);
+  border-color: var(--est-field-focus-border-color);
   box-shadow:
     var(--est-field-shadow),
     0 0 0 2px var(--est-field-focus-ring-offset),
