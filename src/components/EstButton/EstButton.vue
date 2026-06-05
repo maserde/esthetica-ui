@@ -56,13 +56,7 @@ function handleClick(event: MouseEvent) {
     @click="handleClick"
   >
     <span class="est-button__content" :class="{ 'est-button__content--hidden': loading }">
-      <span v-if="$slots.leading" class="est-button__icon">
-        <slot name="leading" />
-      </span>
       <slot />
-      <span v-if="$slots.trailing" class="est-button__icon">
-        <slot name="trailing" />
-      </span>
     </span>
 
     <span

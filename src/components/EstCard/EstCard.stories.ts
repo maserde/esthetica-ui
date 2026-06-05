@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import EstCard from './EstCard.vue'
+import EstCardHeader from './EstCardHeader.vue'
+import EstCardBody from './EstCardBody.vue'
+import EstCardFooter from './EstCardFooter.vue'
 
 const meta = {
   title: 'Components/EstCard',
@@ -14,11 +17,15 @@ const meta = {
     loading: { control: 'boolean' },
   },
   render: (args) => ({
-    components: { EstCard },
+    components: { EstCard, EstCardBody },
     setup() {
       return { args }
     },
-    template: `<EstCard v-bind="args" style="width:320px;">Card content goes here.</EstCard>`,
+    template: `
+      <EstCard v-bind="args" style="width:320px;">
+        <EstCardBody>Card content goes here.</EstCardBody>
+      </EstCard>
+    `,
   }),
 } satisfies Meta<typeof EstCard>
 
@@ -64,12 +71,18 @@ export const Loading: Story = {
 export const AllStates: Story = {
   name: 'All States',
   render: () => ({
-    components: { EstCard },
+    components: { EstCard, EstCardBody },
     template: `
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <EstCard style="width:200px;">Default</EstCard>
-        <EstCard style="width:200px;" borderless>Borderless</EstCard>
-        <EstCard style="width:200px;" loading>Loading</EstCard>
+        <EstCard style="width:200px;">
+          <EstCardBody>Default</EstCardBody>
+        </EstCard>
+        <EstCard style="width:200px;" borderless>
+          <EstCardBody>Borderless</EstCardBody>
+        </EstCard>
+        <EstCard style="width:200px;" loading>
+          <EstCardBody>Loading</EstCardBody>
+        </EstCard>
       </div>
     `,
   }),
@@ -80,11 +93,11 @@ export const AllStates: Story = {
 export const WithHeader: Story = {
   name: 'With Header',
   render: () => ({
-    components: { EstCard },
+    components: { EstCard, EstCardHeader, EstCardBody },
     template: `
       <EstCard style="width:320px;">
-        <template #header>Card Header</template>
-        Card body content.
+        <EstCardHeader>Card Header</EstCardHeader>
+        <EstCardBody>Card body content.</EstCardBody>
       </EstCard>
     `,
   }),
@@ -93,12 +106,12 @@ export const WithHeader: Story = {
 export const WithHeaderAndFooter: Story = {
   name: 'With Header & Footer',
   render: () => ({
-    components: { EstCard },
+    components: { EstCard, EstCardHeader, EstCardBody, EstCardFooter },
     template: `
       <EstCard style="width:320px;">
-        <template #header>Card Header</template>
-        Card body content.
-        <template #footer>Card Footer</template>
+        <EstCardHeader>Card Header</EstCardHeader>
+        <EstCardBody>Card body content.</EstCardBody>
+        <EstCardFooter>Card Footer</EstCardFooter>
       </EstCard>
     `,
   }),
@@ -109,15 +122,15 @@ export const WithHeaderAndFooter: Story = {
 export const AllVariants: Story = {
   name: 'All Variants',
   render: () => ({
-    components: { EstCard },
+    components: { EstCard, EstCardBody },
     template: `
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <EstCard variant="default" style="width:180px;">Default</EstCard>
-        <EstCard variant="primary" style="width:180px;">Primary</EstCard>
-        <EstCard variant="success" style="width:180px;">Success</EstCard>
-        <EstCard variant="info" style="width:180px;">Info</EstCard>
-        <EstCard variant="warning" style="width:180px;">Warning</EstCard>
-        <EstCard variant="danger" style="width:180px;">Danger</EstCard>
+        <EstCard variant="default" style="width:180px;"><EstCardBody>Default</EstCardBody></EstCard>
+        <EstCard variant="primary" style="width:180px;"><EstCardBody>Primary</EstCardBody></EstCard>
+        <EstCard variant="success" style="width:180px;"><EstCardBody>Success</EstCardBody></EstCard>
+        <EstCard variant="info" style="width:180px;"><EstCardBody>Info</EstCardBody></EstCard>
+        <EstCard variant="warning" style="width:180px;"><EstCardBody>Warning</EstCardBody></EstCard>
+        <EstCard variant="danger" style="width:180px;"><EstCardBody>Danger</EstCardBody></EstCard>
       </div>
     `,
   }),

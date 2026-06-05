@@ -126,7 +126,7 @@
   @apply opacity-0;
 }
 
-.est-button__icon {
+:deep(.est-button__icon) {
   @apply inline-flex items-center shrink-0;
 }
 

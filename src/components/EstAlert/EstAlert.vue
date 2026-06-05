@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { provide, toRef } from 'vue'
-import EstCard from '@/components/EstCard.vue'
+import EstCard from '@/components/EstCard/EstCard.vue'
 
 export type AlertVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 

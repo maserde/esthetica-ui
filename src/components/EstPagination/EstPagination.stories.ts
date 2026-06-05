@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import EstPagination from './EstPagination.vue'
+import EstPaginationInfo from './EstPaginationInfo.vue'
+import EstPaginationNav from './EstPaginationNav.vue'
+import EstPaginationRows from './EstPaginationRows.vue'
 
 const meta = {
   title: 'Components/EstPagination',
@@ -13,11 +16,17 @@ const meta = {
     'onUpdate:rowsPerPage': { action: 'update:rowsPerPage' },
   },
   render: (args) => ({
-    components: { EstPagination },
+    components: { EstPagination, EstPaginationInfo, EstPaginationNav, EstPaginationRows },
     setup() {
       return { args }
     },
-    template: `<EstPagination v-bind="args" />`,
+    template: `
+      <EstPagination v-bind="args">
+        <EstPaginationInfo />
+        <EstPaginationNav />
+        <EstPaginationRows />
+      </EstPagination>
+    `,
   }),
 } satisfies Meta<typeof EstPagination>
 
@@ -53,24 +62,40 @@ export const ManyPages: Story = {
 export const AllStates: Story = {
   name: 'All States',
   render: () => ({
-    components: { EstPagination },
+    components: { EstPagination, EstPaginationInfo, EstPaginationNav, EstPaginationRows },
     template: `
       <div style="display:flex;flex-direction:column;gap:24px;">
         <div>
           <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Few pages (≤7)</p>
-          <EstPagination :current-page="3" :total-pages="5" :rows-per-page="10" />
+          <EstPagination :current-page="3" :total-pages="5" :rows-per-page="10">
+            <EstPaginationInfo />
+            <EstPaginationNav />
+            <EstPaginationRows />
+          </EstPagination>
         </div>
         <div>
           <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">First page</p>
-          <EstPagination :current-page="1" :total-pages="10" :rows-per-page="10" />
+          <EstPagination :current-page="1" :total-pages="10" :rows-per-page="10">
+            <EstPaginationInfo />
+            <EstPaginationNav />
+            <EstPaginationRows />
+          </EstPagination>
         </div>
         <div>
           <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Middle page</p>
-          <EstPagination :current-page="5" :total-pages="10" :rows-per-page="10" />
+          <EstPagination :current-page="5" :total-pages="10" :rows-per-page="10">
+            <EstPaginationInfo />
+            <EstPaginationNav />
+            <EstPaginationRows />
+          </EstPagination>
         </div>
         <div>
           <p style="font-size:0.75rem;color:#6b7280;margin-bottom:8px;">Last page</p>
-          <EstPagination :current-page="10" :total-pages="10" :rows-per-page="10" />
+          <EstPagination :current-page="10" :total-pages="10" :rows-per-page="10">
+            <EstPaginationInfo />
+            <EstPaginationNav />
+            <EstPaginationRows />
+          </EstPagination>
         </div>
       </div>
     `,

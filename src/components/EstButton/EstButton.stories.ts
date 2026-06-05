@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import EstButton from './EstButton.vue'
+import EstButtonIcon from './EstButtonIcon.vue'
 
 const meta = {
   title: 'Components/EstButton',
@@ -32,7 +33,7 @@ const meta = {
     onClick: { action: 'click' },
   },
   render: (args) => ({
-    components: { EstButton: EstButton },
+    components: { EstButton },
     setup() {
       return { args }
     },
@@ -82,7 +83,7 @@ export const Large: Story = {
 export const AllSizes: Story = {
   name: 'All Sizes',
   render: () => ({
-    components: { EstButton: EstButton },
+    components: { EstButton },
     template: `
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
         <EstButton size="sm">Small</EstButton>
@@ -106,7 +107,7 @@ export const Disabled: Story = {
 export const AllStates: Story = {
   name: 'All States',
   render: () => ({
-    components: { EstButton: EstButton },
+    components: { EstButton },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
         <EstButton variant="primary">Default</EstButton>
@@ -122,12 +123,12 @@ export const AllStates: Story = {
 export const WithLeadingIcon: Story = {
   name: 'With Leading Icon',
   render: () => ({
-    components: { EstButton },
+    components: { EstButton, EstButtonIcon },
     template: `
       <EstButton variant="primary">
-        <template #leading>
-          <span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />
-        </template>
+        <EstButtonIcon>
+          <span class="i-ri-add-line w-[1em] h-[1em]" />
+        </EstButtonIcon>
         Add item
       </EstButton>
     `,
@@ -137,13 +138,13 @@ export const WithLeadingIcon: Story = {
 export const WithTrailingIcon: Story = {
   name: 'With Trailing Icon',
   render: () => ({
-    components: { EstButton },
+    components: { EstButton, EstButtonIcon },
     template: `
       <EstButton variant="outlined">
         Export
-        <template #trailing>
-          <span class="i-ri-download-line w-[1em] h-[1em]" aria-hidden="true" />
-        </template>
+        <EstButtonIcon>
+          <span class="i-ri-download-line w-[1em] h-[1em]" />
+        </EstButtonIcon>
       </EstButton>
     `,
   }),
@@ -152,21 +153,21 @@ export const WithTrailingIcon: Story = {
 export const AllIcons: Story = {
   name: 'All Icons',
   render: () => ({
-    components: { EstButton },
+    components: { EstButton, EstButtonIcon },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
         <EstButton>
-          <template #leading><span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+          <EstButtonIcon><span class="i-ri-add-line w-[1em] h-[1em]" /></EstButtonIcon>
           Add item
         </EstButton>
         <EstButton variant="outlined">
           Export
-          <template #trailing><span class="i-ri-download-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+          <EstButtonIcon><span class="i-ri-download-line w-[1em] h-[1em]" /></EstButtonIcon>
         </EstButton>
         <EstButton variant="secondary">
-          <template #leading><span class="i-ri-search-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+          <EstButtonIcon><span class="i-ri-search-line w-[1em] h-[1em]" /></EstButtonIcon>
           Search
-          <template #trailing><span class="i-ri-arrow-right-line w-[1em] h-[1em]" aria-hidden="true" /></template>
+          <EstButtonIcon><span class="i-ri-arrow-right-line w-[1em] h-[1em]" /></EstButtonIcon>
         </EstButton>
       </div>
     `,
@@ -178,7 +179,7 @@ export const AllIcons: Story = {
 export const AllVariants: Story = {
   name: 'All Variants',
   render: () => ({
-    components: { EstButton: EstButton },
+    components: { EstButton },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
         <EstButton variant="primary">Primary</EstButton>

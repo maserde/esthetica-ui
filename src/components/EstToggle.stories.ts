@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { ref } from 'vue'
 import EstToggle from './EstToggle.vue'
-import EstButton from './EstButton.vue'
+import EstButton from './EstButton/EstButton.vue'
 
 const meta = {
   title: 'Components/EstToggle',
