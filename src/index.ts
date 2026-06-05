@@ -15,6 +15,7 @@ export { default as EstTable } from './components/EstTable.vue'
 export { default as EstPasswordMeter } from './components/EstPasswordMeter.vue'
 export { default as EstTag } from './components/EstTag.vue'
 export { default as EstToggle } from './components/EstToggle.vue'
+export { default as EstBreadcrumb } from './components/EstBreadcrumb.vue'
 
 export type {
   Variant as ButtonVariant,
@@ -33,6 +34,7 @@ export type { TableColumn, Props as TableProps } from './components/EstTable.vue
 export type { Props as PasswordMeterProps } from './components/EstPasswordMeter.vue'
 export type { TagVariant, TagType, Props as TagProps } from './components/EstTag.vue'
 export type { ToggleSize, Props as ToggleProps } from './components/EstToggle.vue'
+export type { BreadcrumbItem, Props as BreadcrumbProps } from './components/EstBreadcrumb.vue'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
@@ -51,5 +53,6 @@ declare module '@vue/runtime-core' {
     EstTag: (typeof import('./components/EstTag.vue'))['default']
     EstToast: (typeof import('./components/EstToast.vue'))['default']
     EstToggle: (typeof import('./components/EstToggle.vue'))['default']
+    EstBreadcrumb: (typeof import('./components/EstBreadcrumb.vue'))['default']
   }
 }

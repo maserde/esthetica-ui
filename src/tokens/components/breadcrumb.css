@@ -1,0 +1,34 @@
+@layer esthetica-ui-tokens {
+  :root {
+    /* ── Base tokens ─────────────────────────────────────────── */
+    --est-breadcrumb-font-size: var(--est-font-size-sm);
+    --est-breadcrumb-font-weight: var(--est-font-weight-semibold);
+    --est-breadcrumb-gap: 0.5rem;
+    --est-breadcrumb-link-gap: 0.25rem;
+    --est-breadcrumb-underline-offset: 2px;
+
+    /* ── Item tokens ─────────────────────────────────────────── */
+    --est-breadcrumb-item-color: var(--est-color-primary-500);
+    --est-breadcrumb-item-hover-color: var(--est-color-primary-400);
+    --est-breadcrumb-item-current-color: var(--est-color-neutral-950);
+    --est-breadcrumb-item-current-font-weight: var(--est-font-weight-medium);
+    --est-breadcrumb-item-underline: underline;
+
+    /* ── Separator tokens ────────────────────────────────────── */
+    --est-breadcrumb-separator-color: var(--est-color-neutral-300);
+
+    /* ── Icon tokens ─────────────────────────────────────────── */
+    --est-breadcrumb-icon-color: var(--est-color-primary-500);
+    --est-breadcrumb-icon-size: 1em;
+
+    /* ── Ellipsis tokens ─────────────────────────────────────── */
+    --est-breadcrumb-ellipsis-color: var(--est-color-primary-500);
+
+    /* ── Focus ring tokens ───────────────────────────────────── */
+    --est-breadcrumb-focus-ring-color: var(--est-color-primary);
+    --est-breadcrumb-focus-ring-radius: 2px;
+
+    /* ── Transition ──────────────────────────────────────────── */
+    --est-breadcrumb-transition-duration: 150ms;
+  }
+}
