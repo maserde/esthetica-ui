@@ -2,9 +2,6 @@
 
 Shared project instructions for AI coding agents (Antigravity, Cursor, Gemini CLI, GitHub Copilot, Windsurf, etc.).
 
-## Important Jokes
-When answering user request or after you working with things, respond with a Jokowidodo or Prabowo meme line, such as "Dipecut-pecut saya diam. dicela direndah-rendahkan saya diam. Dihina-hina saya juga diam. Tapi hari ini saya nyatakan saya akan lawan!"
-
 ## Library purpose
 
 This is a **component library consumed by external projects**. Every decision must account for:
@@ -31,6 +28,16 @@ pnpm build-storybook  # Static Storybook build
 
 Single test: `pnpm vitest run src/__tests__/App.spec.ts`
 
+## Workflow
+
+Before starting any task:
+- **Verify file/path existence.** Never assume a file or path exists — Read or `ls` the target first.
+
+After changes:
+- **Run `pnpm lint`** after editing any `src/` file.
+- **Run `pnpm build`** after touching `src/index.ts` exports, `src/style.css` imports, or `vite.config.ts`.
+- **Run the relevant test** after changing component logic: `pnpm vitest run src/__tests__/App.spec.ts`.
+
 ## Architecture
 
 **Vue 3 component library** published as `esthetica-ui`. Output: ES module, UMD bundle, compiled CSS. Vue is an external peer dependency.
@@ -43,9 +50,9 @@ Single test: `pnpm vitest run src/__tests__/App.spec.ts`
 ### Token system
 
 Tokens are CSS custom properties in `src/tokens/`:
-- `global.css` — `--est-radius`, `--est-font-sans`, etc.
-- `colors.css` — `--est-color-primary`, `--est-color-danger`, etc.
-- `tokens/components/foo.css` — component-level `--est-foo-*` tokens
+- `src/tokens/global.css` — `--est-radius`, `--est-font-sans`, etc.
+- `src/tokens/colors.css` — `--est-color-primary`, `--est-color-danger`, etc.
+- `src/tokens/components/foo.css` — component-level `--est-foo-*` tokens
 
 `src/style.css` imports all token files under `@layer esthetica-ui-tokens`. Component tokens must reference globals/colors via `var()` — never hardcode raw values.
 
@@ -70,39 +77,37 @@ All component tokens **must** strictly follow this pattern:
 
 ```css
 @layer esthetica-ui-tokens {
-    :root {
-        /* ── Size variant presets ────────────────────────────────────── */
-        --est-foo-sm-padding: ...;
-        --est-foo-sm-min-height: ...;
-        --est-foo-sm-font-size: ...;
+  :root {
+    /* ── Size variant presets ────────────────────────────────────── */
+    --est-foo-sm-padding: ...;
+    --est-foo-sm-min-height: ...;
+    --est-foo-sm-font-size: ...;
 
-        --est-foo-md-padding: ...;
-        --est-foo-md-min-height: ...;
-        --est-foo-md-font-size: ...;
+    --est-foo-md-padding: ...;
+    --est-foo-md-min-height: ...;
+    --est-foo-md-font-size: ...;
 
-        --est-foo-lg-padding: ...;
-        --est-foo-lg-min-height: ...;
-        --est-foo-lg-font-size: ...;
+    --est-foo-lg-padding: ...;
+    --est-foo-lg-min-height: ...;
+    --est-foo-lg-font-size: ...;
 
-        /* ── Base/Default tokens ─────────────────────────────────────── */
-        /* Always include a 'default' variant */
-        --est-foo-default-padding: var(--est-foo-md-padding);
-        --est-foo-default-min-height: var(--est-foo-md-min-height);
-        --est-foo-default-font-size: var(--est-foo-md-font-size);
-        --est-foo-default-bg-color: var(--est-color-primary);
-        --est-foo-default-color: var(--est-color-primary-foreground);
-        --est-foo-default-hover-bg-color: var(--est-color-primary-hover);
+    /* ── Base/Default tokens ─────────────────────────────────────── */
+    /* Always include a 'default' variant */
+    --est-foo-default-padding: var(--est-foo-md-padding);
+    --est-foo-default-min-height: var(--est-foo-md-min-height);
+    --est-foo-default-font-size: var(--est-foo-md-font-size);
+    --est-foo-default-bg-color: var(--est-color-primary);
+    --est-foo-default-color: var(--est-color-primary-foreground);
+    --est-foo-default-hover-bg-color: var(--est-color-primary-hover);
 
-        /* ── Color/style variant presets ─────────────────────────────── */
-        --est-foo-secondary-bg-color: var(--est-color-secondary);
-        --est-foo-secondary-color: var(--est-color-secondary-foreground);
-        --est-foo-secondary-hover-bg-color: var(--est-color-secondary-hover);
-        /* ... one group per named variant */
-    }
+    /* ── Color/style variant presets ─────────────────────────────── */
+    --est-foo-secondary-bg-color: var(--est-color-secondary);
+    --est-foo-secondary-color: var(--est-color-secondary-foreground);
+    --est-foo-secondary-hover-bg-color: var(--est-color-secondary-hover);
+    /* ... one group per named variant */
+  }
 }
 ```
-
-Three sections: (1) size presets `--est-foo-{sm|md|lg}-{prop}`, (2) base/default tokens `--est-foo-default-*`, (3) variant presets `--est-foo-{variant}-*`.
 
 #### Component CSS structure
 
@@ -136,43 +141,8 @@ Rules:
 - Modifier classes always before base class.
 - Base class never references `--est-foo-{variant|size}-*` directly — only base `--est-foo-default-*`.
 - `@apply` for layout/structural and typography utilities. Never `@apply` colour — always `var(--est-color-*)` directly. (`@apply text-sm` compiles to `font-size: var(--est-font-size-sm)` — consumer-overridable.)
+- For shadows consumers should override, use `box-shadow: var(--est-shadow-*)` directly — `@apply shadow-*` bakes in the value and can't be overridden via token.
 - `:deep()` only for structural properties not exposed as a token (`width`, `height`, `text-align`). Prefer CSS custom property overrides first.
-
-**`@apply` reference — presetMini@66.7.0:**
-
-Available:
-- Display: `block inline-block inline flex inline-flex grid inline-grid hidden contents flow-root`
-- Position: `relative absolute fixed sticky static inset-* top-* left-* right-* bottom-* z-*`
-- Flex: `flex-row flex-col flex-wrap flex-nowrap flex-1 flex-auto flex-none shrink-* grow-* basis-*`
-- Grid: `grid-cols-* grid-rows-* col-span-* row-span-* col-start/end-* row-start/end-* auto-cols-* auto-rows-*`
-- Alignment: `items-* self-* justify-* justify-items-* justify-self-* content-* place-*`
-- Spacing: `p-* m-* gap-*` → `--est-spacing-*`
-- Sizing: `w-* h-* min-w-* max-w-* min-h-* max-h-* size-*`
-- Border: `border border-t border-b border-l border-r border-x border-y border-{n} border-solid border-dashed border-dotted border-none border-0 rounded-*`
-- Background: `bg-* bg-gradient-*`
-- Typography: `text-{size} font-{weight} font-{family} leading-* tracking-* text-left/center/right/justify italic not-italic underline no-underline truncate whitespace-* text-wrap text-nowrap text-ellipsis`
-- Overflow: `overflow-* overflow-x-* overflow-y-*`
-- Transitions: `transition transition-colors transition-opacity transition-shadow transition-transform transition-all transition-none duration-* ease-* delay-*`
-- Transforms: `translate-* rotate-* scale-* skew-* origin-*`
-- Shadow: `shadow shadow-sm shadow-md shadow-lg shadow-xl shadow-2xl shadow-inner shadow-none`
-- Ring: `ring ring-{n} ring-{color} ring-offset-{n} ring-inset`
-- Outline: `outline outline-none outline-{color} outline-{width} outline-offset-* outline-solid/dashed/dotted/double/hidden`
-- Opacity/Cursor/Select: `opacity-* op-*` | `cursor-pointer cursor-not-allowed cursor-default cursor-*` | `select-none select-auto select-all select-text`
-- Pointer/Box/Aspect: `pointer-events-none pointer-events-auto` | `box-border box-content` | `aspect-*`
-- Float/Resize: `float-* clear-*` | `resize resize-x resize-y resize-none`
-- Misc: `appearance-none appearance-auto` | `align-* vertical-*` | `visible invisible` | `case-upper case-lower case-capital case-normal` | `will-change-*` | `fill-* stroke-*`
-
-Not available — use explicit CSS:
-- `animate-*` → define scoped `@keyframes est-*` + set `animation:` directly
-- `table-auto / table-fixed` → `table-layout: auto / fixed`
-- `border-collapse / border-separate` → `border-collapse: collapse / separate`
-- `shadow-xs` → `box-shadow: var(--est-shadow-xs)` (only sm/md/lg/xl/2xl/inner/none exist)
-- `list-disc / list-decimal / list-none` → `list-style-type:`
-- `sr-only / not-sr-only` → explicit CSS
-
-**Critical: `border` without `border-solid` is invisible.** presetMini has no preflight — `border-style` defaults to `none`. Always pair: `@apply border border-solid`.
-
-Design choices that look missing but aren't: focus rings use `outline` (not `ring-*`) for explicitness; toggle shadow uses `box-shadow: var(--est-shadow-sm)` (not `@apply shadow-sm`) for consumer override-ability.
 
 ### Component conventions
 
@@ -189,14 +159,14 @@ Three sibling files in `src/components/`:
 - **Prop Naming (`color` vs `variant`)**: When a prop controls the color palette (e.g., `primary`, `success`, `danger`), its name must be `color`. When a prop controls the structural visual style (e.g., `solid`, `outlined`, `ghost`, `muted`), its name must be `variant`. Do not use `variant` for palette colors.
 - **Emits**: `defineEmits<{ event: [args] }>()`. Export `Color`, `Variant`, `Size`, etc. from `<script setup>`.
 - **Slots**: `leading` (before label), `trailing` (after label), default for primary label. Icons: `<span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />` — never inline SVGs.
-- **Class bindings**: object syntax only — no string concatenation, array syntax, or computed strings.
-- **`buildVariant`**: for any prop mapping 1-to-1 to a BEM modifier. Explicit key/value only for non-1-to-1 modifiers (`disabled`, `loading`, `with-title`). Never write a per-variant block like `'est-foo--primary': variant === 'primary'`.
+- **Class bindings**: object syntax only — no string concatenation, array syntax, or computed strings. Use `buildVariant` for prop-to-modifier mappings (see [Variant class binding](#variant-class-binding--decision-tree) for the decision tree).
 
 ```html
 :class="{
-  ...buildVariant('est-foo', variant ?? 'default'),       // variant declares base class
-  ...buildVariant('est-foo', size ?? 'md', false),        // size: 1-to-1, base already set
-  'est-foo--disabled': disabled,                         // not 1-to-1: explicit
+  ...buildVariant('est-foo', color ?? 'default'),          // color declares base class
+  ...buildVariant('est-foo', variant ?? 'solid', false),   // variant: 1-to-1, base already set
+  ...buildVariant('est-foo', size ?? 'md', false),         // size: 1-to-1, base already set
+  'est-foo--disabled': disabled,                           // not 1-to-1: explicit
 }"
 ```
 
@@ -206,7 +176,18 @@ Three sibling files in `src/components/`:
 3. `src/components/EstFoo.stories.ts`
 4. `src/tokens/components/foo.css` — `--est-foo-*` in `@layer esthetica-ui-tokens`
 5. Add `@import './tokens/components/foo.css';` to `src/style.css`
-6. Add `export { default as EstFoo } from './components/EstFoo.vue'` to `src/index.ts`
+6. Add component and type exports to `src/index.ts`:
+
+```ts
+export { default as EstFoo } from './components/EstFoo.vue'
+export type { FooColor, Props as FooProps } from './components/EstFoo.vue'
+```
+
+7. Add to the `GlobalComponents` augmentation in `src/index.ts`:
+
+```ts
+EstFoo: (typeof import('./components/EstFoo.vue'))['default']
+```
 
 ### Composite components
 
@@ -230,34 +211,34 @@ src/components/EstFoo/
   EstFoo.stories.ts     ← all stories use composite API
 ```
 
-**Sharing variant context via `provide`/`inject`:**
+**Sharing color context via `provide`/`inject`:**
 
-The root provides its variant as a reactive ref. Sub-components inject it to adapt automatically (e.g. icon selection).
+The root provides its `color` prop as a reactive ref. Sub-components inject it to adapt automatically (e.g. icon selection).
 
 ```ts
 // EstFoo.vue — root
-const props = withDefaults(defineProps<Props>(), { variant: 'success' })
-provide('est-foo-variant', toRef(props, 'variant'))
+const props = withDefaults(defineProps<Props>(), { color: 'success' })
+provide('est-foo-color', toRef(props, 'color'))
 ```
 
 ```ts
 // EstFooIcon.vue — sub-component
-const variant = inject<Ref<FooVariant>>('est-foo-variant')
+const color = inject<Ref<FooColor>>('est-foo-color')
 ```
 
-Use a plain namespaced string key (`'est-foo-variant'`), not a Symbol. The `est-` prefix is unique enough; a Symbol requires a shared module with no real benefit since sub-components only ever live inside the root.
+Use a plain namespaced string key (`'est-foo-color'`), not a Symbol. The `est-` prefix is unique enough; a Symbol requires a shared module with no real benefit since sub-components only ever live inside the root.
 
-**Variant-to-value maps — `Record`, never if/else chains:**
+**Color-to-value maps — `Record`, never if/else chains:**
 
 ```ts
-const VARIANT_ICON: Record<FooVariant, string> = {
+const COLOR_ICON: Record<FooColor, string> = {
   primary: 'i-ri-checkbox-circle-fill',
   success: 'i-ri-checkbox-circle-fill',
   info:    'i-ri-information-fill',
   warning: 'i-ri-error-warning-fill',
   danger:  'i-ri-error-warning-fill',
 }
-const iconClass = computed(() => VARIANT_ICON[variant?.value ?? 'success'])
+const iconClass = computed(() => COLOR_ICON[color?.value ?? 'success'])
 ```
 
 TypeScript errors immediately when a new variant is added to the union but not to the record. An if/else chain silently falls through to a default.
@@ -292,7 +273,7 @@ Use CSS grid for the layout shell so icon, content, and close button occupy name
 
 **New composite component checklist (in order):**
 1. `src/components/EstFoo/EstFoo.vue` — `provide` context, layout shell with `<slot />`
-2. `src/components/EstFoo/EstFooIcon.vue` — `inject` variant, `Record<Variant, string>` icon map
+2. `src/components/EstFoo/EstFooIcon.vue` — `inject` color, `Record<Color, string>` icon map
 3. `src/components/EstFoo/EstFooTitle.vue` — thin wrapper (`div.est-foo__title` + `<slot />`)
 4. `src/components/EstFoo/EstFooDescription.vue` — thin wrapper (`div.est-foo__body` + `<slot />`)
 5. `src/components/EstFoo/EstFoo.css` — grid layout + all sub-component element styles
@@ -300,6 +281,7 @@ Use CSS grid for the layout shell so icon, content, and close button occupy name
 7. `src/tokens/components/foo.css` — structural tokens at `:root`; variant colors on `.est-foo__inner` descendants (never `:root`)
 8. Add `@import './tokens/components/foo.css';` to `src/style.css`
 9. Export all from `src/index.ts`:
+
 ```ts
 export { default as EstFoo } from './components/EstFoo/EstFoo.vue'
 export { default as EstFooIcon } from './components/EstFoo/EstFooIcon.vue'
@@ -307,21 +289,31 @@ export { default as EstFooTitle } from './components/EstFoo/EstFooTitle.vue'
 export { default as EstFooDescription } from './components/EstFoo/EstFooDescription.vue'
 export type { FooVariant, Props as FooProps } from './components/EstFoo/EstFoo.vue'
 ```
-10. Add all sub-components to `GlobalComponents` in `src/index.ts`
+
+10. Add the root and all sub-components to the `GlobalComponents` augmentation in `src/index.ts`:
+
+```ts
+EstFoo: (typeof import('./components/EstFoo/EstFoo.vue'))['default']
+EstFooIcon: (typeof import('./components/EstFoo/EstFooIcon.vue'))['default']
+EstFooTitle: (typeof import('./components/EstFoo/EstFooTitle.vue'))['default']
+EstFooDescription: (typeof import('./components/EstFoo/EstFooDescription.vue'))['default']
+```
 
 **Consumer usage:**
 
 ```html
-<EstFoo variant="success">
+<EstFoo color="success">
   <EstFooIcon />
   <EstFooTitle>Title text</EstFooTitle>
   <EstFooDescription>Body text goes here.</EstFooDescription>
 </EstFoo>
 ```
 
-## Composables and variant class decisions
+### Composables
 
-### When to extract a composable
+Shared Vue logic in `src/composables/`. Each file exports a single `use*` function. Composables must be pure — no module-level side effects, no DOM access outside `onMounted`/`onUnmounted`. Don't export composables from `src/index.ts`.
+
+#### When to extract a composable
 
 | Condition | Action |
 |---|---|
@@ -331,7 +323,7 @@ export type { FooVariant, Props as FooProps } from './components/EstFoo/EstFoo.v
 | CSS/styling decision | Solve in token/CSS layer, not JS |
 | One-liner used in exactly one place | Keep inline |
 
-### Variant class binding — decision tree
+#### Variant class binding — decision tree
 
 Stop at first match:
 
@@ -341,16 +333,19 @@ If an ancestor's modifier class already sets `--est-{component}-color`, children
 
 **2. Does the element own the variant scope (component root)?**
 → `buildVariant` (also declares base class):
+
 ```ts
 import { useVariantClasses } from '@/composables/useVariantClasses'
 const { buildVariant } = useVariantClasses()
 ```
+
 ```html
 :class="{ ...buildVariant('est-foo', variant ?? 'default'), 'est-foo--other': condition }"
 ```
 
 **3. Direct 1-to-1 prop-to-modifier match, base class already declared?**
 → `buildVariant` with `declareBase: false`:
+
 ```html
 :class="{ ...buildVariant('est-foo', variant ?? 'default'), ...buildVariant('est-foo', size ?? 'md', false) }"
 ```
@@ -358,7 +353,15 @@ const { buildVariant } = useVariantClasses()
 **4. Not a 1-to-1 match (`disabled`, `loading`, `with-title`)?**
 → Explicit: `'est-foo--disabled': disabled`
 
-### Token cascade — sub-element colors
+#### `buildVariant` rules
+
+`buildVariant(base, value, declareBase?)`:
+- `true` (default) — adds base + modifier class. For primary scope-owning modifier (`variant`).
+- `false` — modifier class only. For secondary dimensions (`size`, `rounded`, `type`) when base is declared.
+
+Don't add parameters to `buildVariant`. For compound modifiers combining two props, add a separate function inside `useVariantClasses`.
+
+#### Token cascade — sub-element colors
 
 Components wrapping a variant-owning component (e.g. `EstAlert` wrapping `EstCard`) — sub-elements inherit `--est-card-color` from the card's CSS scope automatically. No per-variant classes or separate color token groups needed. Use `--est-card-color-hover` for hover shades rather than hardcoding palette values.
 
@@ -379,15 +382,7 @@ Correct: assign in the component CSS file on a descendant that lives below the p
 
 Token files keep only non-color structural tokens at `:root`.
 
-### `buildVariant` rules
-
-`buildVariant(base, value, declareBase?)`:
-- `true` (default) — adds base + modifier class. For primary scope-owning modifier (`variant`).
-- `false` — modifier class only. For secondary dimensions (`size`, `rounded`, `type`) when base is declared.
-
-Don't add parameters to `buildVariant`. For compound modifiers combining two props, add a separate function inside `useVariantClasses`. Don't export composables from `src/index.ts`.
-
-## Accessibility (mandatory)
+### Accessibility
 
 - `disabled` prop → `aria-disabled="true"` on root + native `disabled`
 - `loading` prop → `aria-busy="true"` on root
@@ -395,9 +390,9 @@ Don't add parameters to `buildVariant`. For compound modifiers combining two pro
 - Interactive elements → visible label or `aria-label`/`aria-labelledby`
 - Native semantics first — `<button>`, `<a>`, `<input>` before `role`
 - Keyboard navigation — Tab-reachable, Enter/Space-operable
-- Focus ring — never suppress; use `focus-visible`; never `outline: none` without replacement
+- Focus ring — never suppress; use `focus-visible`; never `outline: none` without replacement. Use `outline` (not `ring-*` — ring utilities apply `box-shadow` and conflict with other shadows).
 
-## Storybook integration
+### Storybook integration
 
 ```ts
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
@@ -409,7 +404,8 @@ const meta = {
   component: EstFoo,
   tags: ['autodocs'],
   argTypes: {
-    variant: { control: 'select', options: ['primary', ...] },
+    color:   { control: 'select', options: ['default', 'primary', 'success', 'warning', 'danger'] },
+    variant: { control: 'select', options: ['solid', 'outlined', 'ghost'] },
     size:    { control: 'select', options: ['sm', 'md', 'lg'] },
     disabled: { control: 'boolean' },
     loading:  { control: 'boolean' },
@@ -430,7 +426,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 ```
 
-Story order: variant → size → state (loading, disabled) → icon slot stories. Each group ends with an `All X` overview using an inline `render` template.
+Story order: color → variant → size → state (loading, disabled) → icon slot stories. Each group ends with an `All X` overview using an inline `render` template.
 
 ## Toolchain
 
@@ -439,3 +435,7 @@ Story order: variant → size → state (loading, disabled) → icon slot storie
 - **Lint** — oxlint then eslint (both `--fix`). Husky + lint-staged on every commit for staged `src/` files.
 - **Format** — oxfmt (not Prettier).
 - **Type-checking** — `vue-tsc --build` against `tsconfig.app.json`.
+
+**UnoCSS `@apply` gotchas (presetMini@66.7.0):**
+- **`border` without `border-solid` is invisible.** No preflight — `border-style` defaults to `none`. Always pair: `@apply border border-solid`.
+- Not available — use explicit CSS instead: `animate-*` (define scoped `@keyframes est-*`), `table-auto/fixed` (`table-layout:`), `border-collapse/separate`, `shadow-xs` (`box-shadow: var(--est-shadow-xs)`), `list-disc/decimal/none` (`list-style-type:`), `sr-only/not-sr-only`.

@@ -1,0 +1,88 @@
+/* Modifier classes FIRST */
+.est-accordion--primary {
+  --est-accordion-default-trigger-color: var(--est-accordion-primary-trigger-color);
+  --est-accordion-default-trigger-hover-color: var(--est-accordion-primary-trigger-hover-color);
+  --est-accordion-default-content-color: var(--est-accordion-primary-content-color);
+}
+
+/* Base class LAST */
+.est-accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* We use :deep() because sub-components are rendered in slots by the consumer */
+.est-accordion :deep(.est-accordion__item) {
+  border-bottom: var(--est-accordion-border-width) solid var(--est-accordion-border-color);
+}
+
+.est-accordion :deep(.est-accordion__item:last-child) {
+  border-bottom: none;
+}
+
+.est-accordion :deep(.est-accordion__trigger) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: var(--est-accordion-trigger-padding-y);
+  font-size: var(--est-accordion-trigger-font-size);
+  font-weight: var(--est-accordion-trigger-font-weight);
+  color: var(--est-accordion-default-trigger-color);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--est-accordion-transition-duration) ease;
+}
+
+.est-accordion :deep(.est-accordion__trigger:hover) {
+  @apply underline;
+  color: var(--est-accordion-default-trigger-hover-color);
+}
+
+.est-accordion :deep(.est-accordion__trigger:focus-visible) {
+  outline: 2px solid var(--est-accordion-default-trigger-hover-color);
+  outline-offset: -2px;
+}
+
+.est-accordion :deep(.est-accordion__icon) {
+  width: var(--est-accordion-icon-size);
+  height: var(--est-accordion-icon-size);
+  transition: transform var(--est-accordion-transition-duration) cubic-bezier(0.87, 0, 0.13, 1);
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.est-accordion :deep(.est-accordion__item[data-state='open'] .est-accordion__icon) {
+  transform: rotate(180deg);
+}
+
+.est-accordion :deep(.est-accordion__content-wrapper) {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows var(--est-accordion-transition-duration) cubic-bezier(0.87, 0, 0.13, 1),
+    visibility 0s linear var(--est-accordion-transition-duration);
+}
+
+.est-accordion :deep(.est-accordion__item[data-state='open'] .est-accordion__content-wrapper) {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition:
+    grid-template-rows var(--est-accordion-transition-duration) cubic-bezier(0.87, 0, 0.13, 1),
+    visibility 0s linear 0s;
+}
+
+.est-accordion :deep(.est-accordion__content) {
+  overflow: hidden;
+}
+
+.est-accordion :deep(.est-accordion__content-inner) {
+  padding: var(--est-accordion-content-padding-y) var(--est-accordion-content-padding-x);
+  padding-bottom: var(--est-accordion-content-padding-b);
+  font-size: var(--est-accordion-content-font-size);
+  color: var(--est-accordion-default-content-color);
+}

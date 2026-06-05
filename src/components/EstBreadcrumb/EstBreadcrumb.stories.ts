@@ -78,7 +78,7 @@ export const Collapsed: Story = {
 
 export const ManualSlots: Story = {
   args: {
-    separator: ""
+    separator: '',
   },
 
   name: 'Manual Slots',
@@ -116,5 +116,5 @@ export const ManualSlots: Story = {
         </EstBreadcrumbList>
       </EstBreadcrumb>
     `,
-  })
+  }),
 }
