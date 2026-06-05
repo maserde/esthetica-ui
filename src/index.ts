@@ -28,23 +28,24 @@ export { default as EstToggle } from './components/EstToggle.vue'
 export { default as EstBreadcrumb } from './components/EstBreadcrumb.vue'
 
 export type {
-  Variant as ButtonVariant,
+  ButtonColor,
+  ButtonVariant,
   Size as ButtonSize,
   ButtonType,
   Props as ButtonProps,
 } from './components/EstButton/EstButton.vue'
 export type { SkeletonRounded, Props as SkeletonProps } from './components/EstSkeleton.vue'
-export type { CardVariant, Props as CardProps } from './components/EstCard/EstCard.vue'
+export type { CardColor, Props as CardProps } from './components/EstCard/EstCard.vue'
 export type { Props as FieldProps } from './components/EstField/EstField.vue'
 export type { Props as InputProps } from './components/EstField/EstInput.vue'
 export type { Props as InputOTPProps } from './components/EstInputOTP.vue'
-export type { AlertVariant, Props as AlertProps } from './components/EstAlert/EstAlert.vue'
-export type { ToastVariant, Props as ToastProps } from './components/EstToast.vue'
+export type { AlertColor, Props as AlertProps } from './components/EstAlert/EstAlert.vue'
+export type { ToastColor, Props as ToastProps } from './components/EstToast.vue'
 export type { Props as PaginationProps } from './components/EstPagination/EstPagination.vue'
 export type { TableColumn, Props as TableProps } from './components/EstTable.vue'
 export type { Props as PasswordMeterProps } from './components/EstPasswordMeter.vue'
-export type { TagVariant, TagType, Props as TagProps } from './components/EstTag.vue'
-export type { ToggleVariant, ToggleSize, Props as ToggleProps } from './components/EstToggle.vue'
+export type { TagColor, TagVariant, Props as TagProps } from './components/EstTag.vue'
+export type { ToggleColor, ToggleSize, Props as ToggleProps } from './components/EstToggle.vue'
 export type { BreadcrumbItem, Props as BreadcrumbProps } from './components/EstBreadcrumb.vue'
 
 declare module '@vue/runtime-core' {

@@ -8,7 +8,7 @@ const meta = {
   component: EstToggle,
   tags: ['autodocs'],
   argTypes: {
-    variant: { control: 'select', options: ['primary', 'success', 'info', 'warning', 'error'] },
+    color: { control: 'select', options: ['primary', 'success', 'info', 'warning', 'error'] },
     size: { control: 'select', options: ['sm', 'md'] },
     disabled: { control: 'boolean' },
     modelValue: { control: 'boolean' },
@@ -43,11 +43,11 @@ export const AllVariants: Story = {
     },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <EstToggle v-model="primary" variant="primary" label="Primary" />
-        <EstToggle v-model="success" variant="success" label="Success" />
-        <EstToggle v-model="info" variant="info" label="Info" />
-        <EstToggle v-model="warning" variant="warning" label="Warning" />
-        <EstToggle v-model="error" variant="error" label="Error" />
+        <EstToggle v-model="primary" color="primary" label="Primary" />
+        <EstToggle v-model="success" color="success" label="Success" />
+        <EstToggle v-model="info" color="info" label="Info" />
+        <EstToggle v-model="warning" color="warning" label="Warning" />
+        <EstToggle v-model="error" color="error" label="Error" />
       </div>
     `,
   }),

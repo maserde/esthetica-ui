@@ -6,17 +6,17 @@ import EstAlertIcon from './EstAlert/EstAlertIcon.vue'
 import EstAlertTitle from './EstAlert/EstAlertTitle.vue'
 import EstAlertBody from './EstAlert/EstAlertBody.vue'
 
-export type ToastVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
+export type ToastColor = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
 export interface Props {
-  variant?: ToastVariant
+  color?: ToastColor
   duration?: number
   dismissible?: boolean
   modelValue?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  variant: 'success',
+  color: 'success',
   duration: 5000,
   dismissible: true,
   modelValue: true,
@@ -103,10 +103,10 @@ const { buildVariant } = useVariantClasses()
   <Transition name="est-toast" @after-leave="onAfterLeave">
     <div
       v-if="isVisible"
-      :class="{ ...buildVariant('est-toast', variant ?? 'success') }"
+      :class="{ ...buildVariant('est-toast', color ?? 'success') }"
       aria-live="assertive"
     >
-      <EstAlert :variant="variant" :dismissible="dismissible" @dismiss="handleDismiss">
+      <EstAlert :color="color" :dismissible="dismissible" @dismiss="handleDismiss">
         <EstAlertIcon />
         <EstAlertTitle v-if="$slots.title">
           <slot name="title" />

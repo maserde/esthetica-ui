@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue'
 import type { Ref } from 'vue'
-import type { AlertVariant } from './EstAlert.vue'
+import type { AlertColor } from './EstAlert.vue'
 
-const variant = inject<Ref<AlertVariant>>('est-alert-variant')
+const color = inject<Ref<AlertColor>>('est-alert-color')
 
-const VARIANT_ICON: Record<AlertVariant, string> = {
+const COLOR_ICON: Record<AlertColor, string> = {
   primary: 'i-ri-checkbox-circle-fill',
   success: 'i-ri-checkbox-circle-fill',
   info: 'i-ri-information-fill',
@@ -13,7 +13,7 @@ const VARIANT_ICON: Record<AlertVariant, string> = {
   danger: 'i-ri-error-warning-fill',
 }
 
-const iconClass = computed(() => VARIANT_ICON[variant?.value ?? 'success'])
+const iconClass = computed(() => COLOR_ICON[color?.value ?? 'success'])
 </script>
 
 <template>

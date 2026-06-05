@@ -3,21 +3,21 @@ import { provide, toRef } from 'vue'
 import EstSkeleton from '../EstSkeleton.vue'
 import { useVariantClasses } from '@/composables/useVariantClasses'
 
-export type CardVariant = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
+export type CardColor = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
 export interface Props {
-  variant?: CardVariant
+  color?: CardColor
   borderless?: boolean
   loading?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  variant: 'default',
+  color: 'default',
   borderless: false,
   loading: false,
 })
 
-provide('est-card-variant', toRef(props, 'variant'))
+provide('est-card-color', toRef(props, 'color'))
 provide('est-card-borderless', toRef(props, 'borderless'))
 
 const { buildVariant } = useVariantClasses()
@@ -30,7 +30,7 @@ const { buildVariant } = useVariantClasses()
   <div
     v-else
     :class="{
-      ...buildVariant('est-card', variant ?? 'default'),
+      ...buildVariant('est-card', color ?? 'default'),
       'est-card--borderless': borderless,
     }"
   >

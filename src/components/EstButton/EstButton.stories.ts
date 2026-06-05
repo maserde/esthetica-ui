@@ -6,18 +6,13 @@ const meta = {
   component: EstButton,
   tags: ['autodocs'],
   argTypes: {
+    color: {
+      control: 'select',
+      options: ['primary', 'secondary', 'info', 'success', 'warning', 'danger'],
+    },
     variant: {
       control: 'select',
-      options: [
-        'primary',
-        'secondary',
-        'info',
-        'success',
-        'warning',
-        'danger',
-        'outlined',
-        'ghost',
-      ],
+      options: ['solid', 'outlined', 'ghost'],
     },
     size: {
       control: 'select',
@@ -46,11 +41,11 @@ type Story = StoryObj<typeof meta>
 // ─── Variants ────────────────────────────────────────────────────────────────
 
 export const Primary: Story = {
-  args: { variant: 'primary', default: 'Primary' },
+  args: { color: 'primary', default: 'Primary' },
 }
 
 export const Secondary: Story = {
-  args: { variant: 'secondary', default: 'Secondary' },
+  args: { color: 'secondary', default: 'Secondary' },
 }
 
 export const Outlined: Story = {
@@ -62,7 +57,7 @@ export const Ghost: Story = {
 }
 
 export const Danger: Story = {
-  args: { variant: 'danger', default: 'Danger' },
+  args: { color: 'danger', default: 'Danger' },
 }
 
 // ─── Sizes ────────────────────────────────────────────────────────────────────
@@ -109,9 +104,9 @@ export const AllStates: Story = {
     components: { EstButton },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <EstButton variant="primary">Default</EstButton>
-        <EstButton variant="primary" loading>Loading</EstButton>
-        <EstButton variant="primary" disabled>Disabled</EstButton>
+        <EstButton color="primary">Default</EstButton>
+        <EstButton color="primary" loading>Loading</EstButton>
+        <EstButton color="primary" disabled>Disabled</EstButton>
       </div>
     `,
   }),
@@ -124,7 +119,7 @@ export const WithLeadingIcon: Story = {
   render: () => ({
     components: { EstButton },
     template: `
-      <EstButton variant="primary">
+      <EstButton color="primary">
         <template #leading>
           <span class="i-ri-add-line w-[1em] h-[1em]" aria-hidden="true" />
         </template>
@@ -163,7 +158,7 @@ export const AllIcons: Story = {
           Export
           <template #trailing><span class="i-ri-download-line w-[1em] h-[1em]" aria-hidden="true" /></template>
         </EstButton>
-        <EstButton variant="secondary">
+        <EstButton color="secondary">
           <template #leading><span class="i-ri-search-line w-[1em] h-[1em]" aria-hidden="true" /></template>
           Search
           <template #trailing><span class="i-ri-arrow-right-line w-[1em] h-[1em]" aria-hidden="true" /></template>
@@ -181,11 +176,11 @@ export const AllVariants: Story = {
     components: { EstButton },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <EstButton variant="primary">Primary</EstButton>
-        <EstButton variant="secondary">Secondary</EstButton>
+        <EstButton color="primary">Primary</EstButton>
+        <EstButton color="secondary">Secondary</EstButton>
         <EstButton variant="outlined">Outlined</EstButton>
         <EstButton variant="ghost">Ghost</EstButton>
-        <EstButton variant="danger">Danger</EstButton>
+        <EstButton color="danger">Danger</EstButton>
       </div>
     `,
   }),

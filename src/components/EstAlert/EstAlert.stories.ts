@@ -9,7 +9,7 @@ const meta = {
   component: EstAlert,
   tags: ['autodocs'],
   argTypes: {
-    variant: {
+    color: {
       control: 'select',
       options: ['primary', 'success', 'info', 'warning', 'danger'],
     },
@@ -36,23 +36,23 @@ type Story = StoryObj<typeof meta>
 // ─── Variants ────────────────────────────────────────────────────────────────
 
 export const Primary: Story = {
-  args: { variant: 'primary' },
+  args: { color: 'primary' },
 }
 
 export const Success: Story = {
-  args: { variant: 'success' },
+  args: { color: 'success' },
 }
 
 export const Info: Story = {
-  args: { variant: 'info' },
+  args: { color: 'info' },
 }
 
 export const Warning: Story = {
-  args: { variant: 'warning' },
+  args: { color: 'warning' },
 }
 
 export const Danger: Story = {
-  args: { variant: 'danger' },
+  args: { color: 'danger' },
 }
 
 // ─── States ───────────────────────────────────────────────────────────────────
@@ -62,7 +62,7 @@ export const WithTitle: Story = {
   render: () => ({
     components: { EstAlert, EstAlertIcon, EstAlertTitle, EstAlertBody },
     template: `
-      <EstAlert variant="success" style="width:400px;">
+      <EstAlert color="success" style="width:400px;">
         <EstAlertIcon />
         <EstAlertTitle>Success!</EstAlertTitle>
         <EstAlertBody>Your changes have been saved successfully.</EstAlertBody>
@@ -73,7 +73,7 @@ export const WithTitle: Story = {
 
 export const NotDismissible: Story = {
   name: 'Not Dismissible',
-  args: { variant: 'info', dismissible: false },
+  args: { color: 'info', dismissible: false },
 }
 
 export const AllStates: Story = {
@@ -82,12 +82,12 @@ export const AllStates: Story = {
     components: { EstAlert, EstAlertIcon, EstAlertTitle, EstAlertBody },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;width:400px;">
-        <EstAlert variant="success">
+        <EstAlert color="success">
           <EstAlertIcon />
           <EstAlertTitle>With Title</EstAlertTitle>
           <EstAlertBody>An alert with a title and body text.</EstAlertBody>
         </EstAlert>
-        <EstAlert variant="info" :dismissible="false">
+        <EstAlert color="info" :dismissible="false">
           <EstAlertIcon />
           <EstAlertBody>Not dismissible — no close button shown.</EstAlertBody>
         </EstAlert>
@@ -101,7 +101,7 @@ export const CustomIcon: Story = {
   render: () => ({
     components: { EstAlert, EstAlertIcon, EstAlertTitle, EstAlertBody },
     template: `
-      <EstAlert variant="warning" style="width:400px;">
+      <EstAlert color="warning" style="width:400px;">
         <EstAlertIcon>
           <span class="i-ri-alarm-warning-fill w-6 h-6" />
         </EstAlertIcon>
@@ -120,27 +120,27 @@ export const AllVariants: Story = {
     components: { EstAlert, EstAlertIcon, EstAlertTitle, EstAlertBody },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;width:400px;">
-        <EstAlert variant="primary">
+        <EstAlert color="primary">
           <EstAlertIcon />
           <EstAlertTitle>Primary</EstAlertTitle>
           <EstAlertBody>A primary alert message.</EstAlertBody>
         </EstAlert>
-        <EstAlert variant="success">
+        <EstAlert color="success">
           <EstAlertIcon />
           <EstAlertTitle>Success</EstAlertTitle>
           <EstAlertBody>Operation completed successfully.</EstAlertBody>
         </EstAlert>
-        <EstAlert variant="info">
+        <EstAlert color="info">
           <EstAlertIcon />
           <EstAlertTitle>Info</EstAlertTitle>
           <EstAlertBody>Here is some useful information.</EstAlertBody>
         </EstAlert>
-        <EstAlert variant="warning">
+        <EstAlert color="warning">
           <EstAlertIcon />
           <EstAlertTitle>Warning</EstAlertTitle>
           <EstAlertBody>Please review before proceeding.</EstAlertBody>
         </EstAlert>
-        <EstAlert variant="danger">
+        <EstAlert color="danger">
           <EstAlertIcon />
           <EstAlertTitle>Danger</EstAlertTitle>
           <EstAlertBody>Something went wrong. Please try again.</EstAlertBody>

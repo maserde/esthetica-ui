@@ -2,15 +2,15 @@
 import { provide, toRef } from 'vue'
 import EstCard from '@/components/EstCard/EstCard.vue'
 
-export type AlertVariant = 'primary' | 'success' | 'info' | 'warning' | 'danger'
+export type AlertColor = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
 export interface Props {
-  variant?: AlertVariant
+  color?: AlertColor
   dismissible?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  variant: 'success',
+  color: 'success',
   dismissible: true,
 })
 
@@ -18,11 +18,11 @@ const emit = defineEmits<{
   dismiss: []
 }>()
 
-provide('est-alert-variant', toRef(props, 'variant'))
+provide('est-alert-color', toRef(props, 'color'))
 </script>
 
 <template>
-  <EstCard :variant="props.variant">
+  <EstCard :color="props.color">
     <div class="est-alert__inner" role="alert">
       <slot />
       <button

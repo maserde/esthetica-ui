@@ -2,7 +2,7 @@
 import { useVariantClasses } from '@/composables/useVariantClasses'
 
 export type ToggleSize = 'sm' | 'md'
-export type ToggleVariant = 'primary' | 'success' | 'info' | 'warning' | 'error'
+export type ToggleColor = 'primary' | 'success' | 'info' | 'warning' | 'error'
 
 export interface Props {
   modelValue?: boolean
@@ -10,7 +10,7 @@ export interface Props {
   label?: string
   description?: string
   size?: ToggleSize
-  variant?: ToggleVariant
+  color?: ToggleColor
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
   label: '',
   description: '',
   size: 'md',
-  variant: 'primary',
+  color: 'primary',
 })
 
 const { buildVariant } = useVariantClasses()
@@ -38,7 +38,7 @@ function handleToggle() {
   <label
     :aria-disabled="disabled || undefined"
     :class="{
-      ...buildVariant('est-toggle', variant ?? 'primary'),
+      ...buildVariant('est-toggle', color ?? 'primary'),
       ...buildVariant('est-toggle', size ?? 'md', false),
       'est-toggle--has-description': !!description,
       'est-toggle--disabled': disabled,

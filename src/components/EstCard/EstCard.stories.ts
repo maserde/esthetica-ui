@@ -9,7 +9,7 @@ const meta = {
   component: EstCard,
   tags: ['autodocs'],
   argTypes: {
-    variant: {
+    color: {
       control: 'select',
       options: ['default', 'primary', 'success', 'info', 'warning', 'danger'],
     },
@@ -35,27 +35,27 @@ type Story = StoryObj<typeof meta>
 // ─── Variants ────────────────────────────────────────────────────────────────
 
 export const Default: Story = {
-  args: { variant: 'default' },
+  args: { color: 'default' },
 }
 
 export const Primary: Story = {
-  args: { variant: 'primary' },
+  args: { color: 'primary' },
 }
 
 export const Success: Story = {
-  args: { variant: 'success' },
+  args: { color: 'success' },
 }
 
 export const Info: Story = {
-  args: { variant: 'info' },
+  args: { color: 'info' },
 }
 
 export const Warning: Story = {
-  args: { variant: 'warning' },
+  args: { color: 'warning' },
 }
 
 export const Danger: Story = {
-  args: { variant: 'danger' },
+  args: { color: 'danger' },
 }
 
 // ─── States ───────────────────────────────────────────────────────────────────
@@ -125,12 +125,12 @@ export const AllVariants: Story = {
     components: { EstCard, EstCardBody },
     template: `
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <EstCard variant="default" style="width:180px;"><EstCardBody>Default</EstCardBody></EstCard>
-        <EstCard variant="primary" style="width:180px;"><EstCardBody>Primary</EstCardBody></EstCard>
-        <EstCard variant="success" style="width:180px;"><EstCardBody>Success</EstCardBody></EstCard>
-        <EstCard variant="info" style="width:180px;"><EstCardBody>Info</EstCardBody></EstCard>
-        <EstCard variant="warning" style="width:180px;"><EstCardBody>Warning</EstCardBody></EstCard>
-        <EstCard variant="danger" style="width:180px;"><EstCardBody>Danger</EstCardBody></EstCard>
+        <EstCard color="default" style="width:180px;"><EstCardBody>Default</EstCardBody></EstCard>
+        <EstCard color="primary" style="width:180px;"><EstCardBody>Primary</EstCardBody></EstCard>
+        <EstCard color="success" style="width:180px;"><EstCardBody>Success</EstCardBody></EstCard>
+        <EstCard color="info" style="width:180px;"><EstCardBody>Info</EstCardBody></EstCard>
+        <EstCard color="warning" style="width:180px;"><EstCardBody>Warning</EstCardBody></EstCard>
+        <EstCard color="danger" style="width:180px;"><EstCardBody>Danger</EstCardBody></EstCard>
       </div>
     `,
   }),
