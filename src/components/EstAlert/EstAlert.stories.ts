@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     color: {
       control: 'select',
-      options: ['primary', 'success', 'info', 'warning', 'danger'],
+      options: ['default', 'primary', 'success', 'info', 'warning', 'danger'],
     },
     dismissible: { control: 'boolean' },
     onDismiss: { action: 'dismiss' },
@@ -34,6 +34,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 // ─── Variants ────────────────────────────────────────────────────────────────
+
+export const Default: Story = {
+  args: { color: 'default' },
+}
 
 export const Primary: Story = {
   args: { color: 'primary' },
@@ -120,6 +124,11 @@ export const AllVariants: Story = {
     components: { EstAlert, EstAlertIcon, EstAlertTitle, EstAlertBody },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;width:400px;">
+        <EstAlert color="default">
+          <EstAlertIcon />
+          <EstAlertTitle>Default</EstAlertTitle>
+          <EstAlertBody>A neutral alert message.</EstAlertBody>
+        </EstAlert>
         <EstAlert color="primary">
           <EstAlertIcon />
           <EstAlertTitle>Primary</EstAlertTitle>

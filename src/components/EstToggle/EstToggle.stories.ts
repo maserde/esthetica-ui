@@ -11,7 +11,10 @@ const meta = {
   component: EstToggle,
   tags: ['autodocs'],
   argTypes: {
-    color: { control: 'select', options: ['primary', 'success', 'info', 'warning', 'error'] },
+    color: {
+      control: 'select',
+      options: ['default', 'primary', 'success', 'info', 'warning', 'error'],
+    },
     size: { control: 'select', options: ['sm', 'md'] },
     disabled: { control: 'boolean' },
     modelValue: { control: 'boolean' },
@@ -42,15 +45,20 @@ export const AllVariants: Story = {
   render: () => ({
     components: { EstToggle, EstToggleTrack, EstToggleLabel },
     setup() {
+      const defaultColor = ref(true)
       const primary = ref(true)
       const success = ref(true)
       const info = ref(true)
       const warning = ref(true)
       const error = ref(true)
-      return { primary, success, info, warning, error }
+      return { defaultColor, primary, success, info, warning, error }
     },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;">
+        <EstToggle v-model="defaultColor" color="default">
+          <EstToggleTrack />
+          <EstToggleLabel>Default</EstToggleLabel>
+        </EstToggle>
         <EstToggle v-model="primary" color="primary">
           <EstToggleTrack />
           <EstToggleLabel>Primary</EstToggleLabel>

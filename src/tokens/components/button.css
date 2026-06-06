@@ -73,6 +73,12 @@
     --est-btn-outlined-color: var(--est-color-neutral-500);
     --est-btn-outlined-hover-bg-color: var(--est-color-surface);
 
+    --est-btn-neutral-bg-color: var(--est-color-default-background-color);
+    --est-btn-neutral-hover-bg-color: var(--est-color-default-hovered-color);
+    --est-btn-neutral-pressed-bg-color: var(--est-color-default-pressed-color);
+    --est-btn-neutral-color: var(--est-color-default-foreground-color);
+    --est-btn-neutral-focus-ring-color: var(--est-color-default-focus-ring-color);
+
     --est-btn-ghost-color: var(--est-color-muted-fg);
     --est-btn-ghost-hover-bg-color: var(--est-color-muted);
     --est-btn-ghost-border-color: transparent;

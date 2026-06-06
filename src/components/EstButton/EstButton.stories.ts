@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     color: {
       control: 'select',
-      options: ['primary', 'secondary', 'info', 'success', 'warning', 'danger'],
+      options: ['default', 'primary', 'secondary', 'info', 'success', 'warning', 'danger'],
     },
     variant: {
       control: 'select',
@@ -39,6 +39,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 // ─── Variants ────────────────────────────────────────────────────────────────
+
+export const Default: Story = {
+  args: { color: 'default', default: 'Button' },
+}
 
 export const Primary: Story = {
   args: { color: 'primary', default: 'Primary' },
@@ -104,9 +108,9 @@ export const AllStates: Story = {
     components: { EstButton },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <EstButton color="primary">Default</EstButton>
-        <EstButton color="primary" loading>Loading</EstButton>
-        <EstButton color="primary" disabled>Disabled</EstButton>
+        <EstButton>Default</EstButton>
+        <EstButton loading>Loading</EstButton>
+        <EstButton disabled>Disabled</EstButton>
       </div>
     `,
   }),
@@ -176,6 +180,7 @@ export const AllVariants: Story = {
     components: { EstButton },
     template: `
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <EstButton color="default">Default</EstButton>
         <EstButton color="primary">Primary</EstButton>
         <EstButton color="secondary">Secondary</EstButton>
         <EstButton variant="outlined">Outlined</EstButton>

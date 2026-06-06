@@ -33,5 +33,11 @@
     --est-tag-danger-primary-bg-color: var(--est-color-danger-background-color);
     --est-tag-danger-primary-color: var(--est-color-danger-foreground-color);
     --est-tag-danger-secondary-border-color: var(--est-color-danger-background-color);
+
+    --est-tag-neutral-primary-bg-color: var(--est-color-default-background-color);
+    --est-tag-neutral-primary-color: var(--est-color-default-foreground-color);
+    --est-tag-neutral-secondary-bg-color: var(--est-color-default-muted-background-color);
+    --est-tag-neutral-secondary-color: var(--est-color-default-muted-foreground-color);
+    --est-tag-neutral-secondary-border-color: var(--est-color-default-muted-border-color);
   }
 }

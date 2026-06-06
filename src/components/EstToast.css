@@ -1,3 +1,6 @@
+.est-toast--default {
+  --est-toast-default-progress-bg-color: var(--est-toast-neutral-progress-bg-color);
+}
 .est-toast--primary {
   --est-toast-default-progress-bg-color: var(--est-toast-primary-progress-bg-color);
 }

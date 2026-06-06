@@ -1,5 +1,10 @@
 /* ── Color modifiers — primary (solid) style by default ──────────── */
 
+.est-tag--default {
+  --est-tag-default-bg-color: var(--est-tag-neutral-primary-bg-color);
+  --est-tag-default-color: var(--est-tag-neutral-primary-color);
+}
+
 .est-tag--info {
   --est-tag-default-bg-color: var(--est-tag-info-primary-bg-color);
   --est-tag-default-color: var(--est-tag-info-primary-color);
@@ -21,6 +26,12 @@
 }
 
 /* ── Secondary variant overrides (compound selectors) ────────────── */
+
+.est-tag--secondary.est-tag--default {
+  --est-tag-default-bg-color: var(--est-tag-neutral-secondary-bg-color);
+  --est-tag-default-color: var(--est-tag-neutral-secondary-color);
+  --est-tag-default-border-color: var(--est-tag-neutral-secondary-border-color);
+}
 
 .est-tag--secondary.est-tag--info {
   --est-tag-default-bg-color: var(--est-tag-info-secondary-bg-color);

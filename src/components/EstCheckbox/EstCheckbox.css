@@ -1,4 +1,12 @@
 /* 1. Modifier classes FIRST */
+.est-checkbox--default {
+  --est-checkbox-default-hover-border-color: var(--est-checkbox-neutral-hover-border-color);
+  --est-checkbox-default-checked-bg-color: var(--est-checkbox-neutral-checked-bg-color);
+  --est-checkbox-default-checked-border-color: var(--est-checkbox-neutral-checked-border-color);
+  --est-checkbox-default-checked-icon-color: var(--est-checkbox-neutral-checked-icon-color);
+  --est-checkbox-default-focus-ring-color: var(--est-checkbox-neutral-focus-ring-color);
+}
+
 .est-checkbox--sm {
   --est-checkbox-default-border-radius: var(--est-checkbox-sm-border-radius);
   --est-checkbox-default-size: var(--est-checkbox-sm-size);

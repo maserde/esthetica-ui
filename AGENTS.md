@@ -58,7 +58,7 @@ Tokens are CSS custom properties in `src/tokens/`:
 
 #### Color token state system
 
-Each color variant (`primary`, `info`, `warning`, `success`, `danger`) exposes **11 semantic state tokens** in `colors.css`:
+Each color variant (`default`, `primary`, `info`, `warning`, `success`, `danger`) exposes **11 semantic state tokens** in `colors.css`:
 
 | Suffix | Palette shade | Purpose |
 |---|---|---|
@@ -74,6 +74,8 @@ Each color variant (`primary`, `info`, `warning`, `success`, `danger`) exposes *
 | `-muted-pressed-color` | 200 | Muted background on press |
 | `-muted-border-color` | 200 | Border in muted context |
 
+`default` uses the **neutral** palette (`--est-color-neutral-*`). `secondary` does not use this system (no numbered palette scale) — reference its tokens directly: `--est-color-secondary`, `--est-color-secondary-hover`, `--est-color-secondary-pressed`, `--est-color-secondary-foreground`.
+
 **Always use these semantic tokens** — never reference raw palette shades (e.g. `--est-color-primary-300`) when a semantic slot covers the same value.
 
 ```css
@@ -85,8 +87,6 @@ Each color variant (`primary`, `info`, `warning`, `success`, `danger`) exposes *
 --est-foo-default-bg-color: var(--est-color-primary-500);
 --est-foo-default-focus-ring-color: var(--est-color-primary-300);
 ```
-
-`secondary` does not use this system (no numbered palette scale). Reference its tokens directly: `--est-color-secondary`, `--est-color-secondary-hover`, `--est-color-secondary-pressed`, `--est-color-secondary-foreground`.
 
 #### Token naming convention
 
@@ -104,6 +104,20 @@ All component tokens **must** strictly follow this pattern:
 - `--est-button-primary-hover-bg-color: var(--est-color-primary-border-color);`
 - `--est-pagination-default-hover-btn-bg-color: var(--est-color-neutral-100);`
 - `--est-toggle-success-checked-track-bg-color: var(--est-color-success-background-color);`
+
+**Naming conflict — `default` color variant:** The `[componentVariant]` segment uses `default` for the base/fallback token slot (e.g. `--est-btn-default-bg-color`). This collides with the `color="default"` prop value. To avoid ambiguity, use `neutral` as the internal component preset token prefix for "default" color variant presets, while keeping the CSS modifier class named `--default` (matching the prop value):
+
+```css
+/* ✅ Component token file — use "neutral" prefix for the default color presets */
+--est-btn-neutral-bg-color: var(--est-color-default-background-color);
+--est-btn-neutral-focus-ring-color: var(--est-color-default-focus-ring-color);
+
+/* ✅ Component CSS — modifier class still named --default, references neutral presets */
+.est-button--default {
+  --est-btn-default-bg-color: var(--est-btn-neutral-bg-color);
+  --est-btn-default-focus-ring-color: var(--est-btn-neutral-focus-ring-color);
+}
+```
 
 #### Component token file structure
 
@@ -251,7 +265,7 @@ The root provides its `color` prop as a reactive ref. Sub-components inject it t
 
 ```ts
 // EstFoo.vue — root
-const props = withDefaults(defineProps<Props>(), { color: 'success' })
+const props = withDefaults(defineProps<Props>(), { color: 'default' })
 provide('est-foo-color', toRef(props, 'color'))
 ```
 
@@ -266,13 +280,14 @@ Use a plain namespaced string key (`'est-foo-color'`), not a Symbol. The `est-` 
 
 ```ts
 const COLOR_ICON: Record<FooColor, string> = {
+  default: 'i-ri-checkbox-circle-fill',
   primary: 'i-ri-checkbox-circle-fill',
   success: 'i-ri-checkbox-circle-fill',
   info:    'i-ri-information-fill',
   warning: 'i-ri-error-warning-fill',
   danger:  'i-ri-error-warning-fill',
 }
-const iconClass = computed(() => COLOR_ICON[color?.value ?? 'success'])
+const iconClass = computed(() => COLOR_ICON[color?.value ?? 'default'])
 ```
 
 TypeScript errors immediately when a new variant is added to the union but not to the record. An if/else chain silently falls through to a default.
@@ -336,7 +351,7 @@ EstFooDescription: (typeof import('./components/EstFoo/EstFooDescription.vue'))[
 **Consumer usage:**
 
 ```html
-<EstFoo color="success">
+<EstFoo color="default">
   <EstFooIcon />
   <EstFooTitle>Title text</EstFooTitle>
   <EstFooDescription>Body text goes here.</EstFooDescription>

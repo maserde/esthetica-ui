@@ -19,6 +19,14 @@
   --est-btn-default-radius: var(--est-btn-lg-radius);
 }
 
+.est-button--default {
+  --est-btn-default-focus-ring-color: var(--est-btn-neutral-focus-ring-color);
+  --est-btn-default-bg-color: var(--est-btn-neutral-bg-color);
+  --est-btn-default-color: var(--est-btn-neutral-color);
+  --est-btn-default-hover-bg-color: var(--est-btn-neutral-hover-bg-color);
+  --est-btn-default-pressed-bg-color: var(--est-btn-neutral-pressed-bg-color);
+}
+
 .est-button--secondary {
   --est-btn-default-focus-ring-color: var(--est-btn-secondary-focus-ring-color);
   --est-btn-default-bg-color: var(--est-btn-secondary-bg-color);
