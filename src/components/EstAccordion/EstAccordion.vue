@@ -1,22 +1,18 @@
 <script setup lang="ts">
 import { computed, provide } from 'vue'
-import { useVariantClasses } from '@/composables/useVariantClasses'
 
-export type AccordionColor = 'default' | 'primary'
 export type AccordionType = 'single' | 'multiple'
 
 export interface Props {
   modelValue?: string | string[]
   type?: AccordionType
   collapsible?: boolean
-  color?: AccordionColor
 }
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: undefined,
   type: 'single',
   collapsible: false,
-  color: 'default',
 })
 
 const emit = defineEmits<{
@@ -56,12 +52,10 @@ const toggleItem = (itemValue: string) => {
 
 provide('est-accordion-active-items', activeItems)
 provide('est-accordion-toggle', toggleItem)
-
-const { buildVariant } = useVariantClasses()
 </script>
 
 <template>
-  <div :class="{ ...buildVariant('est-accordion', props.color) }">
+  <div class="est-accordion">
     <slot />
   </div>
 </template>

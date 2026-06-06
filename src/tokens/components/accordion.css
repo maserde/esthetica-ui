@@ -15,14 +15,9 @@
     --est-accordion-icon-size: 1.25rem;
     --est-accordion-transition-duration: 250ms;
 
-    /* Default variant colors */
-    --est-accordion-default-trigger-color: var(--est-color-neutral-900);
-    --est-accordion-default-trigger-hover-color: var(--est-color-primary-background-color);
-    --est-accordion-default-content-color: var(--est-color-neutral-600);
-
-    /* Primary variant colors */
-    --est-accordion-primary-trigger-color: var(--est-color-primary-900);
-    --est-accordion-primary-trigger-hover-color: var(--est-color-primary-pressed-color);
-    --est-accordion-primary-content-color: var(--est-color-primary-800);
+    /* Colors */
+    --est-accordion-trigger-color: var(--est-color-neutral-900);
+    --est-accordion-hover-trigger-color: var(--est-color-primary);
+    --est-accordion-content-color: var(--est-color-neutral-600);
   }
 }

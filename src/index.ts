@@ -89,7 +89,6 @@ export type {
 export type { Props as BreadcrumbLinkProps } from './components/EstBreadcrumb/EstBreadcrumbLink.vue'
 export type { Props as BreadcrumbPageProps } from './components/EstBreadcrumb/EstBreadcrumbPage.vue'
 export type {
-  AccordionColor,
   AccordionType,
   Props as AccordionProps,
 } from './components/EstAccordion/EstAccordion.vue'
