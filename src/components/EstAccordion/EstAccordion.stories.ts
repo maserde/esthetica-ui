@@ -10,7 +10,6 @@ const meta = {
   component: EstAccordion,
   tags: ['autodocs'],
   argTypes: {
-    color: { control: 'select', options: ['default', 'primary'] },
     type: { control: 'select', options: ['single', 'multiple'] },
     collapsible: { control: 'boolean' },
   },
@@ -58,13 +57,5 @@ export const Default: Story = {
 export const Multiple: Story = {
   args: {
     type: 'multiple',
-  },
-}
-
-export const PrimaryColor: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-    color: 'primary',
   },
 }

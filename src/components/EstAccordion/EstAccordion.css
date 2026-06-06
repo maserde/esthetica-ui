@@ -1,11 +1,3 @@
-/* Modifier classes FIRST */
-.est-accordion--primary {
-  --est-accordion-default-trigger-color: var(--est-accordion-primary-trigger-color);
-  --est-accordion-default-trigger-hover-color: var(--est-accordion-primary-trigger-hover-color);
-  --est-accordion-default-content-color: var(--est-accordion-primary-content-color);
-}
-
-/* Base class LAST */
 .est-accordion {
   display: flex;
   flex-direction: column;
@@ -29,7 +21,7 @@
   padding-block: var(--est-accordion-trigger-padding-y);
   font-size: var(--est-accordion-trigger-font-size);
   font-weight: var(--est-accordion-trigger-font-weight);
-  color: var(--est-accordion-default-trigger-color);
+  color: var(--est-accordion-trigger-color);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -39,11 +31,11 @@
 
 .est-accordion :deep(.est-accordion__trigger:hover) {
   @apply underline;
-  color: var(--est-accordion-default-trigger-hover-color);
+  color: var(--est-accordion-hover-trigger-color);
 }
 
 .est-accordion :deep(.est-accordion__trigger:focus-visible) {
-  outline: 2px solid var(--est-accordion-default-trigger-hover-color);
+  outline: 2px solid var(--est-accordion-hover-trigger-color);
   outline-offset: -2px;
 }
 
@@ -84,5 +76,5 @@
   padding: var(--est-accordion-content-padding-y) var(--est-accordion-content-padding-x);
   padding-bottom: var(--est-accordion-content-padding-b);
   font-size: var(--est-accordion-content-font-size);
-  color: var(--est-accordion-default-content-color);
+  color: var(--est-accordion-content-color);
 }

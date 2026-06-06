@@ -38,7 +38,8 @@
     --est-color-primary-900: #300c03;
     --est-color-primary-950: #180601;
 
-    --est-color-primary-background-color: var(--est-color-primary-500);
+    --est-color-primary: var(--est-color-primary-500);
+    --est-color-primary-background-color: var(--est-color-primary);
     --est-color-primary-foreground-color: var(--est-color-white);
     --est-color-primary-hovered-color: var(--est-color-primary-400);
     --est-color-primary-pressed-color: var(--est-color-primary-700);
@@ -62,7 +63,8 @@
     --est-color-info-900: #05152c;
     --est-color-info-950: #020a16;
 
-    --est-color-info-background-color: var(--est-color-info-500);
+    --est-color-info: var(--est-color-info-500);
+    --est-color-info-background-color: var(--est-color-info);
     --est-color-info-foreground-color: var(--est-color-white);
     --est-color-info-hovered-color: var(--est-color-info-400);
     --est-color-info-pressed-color: var(--est-color-info-700);
@@ -86,7 +88,8 @@
     --est-color-warning-900: #322204;
     --est-color-warning-950: #191102;
 
-    --est-color-warning-background-color: var(--est-color-warning-500);
+    --est-color-warning: var(--est-color-warning-500);
+    --est-color-warning-background-color: var(--est-color-warning);
     --est-color-warning-foreground-color: var(--est-color-warning-900);
     --est-color-warning-hovered-color: var(--est-color-warning-400);
     --est-color-warning-pressed-color: var(--est-color-warning-700);
@@ -110,7 +113,8 @@
     --est-color-success-900: #001a03;
     --est-color-success-950: #000d01;
 
-    --est-color-success-background-color: var(--est-color-success-500);
+    --est-color-success: var(--est-color-success-500);
+    --est-color-success-background-color: var(--est-color-success);
     --est-color-success-foreground-color: var(--est-color-white);
     --est-color-success-hovered-color: var(--est-color-success-400);
     --est-color-success-pressed-color: var(--est-color-success-700);
@@ -134,7 +138,8 @@
     --est-color-danger-900: #210000;
     --est-color-danger-950: #100000;
 
-    --est-color-danger-background-color: var(--est-color-danger-500);
+    --est-color-danger: var(--est-color-danger-500);
+    --est-color-danger-background-color: var(--est-color-danger);
     --est-color-danger-foreground-color: var(--est-color-white);
     --est-color-danger-hovered-color: var(--est-color-danger-400);
     --est-color-danger-pressed-color: var(--est-color-danger-700);
