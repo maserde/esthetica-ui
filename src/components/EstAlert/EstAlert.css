@@ -2,8 +2,8 @@
   .est-alert__inner {
     @apply grid items-start;
     grid-template-columns: auto 1fr auto;
-    column-gap: 12px;
-    row-gap: 2px;
+    column-gap: var(--est-alert-column-gap);
+    row-gap: var(--est-alert-row-gap);
     padding: var(--est-alert-padding-y) var(--est-alert-padding-x);
     --est-alert-icon-color: var(--est-card-default-color);
     --est-alert-title-color: var(--est-card-default-color);
@@ -20,6 +20,10 @@
   /* Collapse empty close column when not dismissible */
   .est-alert__inner:not(:has(.est-alert__close)) {
     grid-template-columns: auto 1fr;
+  }
+
+  .est-alert__inner:not(:has(.est-alert__close):has(.est-alert__icon)) > :deep(.est-alert__body) {
+    margin-top: 0.2em;
   }
 
   /* No icon and not dismissible */
@@ -43,7 +47,6 @@
     color: var(--est-alert-title-color);
     font-size: var(--est-alert-title-font-size);
     font-weight: var(--est-alert-title-font-weight);
-    margin-top: 0.125em;
   }
 
   :deep(.est-alert__body) {
@@ -51,7 +54,6 @@
     grid-column: 2;
     color: var(--est-alert-body-color);
     font-size: var(--est-alert-body-font-size);
-    padding: 0.125em 0;
   }
 
   .est-alert__inner:has(.est-alert__title) :deep(.est-alert__icon),
@@ -71,7 +73,6 @@
     align-self: start;
     background-color: transparent;
     color: var(--est-alert-close-color);
-    margin-top: 0.125em;
   }
 
   .est-alert__close:hover {
