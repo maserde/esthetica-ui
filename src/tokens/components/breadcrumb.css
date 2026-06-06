@@ -19,8 +19,33 @@
     --est-breadcrumb-default-page-font-weight: var(--est-font-weight-medium);
 
     --est-breadcrumb-default-separator-color: var(--est-color-neutral-300);
-    --est-breadcrumb-default-icon-color: var(--est-color-primary-500);
-    --est-breadcrumb-default-ellipsis-color: var(--est-color-primary-500);
+    --est-breadcrumb-default-icon-color: var(--est-breadcrumb-default-link-color);
+    --est-breadcrumb-default-ellipsis-color: var(--est-breadcrumb-default-link-color);
     --est-breadcrumb-default-focus-ring-color: var(--est-color-primary);
+
+    /* ── Color variant presets ───────────────────────────────── */
+    --est-breadcrumb-primary-link-color: var(--est-color-primary-500);
+    --est-breadcrumb-primary-hover-link-color: var(--est-color-primary-400);
+    --est-breadcrumb-primary-focus-ring-color: var(--est-color-primary);
+
+    --est-breadcrumb-neutral-link-color: var(--est-color-neutral-600);
+    --est-breadcrumb-neutral-hover-link-color: var(--est-color-neutral-800);
+    --est-breadcrumb-neutral-focus-ring-color: var(--est-color-neutral-400);
+
+    --est-breadcrumb-info-link-color: var(--est-color-info-500);
+    --est-breadcrumb-info-hover-link-color: var(--est-color-info-400);
+    --est-breadcrumb-info-focus-ring-color: var(--est-color-info);
+
+    --est-breadcrumb-success-link-color: var(--est-color-success-500);
+    --est-breadcrumb-success-hover-link-color: var(--est-color-success-400);
+    --est-breadcrumb-success-focus-ring-color: var(--est-color-success);
+
+    --est-breadcrumb-warning-link-color: var(--est-color-warning-600);
+    --est-breadcrumb-warning-hover-link-color: var(--est-color-warning-500);
+    --est-breadcrumb-warning-focus-ring-color: var(--est-color-warning);
+
+    --est-breadcrumb-danger-link-color: var(--est-color-danger-500);
+    --est-breadcrumb-danger-hover-link-color: var(--est-color-danger-400);
+    --est-breadcrumb-danger-focus-ring-color: var(--est-color-danger);
   }
 }

@@ -17,6 +17,7 @@
 @import './tokens/components/toggle.css';
 @import './tokens/components/breadcrumb.css';
 @import './tokens/components/accordion.css';
+@import './tokens/components/dropdown.css';
 
 [class^='est-'],
 [class*=' est-'] {

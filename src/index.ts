@@ -50,6 +50,7 @@ export { default as EstAccordionItem } from './components/EstAccordion/EstAccord
 export { default as EstAccordionTrigger } from './components/EstAccordion/EstAccordionTrigger.vue'
 export { default as EstAccordionContent } from './components/EstAccordion/EstAccordionContent.vue'
 export { default as EstAccordionIcon } from './components/EstAccordion/EstAccordionIcon.vue'
+export { default as EstDropdown } from './components/EstDropdown.vue'
 
 export type {
   ButtonColor,
@@ -84,6 +85,7 @@ export type {
 } from './components/EstToggle/EstToggle.vue'
 export type {
   BreadcrumbItem,
+  BreadcrumbColor,
   Props as BreadcrumbProps,
 } from './components/EstBreadcrumb/EstBreadcrumb.vue'
 export type { Props as BreadcrumbLinkProps } from './components/EstBreadcrumb/EstBreadcrumbLink.vue'
@@ -94,6 +96,11 @@ export type {
   Props as AccordionProps,
 } from './components/EstAccordion/EstAccordion.vue'
 export type { Props as AccordionItemProps } from './components/EstAccordion/EstAccordionItem.vue'
+export type {
+  DropdownSize,
+  DropdownOption,
+  Props as DropdownProps,
+} from './components/EstDropdown.vue'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
@@ -147,5 +154,6 @@ declare module '@vue/runtime-core' {
     EstAccordionTrigger: (typeof import('./components/EstAccordion/EstAccordionTrigger.vue'))['default']
     EstAccordionContent: (typeof import('./components/EstAccordion/EstAccordionContent.vue'))['default']
     EstAccordionIcon: (typeof import('./components/EstAccordion/EstAccordionIcon.vue'))['default']
+    EstDropdown: (typeof import('./components/EstDropdown.vue'))['default']
   }
 }

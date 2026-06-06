@@ -1,0 +1,57 @@
+@layer esthetica-ui-tokens {
+  :root {
+    /* ── Size variant presets ────────────────────────────────────── */
+    --est-dropdown-sm-padding-x: 0.5rem;
+    --est-dropdown-sm-padding-y: 0.25rem;
+    --est-dropdown-sm-font-size: var(--est-font-size-xs);
+
+    --est-dropdown-md-padding-x: 0.75rem;
+    --est-dropdown-md-padding-y: 0.5rem;
+    --est-dropdown-md-font-size: 0.75rem;
+
+    --est-dropdown-lg-padding-x: 1rem;
+    --est-dropdown-lg-padding-y: 0.625rem;
+    --est-dropdown-lg-font-size: var(--est-font-size-sm);
+
+    /* ── Base/Default tokens ─────────────────────────────────────── */
+    --est-dropdown-default-padding-x: var(--est-dropdown-md-padding-x);
+    --est-dropdown-default-padding-y: var(--est-dropdown-md-padding-y);
+    --est-dropdown-default-font-size: var(--est-dropdown-md-font-size);
+
+    --est-dropdown-default-bg-color: var(--est-field-bg-color);
+    --est-dropdown-default-color: var(--est-field-color);
+    --est-dropdown-default-border-color: var(--est-field-border-color);
+    --est-dropdown-default-placeholder-color: var(--est-field-placeholder-color);
+    --est-dropdown-default-radius: var(--est-field-radius);
+    --est-dropdown-default-shadow: var(--est-field-shadow);
+
+    --est-dropdown-default-focus-border-color: var(--est-field-focus-border-color);
+    --est-dropdown-default-focus-ring-color: var(--est-field-focus-ring-color);
+    --est-dropdown-default-focus-ring-offset: var(--est-field-focus-ring-offset);
+
+    --est-dropdown-default-error-border-color: var(--est-field-error-border-color);
+    --est-dropdown-default-error-ring-color: var(--est-field-error-ring-color);
+
+    --est-dropdown-default-disabled-opacity: 0.5;
+    --est-dropdown-default-transition-duration: var(--est-field-transition-duration);
+
+    /* ── Menu tokens ─────────────────────────────────────────────── */
+    --est-dropdown-default-menu-bg-color: var(--est-color-white);
+    --est-dropdown-default-menu-border-color: var(--est-color-neutral-200);
+    --est-dropdown-default-menu-radius: var(--est-field-radius);
+    --est-dropdown-default-menu-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --est-dropdown-default-menu-padding: 0.25rem;
+    --est-dropdown-default-menu-max-height: 15rem;
+
+    /* ── Option tokens ───────────────────────────────────────────── */
+    --est-dropdown-default-option-padding-x: 0.5rem;
+    --est-dropdown-default-option-padding-y: 0.375rem;
+    --est-dropdown-default-option-radius: calc(var(--est-field-radius) - 2px);
+    --est-dropdown-default-option-color: var(--est-color-neutral-800);
+    --est-dropdown-default-option-font-size: var(--est-dropdown-md-font-size);
+    --est-dropdown-default-hover-option-bg-color: var(--est-color-neutral-100);
+    --est-dropdown-default-active-option-bg-color: var(--est-color-primary-50);
+    --est-dropdown-default-active-option-color: var(--est-color-primary-600);
+  }
+}
