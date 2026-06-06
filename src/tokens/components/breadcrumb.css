@@ -11,16 +11,16 @@
     --est-breadcrumb-transition-duration: 150ms;
 
     /* ── Base/Default tokens ─────────────────────────────────── */
-    --est-breadcrumb-default-link-color: var(--est-color-primary-500);
-    --est-breadcrumb-default-hover-link-color: var(--est-color-primary-400);
+    --est-breadcrumb-default-link-color: var(--est-color-primary-background-color);
+    --est-breadcrumb-default-hover-link-color: var(--est-color-primary-hovered-color);
     --est-breadcrumb-default-link-underline: underline;
 
     --est-breadcrumb-default-page-color: var(--est-color-neutral-950);
     --est-breadcrumb-default-page-font-weight: var(--est-font-weight-medium);
 
     --est-breadcrumb-default-separator-color: var(--est-color-neutral-300);
-    --est-breadcrumb-default-icon-color: var(--est-color-primary-500);
-    --est-breadcrumb-default-ellipsis-color: var(--est-color-primary-500);
-    --est-breadcrumb-default-focus-ring-color: var(--est-color-primary);
+    --est-breadcrumb-default-icon-color: var(--est-color-primary-background-color);
+    --est-breadcrumb-default-ellipsis-color: var(--est-color-primary-background-color);
+    --est-breadcrumb-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
   }
 }

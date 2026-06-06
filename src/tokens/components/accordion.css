@@ -17,12 +17,12 @@
 
     /* Default variant colors */
     --est-accordion-default-trigger-color: var(--est-color-neutral-900);
-    --est-accordion-default-trigger-hover-color: var(--est-color-primary);
+    --est-accordion-default-trigger-hover-color: var(--est-color-primary-background-color);
     --est-accordion-default-content-color: var(--est-color-neutral-600);
 
     /* Primary variant colors */
     --est-accordion-primary-trigger-color: var(--est-color-primary-900);
-    --est-accordion-primary-trigger-hover-color: var(--est-color-primary-700);
+    --est-accordion-primary-trigger-hover-color: var(--est-color-primary-pressed-color);
     --est-accordion-primary-content-color: var(--est-color-primary-800);
   }
 }
