@@ -1,15 +1,7 @@
-<script setup lang="ts">
-import { inject, type Ref } from 'vue'
+<script setup lang="ts"></script>
 
-const hasTitle = inject<Ref<boolean>>('est-alert-has-title')
-</script>
 <template>
-  <div
-    :class="{
-      'est-alert__body': true,
-      'est-alert__body--has-title': hasTitle ?? false,
-    }"
-  >
+  <div class="est-alert__body">
     <slot />
   </div>
 </template>
