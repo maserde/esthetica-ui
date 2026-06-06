@@ -1,171 +1,173 @@
-.est-pagination {
-  @apply flex items-center justify-between gap-4 py-3;
-  font-family: var(--est-font-sans), sans-serif;
-}
+@layer estheticaui {
+  .est-pagination {
+    @apply flex items-center justify-between gap-4 py-3;
+    font-family: var(--est-font-sans), sans-serif;
+  }
 
-/* ─── Info section ─────────────────────────────────────────────────────────── */
+  /* ─── Info section ─────────────────────────────────────────────────────────── */
 
-:deep(.est-pagination__page-input) {
-  @apply flex items-center gap-2;
-  --est-field-bg-color: var(--est-pagination-default-btn-bg-color);
-  --est-field-border-color: var(--est-pagination-default-border-color);
-  --est-field-color: var(--est-pagination-text-color);
-  --est-field-font-size: var(--est-pagination-font-size);
-  --est-field-focus-border-color: var(--est-pagination-focus-ring-color);
-  --est-field-focus-ring-color: var(--est-pagination-focus-ring-color);
-  --est-field-focus-ring-offset: var(--est-pagination-focus-ring-offset);
-  --est-field-padding-x: 0;
-  --est-field-padding-y: 0;
-  --est-field-transition-duration: var(--est-pagination-transition-duration);
-}
+  :deep(.est-pagination__page-input) {
+    @apply flex items-center gap-2;
+    --est-field-bg-color: var(--est-pagination-default-btn-bg-color);
+    --est-field-border-color: var(--est-pagination-default-border-color);
+    --est-field-color: var(--est-pagination-text-color);
+    --est-field-font-size: var(--est-pagination-font-size);
+    --est-field-focus-border-color: var(--est-pagination-focus-ring-color);
+    --est-field-focus-ring-color: var(--est-pagination-focus-ring-color);
+    --est-field-focus-ring-offset: var(--est-pagination-focus-ring-offset);
+    --est-field-padding-x: 0;
+    --est-field-padding-y: 0;
+    --est-field-transition-duration: var(--est-pagination-transition-duration);
+  }
 
-:deep(.est-pagination__page-input-text) {
-  @apply whitespace-nowrap;
-  color: var(--est-pagination-text-color);
-  font-size: var(--est-pagination-font-size);
-  font-weight: var(--est-pagination-font-weight);
-}
+  :deep(.est-pagination__page-input-text) {
+    @apply whitespace-nowrap;
+    color: var(--est-pagination-text-color);
+    font-size: var(--est-pagination-font-size);
+    font-weight: var(--est-pagination-font-weight);
+  }
 
-:deep(.est-pagination__page-input .est-field__wrapper) {
-  @apply w-8 h-8;
-}
+  :deep(.est-pagination__page-input .est-field__wrapper) {
+    @apply w-8 h-8;
+  }
 
-:deep(.est-pagination__page-input .est-field__field) {
-  @apply text-center;
-  font-weight: var(--est-pagination-font-weight);
-}
+  :deep(.est-pagination__page-input .est-field__field) {
+    @apply text-center;
+    font-weight: var(--est-pagination-font-weight);
+  }
 
-/* ─── Nav section ──────────────────────────────────────────────────────────── */
+  /* ─── Nav section ──────────────────────────────────────────────────────────── */
 
-:deep(.est-pagination__pages),
-:deep(.est-pagination__rows-per-page-dropdown) {
-  --est-btn-default-bg-color: var(--est-pagination-default-btn-bg-color);
-  --est-btn-default-hover-bg-color: var(--est-pagination-default-hover-btn-bg-color);
-  --est-btn-default-color: var(--est-pagination-text-color);
-  --est-btn-default-border-color: var(--est-pagination-default-border-color);
-  --est-btn-md-font-size: var(--est-pagination-font-size);
-  --est-btn-md-radius: var(--est-pagination-btn-radius);
-  --est-btn-default-focus-ring-color: var(--est-pagination-focus-ring-color);
-  --est-btn-focus-ring-offset: var(--est-pagination-default-btn-bg-color);
-  --est-btn-default-box-shadow: none;
-  --est-btn-transition-duration: var(--est-pagination-transition-duration);
-}
+  :deep(.est-pagination__pages),
+  :deep(.est-pagination__rows-per-page-dropdown) {
+    --est-btn-default-bg-color: var(--est-pagination-default-btn-bg-color);
+    --est-btn-default-hover-bg-color: var(--est-pagination-default-hover-btn-bg-color);
+    --est-btn-default-color: var(--est-pagination-text-color);
+    --est-btn-default-border-color: var(--est-pagination-default-border-color);
+    --est-btn-md-font-size: var(--est-pagination-font-size);
+    --est-btn-md-radius: var(--est-pagination-btn-radius);
+    --est-btn-default-focus-ring-color: var(--est-pagination-focus-ring-color);
+    --est-btn-focus-ring-offset: var(--est-pagination-default-btn-bg-color);
+    --est-btn-default-box-shadow: none;
+    --est-btn-transition-duration: var(--est-pagination-transition-duration);
+  }
 
-:deep(.est-pagination__pages .est-pagination__pages-btn),
-:deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger) {
-  @apply w-8 h-8 border-1 border-solid;
-  padding: 0;
-}
+  :deep(.est-pagination__pages .est-pagination__pages-btn),
+  :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger) {
+    @apply w-8 h-8 border-1 border-solid;
+    padding: 0;
+  }
 
-:deep(.est-pagination__pages .est-pagination__pages-btn) {
-  @apply mx-3;
-}
+  :deep(.est-pagination__pages .est-pagination__pages-btn) {
+    @apply mx-3;
+  }
 
-:deep(.est-pagination__pages) {
-  @apply flex items-center gap-1;
-}
+  :deep(.est-pagination__pages) {
+    @apply flex items-center gap-1;
+  }
 
-:deep(.est-pagination__pages .est-pagination__pages-btn:disabled),
-:deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger:disabled) {
-  @apply border-0;
-  color: var(--est-pagination-disabled-color);
-}
+  :deep(.est-pagination__pages .est-pagination__pages-btn:disabled),
+  :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger:disabled) {
+    @apply border-0;
+    color: var(--est-pagination-disabled-color);
+  }
 
-:deep(.est-pagination__pages .est-pagination__pages-btn:hover:not(:disabled)),
-:deep(
-  .est-pagination__rows-per-page-dropdown,
-  .est-pagination__rows-per-page-trigger:hover:not(:disabled)
-) {
-  --est-btn-default-border-color: var(--est-pagination-default-hover-btn-border-color);
-}
+  :deep(.est-pagination__pages .est-pagination__pages-btn:hover:not(:disabled)),
+  :deep(
+    .est-pagination__rows-per-page-dropdown,
+    .est-pagination__rows-per-page-trigger:hover:not(:disabled)
+  ) {
+    --est-btn-default-border-color: var(--est-pagination-default-hover-btn-border-color);
+  }
 
-/* Page number buttons: borderless by default, bordered when active */
-:deep(.est-pagination__pages .est-pagination__page-btn) {
-  @apply min-w-8 h-8 px-1.5;
-  --est-btn-default-border-color: transparent;
-  --est-btn-default-bg-color: transparent;
-  --est-btn-default-hover-bg-color: transparent;
-}
+  /* Page number buttons: borderless by default, bordered when active */
+  :deep(.est-pagination__pages .est-pagination__page-btn) {
+    @apply min-w-8 h-8 px-1.5;
+    --est-btn-default-border-color: transparent;
+    --est-btn-default-bg-color: transparent;
+    --est-btn-default-hover-bg-color: transparent;
+  }
 
-:deep(.est-pagination__pages .est-pagination__page-btn--active),
-:deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger--active) {
-  @apply font-semibold;
-  box-shadow: var(--est-shadow-xs);
-  --est-btn-default-bg-color: var(--est-pagination-default-active-bg-color);
-  --est-btn-default-hover-bg-color: var(--est-pagination-default-active-bg-color);
-  --est-btn-default-border-color: var(--est-pagination-default-active-border-color);
-}
+  :deep(.est-pagination__pages .est-pagination__page-btn--active),
+  :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger--active) {
+    @apply font-semibold;
+    box-shadow: var(--est-shadow-xs);
+    --est-btn-default-bg-color: var(--est-pagination-default-active-bg-color);
+    --est-btn-default-hover-bg-color: var(--est-pagination-default-active-bg-color);
+    --est-btn-default-border-color: var(--est-pagination-default-active-border-color);
+  }
 
-:deep(.est-pagination__pages .est-pagination__page-btn:not(.est-pagination__page-btn--active)) {
-  color: var(--est-pagination-text-color-inactive);
-}
+  :deep(.est-pagination__pages .est-pagination__page-btn:not(.est-pagination__page-btn--active)) {
+    color: var(--est-pagination-text-color-inactive);
+  }
 
-:deep(.est-pagination__ellipsis) {
-  @apply min-w-8 h-8 flex items-center justify-center select-none;
-  font-size: var(--est-pagination-font-size);
-  color: var(--est-pagination-muted-color);
-}
+  :deep(.est-pagination__ellipsis) {
+    @apply min-w-8 h-8 flex items-center justify-center select-none;
+    font-size: var(--est-pagination-font-size);
+    color: var(--est-pagination-muted-color);
+  }
 
-/* ─── Rows section ─────────────────────────────────────────────────────────── */
+  /* ─── Rows section ─────────────────────────────────────────────────────────── */
 
-:deep(.est-pagination__rows-per-page) {
-  @apply flex items-center gap-2;
-}
+  :deep(.est-pagination__rows-per-page) {
+    @apply flex items-center gap-2;
+  }
 
-:deep(.est-pagination__rows-per-page-label) {
-  @apply whitespace-nowrap;
-  color: var(--est-pagination-text-color);
-  font-size: var(--est-pagination-font-size);
-  font-weight: var(--est-pagination-font-weight);
-}
+  :deep(.est-pagination__rows-per-page-label) {
+    @apply whitespace-nowrap;
+    color: var(--est-pagination-text-color);
+    font-size: var(--est-pagination-font-size);
+    font-weight: var(--est-pagination-font-weight);
+  }
 
-:deep(.est-pagination__rows-per-page-dropdown) {
-  @apply relative outline-none;
-}
+  :deep(.est-pagination__rows-per-page-dropdown) {
+    @apply relative outline-none;
+  }
 
-/* Rows per page trigger: sized, content spread apart */
-:deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger) {
-  @apply min-w-14;
-  padding: 0.375rem 0.5rem;
-}
+  /* Rows per page trigger: sized, content spread apart */
+  :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-trigger) {
+    @apply min-w-14;
+    padding: 0.375rem 0.5rem;
+  }
 
-:deep(
-  .est-pagination__rows-per-page-dropdown,
-  .est-pagination__rows-per-page-trigger,
-  .est-button__content
-) {
-  @apply w-full justify-between;
-}
+  :deep(
+    .est-pagination__rows-per-page-dropdown,
+    .est-pagination__rows-per-page-trigger,
+    .est-button__content
+  ) {
+    @apply w-full justify-between;
+  }
 
-:deep(.est-pagination__rows-per-page-chevron) {
-  color: var(--est-pagination-muted-color);
-  transition: transform var(--est-pagination-transition-duration) ease;
-}
+  :deep(.est-pagination__rows-per-page-chevron) {
+    color: var(--est-pagination-muted-color);
+    transition: transform var(--est-pagination-transition-duration) ease;
+  }
 
-:deep(.est-pagination__rows-per-page-chevron--open) {
-  transform: rotate(180deg);
-}
+  :deep(.est-pagination__rows-per-page-chevron--open) {
+    transform: rotate(180deg);
+  }
 
-:deep(.est-pagination__rows-per-page-menu) {
-  @apply absolute bottom-[calc(100%+4px)] right-0 min-w-full rounded-md z-10 overflow-hidden;
-  background-color: var(--est-pagination-default-menu-bg-color);
-  border: 1px solid var(--est-pagination-default-border-color);
-  box-shadow: var(--est-pagination-menu-shadow);
-}
+  :deep(.est-pagination__rows-per-page-menu) {
+    @apply absolute bottom-[calc(100%+4px)] right-0 min-w-full rounded-md z-10 overflow-hidden;
+    background-color: var(--est-pagination-default-menu-bg-color);
+    border: 1px solid var(--est-pagination-default-border-color);
+    box-shadow: var(--est-pagination-menu-shadow);
+  }
 
-/* Rows option buttons: full-width list items, no border */
-:deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-option) {
-  @apply block w-full text-left;
-  padding: 0.375rem 0.75rem;
-  border: none;
-  --est-btn-default-bg-color: transparent;
-  --est-btn-md-radius: 0;
-  --est-btn-transition-duration: var(--est-pagination-option-transition-duration);
-}
+  /* Rows option buttons: full-width list items, no border */
+  :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-option) {
+    @apply block w-full text-left;
+    padding: 0.375rem 0.75rem;
+    border: none;
+    --est-btn-default-bg-color: transparent;
+    --est-btn-md-radius: 0;
+    --est-btn-transition-duration: var(--est-pagination-option-transition-duration);
+  }
 
-:deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-option--active) {
-  @apply font-semibold;
-  --est-btn-default-bg-color: var(--est-pagination-default-active-option-bg-color);
-  --est-btn-default-hover-bg-color: var(--est-pagination-default-active-option-bg-color);
-  --est-btn-default-color: var(--est-pagination-option-active-color);
+  :deep(.est-pagination__rows-per-page-dropdown .est-pagination__rows-per-page-option--active) {
+    @apply font-semibold;
+    --est-btn-default-bg-color: var(--est-pagination-default-active-option-bg-color);
+    --est-btn-default-hover-bg-color: var(--est-pagination-default-active-option-bg-color);
+    --est-btn-default-color: var(--est-pagination-option-active-color);
+  }
 }

@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-toast-max-width: 420px;
     --est-toast-radius: var(--est-radius);

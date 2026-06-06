@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     /* ── Base/Default tokens ─────────────────────────────────────── */
     --est-tag-padding: 0.25rem 0.5rem;

@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-table-default-bg-color: var(--est-color-white);
     --est-table-default-border-color: var(--est-color-neutral-200);

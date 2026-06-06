@@ -1,143 +1,145 @@
-/* 1. Modifier classes FIRST */
-.est-checkbox--default {
-  --est-checkbox-default-hover-border-color: var(--est-checkbox-neutral-hover-border-color);
-  --est-checkbox-default-checked-bg-color: var(--est-checkbox-neutral-checked-bg-color);
-  --est-checkbox-default-checked-border-color: var(--est-checkbox-neutral-checked-border-color);
-  --est-checkbox-default-checked-icon-color: var(--est-checkbox-neutral-checked-icon-color);
-  --est-checkbox-default-focus-ring-color: var(--est-checkbox-neutral-focus-ring-color);
-}
+@layer estheticaui {
+  /* 1. Modifier classes FIRST */
+  .est-checkbox--default {
+    --est-checkbox-default-hover-border-color: var(--est-checkbox-neutral-hover-border-color);
+    --est-checkbox-default-checked-bg-color: var(--est-checkbox-neutral-checked-bg-color);
+    --est-checkbox-default-checked-border-color: var(--est-checkbox-neutral-checked-border-color);
+    --est-checkbox-default-checked-icon-color: var(--est-checkbox-neutral-checked-icon-color);
+    --est-checkbox-default-focus-ring-color: var(--est-checkbox-neutral-focus-ring-color);
+  }
 
-.est-checkbox--sm {
-  --est-checkbox-default-border-radius: var(--est-checkbox-sm-border-radius);
-  --est-checkbox-default-size: var(--est-checkbox-sm-size);
-  --est-checkbox-default-icon-size: var(--est-checkbox-sm-icon-size);
-  --est-checkbox-default-label-font-size: var(--est-checkbox-sm-label-font-size);
-}
+  .est-checkbox--sm {
+    --est-checkbox-default-border-radius: var(--est-checkbox-sm-border-radius);
+    --est-checkbox-default-size: var(--est-checkbox-sm-size);
+    --est-checkbox-default-icon-size: var(--est-checkbox-sm-icon-size);
+    --est-checkbox-default-label-font-size: var(--est-checkbox-sm-label-font-size);
+  }
 
-.est-checkbox--lg {
-  --est-checkbox-default-size: var(--est-checkbox-lg-size);
-  --est-checkbox-default-icon-size: var(--est-checkbox-lg-icon-size);
-  --est-checkbox-default-label-font-size: var(--est-checkbox-lg-label-font-size);
-}
+  .est-checkbox--lg {
+    --est-checkbox-default-size: var(--est-checkbox-lg-size);
+    --est-checkbox-default-icon-size: var(--est-checkbox-lg-icon-size);
+    --est-checkbox-default-label-font-size: var(--est-checkbox-lg-label-font-size);
+  }
 
-.est-checkbox--primary {
-  --est-checkbox-default-hover-border-color: var(--est-checkbox-primary-hover-border-color);
-  --est-checkbox-default-checked-bg-color: var(--est-checkbox-primary-checked-bg-color);
-  --est-checkbox-default-checked-border-color: var(--est-checkbox-primary-checked-border-color);
-  --est-checkbox-default-checked-icon-color: var(--est-checkbox-primary-checked-icon-color);
-  --est-checkbox-default-focus-ring-color: var(--est-checkbox-primary-focus-ring-color);
-}
+  .est-checkbox--primary {
+    --est-checkbox-default-hover-border-color: var(--est-checkbox-primary-hover-border-color);
+    --est-checkbox-default-checked-bg-color: var(--est-checkbox-primary-checked-bg-color);
+    --est-checkbox-default-checked-border-color: var(--est-checkbox-primary-checked-border-color);
+    --est-checkbox-default-checked-icon-color: var(--est-checkbox-primary-checked-icon-color);
+    --est-checkbox-default-focus-ring-color: var(--est-checkbox-primary-focus-ring-color);
+  }
 
-.est-checkbox--success {
-  --est-checkbox-default-hover-border-color: var(--est-checkbox-success-hover-border-color);
-  --est-checkbox-default-checked-bg-color: var(--est-checkbox-success-checked-bg-color);
-  --est-checkbox-default-checked-border-color: var(--est-checkbox-success-checked-border-color);
-  --est-checkbox-default-checked-icon-color: var(--est-checkbox-success-checked-icon-color);
-  --est-checkbox-default-focus-ring-color: var(--est-checkbox-success-focus-ring-color);
-}
+  .est-checkbox--success {
+    --est-checkbox-default-hover-border-color: var(--est-checkbox-success-hover-border-color);
+    --est-checkbox-default-checked-bg-color: var(--est-checkbox-success-checked-bg-color);
+    --est-checkbox-default-checked-border-color: var(--est-checkbox-success-checked-border-color);
+    --est-checkbox-default-checked-icon-color: var(--est-checkbox-success-checked-icon-color);
+    --est-checkbox-default-focus-ring-color: var(--est-checkbox-success-focus-ring-color);
+  }
 
-.est-checkbox--danger {
-  --est-checkbox-default-hover-border-color: var(--est-checkbox-danger-hover-border-color);
-  --est-checkbox-default-checked-bg-color: var(--est-checkbox-danger-checked-bg-color);
-  --est-checkbox-default-checked-border-color: var(--est-checkbox-danger-checked-border-color);
-  --est-checkbox-default-checked-icon-color: var(--est-checkbox-danger-checked-icon-color);
-  --est-checkbox-default-focus-ring-color: var(--est-checkbox-danger-focus-ring-color);
-}
+  .est-checkbox--danger {
+    --est-checkbox-default-hover-border-color: var(--est-checkbox-danger-hover-border-color);
+    --est-checkbox-default-checked-bg-color: var(--est-checkbox-danger-checked-bg-color);
+    --est-checkbox-default-checked-border-color: var(--est-checkbox-danger-checked-border-color);
+    --est-checkbox-default-checked-icon-color: var(--est-checkbox-danger-checked-icon-color);
+    --est-checkbox-default-focus-ring-color: var(--est-checkbox-danger-focus-ring-color);
+  }
 
-.est-checkbox--warning {
-  --est-checkbox-default-hover-border-color: var(--est-checkbox-warning-hover-border-color);
-  --est-checkbox-default-checked-bg-color: var(--est-checkbox-warning-checked-bg-color);
-  --est-checkbox-default-checked-border-color: var(--est-checkbox-warning-checked-border-color);
-  --est-checkbox-default-checked-icon-color: var(--est-checkbox-warning-checked-icon-color);
-  --est-checkbox-default-focus-ring-color: var(--est-checkbox-warning-focus-ring-color);
-}
+  .est-checkbox--warning {
+    --est-checkbox-default-hover-border-color: var(--est-checkbox-warning-hover-border-color);
+    --est-checkbox-default-checked-bg-color: var(--est-checkbox-warning-checked-bg-color);
+    --est-checkbox-default-checked-border-color: var(--est-checkbox-warning-checked-border-color);
+    --est-checkbox-default-checked-icon-color: var(--est-checkbox-warning-checked-icon-color);
+    --est-checkbox-default-focus-ring-color: var(--est-checkbox-warning-focus-ring-color);
+  }
 
-.est-checkbox--info {
-  --est-checkbox-default-hover-border-color: var(--est-checkbox-info-hover-border-color);
-  --est-checkbox-default-checked-bg-color: var(--est-checkbox-info-checked-bg-color);
-  --est-checkbox-default-checked-border-color: var(--est-checkbox-info-checked-border-color);
-  --est-checkbox-default-checked-icon-color: var(--est-checkbox-info-checked-icon-color);
-  --est-checkbox-default-focus-ring-color: var(--est-checkbox-info-focus-ring-color);
-}
+  .est-checkbox--info {
+    --est-checkbox-default-hover-border-color: var(--est-checkbox-info-hover-border-color);
+    --est-checkbox-default-checked-bg-color: var(--est-checkbox-info-checked-bg-color);
+    --est-checkbox-default-checked-border-color: var(--est-checkbox-info-checked-border-color);
+    --est-checkbox-default-checked-icon-color: var(--est-checkbox-info-checked-icon-color);
+    --est-checkbox-default-focus-ring-color: var(--est-checkbox-info-focus-ring-color);
+  }
 
-/* 2. Modifier classes (state-based) */
-.est-checkbox--disabled {
-  @apply cursor-not-allowed opacity-50;
-}
+  /* 2. Modifier classes (state-based) */
+  .est-checkbox--disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
 
-/* 3. Base class LAST */
-.est-checkbox {
-  @apply select-none inline-flex relative cursor-pointer;
-}
+  /* 3. Base class LAST */
+  .est-checkbox {
+    @apply select-none inline-flex relative cursor-pointer;
+  }
 
-.est-checkbox__inner {
-  @apply grid items-start;
-  grid-template-columns: auto 1fr;
-  column-gap: 8px;
-  row-gap: 2px;
-}
+  .est-checkbox__inner {
+    @apply grid items-start;
+    grid-template-columns: auto 1fr;
+    column-gap: 8px;
+    row-gap: 2px;
+  }
 
-.est-checkbox__inner:not(:has(.est-checkbox__box-wrapper)) {
-  grid-template-columns: 1fr;
-}
+  .est-checkbox__inner:not(:has(.est-checkbox__box-wrapper)) {
+    grid-template-columns: 1fr;
+  }
 
-:deep(.est-checkbox__box-wrapper) {
-  @apply relative inline-flex shrink-0 self-center;
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
+  :deep(.est-checkbox__box-wrapper) {
+    @apply relative inline-flex shrink-0 self-center;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
 
-:deep(.est-checkbox__input) {
-  @apply absolute opacity-0 w-0 h-0 pointer-events-none;
-}
+  :deep(.est-checkbox__input) {
+    @apply absolute opacity-0 w-0 h-0 pointer-events-none;
+  }
 
-:deep(.est-checkbox__box) {
-  @apply flex items-center justify-center border border-solid;
-  width: var(--est-checkbox-default-size);
-  height: var(--est-checkbox-default-size);
-  border-radius: var(--est-checkbox-default-border-radius);
-  background-color: var(--est-checkbox-default-bg-color);
-  border-color: var(--est-checkbox-default-border-color);
-  transition:
-    background-color var(--est-checkbox-transition-duration) ease,
-    border-color var(--est-checkbox-transition-duration) ease,
-    box-shadow var(--est-checkbox-transition-duration) ease;
-}
+  :deep(.est-checkbox__box) {
+    @apply flex items-center justify-center border border-solid;
+    width: var(--est-checkbox-default-size);
+    height: var(--est-checkbox-default-size);
+    border-radius: var(--est-checkbox-default-border-radius);
+    background-color: var(--est-checkbox-default-bg-color);
+    border-color: var(--est-checkbox-default-border-color);
+    transition:
+      background-color var(--est-checkbox-transition-duration) ease,
+      border-color var(--est-checkbox-transition-duration) ease,
+      box-shadow var(--est-checkbox-transition-duration) ease;
+  }
 
-.est-checkbox:not(.est-checkbox--disabled):hover :deep(.est-checkbox__box) {
-  border-color: var(--est-checkbox-default-hover-border-color);
-}
+  .est-checkbox:not(.est-checkbox--disabled):hover :deep(.est-checkbox__box) {
+    border-color: var(--est-checkbox-default-hover-border-color);
+  }
 
-:deep(.est-checkbox__input:focus-visible ~ .est-checkbox__box) {
-  box-shadow:
-    0 0 0 2px var(--est-checkbox-focus-ring-offset),
-    0 0 0 4px var(--est-checkbox-default-focus-ring-color);
-}
+  :deep(.est-checkbox__input:focus-visible ~ .est-checkbox__box) {
+    box-shadow:
+      0 0 0 2px var(--est-checkbox-focus-ring-offset),
+      0 0 0 4px var(--est-checkbox-default-focus-ring-color);
+  }
 
-.est-checkbox--checked :deep(.est-checkbox__box),
-.est-checkbox--indeterminate :deep(.est-checkbox__box) {
-  background-color: var(--est-checkbox-default-checked-bg-color);
-  border-color: var(--est-checkbox-default-checked-border-color);
-}
+  .est-checkbox--checked :deep(.est-checkbox__box),
+  .est-checkbox--indeterminate :deep(.est-checkbox__box) {
+    background-color: var(--est-checkbox-default-checked-bg-color);
+    border-color: var(--est-checkbox-default-checked-border-color);
+  }
 
-:deep(.est-checkbox__icon) {
-  color: var(--est-checkbox-default-checked-icon-color);
-  width: var(--est-checkbox-default-icon-size);
-  height: var(--est-checkbox-default-icon-size);
-}
+  :deep(.est-checkbox__icon) {
+    color: var(--est-checkbox-default-checked-icon-color);
+    width: var(--est-checkbox-default-icon-size);
+    height: var(--est-checkbox-default-icon-size);
+  }
 
-:deep(.est-checkbox__label) {
-  @apply block;
-  grid-column: 2;
-  font-size: var(--est-checkbox-default-label-font-size);
-  line-height: var(--est-checkbox-default-size);
-  color: var(--est-checkbox-default-label-color);
-  margin-top: 0.2em;
-}
+  :deep(.est-checkbox__label) {
+    @apply block;
+    grid-column: 2;
+    font-size: var(--est-checkbox-default-label-font-size);
+    line-height: var(--est-checkbox-default-size);
+    color: var(--est-checkbox-default-label-color);
+    margin-top: 0.2em;
+  }
 
-:deep(.est-checkbox__description) {
-  @apply text-xs block;
-  grid-column: 2;
-  line-height: 1.4;
-  color: var(--est-checkbox-default-description-color);
+  :deep(.est-checkbox__description) {
+    @apply text-xs block;
+    grid-column: 2;
+    line-height: 1.4;
+    color: var(--est-checkbox-default-description-color);
+  }
 }

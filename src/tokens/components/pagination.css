@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-pagination-muted-color: var(--est-color-neutral-400);
     --est-pagination-disabled-color: var(--est-pagination-muted-color);

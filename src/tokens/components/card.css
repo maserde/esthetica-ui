@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-card-radius: var(--est-radius);
     --est-card-padding-x: 0.75rem;

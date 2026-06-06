@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-accordion-border-width: 1px;
     --est-accordion-border-color: var(--est-color-neutral-200);

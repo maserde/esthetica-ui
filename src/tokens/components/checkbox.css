@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     /* ── Size presets ────────────────────────────────────── */
     --est-checkbox-sm-size: 1rem;

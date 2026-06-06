@@ -1,56 +1,58 @@
-.est-otp {
-  @apply flex flex-col gap-1.5;
-}
+@layer estheticaui {
+  .est-otp {
+    @apply flex flex-col gap-1.5;
+  }
 
-.est-otp__label {
-  color: var(--est-field-label-color);
-  font-size: var(--est-field-label-font-size);
-  font-weight: var(--est-field-label-font-weight);
-}
+  .est-otp__label {
+    color: var(--est-field-label-color);
+    font-size: var(--est-field-label-font-size);
+    font-weight: var(--est-field-label-font-weight);
+  }
 
-.est-otp__cells {
-  @apply flex;
-  gap: var(--est-otp-cell-gap);
-}
+  .est-otp__cells {
+    @apply flex;
+    gap: var(--est-otp-cell-gap);
+  }
 
-.est-otp__cell--error {
-  --est-otp-cell-default-border-color: var(--est-otp-cell-error-border-color);
-}
+  .est-otp__cell--error {
+    --est-otp-cell-default-border-color: var(--est-otp-cell-error-border-color);
+  }
 
-.est-otp__cell--error:focus-visible {
-  border-color: var(--est-otp-cell-error-border-color);
-  box-shadow:
-    var(--est-field-shadow),
-    0 0 0 2px var(--est-field-error-ring-color);
-}
+  .est-otp__cell--error:focus-visible {
+    border-color: var(--est-otp-cell-error-border-color);
+    box-shadow:
+      var(--est-field-shadow),
+      0 0 0 2px var(--est-field-error-ring-color);
+  }
 
-.est-otp__cell {
-  @apply border border-solid text-center font-semibold outline-none transition shrink-0;
-  width: var(--est-otp-cell-size);
-  height: var(--est-otp-cell-size);
-  font-size: var(--est-otp-cell-font-size);
-  padding: 0;
-  border-radius: var(--est-field-radius);
-  background-color: var(--est-field-bg-color);
-  color: var(--est-field-color);
-  border-color: var(--est-otp-cell-default-border-color);
-  box-shadow: var(--est-field-shadow);
-  transition-duration: var(--est-field-transition-duration);
-}
+  .est-otp__cell {
+    @apply border border-solid text-center font-semibold outline-none transition shrink-0;
+    width: var(--est-otp-cell-size);
+    height: var(--est-otp-cell-size);
+    font-size: var(--est-otp-cell-font-size);
+    padding: 0;
+    border-radius: var(--est-field-radius);
+    background-color: var(--est-field-bg-color);
+    color: var(--est-field-color);
+    border-color: var(--est-otp-cell-default-border-color);
+    box-shadow: var(--est-field-shadow);
+    transition-duration: var(--est-field-transition-duration);
+  }
 
-.est-otp__cell:focus-visible {
-  border-color: var(--est-field-focus-border-color);
-  box-shadow:
-    var(--est-field-shadow),
-    0 0 0 2px var(--est-field-focus-ring-offset),
-    0 0 0 4px var(--est-field-focus-ring-color);
-}
+  .est-otp__cell:focus-visible {
+    border-color: var(--est-field-focus-border-color);
+    box-shadow:
+      var(--est-field-shadow),
+      0 0 0 2px var(--est-field-focus-ring-offset),
+      0 0 0 4px var(--est-field-focus-ring-color);
+  }
 
-.est-otp__cell:disabled {
-  @apply cursor-not-allowed opacity-50;
-}
+  .est-otp__cell:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
 
-.est-otp__error {
-  @apply flex items-center gap-1 text-xs my-2;
-  color: var(--est-field-error-color);
+  .est-otp__error {
+    @apply flex items-center gap-1 text-xs my-2;
+    color: var(--est-field-error-color);
+  }
 }
