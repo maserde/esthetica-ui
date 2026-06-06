@@ -185,7 +185,7 @@ src/
 
 ## Design tokens
 
-All design tokens are CSS custom properties under the `--est-` namespace and wrapped in `@layer esthetica-ui-tokens` so consumers can override them without specificity fights:
+All design tokens are CSS custom properties under the `--est-` namespace and wrapped in `@layer estheticaui-tokens` so consumers can override them without specificity fights:
 
 ```css
 :root {

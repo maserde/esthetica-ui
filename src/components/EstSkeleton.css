@@ -1,32 +1,34 @@
-.est-skeleton--none {
-  --est-skeleton-default-radius: var(--est-skeleton-none-radius);
-}
-.est-skeleton--sm {
-  --est-skeleton-default-radius: var(--est-skeleton-sm-radius);
-}
-.est-skeleton--md {
-  --est-skeleton-default-radius: var(--est-skeleton-md-radius);
-}
-.est-skeleton--lg {
-  --est-skeleton-default-radius: var(--est-skeleton-lg-radius);
-}
-.est-skeleton--full {
-  --est-skeleton-default-radius: var(--est-skeleton-full-radius);
-}
-
-@keyframes est-skeleton-pulse {
-  0%,
-  100% {
-    opacity: 1;
+@layer estheticaui {
+  .est-skeleton--none {
+    --est-skeleton-default-radius: var(--est-skeleton-none-radius);
   }
-  50% {
-    opacity: 0.5;
+  .est-skeleton--sm {
+    --est-skeleton-default-radius: var(--est-skeleton-sm-radius);
   }
-}
+  .est-skeleton--md {
+    --est-skeleton-default-radius: var(--est-skeleton-md-radius);
+  }
+  .est-skeleton--lg {
+    --est-skeleton-default-radius: var(--est-skeleton-lg-radius);
+  }
+  .est-skeleton--full {
+    --est-skeleton-default-radius: var(--est-skeleton-full-radius);
+  }
 
-.est-skeleton {
-  @apply block;
-  animation: est-skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  background-color: var(--est-skeleton-default-bg-color);
-  border-radius: var(--est-skeleton-default-radius);
+  @keyframes est-skeleton-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .est-skeleton {
+    @apply block;
+    animation: est-skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background-color: var(--est-skeleton-default-bg-color);
+    border-radius: var(--est-skeleton-default-radius);
+  }
 }

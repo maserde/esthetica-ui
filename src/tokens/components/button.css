@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-btn-font-family: var(--est-font-sans);
     --est-btn-transition-duration: 160ms;

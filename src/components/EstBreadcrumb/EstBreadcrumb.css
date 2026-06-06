@@ -1,72 +1,74 @@
-/* ── Modifier classes FIRST ──────────────────────────────────────── */
+@layer estheticaui {
+  /* ── Modifier classes FIRST ──────────────────────────────────────── */
 
-:deep(.est-breadcrumb__link--icon-only) {
-  text-decoration: none;
-}
+  :deep(.est-breadcrumb__link--icon-only) {
+    text-decoration: none;
+  }
 
-/* ── Base class ──────────────────────────────────────────────────── */
+  /* ── Base class ──────────────────────────────────────────────────── */
 
-.est-breadcrumb {
-  font-size: var(--est-breadcrumb-font-size);
-  font-weight: var(--est-breadcrumb-font-weight);
-}
+  .est-breadcrumb {
+    font-size: var(--est-breadcrumb-font-size);
+    font-weight: var(--est-breadcrumb-font-weight);
+  }
 
-:deep(.est-breadcrumb__list) {
-  @apply flex items-center flex-wrap;
-  gap: var(--est-breadcrumb-gap);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  :deep(.est-breadcrumb__list) {
+    @apply flex items-center flex-wrap;
+    gap: var(--est-breadcrumb-gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-:deep(.est-breadcrumb__item) {
-  @apply inline-flex items-center;
-  gap: var(--est-breadcrumb-gap);
-}
+  :deep(.est-breadcrumb__item) {
+    @apply inline-flex items-center;
+    gap: var(--est-breadcrumb-gap);
+  }
 
-:deep(.est-breadcrumb__link) {
-  @apply inline-flex items-center cursor-pointer;
-  gap: var(--est-breadcrumb-link-gap);
-  color: var(--est-breadcrumb-default-link-color);
-  font-weight: var(--est-breadcrumb-font-weight);
-  text-decoration: var(--est-breadcrumb-default-link-underline);
-  text-underline-offset: var(--est-breadcrumb-underline-offset);
-  transition: color var(--est-breadcrumb-transition-duration) ease;
-}
+  :deep(.est-breadcrumb__link) {
+    @apply inline-flex items-center cursor-pointer;
+    gap: var(--est-breadcrumb-link-gap);
+    color: var(--est-breadcrumb-default-link-color);
+    font-weight: var(--est-breadcrumb-font-weight);
+    text-decoration: var(--est-breadcrumb-default-link-underline);
+    text-underline-offset: var(--est-breadcrumb-underline-offset);
+    transition: color var(--est-breadcrumb-transition-duration) ease;
+  }
 
-:deep(.est-breadcrumb__link:hover) {
-  color: var(--est-breadcrumb-default-hover-link-color);
-}
+  :deep(.est-breadcrumb__link:hover) {
+    color: var(--est-breadcrumb-default-hover-link-color);
+  }
 
-:deep(.est-breadcrumb__link:focus-visible) {
-  outline: 2px solid var(--est-breadcrumb-default-focus-ring-color);
-  outline-offset: 2px;
-  border-radius: var(--est-breadcrumb-focus-ring-radius);
-}
+  :deep(.est-breadcrumb__link:focus-visible) {
+    outline: 2px solid var(--est-breadcrumb-default-focus-ring-color);
+    outline-offset: 2px;
+    border-radius: var(--est-breadcrumb-focus-ring-radius);
+  }
 
-:deep(.est-breadcrumb__page) {
-  @apply inline-flex items-center;
-  gap: var(--est-breadcrumb-link-gap);
-  color: var(--est-breadcrumb-default-page-color);
-  font-weight: var(--est-breadcrumb-default-page-font-weight);
-}
+  :deep(.est-breadcrumb__page) {
+    @apply inline-flex items-center;
+    gap: var(--est-breadcrumb-link-gap);
+    color: var(--est-breadcrumb-default-page-color);
+    font-weight: var(--est-breadcrumb-default-page-font-weight);
+  }
 
-:deep(.est-breadcrumb__separator) {
-  @apply select-none inline-flex items-center;
-  color: var(--est-breadcrumb-default-separator-color);
-  flex-shrink: 0;
-}
+  :deep(.est-breadcrumb__separator) {
+    @apply select-none inline-flex items-center;
+    color: var(--est-breadcrumb-default-separator-color);
+    flex-shrink: 0;
+  }
 
-:deep(.est-breadcrumb__ellipsis) {
-  @apply select-none inline-flex items-center;
-  color: var(--est-breadcrumb-default-ellipsis-color);
-  flex-shrink: 0;
-  letter-spacing: 0.1em;
-}
+  :deep(.est-breadcrumb__ellipsis) {
+    @apply select-none inline-flex items-center;
+    color: var(--est-breadcrumb-default-ellipsis-color);
+    flex-shrink: 0;
+    letter-spacing: 0.1em;
+  }
 
-:deep(.est-breadcrumb__icon) {
-  color: var(--est-breadcrumb-default-icon-color);
-  width: var(--est-breadcrumb-icon-size);
-  height: var(--est-breadcrumb-icon-size);
-  flex-shrink: 0;
+  :deep(.est-breadcrumb__icon) {
+    color: var(--est-breadcrumb-default-icon-color);
+    width: var(--est-breadcrumb-icon-size);
+    height: var(--est-breadcrumb-icon-size);
+    flex-shrink: 0;
+  }
 }
