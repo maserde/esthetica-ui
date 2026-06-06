@@ -12,6 +12,7 @@
     --est-toast-default-progress-bg-color: var(--est-toast-success-progress-bg-color);
 
     /* ── Color variant presets ───────────────────────────────────── */
+    --est-toast-neutral-progress-bg-color: var(--est-color-default-background-color);
     --est-toast-primary-progress-bg-color: var(--est-color-primary-background-color);
     --est-toast-success-progress-bg-color: var(--est-color-success-background-color);
     --est-toast-info-progress-bg-color: var(--est-color-info-background-color);

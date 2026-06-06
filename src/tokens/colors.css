@@ -150,5 +150,18 @@
     --est-color-danger-muted-hovered-color: var(--est-color-danger-100);
     --est-color-danger-muted-pressed-color: var(--est-color-danger-200);
     --est-color-danger-muted-border-color: var(--est-color-danger-200);
+
+    --est-color-default: var(--est-color-neutral-950);
+    --est-color-default-background-color: var(--est-color-default);
+    --est-color-default-foreground-color: var(--est-color-white);
+    --est-color-default-hovered-color: var(--est-color-neutral-800);
+    --est-color-default-pressed-color: var(--est-color-neutral-800);
+    --est-color-default-border-color: var(--est-color-neutral-800);
+    --est-color-default-focus-ring-color: var(--est-color-neutral-950);
+    --est-color-default-muted-background-color: var(--est-color-neutral-50);
+    --est-color-default-muted-foreground-color: var(--est-color-neutral-700);
+    --est-color-default-muted-hovered-color: var(--est-color-neutral-100);
+    --est-color-default-muted-pressed-color: var(--est-color-neutral-200);
+    --est-color-default-muted-border-color: var(--est-color-neutral-200);
   }
 }

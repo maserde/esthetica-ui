@@ -63,5 +63,11 @@
     --est-checkbox-info-checked-border-color: var(--est-color-info-background-color);
     --est-checkbox-info-checked-icon-color: var(--est-color-info-foreground-color);
     --est-checkbox-info-focus-ring-color: var(--est-color-info-focus-ring-color);
+
+    --est-checkbox-neutral-hover-border-color: var(--est-color-default-background-color);
+    --est-checkbox-neutral-checked-bg-color: var(--est-color-default-background-color);
+    --est-checkbox-neutral-checked-border-color: var(--est-color-default-background-color);
+    --est-checkbox-neutral-checked-icon-color: var(--est-color-default-foreground-color);
+    --est-checkbox-neutral-focus-ring-color: var(--est-color-default-focus-ring-color);
   }
 }

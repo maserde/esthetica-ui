@@ -6,6 +6,7 @@ import type { AlertColor } from './EstAlert.vue'
 const color = inject<Ref<AlertColor>>('est-alert-color')
 
 const COLOR_ICON: Record<AlertColor, string> = {
+  default: 'i-ri-checkbox-circle-fill',
   primary: 'i-ri-checkbox-circle-fill',
   success: 'i-ri-checkbox-circle-fill',
   info: 'i-ri-information-fill',
@@ -13,7 +14,7 @@ const COLOR_ICON: Record<AlertColor, string> = {
   danger: 'i-ri-error-warning-fill',
 }
 
-const iconClass = computed(() => COLOR_ICON[color?.value ?? 'success'])
+const iconClass = computed(() => COLOR_ICON[color?.value ?? 'default'])
 </script>
 
 <template>

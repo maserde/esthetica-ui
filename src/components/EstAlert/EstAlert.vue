@@ -2,7 +2,7 @@
 import { provide, type Ref, ref, toRef } from 'vue'
 import EstCard from '@/components/EstCard/EstCard.vue'
 
-export type AlertColor = 'primary' | 'success' | 'info' | 'warning' | 'danger'
+export type AlertColor = 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
 
 export interface Props {
   color?: AlertColor
@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: 'success',
+  color: 'default',
   dismissible: true,
 })
 

@@ -44,5 +44,8 @@
 
     --est-toggle-error-checked-track-bg-color: var(--est-color-danger-background-color);
     --est-toggle-error-focus-ring-color: var(--est-color-danger-focus-ring-color);
+
+    --est-toggle-neutral-checked-track-bg-color: var(--est-color-default-background-color);
+    --est-toggle-neutral-focus-ring-color: var(--est-color-default-focus-ring-color);
   }
 }

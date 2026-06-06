@@ -6,7 +6,7 @@ const meta = {
   component: EstTag,
   tags: ['autodocs'],
   argTypes: {
-    color: { control: 'select', options: ['info', 'success', 'warning', 'danger'] },
+    color: { control: 'select', options: ['default', 'info', 'success', 'warning', 'danger'] },
     variant: { control: 'select', options: ['primary', 'secondary'] },
   },
   render: (args) => ({
@@ -22,6 +22,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 // ── Variant stories ───────────────────────────────────────────────
+
+export const Default: Story = {
+  args: { color: 'default' },
+}
 
 export const Info: Story = {
   args: { color: 'info' },
@@ -58,12 +62,14 @@ export const AllVariants: Story = {
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <EstTag color="default" variant="secondary">Default</EstTag>
           <EstTag color="info" variant="secondary">Confirmed</EstTag>
           <EstTag color="success" variant="secondary">Sent</EstTag>
           <EstTag color="warning" variant="secondary">On-hold</EstTag>
           <EstTag color="danger" variant="secondary">Error</EstTag>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <EstTag color="default" variant="primary">Default</EstTag>
           <EstTag color="info" variant="primary">Info</EstTag>
           <EstTag color="success" variant="primary">Success</EstTag>
           <EstTag color="warning" variant="primary">Warning</EstTag>

@@ -1,5 +1,10 @@
 /* ── Variant modifiers ───────────────────────────────────────────── */
 
+.est-toggle--default {
+  --est-toggle-default-checked-track-bg-color: var(--est-toggle-neutral-checked-track-bg-color);
+  --est-toggle-default-focus-ring-color: var(--est-toggle-neutral-focus-ring-color);
+}
+
 .est-toggle--primary {
   --est-toggle-default-checked-track-bg-color: var(--est-toggle-primary-checked-track-bg-color);
   --est-toggle-default-focus-ring-color: var(--est-toggle-primary-focus-ring-color);
