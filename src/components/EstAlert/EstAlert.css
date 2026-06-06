@@ -22,8 +22,7 @@
     grid-template-columns: auto 1fr;
   }
 
-  .est-alert__inner:not(:has(.est-alert__close)) > :deep(.est-alert__body),
-  .est-alert__inner:not(:has(.est-alert__icon)) > :deep(.est-alert__body) {
+  .est-alert__inner:not(:has(.est-alert__close):has(.est-alert__icon)) > :deep(.est-alert__body) {
     margin-top: 0.2em;
   }
 
