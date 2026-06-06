@@ -51,10 +51,42 @@ After changes:
 
 Tokens are CSS custom properties in `src/tokens/`:
 - `src/tokens/global.css` — `--est-radius`, `--est-font-sans`, etc.
-- `src/tokens/colors.css` — `--est-color-primary`, `--est-color-danger`, etc.
+- `src/tokens/colors.css` — semantic color state tokens per variant (see below)
 - `src/tokens/components/foo.css` — component-level `--est-foo-*` tokens
 
-`src/style.css` imports all token files under `@layer esthetica-ui-tokens`. Component tokens must reference globals/colors via `var()` — never hardcode raw values.
+`src/style.css` imports all token files under `@layer esthetica-ui-tokens`. Component tokens must reference globals/colors via `var()` — never hardcode raw values and never reference raw palette shades directly (e.g. `--est-color-primary-500`) when a semantic state token exists.
+
+#### Color token state system
+
+Each color variant (`primary`, `info`, `warning`, `success`, `danger`) exposes **11 semantic state tokens** in `colors.css`:
+
+| Suffix | Palette shade | Purpose |
+|---|---|---|
+| `-background-color` | 500 | Solid fill background |
+| `-foreground-color` | white (warning: 900) | Text/icon on solid background |
+| `-hovered-color` | 400 | Solid background on hover |
+| `-pressed-color` | 700 | Solid background on press |
+| `-border-color` | 600 | Border for solid variant |
+| `-focus-ring-color` | 300 | Focus ring / outline |
+| `-muted-background-color` | 50 | Tinted/light background |
+| `-muted-foreground-color` | 700 | Text on muted background |
+| `-muted-hovered-color` | 100 | Muted background on hover |
+| `-muted-pressed-color` | 200 | Muted background on press |
+| `-muted-border-color` | 200 | Border in muted context |
+
+**Always use these semantic tokens** — never reference raw palette shades (e.g. `--est-color-primary-300`) when a semantic slot covers the same value.
+
+```css
+/* ✅ correct */
+--est-foo-default-bg-color: var(--est-color-primary-background-color);
+--est-foo-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
+
+/* ❌ wrong — raw palette shades */
+--est-foo-default-bg-color: var(--est-color-primary-500);
+--est-foo-default-focus-ring-color: var(--est-color-primary-300);
+```
+
+`secondary` does not use this system (no numbered palette scale). Reference its tokens directly: `--est-color-secondary`, `--est-color-secondary-hover`, `--est-color-secondary-pressed`, `--est-color-secondary-foreground`.
 
 #### Token naming convention
 
@@ -69,9 +101,9 @@ All component tokens **must** strictly follow this pattern:
 
 **Examples:**
 - `--est-card-default-bg-color: var(--est-color-white);`
-- `--est-button-primary-hover-bg-color: var(--est-color-primary-600);`
+- `--est-button-primary-hover-bg-color: var(--est-color-primary-border-color);`
 - `--est-pagination-default-hover-btn-bg-color: var(--est-color-neutral-100);`
-- `--est-toggle-success-checked-track-bg-color: var(--est-color-success);`
+- `--est-toggle-success-checked-track-bg-color: var(--est-color-success-background-color);`
 
 #### Component token file structure
 
@@ -96,9 +128,11 @@ All component tokens **must** strictly follow this pattern:
     --est-foo-default-padding: var(--est-foo-md-padding);
     --est-foo-default-min-height: var(--est-foo-md-min-height);
     --est-foo-default-font-size: var(--est-foo-md-font-size);
-    --est-foo-default-bg-color: var(--est-color-primary);
-    --est-foo-default-color: var(--est-color-primary-foreground);
-    --est-foo-default-hover-bg-color: var(--est-color-primary-hover);
+    --est-foo-default-bg-color: var(--est-color-primary-background-color);
+    --est-foo-default-color: var(--est-color-primary-foreground-color);
+    --est-foo-default-hover-bg-color: var(--est-color-primary-hovered-color);
+    --est-foo-default-pressed-bg-color: var(--est-color-primary-pressed-color);
+    --est-foo-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
 
     /* ── Color/style variant presets ─────────────────────────────── */
     --est-foo-secondary-bg-color: var(--est-color-secondary);

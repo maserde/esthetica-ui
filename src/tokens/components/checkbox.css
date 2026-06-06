@@ -26,42 +26,42 @@
 
     --est-checkbox-default-bg-color: var(--est-color-white);
     --est-checkbox-default-border-color: var(--est-color-neutral-300);
-    --est-checkbox-default-hover-border-color: var(--est-color-primary);
+    --est-checkbox-default-hover-border-color: var(--est-color-primary-background-color);
 
-    --est-checkbox-default-checked-bg-color: var(--est-color-primary);
-    --est-checkbox-default-checked-border-color: var(--est-color-primary);
-    --est-checkbox-default-checked-icon-color: var(--est-color-primary-foreground);
-    --est-checkbox-default-focus-ring-color: var(--est-color-primary-300);
+    --est-checkbox-default-checked-bg-color: var(--est-color-primary-background-color);
+    --est-checkbox-default-checked-border-color: var(--est-color-primary-background-color);
+    --est-checkbox-default-checked-icon-color: var(--est-color-primary-foreground-color);
+    --est-checkbox-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
 
     /* ── Color variant presets ─────────────────────────────── */
-    --est-checkbox-primary-hover-border-color: var(--est-color-primary);
-    --est-checkbox-primary-checked-bg-color: var(--est-color-primary);
-    --est-checkbox-primary-checked-border-color: var(--est-color-primary);
-    --est-checkbox-primary-checked-icon-color: var(--est-color-primary-foreground);
-    --est-checkbox-primary-focus-ring-color: var(--est-color-primary-300);
+    --est-checkbox-primary-hover-border-color: var(--est-color-primary-background-color);
+    --est-checkbox-primary-checked-bg-color: var(--est-color-primary-background-color);
+    --est-checkbox-primary-checked-border-color: var(--est-color-primary-background-color);
+    --est-checkbox-primary-checked-icon-color: var(--est-color-primary-foreground-color);
+    --est-checkbox-primary-focus-ring-color: var(--est-color-primary-focus-ring-color);
 
-    --est-checkbox-success-hover-border-color: var(--est-color-success);
-    --est-checkbox-success-checked-bg-color: var(--est-color-success);
-    --est-checkbox-success-checked-border-color: var(--est-color-success);
-    --est-checkbox-success-checked-icon-color: var(--est-color-success-foreground);
-    --est-checkbox-success-focus-ring-color: var(--est-color-success-300);
+    --est-checkbox-success-hover-border-color: var(--est-color-success-background-color);
+    --est-checkbox-success-checked-bg-color: var(--est-color-success-background-color);
+    --est-checkbox-success-checked-border-color: var(--est-color-success-background-color);
+    --est-checkbox-success-checked-icon-color: var(--est-color-success-foreground-color);
+    --est-checkbox-success-focus-ring-color: var(--est-color-success-focus-ring-color);
 
-    --est-checkbox-danger-hover-border-color: var(--est-color-danger);
-    --est-checkbox-danger-checked-bg-color: var(--est-color-danger);
-    --est-checkbox-danger-checked-border-color: var(--est-color-danger);
-    --est-checkbox-danger-checked-icon-color: var(--est-color-danger-foreground);
-    --est-checkbox-danger-focus-ring-color: var(--est-color-danger-300);
+    --est-checkbox-danger-hover-border-color: var(--est-color-danger-background-color);
+    --est-checkbox-danger-checked-bg-color: var(--est-color-danger-background-color);
+    --est-checkbox-danger-checked-border-color: var(--est-color-danger-background-color);
+    --est-checkbox-danger-checked-icon-color: var(--est-color-danger-foreground-color);
+    --est-checkbox-danger-focus-ring-color: var(--est-color-danger-focus-ring-color);
 
-    --est-checkbox-warning-hover-border-color: var(--est-color-warning);
-    --est-checkbox-warning-checked-bg-color: var(--est-color-warning);
-    --est-checkbox-warning-checked-border-color: var(--est-color-warning);
-    --est-checkbox-warning-checked-icon-color: var(--est-color-warning-foreground);
-    --est-checkbox-warning-focus-ring-color: var(--est-color-warning-300);
+    --est-checkbox-warning-hover-border-color: var(--est-color-warning-background-color);
+    --est-checkbox-warning-checked-bg-color: var(--est-color-warning-background-color);
+    --est-checkbox-warning-checked-border-color: var(--est-color-warning-background-color);
+    --est-checkbox-warning-checked-icon-color: var(--est-color-warning-foreground-color);
+    --est-checkbox-warning-focus-ring-color: var(--est-color-warning-focus-ring-color);
 
-    --est-checkbox-info-hover-border-color: var(--est-color-info);
-    --est-checkbox-info-checked-bg-color: var(--est-color-info);
-    --est-checkbox-info-checked-border-color: var(--est-color-info);
-    --est-checkbox-info-checked-icon-color: var(--est-color-info-foreground);
-    --est-checkbox-info-focus-ring-color: var(--est-color-info-300);
+    --est-checkbox-info-hover-border-color: var(--est-color-info-background-color);
+    --est-checkbox-info-checked-bg-color: var(--est-color-info-background-color);
+    --est-checkbox-info-checked-border-color: var(--est-color-info-background-color);
+    --est-checkbox-info-checked-icon-color: var(--est-color-info-foreground-color);
+    --est-checkbox-info-focus-ring-color: var(--est-color-info-focus-ring-color);
   }
 }

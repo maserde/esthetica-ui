@@ -8,11 +8,11 @@
     --est-field-border-color: var(--est-color-neutral-300);
     --est-field-label-color: var(--est-color-neutral-700);
     --est-field-focus-border-color: transparent;
-    --est-field-focus-ring-color: var(--est-color-primary);
+    --est-field-focus-ring-color: var(--est-color-primary-focus-ring-color);
     --est-field-focus-ring-offset: var(--est-field-bg-color);
-    --est-field-error-border-color: var(--est-color-danger-500);
-    --est-field-error-ring-color: var(--est-color-danger-300);
-    --est-field-error-color: var(--est-color-danger-500);
+    --est-field-error-border-color: var(--est-color-danger-background-color);
+    --est-field-error-ring-color: var(--est-color-danger-focus-ring-color);
+    --est-field-error-color: var(--est-color-danger-background-color);
     --est-field-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.08) inset;
     --est-field-padding-x: 0.75rem;
     --est-field-padding-y: 0.5rem;
