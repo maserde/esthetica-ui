@@ -16,8 +16,8 @@
     --est-accordion-transition-duration: 250ms;
 
     /* Colors */
-    --est-accordion-trigger-color: var(--est-color-neutral-900);
-    --est-accordion-hover-trigger-color: var(--est-color-primary);
+    --est-accordion-trigger-color: var(--est-color-default);
+    --est-accordion-hover-trigger-color: var(--est-color-default-hovered-color);
     --est-accordion-content-color: var(--est-color-neutral-600);
   }
 }
