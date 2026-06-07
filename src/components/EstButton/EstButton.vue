@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { useVariantClasses } from '@/composables/useVariantClasses'
 
-export type ButtonColor = 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
+export type ButtonColor =
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'danger'
 export type ButtonVariant = 'solid' | 'outlined' | 'ghost'
 export type Size = 'sm' | 'md' | 'lg'
 export type ButtonType = 'button' | 'submit' | 'reset'
@@ -16,7 +23,7 @@ export interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: 'primary',
+  color: 'default',
   variant: 'solid',
   size: 'md',
   disabled: false,
@@ -43,7 +50,7 @@ function handleClick(event: MouseEvent) {
     :aria-disabled="disabled || loading"
     :aria-busy="loading"
     :class="{
-      ...buildVariant('est-button', color ?? 'primary'),
+      ...buildVariant('est-button', color ?? 'default'),
       'est-button--outlined': variant === 'outlined',
       'est-button--ghost': variant === 'ghost',
       ...buildVariant('est-button', size ?? 'md', false),

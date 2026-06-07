@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-card-radius: var(--est-radius);
     --est-card-padding-x: 0.75rem;
@@ -11,29 +11,29 @@
     --est-card-default-border-color: rgba(0, 0, 0, 0.1);
 
     /* ── Color variant presets ───────────────────────────────────── */
-    --est-card-primary-bg-color: var(--est-color-primary-50);
-    --est-card-primary-color: var(--est-color-primary-600);
+    --est-card-primary-bg-color: var(--est-color-primary-muted-background-color);
+    --est-card-primary-color: var(--est-color-primary-border-color);
     --est-card-primary-hover-color: var(--est-color-primary-900);
-    --est-card-primary-border-color: var(--est-color-primary-200);
+    --est-card-primary-border-color: var(--est-color-primary-muted-border-color);
 
-    --est-card-success-bg-color: var(--est-color-success-50);
-    --est-card-success-color: var(--est-color-success-500);
+    --est-card-success-bg-color: var(--est-color-success-muted-background-color);
+    --est-card-success-color: var(--est-color-success-background-color);
     --est-card-success-hover-color: var(--est-color-success-900);
-    --est-card-success-border-color: var(--est-color-success-200);
+    --est-card-success-border-color: var(--est-color-success-muted-border-color);
 
-    --est-card-info-bg-color: var(--est-color-info-50);
-    --est-card-info-color: var(--est-color-info-500);
+    --est-card-info-bg-color: var(--est-color-info-muted-background-color);
+    --est-card-info-color: var(--est-color-info-background-color);
     --est-card-info-hover-color: var(--est-color-info-900);
-    --est-card-info-border-color: var(--est-color-info-200);
+    --est-card-info-border-color: var(--est-color-info-muted-border-color);
 
-    --est-card-warning-bg-color: var(--est-color-warning-50);
-    --est-card-warning-color: var(--est-color-warning-700);
-    --est-card-warning-hover-color: var(--est-color-warning-900);
-    --est-card-warning-border-color: var(--est-color-warning-200);
+    --est-card-warning-bg-color: var(--est-color-warning-muted-background-color);
+    --est-card-warning-color: var(--est-color-warning-muted-foreground-color);
+    --est-card-warning-hover-color: var(--est-color-warning-foreground-color);
+    --est-card-warning-border-color: var(--est-color-warning-muted-border-color);
 
-    --est-card-danger-bg-color: var(--est-color-danger-50);
-    --est-card-danger-color: var(--est-color-danger-400);
+    --est-card-danger-bg-color: var(--est-color-danger-muted-background-color);
+    --est-card-danger-color: var(--est-color-danger-hovered-color);
     --est-card-danger-hover-color: var(--est-color-danger-900);
-    --est-card-danger-border-color: var(--est-color-danger-100);
+    --est-card-danger-border-color: var(--est-color-danger-muted-hovered-color);
   }
 }

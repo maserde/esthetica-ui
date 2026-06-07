@@ -1,65 +1,70 @@
-.est-toast--primary {
-  --est-toast-default-progress-bg-color: var(--est-toast-primary-progress-bg-color);
-}
-.est-toast--success {
-  --est-toast-default-progress-bg-color: var(--est-toast-success-progress-bg-color);
-}
-.est-toast--info {
-  --est-toast-default-progress-bg-color: var(--est-toast-info-progress-bg-color);
-}
-.est-toast--warning {
-  --est-toast-default-progress-bg-color: var(--est-toast-warning-progress-bg-color);
-}
-.est-toast--danger {
-  --est-toast-default-progress-bg-color: var(--est-toast-danger-progress-bg-color);
-}
-
-.est-toast {
-  width: 100%;
-  max-width: var(--est-toast-max-width);
-  border-radius: var(--est-toast-radius);
-  overflow: hidden;
-  box-shadow: var(--est-toast-shadow);
-  animation: est-toast-enter var(--est-toast-animation-duration) ease-out;
-}
-
-.est-toast__progress-track {
-  height: var(--est-toast-progress-height);
-  background-color: var(--est-toast-default-progress-track-bg-color);
-}
-
-.est-toast__progress-bar {
-  height: 100%;
-  background-color: var(--est-toast-default-progress-bg-color);
-  transition: width var(--est-toast-progress-transition-duration) linear;
-}
-
-@keyframes est-toast-enter {
-  from {
-    opacity: 0;
-    transform: translateY(-12px) scale(0.96);
+@layer estheticaui {
+  .est-toast--default {
+    --est-toast-default-progress-bg-color: var(--est-toast-neutral-progress-bg-color);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  .est-toast--primary {
+    --est-toast-default-progress-bg-color: var(--est-toast-primary-progress-bg-color);
   }
-}
-
-@keyframes est-toast-leave {
-  from {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  .est-toast--success {
+    --est-toast-default-progress-bg-color: var(--est-toast-success-progress-bg-color);
   }
-  to {
-    opacity: 0;
-    transform: translateY(-12px) scale(0.96);
+  .est-toast--info {
+    --est-toast-default-progress-bg-color: var(--est-toast-info-progress-bg-color);
   }
-}
+  .est-toast--warning {
+    --est-toast-default-progress-bg-color: var(--est-toast-warning-progress-bg-color);
+  }
+  .est-toast--danger {
+    --est-toast-default-progress-bg-color: var(--est-toast-danger-progress-bg-color);
+  }
 
-.est-toast-enter-active {
-  animation: est-toast-enter var(--est-toast-animation-duration) ease-out;
-}
+  .est-toast {
+    width: 100%;
+    max-width: var(--est-toast-max-width);
+    border-radius: var(--est-toast-radius);
+    overflow: hidden;
+    box-shadow: var(--est-toast-shadow);
+    animation: est-toast-enter var(--est-toast-animation-duration) ease-out;
+  }
 
-.est-toast-leave-active {
-  animation: est-toast-leave var(--est-toast-animation-duration) ease-in;
+  .est-toast__progress-track {
+    height: var(--est-toast-progress-height);
+    background-color: var(--est-toast-default-progress-track-bg-color);
+  }
+
+  .est-toast__progress-bar {
+    height: 100%;
+    background-color: var(--est-toast-default-progress-bg-color);
+    transition: width var(--est-toast-progress-transition-duration) linear;
+  }
+
+  @keyframes est-toast-enter {
+    from {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes est-toast-leave {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.96);
+    }
+  }
+
+  .est-toast-enter-active {
+    animation: est-toast-enter var(--est-toast-animation-duration) ease-out;
+  }
+
+  .est-toast-leave-active {
+    animation: est-toast-leave var(--est-toast-animation-duration) ease-in;
+  }
 }

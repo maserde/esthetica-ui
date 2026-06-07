@@ -1,76 +1,86 @@
-.est-alert__inner {
-  @apply grid items-start;
-  grid-template-columns: auto 1fr auto;
-  column-gap: 12px;
-  row-gap: 2px;
-  padding: var(--est-alert-padding-y) var(--est-alert-padding-x);
-  --est-alert-icon-color: var(--est-card-default-color);
-  --est-alert-title-color: var(--est-card-default-color);
-  --est-alert-body-color: var(--est-card-default-color);
-  --est-alert-close-color: var(--est-card-default-color);
-  --est-alert-hover-close-color: var(--est-card-default-hover-color);
-}
+@layer estheticaui {
+  .est-alert__inner {
+    @apply grid items-start;
+    grid-template-columns: auto 1fr auto;
+    column-gap: var(--est-alert-column-gap);
+    row-gap: var(--est-alert-row-gap);
+    padding: var(--est-alert-padding-y) var(--est-alert-padding-x);
+    --est-alert-icon-color: var(--est-card-default-color);
+    --est-alert-title-color: var(--est-card-default-color);
+    --est-alert-body-color: var(--est-card-default-color);
+    --est-alert-close-color: var(--est-card-default-color);
+    --est-alert-hover-close-color: var(--est-card-default-hover-color);
+  }
 
-/* Collapse empty icon column when no icon is present */
-.est-alert__inner:not(:has(.est-alert__icon)) {
-  grid-template-columns: 1fr auto;
-}
+  /* Collapse empty icon column when no icon is present */
+  .est-alert__inner:not(:has(.est-alert__icon)) {
+    grid-template-columns: 1fr auto;
+  }
 
-/* Collapse empty close column when not dismissible */
-.est-alert__inner:not(:has(.est-alert__close)) {
-  grid-template-columns: auto 1fr;
-}
+  /* Collapse empty close column when not dismissible */
+  .est-alert__inner:not(:has(.est-alert__close)) {
+    grid-template-columns: auto 1fr;
+  }
 
-/* No icon and not dismissible */
-.est-alert__inner:not(:has(.est-alert__icon)):not(:has(.est-alert__close)) {
-  grid-template-columns: 1fr;
-}
+  .est-alert__inner:not(:has(.est-alert__close):has(.est-alert__icon)) > :deep(.est-alert__body) {
+    margin-top: 0.2em;
+  }
 
-:deep(.est-alert__icon) {
-  @apply shrink-0 flex items-center justify-center;
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  align-self: start;
-  width: var(--est-alert-icon-size);
-  height: var(--est-alert-icon-size);
-  color: var(--est-alert-icon-color);
-}
+  /* No icon and not dismissible */
+  .est-alert__inner:not(:has(.est-alert__icon)):not(:has(.est-alert__close)) {
+    grid-template-columns: 1fr;
+  }
 
-:deep(.est-alert__title) {
-  @apply leading-snug;
-  grid-column: 2;
-  color: var(--est-alert-title-color);
-  font-size: var(--est-alert-title-font-size);
-  font-weight: var(--est-alert-title-font-weight);
-}
+  :deep(.est-alert__icon) {
+    @apply shrink-0 flex items-center justify-center;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    width: var(--est-alert-icon-size);
+    height: var(--est-alert-icon-size);
+    color: var(--est-alert-icon-color);
+  }
 
-:deep(.est-alert__body) {
-  @apply leading-snug;
-  grid-column: 2;
-  color: var(--est-alert-body-color);
-  font-size: var(--est-alert-body-font-size);
-  padding: 0.12em 0;
-}
+  :deep(.est-alert__title) {
+    @apply leading-snug;
+    grid-column: 2;
+    color: var(--est-alert-title-color);
+    font-size: var(--est-alert-title-font-size);
+    font-weight: var(--est-alert-title-font-weight);
+  }
 
-:deep(.est-alert__body--has-title) {
-  @apply p-0;
-}
+  :deep(.est-alert__body) {
+    @apply leading-snug;
+    grid-column: 2;
+    color: var(--est-alert-body-color);
+    font-size: var(--est-alert-body-font-size);
+  }
 
-.est-alert__close {
-  @apply shrink-0 flex items-center justify-center border-none p-0.5 rounded cursor-pointer
-  transition-colors outline-none;
-  grid-column: 3;
-  grid-row: 1 / span 2;
-  align-self: start;
-  background-color: transparent;
-  color: var(--est-alert-close-color);
-}
+  .est-alert__inner:has(.est-alert__title) :deep(.est-alert__icon),
+  .est-alert__inner:has(.est-alert__title) .est-alert__close {
+    grid-row: 1 / span 2;
+  }
 
-.est-alert__close:hover {
-  color: var(--est-alert-hover-close-color);
-}
+  .est-alert__inner:has(.est-alert__title) :deep(.est-alert__body) {
+    @apply p-0;
+  }
 
-.est-alert__close:focus-visible {
-  outline: 2px solid var(--est-alert-focus-ring-color);
-  outline-offset: 1px;
+  .est-alert__close {
+    @apply shrink-0 flex items-center justify-center border-none p-0.5 rounded cursor-pointer
+    transition-colors outline-none;
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    background-color: transparent;
+    color: var(--est-alert-close-color);
+  }
+
+  .est-alert__close:hover {
+    color: var(--est-alert-hover-close-color);
+  }
+
+  .est-alert__close:focus-visible {
+    outline: 2px solid var(--est-alert-focus-ring-color);
+    outline-offset: 1px;
+  }
 }

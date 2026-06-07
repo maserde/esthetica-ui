@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-alert-padding-x: var(--est-card-padding-x);
     --est-alert-padding-y: var(--est-card-padding-y);
@@ -7,5 +7,7 @@
     --est-alert-title-font-size: var(--est-font-size-sm);
     --est-alert-title-font-weight: var(--est-font-weight-semibold);
     --est-alert-focus-ring-color: currentColor;
+    --est-alert-column-gap: 12px;
+    --est-alert-row-gap: 2px;
   }
 }

@@ -11,7 +11,10 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     modelValue: { control: 'boolean' },
-    color: { control: 'select', options: ['primary', 'success', 'warning', 'danger', 'info'] },
+    color: {
+      control: 'select',
+      options: ['default', 'primary', 'success', 'warning', 'danger', 'info'],
+    },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     disabled: { control: 'boolean' },
   },
@@ -103,15 +106,20 @@ export const AllColors: Story = {
   render: (args) => ({
     components: { EstCheckbox, EstCheckboxBox, EstCheckboxLabel },
     setup() {
+      const defaultColor = ref(true)
       const primary = ref(true)
       const success = ref(true)
       const warning = ref(true)
       const danger = ref(true)
       const info = ref(true)
-      return { args, primary, success, warning, danger, info }
+      return { args, defaultColor, primary, success, warning, danger, info }
     },
     template: `
       <div style="display:flex;flex-direction:column;gap:16px;">
+        <EstCheckbox v-bind="args" v-model="defaultColor" color="default">
+          <EstCheckboxBox />
+          <EstCheckboxLabel>Default</EstCheckboxLabel>
+        </EstCheckbox>
         <EstCheckbox v-bind="args" v-model="primary" color="primary">
           <EstCheckboxBox />
           <EstCheckboxLabel>Primary</EstCheckboxLabel>

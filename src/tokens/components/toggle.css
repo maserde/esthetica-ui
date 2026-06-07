@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     /* ── Size variant presets ────────────────────────────────────── */
     --est-toggle-sm-track-width: 2.25rem;
@@ -17,11 +17,11 @@
     --est-toggle-default-thumb-size: 1.25rem;
     --est-toggle-default-thumb-translate: 1.25rem;
     --est-toggle-default-track-bg-color: var(--est-color-neutral-300);
-    --est-toggle-default-checked-track-bg-color: var(--est-color-primary);
+    --est-toggle-default-checked-track-bg-color: var(--est-color-primary-background-color);
     --est-toggle-default-disabled-track-bg-color: var(--est-color-neutral-300);
     --est-toggle-default-thumb-bg-color: var(--est-color-white);
     --est-toggle-default-disabled-thumb-bg-color: var(--est-color-neutral-400);
-    --est-toggle-default-focus-ring-color: var(--est-color-primary);
+    --est-toggle-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
     --est-toggle-label-color: var(--est-color-neutral-700);
     --est-toggle-label-font-size: var(--est-font-size-sm);
     --est-toggle-label-font-weight: var(--est-font-weight-medium);
@@ -30,19 +30,22 @@
     --est-toggle-description-font-weight: var(--est-font-weight-normal);
 
     /* ── Color variant presets ───────────────────────────────────── */
-    --est-toggle-primary-checked-track-bg-color: var(--est-color-primary);
-    --est-toggle-primary-focus-ring-color: var(--est-color-primary);
+    --est-toggle-primary-checked-track-bg-color: var(--est-color-primary-background-color);
+    --est-toggle-primary-focus-ring-color: var(--est-color-primary-focus-ring-color);
 
-    --est-toggle-success-checked-track-bg-color: var(--est-color-success);
-    --est-toggle-success-focus-ring-color: var(--est-color-success);
+    --est-toggle-success-checked-track-bg-color: var(--est-color-success-background-color);
+    --est-toggle-success-focus-ring-color: var(--est-color-success-focus-ring-color);
 
-    --est-toggle-info-checked-track-bg-color: var(--est-color-info);
-    --est-toggle-info-focus-ring-color: var(--est-color-info);
+    --est-toggle-info-checked-track-bg-color: var(--est-color-info-background-color);
+    --est-toggle-info-focus-ring-color: var(--est-color-info-focus-ring-color);
 
-    --est-toggle-warning-checked-track-bg-color: var(--est-color-warning);
-    --est-toggle-warning-focus-ring-color: var(--est-color-warning);
+    --est-toggle-warning-checked-track-bg-color: var(--est-color-warning-background-color);
+    --est-toggle-warning-focus-ring-color: var(--est-color-warning-focus-ring-color);
 
-    --est-toggle-error-checked-track-bg-color: var(--est-color-danger);
-    --est-toggle-error-focus-ring-color: var(--est-color-danger);
+    --est-toggle-error-checked-track-bg-color: var(--est-color-danger-background-color);
+    --est-toggle-error-focus-ring-color: var(--est-color-danger-focus-ring-color);
+
+    --est-toggle-neutral-checked-track-bg-color: var(--est-color-default-background-color);
+    --est-toggle-neutral-focus-ring-color: var(--est-color-default-focus-ring-color);
   }
 }

@@ -2,7 +2,7 @@
 import { provide, toRef } from 'vue'
 import { useVariantClasses } from '@/composables/useVariantClasses'
 
-export type CheckboxColor = 'primary' | 'success' | 'warning' | 'danger' | 'info'
+export type CheckboxColor = 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'
 export type CheckboxSize = 'sm' | 'md' | 'lg'
 
 export interface Props {
@@ -17,7 +17,7 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
   indeterminate: false,
-  color: 'primary',
+  color: 'default',
   size: 'md',
   disabled: false,
   id: undefined,
@@ -40,7 +40,7 @@ provide('est-checkbox-update', (value: boolean) => emit('update:modelValue', val
   <label
     :aria-disabled="disabled ? 'true' : undefined"
     :class="{
-      ...buildVariant('est-checkbox', color ?? 'primary'),
+      ...buildVariant('est-checkbox', color ?? 'default'),
       ...buildVariant('est-checkbox', size ?? 'md', false),
       'est-checkbox--disabled': disabled,
       'est-checkbox--checked': modelValue && !indeterminate,

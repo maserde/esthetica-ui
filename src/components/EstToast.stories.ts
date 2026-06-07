@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     color: {
       control: 'select',
-      options: ['primary', 'success', 'info', 'warning', 'danger'],
+      options: ['default', 'primary', 'success', 'info', 'warning', 'danger'],
     },
     duration: { control: 'number' },
     dismissible: { control: 'boolean' },
@@ -33,6 +33,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 // ─── Variants ────────────────────────────────────────────────────────────────
+
+export const Default: Story = {
+  args: { color: 'default', modelValue: true, duration: 0 },
+}
 
 export const Success: Story = {
   args: { color: 'success', modelValue: true, duration: 0 },
@@ -87,6 +91,7 @@ export const AllVariants: Story = {
     components: { EstToast },
     template: `
       <div style="display:flex;flex-direction:column;gap:12px;">
+        <EstToast color="default" :model-value="true" :duration="0">Default toast</EstToast>
         <EstToast color="primary" :model-value="true" :duration="0">Primary toast</EstToast>
         <EstToast color="success" :model-value="true" :duration="0">Success toast</EstToast>
         <EstToast color="info" :model-value="true" :duration="0">Info toast</EstToast>

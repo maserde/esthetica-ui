@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-pagination-muted-color: var(--est-color-neutral-400);
     --est-pagination-disabled-color: var(--est-pagination-muted-color);
@@ -10,10 +10,10 @@
     --est-pagination-default-active-bg-color: var(--est-color-neutral-100);
     --est-pagination-default-hover-btn-bg-color: var(--est-color-neutral-50);
     --est-pagination-default-hover-btn-border-color: var(--est-color-neutral-300);
-    --est-pagination-focus-ring-color: var(--est-color-primary);
+    --est-pagination-focus-ring-color: var(--est-color-primary-focus-ring-color);
     --est-pagination-focus-ring-offset: var(--est-pagination-default-btn-bg-color);
-    --est-pagination-default-active-option-bg-color: var(--est-color-primary-100);
-    --est-pagination-option-active-color: var(--est-color-primary-700);
+    --est-pagination-default-active-option-bg-color: var(--est-color-primary-muted-hovered-color);
+    --est-pagination-option-active-color: var(--est-color-primary-pressed-color);
     --est-pagination-default-menu-bg-color: var(--est-pagination-default-btn-bg-color);
 
     --est-pagination-menu-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);

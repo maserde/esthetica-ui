@@ -13,6 +13,7 @@ This is a **component library consumed by external projects**. Every decision mu
 - **Scrutinise third-party libraries.** Prefer native browser APIs and Vue built-ins. Any added lib must be externalised or verified conflict-free at the consumer.
 - **Externalise every peer dependency in `vite.config.ts`.** Every `peerDependency` must also appear in `rolldownOptions.external` — otherwise it gets bundled.
 - **Exported types and prop defaults are public API.** Never remove a union member, rename an exported type, or change a `withDefaults` default without a semver major. Adding new optional members/props is safe.
+- **All component CSS must be wrapped in `@layer estheticaui { }`.**  Vue scoped styles compile selectors to `[data-v-hash] .class` (specificity 0,2,0), which beats any single utility class (0,1,0) a consumer applies. Wrapping in a named layer gives unlayered consumer styles (UnoCSS, Tailwind v3, plain CSS) unconditional override priority regardless of specificity. Every `.css` file under `src/components/` must have its entire content inside `@layer esthetica-ui { }`. Do not add this wrapper to token files under `src/tokens/` — those already use `@layer esthetica-ui-tokens`.
 
 ## Commands
 
@@ -51,10 +52,42 @@ After changes:
 
 Tokens are CSS custom properties in `src/tokens/`:
 - `src/tokens/global.css` — `--est-radius`, `--est-font-sans`, etc.
-- `src/tokens/colors.css` — `--est-color-primary`, `--est-color-danger`, etc.
+- `src/tokens/colors.css` — semantic color state tokens per variant (see below)
 - `src/tokens/components/foo.css` — component-level `--est-foo-*` tokens
 
-`src/style.css` imports all token files under `@layer esthetica-ui-tokens`. Component tokens must reference globals/colors via `var()` — never hardcode raw values.
+`src/style.css` imports all token files under `@layer estheticaui-tokens`. Component tokens must reference globals/colors via `var()` — never hardcode raw values and never reference raw palette shades directly (e.g. `--est-color-primary-500`) when a semantic state token exists.
+
+#### Color token state system
+
+Each color variant (`default`, `primary`, `info`, `warning`, `success`, `danger`) exposes **11 semantic state tokens** in `colors.css`:
+
+| Suffix | Palette shade | Purpose |
+|---|---|---|
+| `-background-color` | 500 | Solid fill background |
+| `-foreground-color` | white (warning: 900) | Text/icon on solid background |
+| `-hovered-color` | 400 | Solid background on hover |
+| `-pressed-color` | 700 | Solid background on press |
+| `-border-color` | 600 | Border for solid variant |
+| `-focus-ring-color` | 300 | Focus ring / outline |
+| `-muted-background-color` | 50 | Tinted/light background |
+| `-muted-foreground-color` | 700 | Text on muted background |
+| `-muted-hovered-color` | 100 | Muted background on hover |
+| `-muted-pressed-color` | 200 | Muted background on press |
+| `-muted-border-color` | 200 | Border in muted context |
+
+`default` uses the **neutral** palette (`--est-color-neutral-*`). `secondary` does not use this system (no numbered palette scale) — reference its tokens directly: `--est-color-secondary`, `--est-color-secondary-hover`, `--est-color-secondary-pressed`, `--est-color-secondary-foreground`.
+
+**Always use these semantic tokens** — never reference raw palette shades (e.g. `--est-color-primary-300`) when a semantic slot covers the same value.
+
+```css
+/* ✅ correct */
+--est-foo-default-bg-color: var(--est-color-primary-background-color);
+--est-foo-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
+
+/* ❌ wrong — raw palette shades */
+--est-foo-default-bg-color: var(--est-color-primary-500);
+--est-foo-default-focus-ring-color: var(--est-color-primary-300);
+```
 
 #### Token naming convention
 
@@ -69,14 +102,28 @@ All component tokens **must** strictly follow this pattern:
 
 **Examples:**
 - `--est-card-default-bg-color: var(--est-color-white);`
-- `--est-button-primary-hover-bg-color: var(--est-color-primary-600);`
+- `--est-button-primary-hover-bg-color: var(--est-color-primary-border-color);`
 - `--est-pagination-default-hover-btn-bg-color: var(--est-color-neutral-100);`
-- `--est-toggle-success-checked-track-bg-color: var(--est-color-success);`
+- `--est-toggle-success-checked-track-bg-color: var(--est-color-success-background-color);`
+
+**Naming conflict — `default` color variant:** The `[componentVariant]` segment uses `default` for the base/fallback token slot (e.g. `--est-btn-default-bg-color`). This collides with the `color="default"` prop value. To avoid ambiguity, use `neutral` as the internal component preset token prefix for "default" color variant presets, while keeping the CSS modifier class named `--default` (matching the prop value):
+
+```css
+/* ✅ Component token file — use "neutral" prefix for the default color presets */
+--est-btn-neutral-bg-color: var(--est-color-default-background-color);
+--est-btn-neutral-focus-ring-color: var(--est-color-default-focus-ring-color);
+
+/* ✅ Component CSS — modifier class still named --default, references neutral presets */
+.est-button--default {
+  --est-btn-default-bg-color: var(--est-btn-neutral-bg-color);
+  --est-btn-default-focus-ring-color: var(--est-btn-neutral-focus-ring-color);
+}
+```
 
 #### Component token file structure
 
 ```css
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     /* ── Size variant presets ────────────────────────────────────── */
     --est-foo-sm-padding: ...;
@@ -96,9 +143,11 @@ All component tokens **must** strictly follow this pattern:
     --est-foo-default-padding: var(--est-foo-md-padding);
     --est-foo-default-min-height: var(--est-foo-md-min-height);
     --est-foo-default-font-size: var(--est-foo-md-font-size);
-    --est-foo-default-bg-color: var(--est-color-primary);
-    --est-foo-default-color: var(--est-color-primary-foreground);
-    --est-foo-default-hover-bg-color: var(--est-color-primary-hover);
+    --est-foo-default-bg-color: var(--est-color-primary-background-color);
+    --est-foo-default-color: var(--est-color-primary-foreground-color);
+    --est-foo-default-hover-bg-color: var(--est-color-primary-hovered-color);
+    --est-foo-default-pressed-bg-color: var(--est-color-primary-pressed-color);
+    --est-foo-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
 
     /* ── Color/style variant presets ─────────────────────────────── */
     --est-foo-secondary-bg-color: var(--est-color-secondary);
@@ -114,27 +163,29 @@ All component tokens **must** strictly follow this pattern:
 Modifier classes re-point base/default tokens; base class reads only base/default tokens — single rendering path.
 
 ```css
-/* 1. Modifier classes FIRST */
-.est-foo--sm {
-  --est-foo-default-padding: var(--est-foo-sm-padding);
-  --est-foo-default-min-height: var(--est-foo-sm-min-height);
-  --est-foo-default-font-size: var(--est-foo-sm-font-size);
-}
-.est-foo--secondary {
-  --est-foo-default-bg-color: var(--est-foo-secondary-bg-color);
-  --est-foo-default-color: var(--est-foo-secondary-color);
-  --est-foo-default-hover-bg-color: var(--est-foo-secondary-hover-bg-color);
-}
+@layer estheticaui {
+  /* 1. Modifier classes FIRST */
+  .est-foo--sm {
+    --est-foo-default-padding: var(--est-foo-sm-padding);
+    --est-foo-default-min-height: var(--est-foo-sm-min-height);
+    --est-foo-default-font-size: var(--est-foo-sm-font-size);
+  }
+  .est-foo--secondary {
+    --est-foo-default-bg-color: var(--est-foo-secondary-bg-color);
+    --est-foo-default-color: var(--est-foo-secondary-color);
+    --est-foo-default-hover-bg-color: var(--est-foo-secondary-hover-bg-color);
+  }
 
-/* 2. Base class LAST — only reads default tokens, never variant tokens directly */
-.est-foo {
-  padding: var(--est-foo-default-padding);
-  min-height: var(--est-foo-default-min-height);
-  font-size: var(--est-foo-default-font-size);
-  background-color: var(--est-foo-default-bg-color);
-  color: var(--est-foo-default-color);
+  /* 2. Base class LAST — only reads default tokens, never variant tokens directly */
+  .est-foo {
+    padding: var(--est-foo-default-padding);
+    min-height: var(--est-foo-default-min-height);
+    font-size: var(--est-foo-default-font-size);
+    background-color: var(--est-foo-default-bg-color);
+    color: var(--est-foo-default-color);
+  }
+  .est-foo:hover { background-color: var(--est-foo-default-hover-bg-color); }
 }
-.est-foo:hover { background-color: var(--est-foo-default-hover-bg-color); }
 ```
 
 Rules:
@@ -142,7 +193,7 @@ Rules:
 - Base class never references `--est-foo-{variant|size}-*` directly — only base `--est-foo-default-*`.
 - `@apply` for layout/structural and typography utilities. Never `@apply` colour — always `var(--est-color-*)` directly. (`@apply text-sm` compiles to `font-size: var(--est-font-size-sm)` — consumer-overridable.)
 - For shadows consumers should override, use `box-shadow: var(--est-shadow-*)` directly — `@apply shadow-*` bakes in the value and can't be overridden via token.
-- `:deep()` only for structural properties not exposed as a token (`width`, `height`, `text-align`). Prefer CSS custom property overrides first.
+- `:deep()` is **required** for all sub-component element rules in composite families (sub-components render inside `<slot />` in the consumer's scope and do not receive the scoped `data-v-*` attribute, so plain scoped selectors won't match). For simple single-component patterns where you own the template, avoid `:deep()` — use regular scoped selectors or CSS custom properties instead. Consumer override-ability is guaranteed by `@layer estheticaui`, not by avoiding `:deep()`.
 
 ### Component conventions
 
@@ -172,9 +223,9 @@ Three sibling files in `src/components/`:
 
 **New component checklist (in order):**
 1. `src/components/EstFoo.vue`
-2. `src/components/EstFoo.css`
+2. `src/components/EstFoo.css` — entire content wrapped in `@layer estheticaui { }`
 3. `src/components/EstFoo.stories.ts`
-4. `src/tokens/components/foo.css` — `--est-foo-*` in `@layer esthetica-ui-tokens`
+4. `src/tokens/components/foo.css` — `--est-foo-*` in `@layer estheticaui-tokens`
 5. Add `@import './tokens/components/foo.css';` to `src/style.css`
 6. Add component and type exports to `src/index.ts`:
 
@@ -217,7 +268,7 @@ The root provides its `color` prop as a reactive ref. Sub-components inject it t
 
 ```ts
 // EstFoo.vue — root
-const props = withDefaults(defineProps<Props>(), { color: 'success' })
+const props = withDefaults(defineProps<Props>(), { color: 'default' })
 provide('est-foo-color', toRef(props, 'color'))
 ```
 
@@ -232,13 +283,14 @@ Use a plain namespaced string key (`'est-foo-color'`), not a Symbol. The `est-` 
 
 ```ts
 const COLOR_ICON: Record<FooColor, string> = {
+  default: 'i-ri-checkbox-circle-fill',
   primary: 'i-ri-checkbox-circle-fill',
   success: 'i-ri-checkbox-circle-fill',
   info:    'i-ri-information-fill',
   warning: 'i-ri-error-warning-fill',
   danger:  'i-ri-error-warning-fill',
 }
-const iconClass = computed(() => COLOR_ICON[color?.value ?? 'success'])
+const iconClass = computed(() => COLOR_ICON[color?.value ?? 'default'])
 ```
 
 TypeScript errors immediately when a new variant is added to the union but not to the record. An if/else chain silently falls through to a default.
@@ -252,23 +304,25 @@ Sub-components do not need their own CSS files.
 Use CSS grid for the layout shell so icon, content, and close button occupy named columns without a JS-managed wrapper:
 
 ```css
-.est-foo__inner {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* icon | content | close */
-  column-gap: 12px;
-  row-gap: 2px;
-  align-items: start;
+@layer estheticaui {
+  .est-foo__inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* icon | content | close */
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+
+  /* Collapse empty columns when parts are absent */
+  .est-foo__inner:not(:has(.est-foo__icon))  { grid-template-columns: 1fr auto; }
+  .est-foo__inner:not(:has(.est-foo__close)) { grid-template-columns: auto 1fr; }
+  .est-foo__inner:not(:has(.est-foo__icon)):not(:has(.est-foo__close)) { grid-template-columns: 1fr; }
+
+  .est-foo__icon  { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+  .est-foo__title { grid-column: 2; }
+  .est-foo__body  { grid-column: 2; }
+  .est-foo__close { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
 }
-
-/* Collapse empty columns when parts are absent */
-.est-foo__inner:not(:has(.est-foo__icon))  { grid-template-columns: 1fr auto; }
-.est-foo__inner:not(:has(.est-foo__close)) { grid-template-columns: auto 1fr; }
-.est-foo__inner:not(:has(.est-foo__icon)):not(:has(.est-foo__close)) { grid-template-columns: 1fr; }
-
-.est-foo__icon  { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
-.est-foo__title { grid-column: 2; }
-.est-foo__body  { grid-column: 2; }
-.est-foo__close { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
 ```
 
 **New composite component checklist (in order):**
@@ -276,7 +330,7 @@ Use CSS grid for the layout shell so icon, content, and close button occupy name
 2. `src/components/EstFoo/EstFooIcon.vue` — `inject` color, `Record<Color, string>` icon map
 3. `src/components/EstFoo/EstFooTitle.vue` — thin wrapper (`div.est-foo__title` + `<slot />`)
 4. `src/components/EstFoo/EstFooDescription.vue` — thin wrapper (`div.est-foo__body` + `<slot />`)
-5. `src/components/EstFoo/EstFoo.css` — grid layout + all sub-component element styles
+5. `src/components/EstFoo/EstFoo.css` — entire content wrapped in `@layer estheticaui { }`; grid layout + all sub-component element styles inside
 6. `src/components/EstFoo/EstFoo.stories.ts` — all stories use composite API
 7. `src/tokens/components/foo.css` — structural tokens at `:root`; variant colors on `.est-foo__inner` descendants (never `:root`)
 8. Add `@import './tokens/components/foo.css';` to `src/style.css`
@@ -302,7 +356,7 @@ EstFooDescription: (typeof import('./components/EstFoo/EstFooDescription.vue'))[
 **Consumer usage:**
 
 ```html
-<EstFoo color="success">
+<EstFoo color="default">
   <EstFooIcon />
   <EstFooTitle>Title text</EstFooTitle>
   <EstFooDescription>Body text goes here.</EstFooDescription>
@@ -371,9 +425,11 @@ Correct: assign in the component CSS file on a descendant that lives below the p
 
 ```css
 /* ✅ EstAlert.css — .est-alert__inner is a DOM child of .est-card--{variant} */
-.est-alert__inner {
-  --est-alert-icon-color: var(--est-card-color);
-  --est-alert-close-hover-color: var(--est-card-color-hover);
+@layer estheticaui {
+  .est-alert__inner {
+    --est-alert-icon-color: var(--est-card-color);
+    --est-alert-close-hover-color: var(--est-card-color-hover);
+  }
 }
 
 /* ❌ alert.css at :root — always resolves to default color */

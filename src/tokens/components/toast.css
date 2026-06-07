@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     --est-toast-max-width: 420px;
     --est-toast-radius: var(--est-radius);
@@ -12,10 +12,11 @@
     --est-toast-default-progress-bg-color: var(--est-toast-success-progress-bg-color);
 
     /* ── Color variant presets ───────────────────────────────────── */
-    --est-toast-primary-progress-bg-color: var(--est-color-primary-500);
-    --est-toast-success-progress-bg-color: var(--est-color-success);
-    --est-toast-info-progress-bg-color: var(--est-color-info);
-    --est-toast-warning-progress-bg-color: var(--est-color-warning);
-    --est-toast-danger-progress-bg-color: var(--est-color-danger);
+    --est-toast-neutral-progress-bg-color: var(--est-color-default-background-color);
+    --est-toast-primary-progress-bg-color: var(--est-color-primary-background-color);
+    --est-toast-success-progress-bg-color: var(--est-color-success-background-color);
+    --est-toast-info-progress-bg-color: var(--est-color-info-background-color);
+    --est-toast-warning-progress-bg-color: var(--est-color-warning-background-color);
+    --est-toast-danger-progress-bg-color: var(--est-color-danger-background-color);
   }
 }

@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     /* ── Base/Default tokens ─────────────────────────────────────── */
     --est-tag-padding: 0.25rem 0.5rem;
@@ -10,28 +10,34 @@
     --est-tag-default-border-color: transparent;
 
     /* ── Color/style variant presets ─────────────────────────────── */
-    --est-tag-info-secondary-bg-color: var(--est-color-info-50);
-    --est-tag-info-secondary-color: var(--est-color-info-500);
-    --est-tag-info-primary-bg-color: var(--est-color-info-500);
-    --est-tag-info-primary-color: var(--est-color-white);
-    --est-tag-info-secondary-border-color: var(--est-color-info-500);
+    --est-tag-info-secondary-bg-color: var(--est-color-info-muted-background-color);
+    --est-tag-info-secondary-color: var(--est-color-info-background-color);
+    --est-tag-info-primary-bg-color: var(--est-color-info-background-color);
+    --est-tag-info-primary-color: var(--est-color-info-foreground-color);
+    --est-tag-info-secondary-border-color: var(--est-color-info-background-color);
 
-    --est-tag-success-secondary-bg-color: var(--est-color-success-50);
-    --est-tag-success-secondary-color: var(--est-color-success-500);
-    --est-tag-success-primary-bg-color: var(--est-color-success-500);
-    --est-tag-success-primary-color: var(--est-color-white);
-    --est-tag-success-secondary-border-color: var(--est-color-success-500);
+    --est-tag-success-secondary-bg-color: var(--est-color-success-muted-background-color);
+    --est-tag-success-secondary-color: var(--est-color-success-background-color);
+    --est-tag-success-primary-bg-color: var(--est-color-success-background-color);
+    --est-tag-success-primary-color: var(--est-color-success-foreground-color);
+    --est-tag-success-secondary-border-color: var(--est-color-success-background-color);
 
-    --est-tag-warning-secondary-bg-color: var(--est-color-warning-50);
-    --est-tag-warning-secondary-color: var(--est-color-warning-700);
-    --est-tag-warning-primary-bg-color: var(--est-color-warning-500);
-    --est-tag-warning-primary-color: var(--est-color-warning-900);
-    --est-tag-warning-secondary-border-color: var(--est-color-warning-500);
+    --est-tag-warning-secondary-bg-color: var(--est-color-warning-muted-background-color);
+    --est-tag-warning-secondary-color: var(--est-color-warning-muted-foreground-color);
+    --est-tag-warning-primary-bg-color: var(--est-color-warning-background-color);
+    --est-tag-warning-primary-color: var(--est-color-warning-foreground-color);
+    --est-tag-warning-secondary-border-color: var(--est-color-warning-background-color);
 
-    --est-tag-danger-secondary-bg-color: var(--est-color-danger-50);
-    --est-tag-danger-secondary-color: var(--est-color-danger-500);
-    --est-tag-danger-primary-bg-color: var(--est-color-danger-500);
-    --est-tag-danger-primary-color: var(--est-color-white);
-    --est-tag-danger-secondary-border-color: var(--est-color-danger-500);
+    --est-tag-danger-secondary-bg-color: var(--est-color-danger-muted-background-color);
+    --est-tag-danger-secondary-color: var(--est-color-danger-background-color);
+    --est-tag-danger-primary-bg-color: var(--est-color-danger-background-color);
+    --est-tag-danger-primary-color: var(--est-color-danger-foreground-color);
+    --est-tag-danger-secondary-border-color: var(--est-color-danger-background-color);
+
+    --est-tag-neutral-primary-bg-color: var(--est-color-default-background-color);
+    --est-tag-neutral-primary-color: var(--est-color-default-foreground-color);
+    --est-tag-neutral-secondary-bg-color: var(--est-color-default-muted-background-color);
+    --est-tag-neutral-secondary-color: var(--est-color-default-muted-foreground-color);
+    --est-tag-neutral-secondary-border-color: var(--est-color-default-muted-border-color);
   }
 }

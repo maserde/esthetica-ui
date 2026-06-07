@@ -1,72 +1,74 @@
-.est-field {
-  @apply flex flex-col gap-1.5;
-}
+@layer estheticaui {
+  .est-field {
+    @apply flex flex-col gap-1.5;
+  }
 
-:deep(.est-field__label) {
-  color: var(--est-field-label-color);
-  font-size: var(--est-field-label-font-size);
-  font-weight: var(--est-field-label-font-weight);
-}
+  :deep(.est-field__label) {
+    color: var(--est-field-label-color);
+    font-size: var(--est-field-label-font-size);
+    font-weight: var(--est-field-label-font-weight);
+  }
 
-:deep(.est-field__wrapper--error) {
-  --est-field-border-color: var(--est-field-error-border-color);
-}
+  :deep(.est-field__wrapper--error) {
+    --est-field-border-color: var(--est-field-error-border-color);
+  }
 
-:deep(.est-field__wrapper--readonly) {
-  --est-field-bg-color: var(--est-field-readonly-bg-color);
-}
+  :deep(.est-field__wrapper--readonly) {
+    --est-field-bg-color: var(--est-field-readonly-bg-color);
+  }
 
-:deep(.est-field__wrapper--disabled) {
-  @apply opacity-50 pointer-events-none;
-}
+  :deep(.est-field__wrapper--disabled) {
+    @apply opacity-50 pointer-events-none;
+  }
 
-:deep(.est-field__wrapper) {
-  @apply flex items-center gap-2;
-  border-radius: var(--est-field-radius);
-  background-color: var(--est-field-bg-color);
-  outline: 1px solid var(--est-field-border-color);
-  padding: 0 var(--est-field-padding-x);
-  box-shadow: var(--est-field-shadow);
-  transition-property: outline-color, box-shadow;
-  transition-duration: var(--est-field-transition-duration);
-  transition-timing-function: ease;
-}
+  :deep(.est-field__wrapper) {
+    @apply flex items-center gap-2;
+    border-radius: var(--est-field-radius);
+    background-color: var(--est-field-bg-color);
+    outline: 1px solid var(--est-field-border-color);
+    padding: 0 var(--est-field-padding-x);
+    box-shadow: var(--est-field-shadow);
+    transition-property: outline-color, box-shadow;
+    transition-duration: var(--est-field-transition-duration);
+    transition-timing-function: ease;
+  }
 
-:deep(.est-field__wrapper:focus-within:not(.est-field__wrapper--readonly)) {
-  outline-color: var(--est-field-focus-border-color);
-  box-shadow:
-    var(--est-field-shadow),
-    0 0 0 2px var(--est-field-focus-ring-offset),
-    0 0 0 4px var(--est-field-focus-ring-color);
-}
+  :deep(.est-field__wrapper:focus-within:not(.est-field__wrapper--readonly)) {
+    outline-color: var(--est-field-focus-border-color);
+    box-shadow:
+      var(--est-field-shadow),
+      0 0 0 2px var(--est-field-focus-ring-offset),
+      0 0 0 4px var(--est-field-focus-ring-color);
+  }
 
-:deep(.est-field__wrapper--error:focus-within) {
-  outline-color: var(--est-field-border-color);
-  box-shadow:
-    var(--est-field-shadow),
-    0 0 0 2px var(--est-field-error-ring-color);
-}
+  :deep(.est-field__wrapper--error:focus-within) {
+    outline-color: var(--est-field-border-color);
+    box-shadow:
+      var(--est-field-shadow),
+      0 0 0 2px var(--est-field-error-ring-color);
+  }
 
-:deep(.est-field__field) {
-  @apply flex-1 min-w-0 border-0 outline-none;
-  background-color: transparent;
-  color: var(--est-field-color);
-  font-size: var(--est-field-font-size);
-  line-height: var(--est-field-font-line-height);
-  padding: var(--est-field-padding-y) 0;
-}
+  :deep(.est-field__field) {
+    @apply flex-1 min-w-0 border-0 outline-none;
+    background-color: transparent;
+    color: var(--est-field-color);
+    font-size: var(--est-field-font-size);
+    line-height: var(--est-field-font-line-height);
+    padding: var(--est-field-padding-y) 0;
+  }
 
-:deep(.est-field__field::placeholder) {
-  color: var(--est-field-placeholder-color);
-}
+  :deep(.est-field__field::placeholder) {
+    color: var(--est-field-placeholder-color);
+  }
 
-:deep(.est-field__field:disabled) {
-  @apply cursor-not-allowed;
-}
+  :deep(.est-field__field:disabled) {
+    @apply cursor-not-allowed;
+  }
 
-:deep(.est-field__error) {
-  @apply flex items-center gap-1 my-2;
-  color: var(--est-field-error-color);
-  font-size: var(--est-field-error-font-size);
-  font-weight: var(--est-field-error-font-weight);
+  :deep(.est-field__error) {
+    @apply flex items-center gap-1 my-2;
+    color: var(--est-field-error-color);
+    font-size: var(--est-field-error-font-size);
+    font-weight: var(--est-field-error-font-weight);
+  }
 }
