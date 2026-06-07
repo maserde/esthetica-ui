@@ -4,27 +4,33 @@
     --est-btn-transition-duration: 160ms;
     --est-btn-active-transition-duration: 80ms;
     --est-btn-spinner-duration: 580ms;
-    --est-btn-focus-ring: initial;
-    --est-btn-focus-ring-offset: var(--est-color-surface);
+    --est-btn-focus-ring: var(--est-color-default-focus-ring-color);
+    --est-btn-focus-ring-offset: var(--est-color-white);
 
-    /* ── Size variant presets ────────────────────────────────────── */
-    --est-btn-sm-padding: 0.5rem 0.5rem;
+    --est-btn-sm-padding-y: 0.5rem;
+    --est-btn-sm-padding-x: 0.5rem;
+    --est-btn-sm-padding: var(--est-btn-sm-padding-x) var(--est-btn-sm-padding-y);
     --est-btn-sm-min-height: 1.5rem;
     --est-btn-sm-font-size: 0.75rem;
     --est-btn-sm-radius: 4px;
 
-    --est-btn-md-padding: 0.2rem 0.75rem;
+    --est-btn-md-padding-x: 0.75rem;
+    --est-btn-md-padding-y: 0.2rem;
+    --est-btn-md-padding: var(--est-btn-md-padding-x) var(--est-btn-md-padding-y);
     --est-btn-md-min-height: 2rem;
     --est-btn-md-font-size: 0.75rem;
     --est-btn-md-radius: 4px;
 
-    --est-btn-lg-padding: 0.75rem 1.25rem;
+    --est-btn-lg-padding-x: 1.25rem;
+    --est-btn-lg-padding-y: 0.75rem;
+    --est-btn-lg-padding: var(--est-btn-lg-padding-x) var(--est-btn-lg-padding-y);
     --est-btn-lg-min-height: 2.5rem;
     --est-btn-lg-font-size: 0.875rem;
     --est-btn-lg-radius: 8px;
 
-    /* ── Base/Default tokens ─────────────────────────────────────── */
-    --est-btn-default-padding: 0.2rem 0.75rem;
+    --est-btn-default-padding-x: 0.75rem;
+    --est-btn-default-padding-y: 0.2rem;
+    --est-btn-default-padding: var(--est-btn-default-padding-x) var(--est-btn-default-padding-y);
     --est-btn-default-min-height: 2rem;
     --est-btn-default-font-size: 0.75rem;
     --est-btn-default-bg-color: var(--est-color-primary-background-color);
@@ -37,7 +43,6 @@
     --est-btn-default-box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
     --est-btn-default-radius: 4px;
 
-    /* ── Color/style variant presets ─────────────────────────────── */
     --est-btn-secondary-bg-color: var(--est-color-secondary);
     --est-btn-secondary-hover-bg-color: var(--est-color-secondary-hover);
     --est-btn-secondary-pressed-bg-color: var(--est-color-secondary-pressed);
@@ -68,9 +73,9 @@
     --est-btn-danger-color: var(--est-color-danger-foreground-color);
     --est-btn-danger-focus-ring-color: var(--est-color-danger-focus-ring-color);
 
-    --est-btn-outlined-border-color: var(--est-color-neutral-500);
-    --est-btn-outlined-hover-border-color: var(--est-color-neutral-300);
-    --est-btn-outlined-color: var(--est-color-neutral-500);
+    --est-btn-outlined-border-color: var(--est-color-default-border-color);
+    --est-btn-outlined-hover-border-color: var(--est-color-default-hovered-color);
+    --est-btn-outlined-color: var(--est-color-default-border-color);
     --est-btn-outlined-hover-bg-color: var(--est-color-surface);
 
     --est-btn-neutral-bg-color: var(--est-color-default-background-color);
@@ -79,7 +84,7 @@
     --est-btn-neutral-color: var(--est-color-default-foreground-color);
     --est-btn-neutral-focus-ring-color: var(--est-color-default-focus-ring-color);
 
-    --est-btn-ghost-color: var(--est-color-muted-fg);
+    --est-btn-ghost-color: var(--est-color-muted-foreground);
     --est-btn-ghost-hover-bg-color: var(--est-color-muted);
     --est-btn-ghost-border-color: transparent;
 

@@ -2,12 +2,12 @@
   :root {
     --est-color-black: #070707;
     --est-color-white: white;
+
     --est-color-border: #a8a29e;
-    --est-color-border-strong: #1c1917;
     --est-color-surface: #fafaf9;
 
     --est-color-muted: #f5f5f4;
-    --est-color-muted-fg: #44403c;
+    --est-color-muted-foreground: #44403c;
 
     --est-color-neutral-50: #f8fafc;
     --est-color-neutral-100: #f1f5f9;
@@ -20,6 +20,19 @@
     --est-color-neutral-800: #1d293d;
     --est-color-neutral-900: #0f172b;
     --est-color-neutral-950: #020618;
+
+    --est-color-default: var(--est-color-neutral-950);
+    --est-color-default-focus-ring-color: var(--est-color-neutral-300);
+    --est-color-default-background-color: var(--est-color-default);
+    --est-color-default-foreground-color: var(--est-color-white);
+    --est-color-default-hovered-color: var(--est-color-neutral-800);
+    --est-color-default-pressed-color: var(--est-color-neutral-800);
+    --est-color-default-border-color: var(--est-color-neutral-800);
+    --est-color-default-muted-background-color: var(--est-color-neutral-50);
+    --est-color-default-muted-foreground-color: var(--est-color-neutral-700);
+    --est-color-default-muted-hovered-color: var(--est-color-neutral-100);
+    --est-color-default-muted-pressed-color: var(--est-color-neutral-200);
+    --est-color-default-muted-border-color: var(--est-color-neutral-200);
 
     --est-color-secondary: #e7e5e4;
     --est-color-secondary-hover: #d6d3d1;
@@ -39,12 +52,12 @@
     --est-color-primary-950: #180601;
 
     --est-color-primary: var(--est-color-primary-500);
+    --est-color-primary-focus-ring-color: var(--est-color-primary-300);
     --est-color-primary-background-color: var(--est-color-primary);
     --est-color-primary-foreground-color: var(--est-color-white);
     --est-color-primary-hovered-color: var(--est-color-primary-400);
     --est-color-primary-pressed-color: var(--est-color-primary-700);
     --est-color-primary-border-color: var(--est-color-primary-600);
-    --est-color-primary-focus-ring-color: var(--est-color-primary-300);
     --est-color-primary-muted-background-color: var(--est-color-primary-50);
     --est-color-primary-muted-foreground-color: var(--est-color-primary-700);
     --est-color-primary-muted-hovered-color: var(--est-color-primary-100);
@@ -64,12 +77,12 @@
     --est-color-info-950: #020a16;
 
     --est-color-info: var(--est-color-info-500);
+    --est-color-info-focus-ring-color: var(--est-color-info-300);
     --est-color-info-background-color: var(--est-color-info);
     --est-color-info-foreground-color: var(--est-color-white);
     --est-color-info-hovered-color: var(--est-color-info-400);
     --est-color-info-pressed-color: var(--est-color-info-700);
     --est-color-info-border-color: var(--est-color-info-600);
-    --est-color-info-focus-ring-color: var(--est-color-info-300);
     --est-color-info-muted-background-color: var(--est-color-info-50);
     --est-color-info-muted-foreground-color: var(--est-color-info-700);
     --est-color-info-muted-hovered-color: var(--est-color-info-100);
@@ -89,12 +102,12 @@
     --est-color-warning-950: #191102;
 
     --est-color-warning: var(--est-color-warning-500);
+    --est-color-warning-focus-ring-color: var(--est-color-warning-300);
     --est-color-warning-background-color: var(--est-color-warning);
     --est-color-warning-foreground-color: var(--est-color-warning-900);
     --est-color-warning-hovered-color: var(--est-color-warning-400);
     --est-color-warning-pressed-color: var(--est-color-warning-700);
     --est-color-warning-border-color: var(--est-color-warning-600);
-    --est-color-warning-focus-ring-color: var(--est-color-warning-300);
     --est-color-warning-muted-background-color: var(--est-color-warning-50);
     --est-color-warning-muted-foreground-color: var(--est-color-warning-700);
     --est-color-warning-muted-hovered-color: var(--est-color-warning-100);
@@ -114,12 +127,12 @@
     --est-color-success-950: #000d01;
 
     --est-color-success: var(--est-color-success-500);
+    --est-color-success-focus-ring-color: var(--est-color-success-300);
     --est-color-success-background-color: var(--est-color-success);
     --est-color-success-foreground-color: var(--est-color-white);
     --est-color-success-hovered-color: var(--est-color-success-400);
     --est-color-success-pressed-color: var(--est-color-success-700);
     --est-color-success-border-color: var(--est-color-success-600);
-    --est-color-success-focus-ring-color: var(--est-color-success-300);
     --est-color-success-muted-background-color: var(--est-color-success-50);
     --est-color-success-muted-foreground-color: var(--est-color-success-700);
     --est-color-success-muted-hovered-color: var(--est-color-success-100);
@@ -139,29 +152,16 @@
     --est-color-danger-950: #100000;
 
     --est-color-danger: var(--est-color-danger-500);
+    --est-color-danger-focus-ring-color: var(--est-color-danger-300);
     --est-color-danger-background-color: var(--est-color-danger);
     --est-color-danger-foreground-color: var(--est-color-white);
     --est-color-danger-hovered-color: var(--est-color-danger-400);
     --est-color-danger-pressed-color: var(--est-color-danger-700);
     --est-color-danger-border-color: var(--est-color-danger-600);
-    --est-color-danger-focus-ring-color: var(--est-color-danger-300);
     --est-color-danger-muted-background-color: var(--est-color-danger-50);
     --est-color-danger-muted-foreground-color: var(--est-color-danger-700);
     --est-color-danger-muted-hovered-color: var(--est-color-danger-100);
     --est-color-danger-muted-pressed-color: var(--est-color-danger-200);
     --est-color-danger-muted-border-color: var(--est-color-danger-200);
-
-    --est-color-default: var(--est-color-neutral-950);
-    --est-color-default-background-color: var(--est-color-default);
-    --est-color-default-foreground-color: var(--est-color-white);
-    --est-color-default-hovered-color: var(--est-color-neutral-800);
-    --est-color-default-pressed-color: var(--est-color-neutral-800);
-    --est-color-default-border-color: var(--est-color-neutral-800);
-    --est-color-default-focus-ring-color: var(--est-color-neutral-950);
-    --est-color-default-muted-background-color: var(--est-color-neutral-50);
-    --est-color-default-muted-foreground-color: var(--est-color-neutral-700);
-    --est-color-default-muted-hovered-color: var(--est-color-neutral-100);
-    --est-color-default-muted-pressed-color: var(--est-color-neutral-200);
-    --est-color-default-muted-border-color: var(--est-color-neutral-200);
   }
 }
