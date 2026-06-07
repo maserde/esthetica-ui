@@ -119,12 +119,11 @@
   .est-checkbox--indeterminate :deep(.est-checkbox__box) {
     background-color: var(--est-checkbox-default-checked-bg-color);
     border-color: var(--est-checkbox-default-checked-border-color);
+    color: var(--est-checkbox-default-checked-icon-color);
   }
 
   :deep(.est-checkbox__icon) {
-    color: var(--est-checkbox-default-checked-icon-color);
-    width: var(--est-checkbox-default-icon-size);
-    height: var(--est-checkbox-default-icon-size);
+    font-size: var(--est-checkbox-default-icon-size);
   }
 
   :deep(.est-checkbox__label) {

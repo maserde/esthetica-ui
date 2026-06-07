@@ -1,6 +1,5 @@
 @layer estheticaui-tokens {
   :root {
-    /* ── Size presets ────────────────────────────────────── */
     --est-checkbox-sm-size: 1rem;
     --est-checkbox-sm-icon-size: 0.75rem;
     --est-checkbox-sm-label-font-size: 0.75rem;
@@ -8,7 +7,7 @@
 
     --est-checkbox-md-size: 1.25rem;
     --est-checkbox-md-icon-size: 0.875rem;
-    --est-checkbox-md-label-font-size: 0.75rem; /* same as md button font size */
+    --est-checkbox-md-label-font-size: 0.75rem;
 
     --est-checkbox-lg-size: 1.5rem;
     --est-checkbox-lg-icon-size: 1.125rem;
@@ -19,19 +18,19 @@
     --est-checkbox-default-border-radius: var(--est-radius);
     --est-checkbox-default-icon-size: var(--est-checkbox-md-icon-size);
     --est-checkbox-default-label-font-size: var(--est-checkbox-md-label-font-size);
-    --est-checkbox-default-label-color: var(--est-color-neutral-700);
-    --est-checkbox-default-description-color: var(--est-color-neutral-500);
+    --est-checkbox-default-label-color: var(--est-color-default);
+    --est-checkbox-default-description-color: var(--est-color-neutral-800);
+    --est-checkbox-default-focus-ring-offset: var(--est-color-default);
     --est-checkbox-transition-duration: 150ms;
-    --est-checkbox-focus-ring-offset: var(--est-color-surface, var(--est-color-white));
+    --est-checkbox-focus-ring-offset: var(--est-checkbox-default-focus-ring-offset);
 
     --est-checkbox-default-bg-color: var(--est-color-white);
-    --est-checkbox-default-border-color: var(--est-color-neutral-300);
-    --est-checkbox-default-hover-border-color: var(--est-color-primary-background-color);
-
-    --est-checkbox-default-checked-bg-color: var(--est-color-primary-background-color);
-    --est-checkbox-default-checked-border-color: var(--est-color-primary-background-color);
-    --est-checkbox-default-checked-icon-color: var(--est-color-primary-foreground-color);
-    --est-checkbox-default-focus-ring-color: var(--est-color-primary-focus-ring-color);
+    --est-checkbox-default-border-color: var(--est-color-default-border-color);
+    --est-checkbox-default-hover-border-color: var(--est-color-default-hovered-color);
+    --est-checkbox-default-checked-bg-color: var(--est-color-default-background-color);
+    --est-checkbox-default-checked-border-color: var(--est-color-default-border-color);
+    --est-checkbox-default-checked-icon-color: var(--est-color-default-foreground-color);
+    --est-checkbox-default-focus-ring-color: var(--est-color-default-focus-ring-color);
 
     /* ── Color variant presets ─────────────────────────────── */
     --est-checkbox-primary-hover-border-color: var(--est-color-primary-background-color);
