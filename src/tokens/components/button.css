@@ -9,28 +9,28 @@
 
     --est-btn-sm-padding-y: 0.5rem;
     --est-btn-sm-padding-x: 0.5rem;
-    --est-btn-sm-padding: var(--est-btn-sm-padding-x) var(--est-btn-sm-padding-y);
+    --est-btn-sm-padding: var(--est-btn-sm-padding-y) var(--est-btn-sm-padding-x);
     --est-btn-sm-min-height: 1.5rem;
     --est-btn-sm-font-size: 0.75rem;
     --est-btn-sm-radius: 4px;
 
     --est-btn-md-padding-x: 0.75rem;
     --est-btn-md-padding-y: 0.2rem;
-    --est-btn-md-padding: var(--est-btn-md-padding-x) var(--est-btn-md-padding-y);
+    --est-btn-md-padding: var(--est-btn-md-padding-y) var(--est-btn-md-padding-x);
     --est-btn-md-min-height: 2rem;
     --est-btn-md-font-size: 0.75rem;
     --est-btn-md-radius: 4px;
 
     --est-btn-lg-padding-x: 1.25rem;
     --est-btn-lg-padding-y: 0.75rem;
-    --est-btn-lg-padding: var(--est-btn-lg-padding-x) var(--est-btn-lg-padding-y);
+    --est-btn-lg-padding: var(--est-btn-lg-padding-y) var(--est-btn-lg-padding-x);
     --est-btn-lg-min-height: 2.5rem;
     --est-btn-lg-font-size: 0.875rem;
     --est-btn-lg-radius: 8px;
 
     --est-btn-default-padding-x: 0.75rem;
     --est-btn-default-padding-y: 0.2rem;
-    --est-btn-default-padding: var(--est-btn-default-padding-x) var(--est-btn-default-padding-y);
+    --est-btn-default-padding: var(--est-btn-default-padding-y) var(--est-btn-default-padding-x);
     --est-btn-default-min-height: 2rem;
     --est-btn-default-font-size: 0.75rem;
     --est-btn-default-bg-color: var(--est-color-primary-background-color);
