@@ -1,0 +1,137 @@
+@layer estheticaui {
+  /* ── Surface variant — re-points list & trigger tokens ───────────── */
+  .est-tabs--surface :deep(.est-tabs__list) {
+    --est-tabs-list-bg-color: var(--est-tabs-surface-list-bg-color);
+    box-shadow: var(--est-tabs-surface-list-box-shadow);
+  }
+
+  .est-tabs--surface :deep(.est-tabs__trigger) {
+    --est-tabs-trigger-default-bg-color: var(--est-tabs-surface-trigger-default-bg-color);
+    --est-tabs-trigger-default-hover-bg-color: var(
+      --est-tabs-surface-trigger-default-hover-bg-color
+    );
+  }
+
+  .est-tabs--surface :deep(.est-tabs__trigger--active) {
+    --est-tabs-trigger-active-bg-color: var(--est-tabs-surface-trigger-active-bg-color);
+    --est-tabs-trigger-active-box-shadow: var(--est-tabs-surface-trigger-active-box-shadow);
+  }
+
+  /* ── Active trigger — re-points base tokens ──────────────────────── */
+  .est-tabs :deep(.est-tabs__trigger--active) {
+    --est-tabs-trigger-default-bg-color: var(--est-tabs-trigger-active-bg-color);
+    --est-tabs-trigger-default-color: var(--est-tabs-trigger-active-color);
+    --est-tabs-trigger-default-icon-color: var(--est-tabs-trigger-active-icon-color);
+    --est-tabs-trigger-default-badge-bg-color: var(--est-tabs-trigger-active-badge-bg-color);
+    --est-tabs-trigger-default-badge-color: var(--est-tabs-trigger-active-badge-color);
+    --est-tabs-trigger-default-badge-box-shadow: var(--est-tabs-trigger-active-badge-box-shadow);
+    --est-tabs-trigger-default-box-shadow: var(--est-tabs-trigger-active-box-shadow);
+  }
+
+  /* ── Disabled trigger ────────────────────────────────────────────── */
+  .est-tabs :deep(.est-tabs__trigger--disabled) {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+
+  /* ── Root ────────────────────────────────────────────────────────── */
+  .est-tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* ── List ────────────────────────────────────────────────────────── */
+  .est-tabs :deep(.est-tabs__list) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--est-tabs-list-gap);
+    padding: var(--est-tabs-list-padding);
+    background-color: var(--est-tabs-list-bg-color);
+    border-radius: var(--est-tabs-list-radius);
+  }
+
+  /* ── Trigger base — reads only default tokens ────────────────────── */
+  .est-tabs :deep(.est-tabs__trigger) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--est-tabs-trigger-gap);
+    padding: var(--est-tabs-trigger-padding);
+    font-size: var(--est-tabs-trigger-font-size);
+    font-weight: var(--est-tabs-trigger-font-weight);
+    line-height: 1.25;
+    border-radius: var(--est-tabs-trigger-radius);
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    background-color: var(--est-tabs-trigger-default-bg-color);
+    color: var(--est-tabs-trigger-default-color);
+    box-shadow: var(--est-tabs-trigger-default-box-shadow);
+    transition:
+      background-color var(--est-tabs-trigger-transition-duration) ease,
+      color var(--est-tabs-trigger-transition-duration) ease,
+      box-shadow var(--est-tabs-trigger-transition-duration) ease;
+    outline: none;
+  }
+
+  .est-tabs
+    :deep(
+      .est-tabs__trigger:hover:not(.est-tabs__trigger--active):not(.est-tabs__trigger--disabled)
+    ) {
+    background-color: var(--est-tabs-trigger-default-hover-bg-color);
+    color: var(--est-tabs-trigger-default-hover-color);
+  }
+
+  .est-tabs :deep(.est-tabs__trigger:focus-visible) {
+    outline: 2px solid var(--est-color-primary-focus-ring-color);
+    outline-offset: 2px;
+  }
+
+  /* ── Trigger icon ────────────────────────────────────────────────── */
+  .est-tabs :deep(.est-tabs__trigger-icon) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--est-tabs-trigger-icon-size);
+    height: var(--est-tabs-trigger-icon-size);
+    flex-shrink: 0;
+    color: var(--est-tabs-trigger-default-icon-color);
+    transition: color var(--est-tabs-trigger-transition-duration) ease;
+  }
+
+  /* ── Trigger label ───────────────────────────────────────────────── */
+  .est-tabs :deep(.est-tabs__trigger-label) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* ── Badge ───────────────────────────────────────────────────────── */
+  .est-tabs :deep(.est-tabs__trigger-badge) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--est-tabs-badge-padding);
+    font-size: var(--est-tabs-badge-font-size);
+    font-weight: var(--est-tabs-badge-font-weight);
+    line-height: 1;
+    border-radius: var(--est-tabs-badge-radius);
+    background-color: var(--est-tabs-trigger-default-badge-bg-color);
+    color: var(--est-tabs-trigger-default-badge-color);
+    box-shadow: var(--est-tabs-trigger-default-badge-box-shadow, none);
+    transition:
+      background-color var(--est-tabs-trigger-transition-duration) ease,
+      color var(--est-tabs-trigger-transition-duration) ease,
+      box-shadow var(--est-tabs-trigger-transition-duration) ease;
+  }
+
+  /* ── Content panel ───────────────────────────────────────────────── */
+  .est-tabs :deep(.est-tabs__content) {
+    width: 100%;
+    padding-top: var(--est-tabs-content-padding-top);
+  }
+
+  .est-tabs :deep(.est-tabs__content[hidden]) {
+    display: none;
+  }
+}
