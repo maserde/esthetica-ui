@@ -14,7 +14,9 @@ export { default as EstCardFooter } from './components/EstCard/EstCardFooter.vue
 export { default as EstField } from './components/EstField/EstField.vue'
 export { default as EstLabel } from './components/EstField/EstLabel.vue'
 export { default as EstInput } from './components/EstField/EstInput.vue'
+export { default as EstSelect } from './components/EstField/EstSelect.vue'
 export { default as EstFieldError } from './components/EstField/EstFieldError.vue'
+export { default as EstFieldHint } from './components/EstField/EstFieldHint.vue'
 export { default as EstInputOTP } from './components/EstInputOTP.vue'
 export { default as EstAlert } from './components/EstAlert/EstAlert.vue'
 export { default as EstAlertIcon } from './components/EstAlert/EstAlertIcon.vue'
@@ -72,6 +74,10 @@ export type { SkeletonRounded, Props as SkeletonProps } from './components/EstSk
 export type { CardColor, Props as CardProps } from './components/EstCard/EstCard.vue'
 export type { Props as FieldProps } from './components/EstField/EstField.vue'
 export type { Props as InputProps } from './components/EstField/EstInput.vue'
+export type {
+  Option as SelectOption,
+  Props as SelectProps,
+} from './components/EstField/EstSelect.vue'
 export type { Props as InputOTPProps } from './components/EstInputOTP.vue'
 export type { AlertColor, Props as AlertProps } from './components/EstAlert/EstAlert.vue'
 export type { ToastColor, Props as ToastProps } from './components/EstToast.vue'
@@ -127,7 +133,9 @@ declare module '@vue/runtime-core' {
     EstField: (typeof import('./components/EstField/EstField.vue'))['default']
     EstLabel: (typeof import('./components/EstField/EstLabel.vue'))['default']
     EstInput: (typeof import('./components/EstField/EstInput.vue'))['default']
+    EstSelect: (typeof import('./components/EstField/EstSelect.vue'))['default']
     EstFieldError: (typeof import('./components/EstField/EstFieldError.vue'))['default']
+    EstFieldHint: (typeof import('./components/EstField/EstFieldHint.vue'))['default']
     EstInputOTP: (typeof import('./components/EstInputOTP.vue'))['default']
     EstPagination: (typeof import('./components/EstPagination/EstPagination.vue'))['default']
     EstPaginationPageInput: (typeof import('./components/EstPagination/EstPaginationPageInput.vue'))['default']
