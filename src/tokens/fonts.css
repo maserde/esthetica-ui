@@ -1,5 +1,6 @@
 @layer estheticaui-tokens {
   :root {
+    --est-font-size-2xs: 0.625rem;
     --est-font-size-xs: 0.75rem;
     --est-font-size-sm: 0.875rem;
     --est-font-size-base: 1rem;

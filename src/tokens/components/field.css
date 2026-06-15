@@ -25,12 +25,49 @@
     --est-field-hint-color: var(--est-color-neutral-500);
     --est-field-hint-font-size: var(--est-font-size-sm);
     --est-field-hint-font-weight: var(--est-font-weight-normal);
+    --est-field-select-radius: var(--est-field-select-lg-radius);
     --est-field-select-leading-icon-color: var(--est-color-neutral-400);
     --est-field-select-trailing-icon-color: var(--est-color-neutral-900);
-    --est-field-select-font-size: var(--est-font-size-base);
-    --est-field-select-font-line-height: var(--est-font-line-height-base);
-    --est-field-select-padding-x: 0.75rem;
-    --est-field-select-padding-y: 0.5rem;
+    /* ── Select size presets ─────────────────────────────────────── */
+    --est-field-select-lg-font-size: var(--est-font-size-base);
+    --est-field-select-lg-font-line-height: var(--est-font-line-height-base);
+    --est-field-select-lg-padding-x: 0.75rem;
+    --est-field-select-lg-padding-y: 0.5rem;
+    --est-field-select-lg-radius: 0.5rem;
+    --est-field-select-lg-label-font-size: var(--est-font-size-sm);
+    --est-field-select-lg-hint-font-size: var(--est-font-size-sm);
+
+    --est-field-select-md-font-size: var(--est-font-size-xs);
+    --est-field-select-md-font-line-height: var(--est-font-line-height-xs);
+    --est-field-select-md-padding-x: 0.625rem;
+    --est-field-select-md-padding-y: 0.375rem;
+    --est-field-select-md-radius: 0.25rem;
+    --est-field-select-md-label-font-size: var(--est-font-size-xs);
+    --est-field-select-md-hint-font-size: var(--est-font-size-xs);
+
+    --est-field-select-sm-font-size: var(--est-font-size-2xs);
+    --est-field-select-sm-font-line-height: var(--est-font-line-height-xs);
+    --est-field-select-sm-padding-x: 0.5rem;
+    --est-field-select-sm-padding-y: 0.25rem;
+    --est-field-select-sm-radius: 0.25rem;
+    --est-field-select-sm-label-font-size: var(--est-font-size-2xs);
+    --est-field-select-sm-hint-font-size: var(--est-font-size-2xs);
+
+    /* ── Select default slot (reads lg by default, overridden by modifiers) ── */
+    --est-field-select-font-size: var(--est-field-select-lg-font-size);
+    --est-field-select-font-line-height: var(--est-field-select-lg-font-line-height);
+    --est-field-select-padding-x: var(--est-field-select-lg-padding-x);
+    --est-field-select-padding-y: var(--est-field-select-lg-padding-y);
+    --est-field-select-label-font-size: var(--est-field-select-lg-label-font-size);
+    --est-field-select-hint-font-size: var(--est-field-select-lg-hint-font-size);
     --est-field-transition-duration: 150ms;
+
+    /* ── Select interaction state tokens ────────────────────────── */
+    --est-field-select-hover-border-color: var(--est-color-primary-500);
+    --est-field-select-active-border-color: var(--est-color-primary-500);
+    --est-field-select-active-ring-color: var(--est-color-primary-50);
+    --est-field-select-active-ring-width: 3px;
+    --est-field-select-error-border-color: var(--est-color-danger-500);
+    --est-field-select-error-hint-color: var(--est-color-danger-500);
   }
 }

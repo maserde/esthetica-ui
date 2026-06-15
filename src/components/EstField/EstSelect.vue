@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import type { ComputedRef, Ref } from 'vue'
+import type { SelectSize } from './EstField.vue'
 
 defineOptions({ inheritAttrs: false })
 
@@ -27,6 +28,7 @@ const modelValue = inject<Ref<string>>('est-field-value')
 const disabled = inject<Ref<boolean>>('est-field-disabled')
 const readonly = inject<Ref<boolean>>('est-field-readonly')
 const error = inject<Ref<string | undefined>>('est-field-error')
+const size = inject<Ref<SelectSize>>('est-field-size')
 const emitUpdate = inject<(value: string) => void>('est-field-emit')
 
 function handleChange(event: Event) {
@@ -41,6 +43,9 @@ function handleChange(event: Event) {
       'est-field__wrapper--error': !!error,
       'est-field__wrapper--disabled': disabled,
       'est-field__wrapper--readonly': readonly,
+      'est-field__wrapper--select-lg': size === 'lg',
+      'est-field__wrapper--select-md': size === 'md',
+      'est-field__wrapper--select-sm': size === 'sm',
     }"
   >
     <slot name="leading">
