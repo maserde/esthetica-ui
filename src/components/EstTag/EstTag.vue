@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useVariantClasses } from '@/composables/useVariantClasses'
+import { provide, toRef } from 'vue'
 
-export type TagColor = 'default' | 'info' | 'success' | 'warning' | 'danger'
+export type TagColor = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'error'
 export type TagVariant = 'primary' | 'secondary'
 
 export interface Props {
@@ -9,12 +10,14 @@ export interface Props {
   variant?: TagVariant
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   color: 'default',
   variant: 'primary',
 })
 
 const { buildVariant } = useVariantClasses()
+
+provide('est-tag-color', toRef(props, 'color'))
 </script>
 
 <template>
@@ -24,7 +27,9 @@ const { buildVariant } = useVariantClasses()
       'est-tag--secondary': variant === 'secondary',
     }"
   >
-    <slot />
+    <span class="est-tag__inner">
+      <slot />
+    </span>
   </span>
 </template>
 

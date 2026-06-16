@@ -6,6 +6,11 @@
     --est-tag-default-color: var(--est-tag-neutral-primary-color);
   }
 
+  .est-tag--primary {
+    --est-tag-default-bg-color: var(--est-tag-primary-primary-bg-color);
+    --est-tag-default-color: var(--est-tag-primary-primary-color);
+  }
+
   .est-tag--info {
     --est-tag-default-bg-color: var(--est-tag-info-primary-bg-color);
     --est-tag-default-color: var(--est-tag-info-primary-color);
@@ -21,9 +26,9 @@
     --est-tag-default-color: var(--est-tag-warning-primary-color);
   }
 
-  .est-tag--danger {
-    --est-tag-default-bg-color: var(--est-tag-danger-primary-bg-color);
-    --est-tag-default-color: var(--est-tag-danger-primary-color);
+  .est-tag--error {
+    --est-tag-default-bg-color: var(--est-tag-error-primary-bg-color);
+    --est-tag-default-color: var(--est-tag-error-primary-color);
   }
 
   /* ── Secondary variant overrides (compound selectors) ────────────── */
@@ -32,6 +37,12 @@
     --est-tag-default-bg-color: var(--est-tag-neutral-secondary-bg-color);
     --est-tag-default-color: var(--est-tag-neutral-secondary-color);
     --est-tag-default-border-color: var(--est-tag-neutral-secondary-border-color);
+  }
+
+  .est-tag--secondary.est-tag--primary {
+    --est-tag-default-bg-color: var(--est-tag-primary-secondary-bg-color);
+    --est-tag-default-color: var(--est-tag-primary-secondary-color);
+    --est-tag-default-border-color: var(--est-tag-primary-secondary-border-color);
   }
 
   .est-tag--secondary.est-tag--info {
@@ -52,24 +63,47 @@
     --est-tag-default-border-color: var(--est-tag-warning-secondary-border-color);
   }
 
-  .est-tag--secondary.est-tag--danger {
-    --est-tag-default-bg-color: var(--est-tag-danger-secondary-bg-color);
-    --est-tag-default-color: var(--est-tag-danger-secondary-color);
-    --est-tag-default-border-color: var(--est-tag-danger-secondary-border-color);
+  .est-tag--secondary.est-tag--error {
+    --est-tag-default-bg-color: var(--est-tag-error-secondary-bg-color);
+    --est-tag-default-color: var(--est-tag-error-secondary-color);
+    --est-tag-default-border-color: var(--est-tag-error-secondary-border-color);
   }
 
   /* ── Base class ──────────────────────────────────────────────────── */
 
   .est-tag {
-    @apply inline-flex items-center justify-center tracking-wide whitespace-nowrap select-none
-    border-1 border-solid;
+    @apply inline-flex tracking-wide whitespace-nowrap select-none border border-solid;
 
     font-size: var(--est-tag-font-size);
     font-weight: var(--est-tag-font-weight);
-    padding: var(--est-tag-padding);
     border-radius: var(--est-tag-border-radius);
     border-color: var(--est-tag-default-border-color);
     background-color: var(--est-tag-default-bg-color);
     color: var(--est-tag-default-color);
+  }
+
+  .est-tag__inner {
+    @apply w-full flex items-center justify-center;
+    gap: var(--est-tag-gap);
+    padding: var(--est-tag-padding);
+  }
+
+  :deep(.est-tag__icon) {
+    @apply flex items-center justify-center shrink-0;
+  }
+
+  :deep(.est-tag__label) {
+    @apply truncate;
+  }
+
+  :deep(.est-tag__close) {
+    @apply flex items-center justify-center shrink-0 cursor-pointer p-0 m-0 bg-transparent border-none opacity-70 hover:opacity-100 transition-opacity outline-none;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  :deep(.est-tag__close:focus-visible) {
+    @apply opacity-100 ring-2 ring-offset-1 rounded-sm;
+    outline: none;
   }
 }

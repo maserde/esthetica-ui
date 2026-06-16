@@ -1,7 +1,8 @@
 @layer estheticaui-tokens {
   :root {
     /* ── Base/Default tokens ─────────────────────────────────────── */
-    --est-tag-padding: 0.25rem 0.5rem;
+    --est-tag-padding: 0.25rem 0.5rem; /* 4px 8px */
+    --est-tag-gap: 0.375rem; /* 6px */
     --est-tag-border-radius: 0.25rem;
     --est-tag-font-size: var(--est-font-size-xs);
     --est-tag-font-weight: var(--est-font-weight-semibold);
@@ -10,6 +11,12 @@
     --est-tag-default-border-color: transparent;
 
     /* ── Color/style variant presets ─────────────────────────────── */
+    --est-tag-primary-secondary-bg-color: var(--est-color-primary-muted-background-color);
+    --est-tag-primary-secondary-color: var(--est-color-primary-background-color);
+    --est-tag-primary-primary-bg-color: var(--est-color-primary-background-color);
+    --est-tag-primary-primary-color: var(--est-color-primary-foreground-color);
+    --est-tag-primary-secondary-border-color: var(--est-color-primary-background-color);
+
     --est-tag-info-secondary-bg-color: var(--est-color-info-muted-background-color);
     --est-tag-info-secondary-color: var(--est-color-info-background-color);
     --est-tag-info-primary-bg-color: var(--est-color-info-background-color);
@@ -28,11 +35,11 @@
     --est-tag-warning-primary-color: var(--est-color-warning-foreground-color);
     --est-tag-warning-secondary-border-color: var(--est-color-warning-background-color);
 
-    --est-tag-danger-secondary-bg-color: var(--est-color-danger-muted-background-color);
-    --est-tag-danger-secondary-color: var(--est-color-danger-background-color);
-    --est-tag-danger-primary-bg-color: var(--est-color-danger-background-color);
-    --est-tag-danger-primary-color: var(--est-color-danger-foreground-color);
-    --est-tag-danger-secondary-border-color: var(--est-color-danger-background-color);
+    --est-tag-error-secondary-bg-color: var(--est-color-danger-muted-background-color);
+    --est-tag-error-secondary-color: var(--est-color-danger-background-color);
+    --est-tag-error-primary-bg-color: var(--est-color-danger-background-color);
+    --est-tag-error-primary-color: var(--est-color-danger-foreground-color);
+    --est-tag-error-secondary-border-color: var(--est-color-danger-background-color);
 
     --est-tag-neutral-primary-bg-color: var(--est-color-default-background-color);
     --est-tag-neutral-primary-color: var(--est-color-default-foreground-color);

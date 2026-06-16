@@ -35,7 +35,10 @@ export { default as EstTableHead } from './components/EstTable/EstTableHead.vue'
 export { default as EstTableCell } from './components/EstTable/EstTableCell.vue'
 export { default as EstTableEmpty } from './components/EstTable/EstTableEmpty.vue'
 export { default as EstPasswordMeter } from './components/EstPasswordMeter.vue'
-export { default as EstTag } from './components/EstTag.vue'
+export { default as EstTag } from './components/EstTag/EstTag.vue'
+export { default as EstTagIcon } from './components/EstTag/EstTagIcon.vue'
+export { default as EstTagLabel } from './components/EstTag/EstTagLabel.vue'
+export { default as EstTagClose } from './components/EstTag/EstTagClose.vue'
 export { default as EstToggle } from './components/EstToggle/EstToggle.vue'
 export { default as EstToggleTrack } from './components/EstToggle/EstToggleTrack.vue'
 export { default as EstToggleLabel } from './components/EstToggle/EstToggleLabel.vue'
@@ -87,7 +90,7 @@ export type { Props as TableRowProps } from './components/EstTable/EstTableRow.v
 export type { Props as TableHeadProps } from './components/EstTable/EstTableHead.vue'
 export type { Props as TableEmptyProps } from './components/EstTable/EstTableEmpty.vue'
 export type { Props as PasswordMeterProps } from './components/EstPasswordMeter.vue'
-export type { TagColor, TagVariant, Props as TagProps } from './components/EstTag.vue'
+export type { TagColor, TagVariant, Props as TagProps } from './components/EstTag/EstTag.vue'
 export type {
   ToggleColor,
   ToggleSize,
@@ -150,7 +153,10 @@ declare module '@vue/runtime-core' {
     EstTableHead: (typeof import('./components/EstTable/EstTableHead.vue'))['default']
     EstTableCell: (typeof import('./components/EstTable/EstTableCell.vue'))['default']
     EstTableEmpty: (typeof import('./components/EstTable/EstTableEmpty.vue'))['default']
-    EstTag: (typeof import('./components/EstTag.vue'))['default']
+    EstTag: (typeof import('./components/EstTag/EstTag.vue'))['default']
+    EstTagIcon: (typeof import('./components/EstTag/EstTagIcon.vue'))['default']
+    EstTagLabel: (typeof import('./components/EstTag/EstTagLabel.vue'))['default']
+    EstTagClose: (typeof import('./components/EstTag/EstTagClose.vue'))['default']
     EstToast: (typeof import('./components/EstToast.vue'))['default']
     EstToggle: (typeof import('./components/EstToggle/EstToggle.vue'))['default']
     EstToggleTrack: (typeof import('./components/EstToggle/EstToggleTrack.vue'))['default']
