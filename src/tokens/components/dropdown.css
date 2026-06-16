@@ -1,4 +1,4 @@
-@layer esthetica-ui-tokens {
+@layer estheticaui-tokens {
   :root {
     /* ── Size variant presets ────────────────────────────────────── */
     --est-dropdown-sm-padding-x: 0.5rem;

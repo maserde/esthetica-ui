@@ -4,7 +4,7 @@
     --est-field-bg-color: var(--est-color-white);
     --est-field-readonly-bg-color: var(--est-color-neutral-50);
     --est-field-color: var(--est-color-neutral-800);
-    --est-field-placeholder-color: var(--est-color-neutral-950);
+    --est-field-placeholder-color: var(--est-color-neutral-400);
     --est-field-border-color: var(--est-color-neutral-300);
     --est-field-label-color: var(--est-color-neutral-950);
     --est-field-focus-border-color: transparent;

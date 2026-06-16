@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, provide, toRef } from 'vue'
+import { computed, provide } from 'vue'
 
 export type TabsVariant = 'default' | 'surface'
 
@@ -25,7 +25,6 @@ const setTab = (value: string) => {
 
 provide('est-tabs-active', activeTab)
 provide('est-tabs-set', setTab)
-provide('est-tabs-variant', toRef(props, 'variant'))
 </script>
 
 <template>
