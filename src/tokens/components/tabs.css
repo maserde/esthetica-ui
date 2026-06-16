@@ -1,0 +1,55 @@
+@layer estheticaui-tokens {
+  :root {
+    /* ── List structural ─────────────────────────────────────────── */
+    --est-tabs-list-gap: 0.25rem;
+    --est-tabs-list-padding: 0.25rem;
+    --est-tabs-list-bg-color: var(--est-color-neutral-100);
+    --est-tabs-list-radius: var(--est-radius);
+
+    /* ── Surface variant presets ─────────────────────────────────── */
+    --est-tabs-surface-list-bg-color: var(--est-color-white);
+    --est-tabs-surface-list-box-shadow: inset 0 0 0 1px var(--est-color-neutral-200);
+    --est-tabs-surface-trigger-default-bg-color: var(--est-color-white);
+    --est-tabs-surface-trigger-default-hover-bg-color: var(--est-color-neutral-50);
+    --est-tabs-surface-trigger-active-bg-color: var(--est-color-neutral-100);
+    --est-tabs-surface-trigger-active-box-shadow: none;
+
+    /* ── Trigger structural ──────────────────────────────────────── */
+    --est-tabs-trigger-padding: 0.3125rem 0.625rem;
+    --est-tabs-trigger-font-size: 0.8125rem;
+    --est-tabs-trigger-font-weight: 500;
+    --est-tabs-trigger-radius: calc(var(--est-radius) - 2px);
+    --est-tabs-trigger-gap: 0.375rem;
+    --est-tabs-trigger-icon-size: 0.875rem;
+    --est-tabs-trigger-transition-duration: 150ms;
+
+    /* ── Badge structural ────────────────────────────────────────── */
+    --est-tabs-badge-padding: 0.375rem 0.375rem;
+    --est-tabs-badge-font-size: 0.6875rem;
+    --est-tabs-badge-radius: 4px;
+    --est-tabs-badge-font-weight: 500;
+
+    /* ── Content structural ──────────────────────────────────────── */
+    --est-tabs-content-padding-top: 0.75rem;
+
+    /* ── Default (inactive) base tokens ─────────────────────────── */
+    --est-tabs-trigger-default-bg-color: var(--est-color-neutral-100);
+    --est-tabs-trigger-default-color: var(--est-color-neutral-400);
+    --est-tabs-trigger-default-icon-color: var(--est-color-neutral-400);
+    --est-tabs-trigger-default-hover-bg-color: var(--est-color-neutral-50);
+    --est-tabs-trigger-default-hover-color: var(--est-color-neutral-700);
+    --est-tabs-trigger-default-badge-bg-color: var(--est-color-white);
+    --est-tabs-trigger-default-badge-color: var(--est-color-neutral-500);
+    --est-tabs-trigger-default-badge-box-shadow: inset 0 0 0 1px var(--est-color-neutral-200);
+    --est-tabs-trigger-default-box-shadow: none;
+
+    /* ── Active state presets ────────────────────────────────────── */
+    --est-tabs-trigger-active-bg-color: var(--est-color-white);
+    --est-tabs-trigger-active-color: var(--est-color-neutral-900);
+    --est-tabs-trigger-active-icon-color: var(--est-color-primary-background-color);
+    --est-tabs-trigger-active-badge-bg-color: var(--est-color-white);
+    --est-tabs-trigger-active-badge-color: var(--est-color-neutral-900);
+    --est-tabs-trigger-active-badge-box-shadow: inset 0 0 0 1px var(--est-color-neutral-200);
+    --est-tabs-trigger-active-box-shadow: var(--est-shadow-xs);
+  }
+}

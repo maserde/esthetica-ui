@@ -12,6 +12,10 @@ const meta = {
   component: EstBreadcrumb,
   tags: ['autodocs'],
   argTypes: {
+    color: {
+      control: 'select',
+      options: ['primary', 'neutral', 'info', 'success', 'warning', 'danger'],
+    },
     separator: { control: 'text' },
   },
   render: (args) => ({
@@ -115,6 +119,43 @@ export const ManualSlots: Story = {
           </EstBreadcrumbItem>
         </EstBreadcrumbList>
       </EstBreadcrumb>
+    `,
+  }),
+}
+
+export const AllColors: Story = {
+  name: 'All Colors',
+  render: () => ({
+    components: {
+      EstBreadcrumb,
+      EstBreadcrumbList,
+      EstBreadcrumbItem,
+      EstBreadcrumbLink,
+      EstBreadcrumbSeparator,
+      EstBreadcrumbPage,
+    },
+    setup() {
+      const colors = ['primary', 'neutral', 'info', 'success', 'warning', 'danger']
+      return { colors }
+    },
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <EstBreadcrumb v-for="color in colors" :key="color" :color="color">
+          <EstBreadcrumbList>
+            <EstBreadcrumbItem>
+              <EstBreadcrumbLink href="/">Home</EstBreadcrumbLink>
+            </EstBreadcrumbItem>
+            <EstBreadcrumbSeparator />
+            <EstBreadcrumbItem>
+              <EstBreadcrumbLink href="/products">Products</EstBreadcrumbLink>
+            </EstBreadcrumbItem>
+            <EstBreadcrumbSeparator />
+            <EstBreadcrumbItem>
+              <EstBreadcrumbPage>{{ color.charAt(0).toUpperCase() + color.slice(1) }} Details</EstBreadcrumbPage>
+            </EstBreadcrumbItem>
+          </EstBreadcrumbList>
+        </EstBreadcrumb>
+      </div>
     `,
   }),
 }

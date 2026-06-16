@@ -71,4 +71,126 @@
     font-size: var(--est-field-error-font-size);
     font-weight: var(--est-field-error-font-weight);
   }
+
+  :deep(.est-field__hint) {
+    color: var(--est-field-hint-color);
+    font-size: var(--est-field-hint-font-size);
+    font-weight: var(--est-field-hint-font-weight);
+    margin: 0;
+  }
+
+  /* Select: size modifier classes on root (modifier-first, root cascades to all descendants) */
+  .est-field-select--lg {
+    --est-field-select-font-size: var(--est-field-select-lg-font-size);
+    --est-field-select-font-line-height: var(--est-field-select-lg-font-line-height);
+    --est-field-select-padding-x: var(--est-field-select-lg-padding-x);
+    --est-field-select-padding-y: var(--est-field-select-lg-padding-y);
+  }
+  .est-field-select--lg :deep(.est-field__label) {
+    font-size: var(--est-field-select-lg-label-font-size);
+  }
+  .est-field-select--lg :deep(.est-field__hint),
+  .est-field-select--lg :deep(.est-field__error) {
+    font-size: var(--est-field-select-lg-hint-font-size);
+  }
+
+  .est-field-select--md {
+    --est-field-select-font-size: var(--est-field-select-md-font-size);
+    --est-field-select-font-line-height: var(--est-field-select-md-font-line-height);
+    --est-field-select-padding-x: var(--est-field-select-md-padding-x);
+    --est-field-select-padding-y: var(--est-field-select-md-padding-y);
+    --est-field-select-radius: var(--est-field-select-md-radius);
+  }
+  .est-field-select--md :deep(.est-field__label) {
+    font-size: var(--est-field-select-md-label-font-size);
+  }
+  .est-field-select--md :deep(.est-field__hint),
+  .est-field-select--md :deep(.est-field__error) {
+    font-size: var(--est-field-select-md-hint-font-size);
+  }
+
+  .est-field-select--sm {
+    --est-field-select-font-size: var(--est-field-select-sm-font-size);
+    --est-field-select-font-line-height: var(--est-field-select-sm-font-line-height);
+    --est-field-select-padding-x: var(--est-field-select-sm-padding-x);
+    --est-field-select-padding-y: var(--est-field-select-sm-padding-y);
+    --est-field-select-radius: var(--est-field-select-sm-radius);
+  }
+  .est-field-select--sm :deep(.est-field__label) {
+    font-size: var(--est-field-select-sm-label-font-size);
+  }
+  .est-field-select--sm :deep(.est-field__hint),
+  .est-field-select--sm :deep(.est-field__error) {
+    font-size: var(--est-field-select-sm-hint-font-size);
+  }
+
+  /* Select: base wrapper — reads default slot tokens */
+  :deep(.est-field__wrapper--select) {
+    cursor: pointer;
+    border-radius: var(--est-field-select-radius);
+    --est-field-padding-x: var(--est-field-select-padding-x);
+    --est-field-padding-y: var(--est-field-select-padding-y);
+  }
+
+  /* Select: hover — border turns brand-500 */
+  :deep(
+    .est-field__wrapper--select:hover:not(:focus-within):not(.est-field__wrapper--disabled):not(
+        .est-field__wrapper--readonly
+      )
+  ) {
+    outline-color: var(--est-field-select-hover-border-color);
+  }
+
+  /* Select: active/focus — brand-500 border + 3px brand-50 outer ring */
+  :deep(.est-field__wrapper--select:focus-within:not(.est-field__wrapper--readonly)) {
+    outline-color: var(--est-field-select-active-border-color);
+    box-shadow:
+      var(--est-field-shadow),
+      0 0 0 var(--est-field-select-active-ring-width) var(--est-field-select-active-ring-color);
+  }
+
+  /* Select: error — override wrapper border + hint text color */
+  :deep(.est-field__wrapper--select.est-field__wrapper--error) {
+    --est-field-border-color: var(--est-field-select-error-border-color);
+  }
+
+  :deep(.est-field__wrapper--select.est-field__wrapper--error ~ .est-field__hint) {
+    color: var(--est-field-select-error-hint-color);
+  }
+
+  :deep(.est-field__select) {
+    @apply flex-1 min-w-0 border-0 outline-none cursor-pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    color: var(--est-field-color);
+    font-size: var(--est-field-select-font-size);
+    line-height: var(--est-field-select-font-line-height);
+    padding: var(--est-field-padding-y) 0;
+  }
+
+  :deep(.est-field__select--placeholder) {
+    color: var(--est-field-placeholder-color);
+  }
+
+  :deep(.est-field__select:disabled) {
+    @apply cursor-not-allowed;
+  }
+
+  :deep(.est-field__select-chevron) {
+    @apply shrink-0 flex items-center justify-center;
+    color: var(--est-field-select-trailing-icon-color);
+    transition: transform var(--est-field-transition-duration) ease;
+    pointer-events: none;
+  }
+
+  :deep(.est-field__wrapper--select:focus-within .est-field__select-chevron) {
+    transform: rotate(180deg);
+  }
+
+  :deep(.est-field__select-icon) {
+    @apply shrink-0 flex items-center justify-center;
+    color: var(--est-field-select-leading-icon-color);
+    pointer-events: none;
+  }
 }
